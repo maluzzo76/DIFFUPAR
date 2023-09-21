@@ -1,0 +1,14 @@
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\bin\Debug\Process.dll
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\bin\Debug\Process.pdb
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\bin\Debug\ADO.dll
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\bin\Debug\ADO.pdb
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\obj\Debug\Process.csproj.AssemblyReference.cache
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\obj\Debug\Process.csproj.CoreCompileInputs.cache
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\obj\Debug\Process.csproj.CopyComplete
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\obj\Debug\Process.dll
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\obj\Debug\Process.pdb
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\bin\Debug\Process.dll.config
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\bin\Debug\EntityFramework.dll
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\bin\Debug\EntityFramework.SqlServer.dll
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\bin\Debug\EntityFramework.xml
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\bin\Debug\EntityFramework.SqlServer.xml

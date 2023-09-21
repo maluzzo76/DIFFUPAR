@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="dbb90cd7e64342d4a04bb084ced65c3d" Name="Diagram1">
+        <EntityTypeShape EntityType="DiffuparAnalyticsModel.DbColumns" Width="1.5" PointX="10.5" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiffuparAnalyticsModel.DbMapping" Width="1.5" PointX="9.375" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiffuparAnalyticsModel.DbProviders" Width="1.5" PointX="1" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiffuparAnalyticsModel.DbQuery" Width="1.5" PointX="6.875" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiffuparAnalyticsModel.DbSource" Width="1.5" PointX="3.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiffuparAnalyticsModel.DbTables" Width="1.5" PointX="6.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiffuparAnalyticsModel.DbTableStg" Width="1.5" PointX="4.5" PointY="5.375" IsExpanded="true" />
+        <AssociationConnector Association="DiffuparAnalyticsModel.FK__DbColumns__Dbtab__7D439ABD" ManuallyRouted="false" />
+        <AssociationConnector Association="DiffuparAnalyticsModel.FK__DbMapping__Query__04E4BC85" ManuallyRouted="false" />
+        <AssociationConnector Association="DiffuparAnalyticsModel.FK__DbSource__Provid__778AC167" ManuallyRouted="false" />
+        <AssociationConnector Association="DiffuparAnalyticsModel.FK__DbQuery__TableDe__01142BA1" ManuallyRouted="false" />
+        <AssociationConnector Association="DiffuparAnalyticsModel.FK__DbQuery__TableId__00200768" ManuallyRouted="false" />
+        <AssociationConnector Association="DiffuparAnalyticsModel.FK__DbTables__DbSour__7A672E12" ManuallyRouted="false" />
+        <AssociationConnector Association="DiffuparAnalyticsModel.FK__DbMapping__Colum__07C12930" />
+        <EntityTypeShape EntityType="DiffuparAnalyticsModel.DbSchedule" Width="1.5" PointX="1.875" PointY="4.25" />
+        <AssociationConnector Association="DiffuparAnalyticsModel.FK__DbSchedul__Query__0A9D95DB" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

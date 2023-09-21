@@ -1,0 +1,60 @@
+﻿@model ASDWP.Models.DbQuery
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Mapping query</h2>
+
+<div>
+    <hr />
+    <div class="container bg-secondary text-light">
+        <h1>@Model.Name</h1>
+        <h5>Origen: @Model.DbTables.Name</h5>
+        <h5>Destino: @Model.DbTableStg.Name</h5>
+    </div>
+</div>
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Origen
+                </th>
+                <th>
+                    Destino
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @{ foreach (var m in (ViewData["Mapping"] as IList<ASDWP.Models.DbMapping>))
+                {
+                    if (m.DbColumns == null)
+                    {
+                        <tr>
+                            <td>@Html.ActionLink("Agregar", "Edit", "DbMappings", new { id = m.Id }, new { @class = "badge rounded-pill bg-info" })</td>
+                            <td>
+                                @m.DbQuery.DbTableStg.Name.@m.ColumnDestino
+                            </td>
+                        </tr>
+
+                    }
+                    else
+                    {
+                        <tr>
+                            <td>@m.DbColumns.DbTables.Name.@m.DbColumns.Name <span>@Html.ActionLink("Eliminar", "Delete", "DbMappings", new { id = m.Id }, new { @class = "badge rounded-pill bg-danger" })</span></td>
+                            <td>
+                                @m.DbQuery.DbTableStg.Name.@m.ColumnDestino
+                            </td>
+                        </tr>
+                    }
+
+                }
+            }
+        </tbody>
+    </table>
+
+</div>
+<p>
+    @Html.ActionLink("Volver", "Index", null, new {@class= "btn btn-secondary" })
+</p>

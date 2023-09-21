@@ -1,0 +1,551 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DiffuparAnalyticsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DbColumns">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DbtableId" Type="int" />
+          <Property Name="Name" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="DbMapping">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QueryId" Type="int" Nullable="false" />
+          <Property Name="ColumnSourceId" Type="int" />
+          <Property Name="ColumnDestino" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="DbProviders">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="DbQuery">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TableId" Type="int" Nullable="false" />
+          <Property Name="TableDestinoId" Type="int" />
+          <Property Name="Where" Type="varchar" MaxLength="100" />
+          <Property Name="Name" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="DbSchedule">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" />
+          <Property Name="QueryId" Type="int" />
+          <Property Name="StarDate" Type="datetime" />
+          <Property Name="LastStarDate" Type="datetime" />
+          <Property Name="Status" Type="int" />
+        </EntityType>
+        <EntityType Name="DbSource">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Connetion" Type="varchar(max)" Nullable="false" />
+          <Property Name="ProviderId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DbTables">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DbSourceId" Type="int" />
+          <Property Name="Name" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="DbTableStg">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ObjectId" Type="int" />
+          <Property Name="Name" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <Association Name="FK__DbColumns__Dbtab__7D439ABD">
+          <End Role="DbTables" Type="Self.DbTables" Multiplicity="0..1" />
+          <End Role="DbColumns" Type="Self.DbColumns" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DbTables">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DbColumns">
+              <PropertyRef Name="DbtableId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DbMapping__Colum__07C12930">
+          <End Role="DbColumns" Type="Self.DbColumns" Multiplicity="0..1" />
+          <End Role="DbMapping" Type="Self.DbMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DbColumns">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DbMapping">
+              <PropertyRef Name="ColumnSourceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DbMapping__Query__04E4BC85">
+          <End Role="DbQuery" Type="Self.DbQuery" Multiplicity="1" />
+          <End Role="DbMapping" Type="Self.DbMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DbQuery">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DbMapping">
+              <PropertyRef Name="QueryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DbQuery__TableDe__01142BA1">
+          <End Role="DbTableStg" Type="Self.DbTableStg" Multiplicity="0..1" />
+          <End Role="DbQuery" Type="Self.DbQuery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DbTableStg">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DbQuery">
+              <PropertyRef Name="TableDestinoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DbQuery__TableId__00200768">
+          <End Role="DbTables" Type="Self.DbTables" Multiplicity="1" />
+          <End Role="DbQuery" Type="Self.DbQuery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DbTables">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DbQuery">
+              <PropertyRef Name="TableId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DbSchedul__Query__0A9D95DB">
+          <End Role="DbQuery" Type="Self.DbQuery" Multiplicity="0..1" />
+          <End Role="DbSchedule" Type="Self.DbSchedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DbQuery">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DbSchedule">
+              <PropertyRef Name="QueryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DbSource__Provid__778AC167">
+          <End Role="DbProviders" Type="Self.DbProviders" Multiplicity="1" />
+          <End Role="DbSource" Type="Self.DbSource" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DbProviders">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DbSource">
+              <PropertyRef Name="ProviderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DbTables__DbSour__7A672E12">
+          <End Role="DbSource" Type="Self.DbSource" Multiplicity="0..1" />
+          <End Role="DbTables" Type="Self.DbTables" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DbSource">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DbTables">
+              <PropertyRef Name="DbSourceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DiffuparAnalyticsModelStoreContainer">
+          <EntitySet Name="DbColumns" EntityType="Self.DbColumns" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DbMapping" EntityType="Self.DbMapping" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DbProviders" EntityType="Self.DbProviders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DbQuery" EntityType="Self.DbQuery" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DbSchedule" EntityType="Self.DbSchedule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DbSource" EntityType="Self.DbSource" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DbTables" EntityType="Self.DbTables" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DbTableStg" EntityType="Self.DbTableStg" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__DbColumns__Dbtab__7D439ABD" Association="Self.FK__DbColumns__Dbtab__7D439ABD">
+            <End Role="DbTables" EntitySet="DbTables" />
+            <End Role="DbColumns" EntitySet="DbColumns" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DbMapping__Colum__07C12930" Association="Self.FK__DbMapping__Colum__07C12930">
+            <End Role="DbColumns" EntitySet="DbColumns" />
+            <End Role="DbMapping" EntitySet="DbMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DbMapping__Query__04E4BC85" Association="Self.FK__DbMapping__Query__04E4BC85">
+            <End Role="DbQuery" EntitySet="DbQuery" />
+            <End Role="DbMapping" EntitySet="DbMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DbQuery__TableDe__01142BA1" Association="Self.FK__DbQuery__TableDe__01142BA1">
+            <End Role="DbTableStg" EntitySet="DbTableStg" />
+            <End Role="DbQuery" EntitySet="DbQuery" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DbQuery__TableId__00200768" Association="Self.FK__DbQuery__TableId__00200768">
+            <End Role="DbTables" EntitySet="DbTables" />
+            <End Role="DbQuery" EntitySet="DbQuery" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DbSchedul__Query__0A9D95DB" Association="Self.FK__DbSchedul__Query__0A9D95DB">
+            <End Role="DbQuery" EntitySet="DbQuery" />
+            <End Role="DbSchedule" EntitySet="DbSchedule" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DbSource__Provid__778AC167" Association="Self.FK__DbSource__Provid__778AC167">
+            <End Role="DbProviders" EntitySet="DbProviders" />
+            <End Role="DbSource" EntitySet="DbSource" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DbTables__DbSour__7A672E12" Association="Self.FK__DbTables__DbSour__7A672E12">
+            <End Role="DbSource" EntitySet="DbSource" />
+            <End Role="DbTables" EntitySet="DbTables" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DiffuparAnalyticsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DbColumns">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DbtableId" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DbTables" Relationship="Self.FK__DbColumns__Dbtab__7D439ABD" FromRole="DbColumns" ToRole="DbTables" />
+          <NavigationProperty Name="DbMapping" Relationship="DiffuparAnalyticsModel.FK__DbMapping__Colum__07C12930" FromRole="DbColumns" ToRole="DbMapping" />
+        </EntityType>
+        <EntityType Name="DbMapping">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QueryId" Type="Int32" Nullable="false" />
+          <Property Name="ColumnSourceId" Type="Int32" />
+          <Property Name="ColumnDestino" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DbQuery" Relationship="Self.FK__DbMapping__Query__04E4BC85" FromRole="DbMapping" ToRole="DbQuery" />
+          <NavigationProperty Name="DbColumns" Relationship="DiffuparAnalyticsModel.FK__DbMapping__Colum__07C12930" FromRole="DbMapping" ToRole="DbColumns" />
+        </EntityType>
+        <EntityType Name="DbProviders">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DbSource" Relationship="Self.FK__DbSource__Provid__778AC167" FromRole="DbProviders" ToRole="DbSource" />
+        </EntityType>
+        <EntityType Name="DbQuery">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TableId" Type="Int32" Nullable="false" />
+          <Property Name="TableDestinoId" Type="Int32" />
+          <Property Name="Where" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DbMapping" Relationship="Self.FK__DbMapping__Query__04E4BC85" FromRole="DbQuery" ToRole="DbMapping" />
+          <NavigationProperty Name="DbTableStg" Relationship="Self.FK__DbQuery__TableDe__01142BA1" FromRole="DbQuery" ToRole="DbTableStg" />
+          <NavigationProperty Name="DbTables" Relationship="Self.FK__DbQuery__TableId__00200768" FromRole="DbQuery" ToRole="DbTables" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DbSchedule" Relationship="DiffuparAnalyticsModel.FK__DbSchedul__Query__0A9D95DB" FromRole="DbQuery" ToRole="DbSchedule" />
+        </EntityType>
+        <EntityType Name="DbSource">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Connetion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProviderId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DbProviders" Relationship="Self.FK__DbSource__Provid__778AC167" FromRole="DbSource" ToRole="DbProviders" />
+          <NavigationProperty Name="DbTables" Relationship="Self.FK__DbTables__DbSour__7A672E12" FromRole="DbSource" ToRole="DbTables" />
+        </EntityType>
+        <EntityType Name="DbTables">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DbSourceId" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DbColumns" Relationship="Self.FK__DbColumns__Dbtab__7D439ABD" FromRole="DbTables" ToRole="DbColumns" />
+          <NavigationProperty Name="DbQuery" Relationship="Self.FK__DbQuery__TableId__00200768" FromRole="DbTables" ToRole="DbQuery" />
+          <NavigationProperty Name="DbSource" Relationship="Self.FK__DbTables__DbSour__7A672E12" FromRole="DbTables" ToRole="DbSource" />
+        </EntityType>
+        <EntityType Name="DbTableStg">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ObjectId" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DbQuery" Relationship="Self.FK__DbQuery__TableDe__01142BA1" FromRole="DbTableStg" ToRole="DbQuery" />
+        </EntityType>
+        <Association Name="FK__DbColumns__Dbtab__7D439ABD">
+          <End Role="DbTables" Type="Self.DbTables" Multiplicity="0..1" />
+          <End Role="DbColumns" Type="Self.DbColumns" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DbTables">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DbColumns">
+              <PropertyRef Name="DbtableId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DbMapping__Query__04E4BC85">
+          <End Role="DbQuery" Type="Self.DbQuery" Multiplicity="1" />
+          <End Role="DbMapping" Type="Self.DbMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DbQuery">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DbMapping">
+              <PropertyRef Name="QueryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DbSource__Provid__778AC167">
+          <End Role="DbProviders" Type="Self.DbProviders" Multiplicity="1" />
+          <End Role="DbSource" Type="Self.DbSource" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DbProviders">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DbSource">
+              <PropertyRef Name="ProviderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DbQuery__TableDe__01142BA1">
+          <End Role="DbTableStg" Type="Self.DbTableStg" Multiplicity="0..1" />
+          <End Role="DbQuery" Type="Self.DbQuery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DbTableStg">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DbQuery">
+              <PropertyRef Name="TableDestinoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DbQuery__TableId__00200768">
+          <End Role="DbTables" Type="Self.DbTables" Multiplicity="1" />
+          <End Role="DbQuery" Type="Self.DbQuery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DbTables">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DbQuery">
+              <PropertyRef Name="TableId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DbTables__DbSour__7A672E12">
+          <End Role="DbSource" Type="Self.DbSource" Multiplicity="0..1" />
+          <End Role="DbTables" Type="Self.DbTables" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DbSource">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DbTables">
+              <PropertyRef Name="DbSourceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ASDW_Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DbColumns" EntityType="Self.DbColumns" />
+          <EntitySet Name="DbMapping" EntityType="Self.DbMapping" />
+          <EntitySet Name="DbProviders" EntityType="Self.DbProviders" />
+          <EntitySet Name="DbQuery" EntityType="Self.DbQuery" />
+          <EntitySet Name="DbSource" EntityType="Self.DbSource" />
+          <EntitySet Name="DbTables" EntityType="Self.DbTables" />
+          <EntitySet Name="DbTableStg" EntityType="Self.DbTableStg" />
+          <AssociationSet Name="FK__DbColumns__Dbtab__7D439ABD" Association="Self.FK__DbColumns__Dbtab__7D439ABD">
+            <End Role="DbTables" EntitySet="DbTables" />
+            <End Role="DbColumns" EntitySet="DbColumns" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DbMapping__Query__04E4BC85" Association="Self.FK__DbMapping__Query__04E4BC85">
+            <End Role="DbQuery" EntitySet="DbQuery" />
+            <End Role="DbMapping" EntitySet="DbMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DbSource__Provid__778AC167" Association="Self.FK__DbSource__Provid__778AC167">
+            <End Role="DbProviders" EntitySet="DbProviders" />
+            <End Role="DbSource" EntitySet="DbSource" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DbQuery__TableDe__01142BA1" Association="Self.FK__DbQuery__TableDe__01142BA1">
+            <End Role="DbTableStg" EntitySet="DbTableStg" />
+            <End Role="DbQuery" EntitySet="DbQuery" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DbQuery__TableId__00200768" Association="Self.FK__DbQuery__TableId__00200768">
+            <End Role="DbTables" EntitySet="DbTables" />
+            <End Role="DbQuery" EntitySet="DbQuery" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DbTables__DbSour__7A672E12" Association="Self.FK__DbTables__DbSour__7A672E12">
+            <End Role="DbSource" EntitySet="DbSource" />
+            <End Role="DbTables" EntitySet="DbTables" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DbMapping__Colum__07C12930" Association="DiffuparAnalyticsModel.FK__DbMapping__Colum__07C12930">
+            <End Role="DbColumns" EntitySet="DbColumns" />
+            <End Role="DbMapping" EntitySet="DbMapping" />
+          </AssociationSet>
+          <EntitySet Name="DbSchedule" EntityType="DiffuparAnalyticsModel.DbSchedule" />
+          <AssociationSet Name="FK__DbSchedul__Query__0A9D95DB" Association="DiffuparAnalyticsModel.FK__DbSchedul__Query__0A9D95DB">
+            <End Role="DbQuery" EntitySet="DbQuery" />
+            <End Role="DbSchedule" EntitySet="DbSchedule" />
+          </AssociationSet>
+        </EntityContainer>
+        <Association Name="FK__DbMapping__Colum__07C12930">
+          <End Type="DiffuparAnalyticsModel.DbColumns" Role="DbColumns" Multiplicity="0..1" />
+          <End Type="DiffuparAnalyticsModel.DbMapping" Role="DbMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DbColumns">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DbMapping">
+              <PropertyRef Name="ColumnSourceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="DbSchedule">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="QueryId" Type="Int32" />
+          <Property Name="StarDate" Type="DateTime" Precision="3" />
+          <Property Name="LastStarDate" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="Int32" />
+          <NavigationProperty Name="DbQuery" Relationship="DiffuparAnalyticsModel.FK__DbSchedul__Query__0A9D95DB" FromRole="DbSchedule" ToRole="DbQuery" />
+        </EntityType>
+        <Association Name="FK__DbSchedul__Query__0A9D95DB">
+          <End Type="DiffuparAnalyticsModel.DbQuery" Role="DbQuery" Multiplicity="0..1" />
+          <End Type="DiffuparAnalyticsModel.DbSchedule" Role="DbSchedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DbQuery">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DbSchedule">
+              <PropertyRef Name="QueryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DiffuparAnalyticsModelStoreContainer" CdmEntityContainer="ASDW_Entities">
+          <EntitySetMapping Name="DbColumns">
+            <EntityTypeMapping TypeName="DiffuparAnalyticsModel.DbColumns">
+              <MappingFragment StoreEntitySet="DbColumns">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DbtableId" ColumnName="DbtableId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DbMapping">
+            <EntityTypeMapping TypeName="DiffuparAnalyticsModel.DbMapping">
+              <MappingFragment StoreEntitySet="DbMapping">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="QueryId" ColumnName="QueryId" />
+                <ScalarProperty Name="ColumnSourceId" ColumnName="ColumnSourceId" />
+                <ScalarProperty Name="ColumnDestino" ColumnName="ColumnDestino" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DbProviders">
+            <EntityTypeMapping TypeName="DiffuparAnalyticsModel.DbProviders">
+              <MappingFragment StoreEntitySet="DbProviders">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DbQuery">
+            <EntityTypeMapping TypeName="DiffuparAnalyticsModel.DbQuery">
+              <MappingFragment StoreEntitySet="DbQuery">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TableId" ColumnName="TableId" />
+                <ScalarProperty Name="TableDestinoId" ColumnName="TableDestinoId" />
+                <ScalarProperty Name="Where" ColumnName="Where" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DbSource">
+            <EntityTypeMapping TypeName="DiffuparAnalyticsModel.DbSource">
+              <MappingFragment StoreEntitySet="DbSource">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Connetion" ColumnName="Connetion" />
+                <ScalarProperty Name="ProviderId" ColumnName="ProviderId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DbTables">
+            <EntityTypeMapping TypeName="DiffuparAnalyticsModel.DbTables">
+              <MappingFragment StoreEntitySet="DbTables">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DbSourceId" ColumnName="DbSourceId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DbTableStg">
+            <EntityTypeMapping TypeName="DiffuparAnalyticsModel.DbTableStg">
+              <MappingFragment StoreEntitySet="DbTableStg">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ObjectId" ColumnName="ObjectId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DbSchedule">
+            <EntityTypeMapping TypeName="DiffuparAnalyticsModel.DbSchedule">
+              <MappingFragment StoreEntitySet="DbSchedule">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="LastStarDate" ColumnName="LastStarDate" />
+                <ScalarProperty Name="StarDate" ColumnName="StarDate" />
+                <ScalarProperty Name="QueryId" ColumnName="QueryId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

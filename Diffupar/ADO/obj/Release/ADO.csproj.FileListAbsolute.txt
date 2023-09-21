@@ -1,0 +1,6 @@
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\ADO\bin\Release\ADO.dll
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\ADO\bin\Release\ADO.pdb
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\ADO\obj\Release\ADO.csproj.AssemblyReference.cache
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\ADO\obj\Release\ADO.csproj.CoreCompileInputs.cache
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\ADO\obj\Release\ADO.dll
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\ADO\obj\Release\ADO.pdb

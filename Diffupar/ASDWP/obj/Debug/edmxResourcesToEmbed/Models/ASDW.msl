@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DiffuparAnalyticsModelStoreContainer" CdmEntityContainer="ASDW_Entities">
+    <EntitySetMapping Name="DbColumns">
+      <EntityTypeMapping TypeName="DiffuparAnalyticsModel.DbColumns">
+        <MappingFragment StoreEntitySet="DbColumns">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DbtableId" ColumnName="DbtableId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DbMapping">
+      <EntityTypeMapping TypeName="DiffuparAnalyticsModel.DbMapping">
+        <MappingFragment StoreEntitySet="DbMapping">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="QueryId" ColumnName="QueryId" />
+          <ScalarProperty Name="ColumnSourceId" ColumnName="ColumnSourceId" />
+          <ScalarProperty Name="ColumnDestino" ColumnName="ColumnDestino" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DbProviders">
+      <EntityTypeMapping TypeName="DiffuparAnalyticsModel.DbProviders">
+        <MappingFragment StoreEntitySet="DbProviders">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DbQuery">
+      <EntityTypeMapping TypeName="DiffuparAnalyticsModel.DbQuery">
+        <MappingFragment StoreEntitySet="DbQuery">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TableId" ColumnName="TableId" />
+          <ScalarProperty Name="TableDestinoId" ColumnName="TableDestinoId" />
+          <ScalarProperty Name="Where" ColumnName="Where" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DbSource">
+      <EntityTypeMapping TypeName="DiffuparAnalyticsModel.DbSource">
+        <MappingFragment StoreEntitySet="DbSource">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Connetion" ColumnName="Connetion" />
+          <ScalarProperty Name="ProviderId" ColumnName="ProviderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DbTables">
+      <EntityTypeMapping TypeName="DiffuparAnalyticsModel.DbTables">
+        <MappingFragment StoreEntitySet="DbTables">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DbSourceId" ColumnName="DbSourceId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DbTableStg">
+      <EntityTypeMapping TypeName="DiffuparAnalyticsModel.DbTableStg">
+        <MappingFragment StoreEntitySet="DbTableStg">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ObjectId" ColumnName="ObjectId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DbSchedule">
+      <EntityTypeMapping TypeName="DiffuparAnalyticsModel.DbSchedule">
+        <MappingFragment StoreEntitySet="DbSchedule">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="LastStarDate" ColumnName="LastStarDate" />
+          <ScalarProperty Name="StarDate" ColumnName="StarDate" />
+          <ScalarProperty Name="QueryId" ColumnName="QueryId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

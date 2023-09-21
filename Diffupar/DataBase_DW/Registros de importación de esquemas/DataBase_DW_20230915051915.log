@@ -1,0 +1,88 @@
+15/9/2023 14:19:15	Este registro contiene información acerca de la operación de importación de esquema en el proyecto 'DataBase_DW' del equipo 'NOTEBOOK-DELL' por el usuario 'maria'.
+15/9/2023 14:19:16	Se inició la importación del esquema de la base de datos.
+15/9/2023 14:19:17	Recopilando credenciales de la base de datos
+15/9/2023 14:19:17	Recopilando opciones de base de datos
+15/9/2023 14:19:17	Recopilando la opción de configuración de ámbito de la base de datos genérica
+15/9/2023 14:19:17	Recopilando usuarios
+15/9/2023 14:19:17	Recopilando roles
+15/9/2023 14:19:17	Recopilando roles de aplicación
+15/9/2023 14:19:17	Recopilando pertenencias a roles
+15/9/2023 14:19:17	Recopilando grupos de archivos
+15/9/2023 14:19:17	Recopilando catálogos de texto completo
+15/9/2023 14:19:17	Recopilando ensamblados
+15/9/2023 14:19:17	Recopilando certificados
+15/9/2023 14:19:17	Recopilando claves asimétricas
+15/9/2023 14:19:17	Recopilando claves simétricas
+15/9/2023 14:19:17	Recopilando claves simétricas cifradas
+15/9/2023 14:19:17	Recopilando esquemas
+15/9/2023 14:19:17	Recopilando colecciones de esquemas XML
+15/9/2023 14:19:17	Recopilando tipos de datos definidos por el usuario
+15/9/2023 14:19:17	Recopilando tipos definidos por el usuario
+15/9/2023 14:19:17	Recopilando tipos de tabla
+15/9/2023 14:19:17	Recopilando claves únicas para tipos de tabla
+15/9/2023 14:19:17	Recopilando claves principales para tipos de tabla
+15/9/2023 14:19:17	Recopilando índices para tipos de tablas
+15/9/2023 14:19:17	Recopilando restricciones CHECK para tipos de tabla
+15/9/2023 14:19:17	Recopilando restricciones DEFAULT para tipos de tabla
+15/9/2023 14:19:17	Recopilando funciones de partición
+15/9/2023 14:19:17	Recopilando esquemas de partición
+15/9/2023 14:19:17	Recopilando funciones
+15/9/2023 14:19:17	Recopilando funciones cifradas
+15/9/2023 14:19:17	Recopilando agregados
+15/9/2023 14:19:17	Recopilando procedimientos
+15/9/2023 14:19:17	Recopilando procedimientos cifrados
+15/9/2023 14:19:17	Recopilando tablas
+15/9/2023 14:19:17	Recopilando claves principales
+15/9/2023 14:19:17	Recopilando restricciones UNIQUE
+15/9/2023 14:19:17	Recopilando claves externas
+15/9/2023 14:19:17	Recopilando restricciones DEFAULT
+15/9/2023 14:19:17	Recopilando restricciones CHECK
+15/9/2023 14:19:17	Recopilando vistas
+15/9/2023 14:19:17	Recopilando vistas cifradas
+15/9/2023 14:19:17	Recopilando índices
+15/9/2023 14:19:17	Recopilando estadísticas
+15/9/2023 14:19:17	Recopilando listas de palabras irrelevantes de índices de texto completo
+15/9/2023 14:19:17	Recopilando listas de propiedades de búsqueda
+15/9/2023 14:19:17	Recopilando propiedades de búsqueda
+15/9/2023 14:19:17	Recopilando índices de texto completo
+15/9/2023 14:19:17	Recopilando índices de almacenamiento de columnas
+15/9/2023 14:19:17	Recopilando índices espaciales
+15/9/2023 14:19:17	Recopilando índices XML
+15/9/2023 14:19:17	Recopilando índices XML selectivos
+15/9/2023 14:19:17	Recopilando desencadenadores cifrados
+15/9/2023 14:19:17	Recopilando desencadenadores
+15/9/2023 14:19:17	Recopilando DDL triggers cifrados y de CLR
+15/9/2023 14:19:17	Recopilando DDL triggers
+15/9/2023 14:19:17	Creación de la restricción perimetral en curso
+15/9/2023 14:19:17	Recopilando sinónimos
+15/9/2023 14:19:17	Recopilando valores predeterminados
+15/9/2023 14:19:17	Recopilando enlaces UDDT de restricción de datos
+15/9/2023 14:19:17	Recopilando reglas
+15/9/2023 14:19:17	Recopilando enlaces UDDT de restricción de datos
+15/9/2023 14:19:17	Recopilando tipos de mensaje
+15/9/2023 14:19:17	Recopilando colas
+15/9/2023 14:19:17	Recopilando contratos
+15/9/2023 14:19:17	Recopilando servicios
+15/9/2023 14:19:17	Recopilando notificaciones de eventos
+15/9/2023 14:19:17	Recopilando enlaces de servicio remoto
+15/9/2023 14:19:17	Recopilando prioridades de Broker
+15/9/2023 14:19:17	Recopilando firmas
+15/9/2023 14:19:17	Recopilando opciones de compresión
+15/9/2023 14:19:17	Recopilando tipos de secuencia
+15/9/2023 14:19:17	Recopilando directivas de seguridad
+15/9/2023 14:19:17	Recopilar claves de cifrado de columna
+15/9/2023 14:19:17	Recopilando claves maestras de columna
+15/9/2023 14:19:17	Recopilando orígenes de datos externos
+15/9/2023 14:19:17	Recopilando formatos de archivo externos
+15/9/2023 14:19:17	Recopilando tablas externas
+15/9/2023 14:19:17	Recopilando opciones de compresión de índice XML
+15/9/2023 14:19:17	Recopilando propiedades extendidas
+15/9/2023 14:19:17	Recopilando ensamblados
+15/9/2023 14:19:18	Recopilando credenciales
+15/9/2023 14:19:18	Recopilando inicios de sesión
+15/9/2023 14:19:18	Recopilando auditorías de servidor
+15/9/2023 14:19:20	Buscando elementos duplicados en el proyecto
+15/9/2023 14:19:20	Ha finalizado el procesamiento de los elementos duplicados
+15/9/2023 14:19:21	Finalizó la importación de la base de datos.
+15/9/2023 14:19:21	Se guardó un resumen de la importación en la siguiente ubicación: D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\DataBase_DW\Registros de importación de esquemas\DataBase_DW_20230915051915.log
+15/9/2023 14:19:21	Haga clic en Finalizar para continuar...
