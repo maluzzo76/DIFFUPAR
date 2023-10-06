@@ -177,6 +177,7 @@
     <Build Include="dbo\Tables\DbTableStg.sql" />
     <Build Include="dbo\Tables\DbSchedule.sql" />
     <Build Include="dbo\Procedures\GetSchedule.sql" />
+    <Build Include="stg\Tables\Categoria.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\Crear Seguridad.sql" />

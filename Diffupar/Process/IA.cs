@@ -26,6 +26,7 @@ namespace Process
 
                 Console.WriteLine(string.Format("Ejecutando Schedule: {0}",_scheduleName.ToUpper()));
 
+
                 ProcessEntity _pe = MappingEntities.Mapping.GetProcessEntityBySchedule(_scheduleID);
 
                 Console.WriteLine(_pe.queryExceute);

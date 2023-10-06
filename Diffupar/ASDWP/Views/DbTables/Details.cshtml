@@ -4,30 +4,39 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Tabla Detalle</h2>
 
 <div>
-    <h4>DbTables</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DbSource.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DbSource.Name)
-        </dd>
-
-    </dl>
+    <div class="container bg-secondary text-light">
+        <h1>@Model.Name</h1>
+        <h5>Origen: @Model.Name</h5>
+        <h5>Destino: @Model.DbSource.DbProviders.Name</h5>
+    </div>
 </div>
+
+<div class="container">
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Columnas
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ foreach (var m in Model.DbColumns)
+            {                
+                    <tr>                
+                        <td>
+                            @m.Name
+                        </td>
+                    </tr>
+            }
+        }
+    </tbody>
+</table>
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
