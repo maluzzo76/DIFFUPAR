@@ -4,10 +4,11 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Columnas de tabla @ViewBag.TablaName</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Agregar Columna", "Create", new { idt = ViewBag.idt }, new {@class="btn btn-success"})
+    @Html.ActionLink("Volver", "Index", "Dbtables",null, new { @class = "btn btn-info" })
 </p>
 <table class="table">
     <tr>
@@ -29,9 +30,9 @@
             @Html.DisplayFor(modelItem => item.DbTables.Name)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            <a class="btn-grid" href="@Url.Action("Edit","DbColumns", new { id = item.Id }) "><span><img src="~/Content/image/iconos_Lapiz.png" /></span></a>            
+            <a class="btn-grid" href="@Url.Action("Delete","DbColumns", new { id = item.Id }) "><img src="~/Content/image/iconos_Basura.png" /></a>
+            
         </td>
     </tr>
 }

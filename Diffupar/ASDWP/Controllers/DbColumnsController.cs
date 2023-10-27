@@ -15,9 +15,11 @@ namespace ASDWP.Controllers
         private ASDW_Entities db = new ASDW_Entities();
 
         // GET: DbColumns
-        public ActionResult Index()
+        public ActionResult Index(int? idt)
         {
-            var dbColumns = db.DbColumns.Include(d => d.DbTables);
+            var dbColumns = db.DbColumns.Include(d => d.DbTables).Where(w=> w.DbTables.Id==idt);
+            ViewBag.idt = idt;
+            ViewBag.tablaName = db.DbTables.Find(idt).Name;
             return View(dbColumns.ToList());
         }
 
@@ -37,9 +39,10 @@ namespace ASDWP.Controllers
         }
 
         // GET: DbColumns/Create
-        public ActionResult Create()
+        public ActionResult Create(int? idt)
         {
-            ViewBag.DbtableId = new SelectList(db.DbTables, "Id", "Name");
+            ViewBag.DbtableId = new SelectList(db.DbTables.Where(w=>w.Id==idt), "Id", "Name");
+            ViewBag.idt = idt;
             return View();
         }
 
@@ -54,7 +57,7 @@ namespace ASDWP.Controllers
             {
                 db.DbColumns.Add(dbColumns);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new {idt=dbColumns.DbtableId });
             }
 
             ViewBag.DbtableId = new SelectList(db.DbTables, "Id", "Name", dbColumns.DbtableId);
@@ -73,7 +76,7 @@ namespace ASDWP.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.DbtableId = new SelectList(db.DbTables, "Id", "Name", dbColumns.DbtableId);
+            ViewBag.DbtableId = new SelectList(db.DbTables.Where(w=> w.Id == dbColumns.DbtableId), "Id", "Name", dbColumns.DbtableId);
             return View(dbColumns);
         }
 
@@ -88,7 +91,7 @@ namespace ASDWP.Controllers
             {
                 db.Entry(dbColumns).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { idt = dbColumns.DbtableId });
             }
             ViewBag.DbtableId = new SelectList(db.DbTables, "Id", "Name", dbColumns.DbtableId);
             return View(dbColumns);
@@ -115,9 +118,10 @@ namespace ASDWP.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             DbColumns dbColumns = db.DbColumns.Find(id);
+            int _idt = dbColumns.DbtableId.Value;
             db.DbColumns.Remove(dbColumns);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { idt=_idt});
         }
 
         protected override void Dispose(bool disposing)

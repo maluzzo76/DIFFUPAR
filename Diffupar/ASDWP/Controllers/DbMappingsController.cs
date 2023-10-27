@@ -58,7 +58,7 @@ namespace ASDWP.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.QueryId = new SelectList(db.DbQuery, "Id", "Where", dbMapping.QueryId);
+            ViewBag.QueryId = new SelectList(db.DbQuery, "Id", "Name", dbMapping.QueryId);
             ViewBag.ColumnSourceId = new SelectList(db.DbColumns, "Id", "Name", dbMapping.ColumnSourceId);
             return View(dbMapping);
         }
@@ -75,9 +75,10 @@ namespace ASDWP.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.QueryId = new SelectList(db.DbQuery, "Id", "Where", dbMapping.QueryId);
-            ViewBag.ColumnSourceId = new SelectList(db.DbColumns, "Id", "Name", dbMapping.ColumnSourceId);
+            ViewBag.QueryId = new SelectList(db.DbQuery, "Id", "Name", dbMapping.QueryId);
+            ViewBag.ColumnSourceId = new SelectList(db.DbColumns.Where(w=>w.DbtableId == dbMapping.DbQuery.TableId), "Id", "Name", dbMapping.ColumnSourceId);
             return View(dbMapping);
+            
         }
 
         // POST: DbMappings/Edit/5

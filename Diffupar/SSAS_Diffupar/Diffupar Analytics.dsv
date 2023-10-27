@@ -1,0 +1,171 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="57e3ee9e-8f2a-4da5-8a78-8381b8a67e52" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Diffupar Analytics</ID>
+  <Name>Diffupar Analytics</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>Diffupar Analytics</DataSourceID>
+  <Schema>
+    <xs:schema id="Diffupar_x0020_Analytics" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="Diffupar_x0020_Analytics" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="3337a317-b4cf-4055-bcde-23cf796f35d3">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="whs_DimProductos" msprop:DbTableName="DimProductos" msprop:FriendlyName="DimProductos" msprop:TableType="Table" msprop:DbSchemaName="whs" msprop:design-time-name="78726f57-8d55-4846-9d09-be1670a1d103">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="Id" msprop:DbColumnName="Id" msprop:design-time-name="c77fcea0-c93d-4b84-a3af-acd1f88fcaf3" type="xs:int" />
+                  <xs:element name="Codigo" msprop:FriendlyName="Codigo" msprop:DbColumnName="Codigo" msprop:design-time-name="567e06d3-af80-410b-92c7-0e7b8824ed6a" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Nombre" msprop:FriendlyName="Nombre" msprop:DbColumnName="Nombre" msprop:design-time-name="dee0912d-030a-44d1-a557-dc5d35d5e187" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="500" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Categoria_Id" msprop:FriendlyName="Categoria_Id" msprop:DbColumnName="Categoria_Id" msprop:design-time-name="10147c77-7ee9-4c92-9c3f-84c6e07bc531" type="xs:int" minOccurs="0" />
+                  <xs:element name="TipoProveedor_Id" msprop:FriendlyName="TipoProveedor_Id" msprop:DbColumnName="TipoProveedor_Id" msprop:design-time-name="b8ebcad9-4862-42f5-a0dc-ca1d19ee60ec" type="xs:int" minOccurs="0" />
+                  <xs:element name="ProveedorRetailCegid_Id" msprop:FriendlyName="ProveedorRetailCegid_Id" msprop:DbColumnName="ProveedorRetailCegid_Id" msprop:design-time-name="f429164a-8ebc-4ec9-b8f9-c98a347a7820" type="xs:int" minOccurs="0" />
+                  <xs:element name="CreateDate" msprop:FriendlyName="CreateDate" msprop:DbColumnName="CreateDate" msprop:design-time-name="b4f35644-3f4a-4aeb-bdae-483eb08158c0" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="UpdateDate" msprop:FriendlyName="UpdateDate" msprop:DbColumnName="UpdateDate" msprop:design-time-name="47b31615-007e-4d97-aebd-84834e5c2834" type="xs:dateTime" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="whs_DimCategoria" msprop:DbTableName="DimCategoria" msprop:FriendlyName="DimCategoria" msprop:TableType="Table" msprop:DbSchemaName="whs" msprop:design-time-name="08849ae2-c63a-4e1f-a7d6-53dd90901e9d">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="Id" msprop:DbColumnName="Id" msprop:design-time-name="a2145b29-89e6-42eb-b975-3d8ba5c5509a" type="xs:int" />
+                  <xs:element name="Codigo" msprop:FriendlyName="Codigo" msprop:DbColumnName="Codigo" msprop:design-time-name="3bdf72ef-5887-42bb-ab85-d7a667d811c4" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Nombre" msprop:FriendlyName="Nombre" msprop:DbColumnName="Nombre" msprop:design-time-name="4737552b-fc09-47db-a1c7-06a4d395adc2" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CreateDate" msprop:FriendlyName="CreateDate" msprop:DbColumnName="CreateDate" msprop:design-time-name="82322f77-b0e8-407f-a458-d732c47c7e1d" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="UpdateDate" msprop:FriendlyName="UpdateDate" msprop:DbColumnName="UpdateDate" msprop:design-time-name="dfe53625-35e9-4af6-ad24-d98386267d69" type="xs:dateTime" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="whs_DimTipoProveedor" msprop:DbTableName="DimTipoProveedor" msprop:FriendlyName="DimTipoProveedor" msprop:TableType="Table" msprop:DbSchemaName="whs" msprop:design-time-name="7334c9e1-6c29-4dd8-98c3-19413c2e1e70">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Id" msprop:FriendlyName="Id" msprop:DbColumnName="Id" msprop:design-time-name="18c64f01-369d-4808-b98d-5bc76285ed0b" type="xs:int" />
+                  <xs:element name="Codigo" msprop:FriendlyName="Codigo" msprop:DbColumnName="Codigo" msprop:design-time-name="85f1d07f-00f2-420d-abd1-db5a1398ba1a" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Nombre" msprop:FriendlyName="Nombre" msprop:DbColumnName="Nombre" msprop:design-time-name="16504fa6-91b0-41dc-8f51-acc54d32938a" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="500" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CreateDate" msprop:FriendlyName="CreateDate" msprop:DbColumnName="CreateDate" msprop:design-time-name="a7a0f988-b643-4b03-bf68-481ecd462d34" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="UpdateDate" msprop:FriendlyName="UpdateDate" msprop:DbColumnName="UpdateDate" msprop:design-time-name="82dcc6a0-6d2f-4033-8ae7-741917bb9da2" type="xs:dateTime" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="whs_DimProveedorRetailCegid" msprop:DbTableName="DimProveedorRetailCegid" msprop:FriendlyName="DimProveedorRetailCegid" msprop:TableType="Table" msprop:DbSchemaName="whs" msprop:design-time-name="61b85870-d123-44c2-bbce-a65ae8fccd75">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="Id" msprop:DbColumnName="Id" msprop:design-time-name="e3dd1b68-167c-4f46-9c6b-44b2e06b325c" type="xs:int" />
+                  <xs:element name="Code" msprop:FriendlyName="Code" msprop:DbColumnName="Code" msprop:design-time-name="87cfc329-7450-4cf0-97fb-4bb083cafa57" type="xs:int" minOccurs="0" />
+                  <xs:element name="Name" msprop:FriendlyName="Name" msprop:DbColumnName="Name" msprop:design-time-name="056c7d03-3259-4f17-b95d-6b679a25859b" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="200" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CreateDate" msprop:FriendlyName="CreateDate" msprop:DbColumnName="CreateDate" msprop:design-time-name="5ff201bc-c38f-4b8a-a0de-7161cec41f5b" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="UpdateDate" msprop:FriendlyName="UpdateDate" msprop:DbColumnName="UpdateDate" msprop:design-time-name="52ad1099-0232-447a-81ae-f2e4386fa889" type="xs:dateTime" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//whs_DimProductos" />
+          <xs:field xpath="Id" />
+        </xs:unique>
+        <xs:unique name="whs_DimCategoria_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//whs_DimCategoria" />
+          <xs:field xpath="Id" />
+        </xs:unique>
+        <xs:unique name="whs_DimTipoProveedor_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//whs_DimTipoProveedor" />
+          <xs:field xpath="Id" />
+        </xs:unique>
+        <xs:unique name="whs_DimProveedorRetailCegid_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//whs_DimProveedorRetailCegid" />
+          <xs:field xpath="Id" />
+        </xs:unique>
+        <xs:keyref name="FK__DimProduc__Prove__22751F6C" refer="whs_DimProveedorRetailCegid_Constraint1">
+          <xs:selector xpath=".//whs_DimProductos" />
+          <xs:field xpath="ProveedorRetailCegid_Id" />
+        </xs:keyref>
+        <xs:keyref name="FK__DimProduc__TipoP__2180FB33" refer="whs_DimTipoProveedor_Constraint1">
+          <xs:selector xpath=".//whs_DimProductos" />
+          <xs:field xpath="TipoProveedor_Id" />
+        </xs:keyref>
+        <xs:keyref name="FK__DimProduc__Categ__208CD6FA" refer="whs_DimCategoria_Constraint1">
+          <xs:selector xpath=".//whs_DimProductos" />
+          <xs:field xpath="Categoria_Id" />
+        </xs:keyref>
+      </xs:element>
+    </xs:schema>
+    <Diffupar_x0020_Analytics xmlns="" />
+  </Schema>
+</DataSourceView>

@@ -4,7 +4,7 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Tabla Detalle</h2>
+<h2>Detalle de Tabla</h2>
 
 <div>
     <hr />
@@ -37,7 +37,7 @@
     </tbody>
 </table>
 
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+<p>    
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new {@class= "btn btn-success" })
+    @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-info" })
 </p>

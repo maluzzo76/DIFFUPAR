@@ -1,0 +1,203 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="87740a4c-d59a-4c00-8255-19eea1620516" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Diffupar Analytics</ID>
+  <Name>Diffupar Analytics</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="a2bff876-f540-4add-9cec-dfff9910a8ba">
+      <ID>Dim Productos</ID>
+      <Name>Dim Productos</Name>
+      <DimensionID>Dim Productos</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="896473fb-2ae5-4dd0-a2f1-95911f8f72a7">
+          <AttributeID>Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="65e2bd20-bde5-480f-a31d-8deb0d9ea797">
+          <AttributeID>Categoria Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="545d5948-9108-4ee7-b232-85bc8d31422b">
+          <AttributeID>Tipo Proveedor Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b8205a8d-8bb8-4a80-a9e7-b7810c6bdf7d">
+          <AttributeID>Proveedor Retail Cegid Id</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="4d7769c6-6979-423c-9993-ce50f1c92bec">
+      <ID>Dim Categoria</ID>
+      <Name>Dim Categoria</Name>
+      <DimensionID>Dim Categoria</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="55515d97-c73d-433d-a84c-efa10950f5e4">
+          <AttributeID>Id</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="fa809c31-a1cc-4803-804a-68c53de548a8">
+      <ID>Dim Tipo Proveedor</ID>
+      <Name>Dim Tipo Proveedor</Name>
+      <DimensionID>Dim Tipo Proveedor</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="88d4df13-9ace-49a1-85ef-6c87378a8894">
+          <AttributeID>Id</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="64a9b137-364e-43ea-8ea6-45547b6d5e8d">
+      <ID>Dim Proveedor Retail Cegid</ID>
+      <Name>Dim Proveedor Retail Cegid</Name>
+      <DimensionID>Dim Proveedor Retail Cegid</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="44a23b18-0a0e-4fd7-b35b-d83ea4563f1c">
+          <AttributeID>Id</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="897aa71e-e5a3-4447-8835-282e8b4931b9">
+      <ID>Dim Productos</ID>
+      <Name>Dim Productos</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="2df2d22b-6393-4812-b8e3-3df4722c81dd">
+          <ID>Recuento Dim Productos</ID>
+          <Name>Recuento Dim Productos</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="cc208e4b-2699-46aa-bb17-c4e46d3ec675">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="a7cbf90a-6338-4d1d-b84c-a05401853564">
+              <TableID>whs_DimProductos</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="ca4a8535-185b-42df-b7c6-57de96daa185">
+          <CubeDimensionID>Dim Productos</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="9cf8dc71-b40d-4e5f-be7b-d635ecf2aae7">
+              <AttributeID>Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="661b9b91-857c-483a-abd0-563e6d759b1d">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="1dffa812-1f0c-4fd9-9f07-1db250a5e227">
+                    <TableID>whs_DimProductos</TableID>
+                    <ColumnID>Id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="699153a3-12b3-4920-95aa-6c631afbee52">
+          <CubeDimensionID>Dim Categoria</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="070118bd-cc0e-4061-8913-f7b699907a41">
+              <AttributeID>Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="e627c7b4-088f-4d28-900f-c853a5f1bc79">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="35f7cf6f-1713-4fd2-a56b-633271801865">
+                    <TableID>whs_DimProductos</TableID>
+                    <ColumnID>Categoria_Id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="994eabdb-2708-47f8-851e-95ec8d88014d">
+          <CubeDimensionID>Dim Tipo Proveedor</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="159e3817-be7f-441f-8031-7dcfaf7da45d">
+              <AttributeID>Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="ec224d31-8716-4a43-8334-52b1562222f8">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d5f63274-b792-46de-b19e-5e80819ee613">
+                    <TableID>whs_DimProductos</TableID>
+                    <ColumnID>TipoProveedor_Id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="ae2faa11-bf2f-4252-a64d-2073ac005af6">
+          <CubeDimensionID>Dim Proveedor Retail Cegid</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="a521f0e9-fb47-4ff5-a9ff-5c314d9414f3">
+              <AttributeID>Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="d0cbd519-bbba-47bd-9467-2b00f9fa50ae">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="05e8bf30-a60d-4ed4-b3db-57cddaac3701">
+                    <TableID>whs_DimProductos</TableID>
+                    <ColumnID>ProveedorRetailCegid_Id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="2ca64e23-9892-4cd5-a9b3-fd0f1060a201">
+    <DataSourceViewID>Diffupar Analytics</DataSourceViewID>
+  </Source>
+</Cube>

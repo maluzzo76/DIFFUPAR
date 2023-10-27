@@ -178,10 +178,17 @@
     <Build Include="dbo\Tables\DbSchedule.sql" />
     <Build Include="dbo\Procedures\GetSchedule.sql" />
     <Build Include="stg\Tables\Categoria.sql" />
+    <Build Include="whs\Tables\DimProductos.sql" />
+    <Build Include="whs\Tables\DimTipoProveedor.sql" />
+    <Build Include="whs\Tables\DimCategoria.sql" />
+    <Build Include="stg\Tables\TipoProveedor.sql" />
+    <Build Include="stg\Tables\ProveedorRetailCegid.sql" />
+    <Build Include="whs\Tables\DimProveedorRetailCegid.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\Crear Seguridad.sql" />
     <None Include="Scripts\Carga Tablas stg.sql" />
     <None Include="dbo\Triggers\Triggers.sql" />
+    <None Include="Scripts\Grant.sql" />
   </ItemGroup>
 </Project>

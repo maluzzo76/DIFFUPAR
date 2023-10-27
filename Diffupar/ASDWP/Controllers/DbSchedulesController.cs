@@ -73,7 +73,7 @@ namespace ASDWP.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.QueryId = new SelectList(db.DbQuery, "Id", "Where", dbSchedule.QueryId);
+            ViewBag.QueryId = new SelectList(db.DbQuery, "Id", "Name", dbSchedule.QueryId);
             return View(dbSchedule);
         }
 
