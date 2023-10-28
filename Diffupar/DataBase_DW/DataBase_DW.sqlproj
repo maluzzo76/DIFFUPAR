@@ -184,15 +184,15 @@
     <Build Include="stg\Tables\TipoProveedor.sql" />
     <Build Include="stg\Tables\ProveedorRetailCegid.sql" />
     <Build Include="whs\Tables\DimProveedorRetailCegid.sql" />
-    <Build Include="stg\Tables\Grupo Art.sql" />
+    <Build Include="stg\Tables\GrupoArt.sql" />
     <Build Include="stg\Tables\Genero.sql" />
     <Build Include="stg\Tables\TamanoReal.sql" />
     <Build Include="stg\Tables\TamanoConc.sql" />
-    <Build Include="stg\Tables\Tabla Marca.sql" />
+    <Build Include="stg\Tables\Marca.sql" />
     <Build Include="stg\Tables\Fabricante.sql" />
     <Build Include="stg\Tables\UnidadMedida.sql" />
     <Build Include="stg\Tables\UnidadNegocio.sql" />
-    <Build Include="stg\Tables\tabla Linea.sql" />
+    <Build Include="stg\Tables\Linea.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\Crear Seguridad.sql" />

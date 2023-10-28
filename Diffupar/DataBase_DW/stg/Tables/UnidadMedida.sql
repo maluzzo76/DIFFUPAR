@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[UnidadMedida]
+﻿CREATE TABLE [stg].[UnidadMedida]
 (
 	[Code] int,
 	[Name] varchar(200),

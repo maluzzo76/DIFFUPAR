@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[UnidadNegocio]
+﻿CREATE TABLE [stg].[UnidadNegocio]
 (
 	[Code] int,
 	[Name] varchar(200),

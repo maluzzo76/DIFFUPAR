@@ -1,6 +1,6 @@
-﻿CREATE TABLE [dbo].[Fabricante]
+﻿CREATE TABLE [stg].[Fabricante]
 (
-	[Code] int,
+	[Code] varchar(50),
 	[Name] varchar(200),
 	[CreateDate] datetime,
 	[UpdateDate] datetime

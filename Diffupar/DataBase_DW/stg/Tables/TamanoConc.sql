@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[TamanoConc]
+﻿CREATE TABLE [stg].[TamanoConc]
 (
 	[Code] int,
 	[Name] varchar(200),

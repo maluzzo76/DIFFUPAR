@@ -1,7 +1,7 @@
-﻿CREATE TABLE [dbo].[TamanoReal]
+﻿CREATE TABLE [stg].[TamanoReal]
 (
 	[Code] int,
-	[Name] varchat(200),
+	[Name] varchar(200),
 	[Createdate] datetime,
 	[UpdateDate] datetime
 )
