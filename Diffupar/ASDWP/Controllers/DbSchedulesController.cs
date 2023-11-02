@@ -17,7 +17,7 @@ namespace ASDWP.Controllers
         // GET: DbSchedules
         public ActionResult Index()
         {
-            var dbSchedule = db.DbSchedule.Include(d => d.DbQuery);
+            var dbSchedule = db.DbSchedule.Include(d => d.DbQuery).OrderBy(o=> o.Orden);
             return View(dbSchedule.ToList());
         }
 
@@ -48,7 +48,7 @@ namespace ASDWP.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,QueryId,StarDate,LastStarDate,Status")] DbSchedule dbSchedule)
+        public ActionResult Create([Bind(Include = "Id,Name,QueryId,StarDate,LastStarDate,Status,Orden")] DbSchedule dbSchedule)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace ASDWP.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,QueryId,StarDate,LastStarDate,Status")] DbSchedule dbSchedule)
+        public ActionResult Edit([Bind(Include = "Id,Name,QueryId,StarDate,LastStarDate,Status,Orden")] DbSchedule dbSchedule)
         {
             if (ModelState.IsValid)
             {

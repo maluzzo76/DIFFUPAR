@@ -248,6 +248,11 @@
     <Content Include="Content\image\iconos_Buscar.png" />
     <Content Include="Content\image\iconos_Lapiz.png" />
     <Content Include="Content\image\iconos_Link 2.png" />
+    <Content Include="Content\image\Logo_Solo_nombre.png" />
+    <Content Include="Content\image\query.png" />
+    <Content Include="Content\image\schedule.png" />
+    <Content Include="Content\image\source.png" />
+    <Content Include="Content\image\tablas.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />

@@ -1,0 +1,25 @@
+﻿@model ASDWP.Models.DbMapping
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+
+<div class="container bg-secondary text-light">
+    <h2>Eliminar Mapeo</h2>
+    <h4>Confirma la eliminación del mapeo entre @Model.DbQuery.DbTables.Name.@Model.DbColumns.Name y @Model.DbQuery.DbTableStg.Name.@Model.ColumnDestino ?</h4>
+</div> 
+
+<div>    
+    <hr />
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-success" /> 
+            @Html.ActionLink("Volver", "Details", "DbQueries", new {id=Model.QueryId}, new {@class= "btn btn-secondary" } )
+        </div>
+    }
+</div>

@@ -4,7 +4,7 @@
 	[Codigo] varchar(100), 
 	[Nombre] varchar(500), 
 	[CreateDate] datetime,
-	[UpdateDate] datetime
+	[UpdateDate] datetime 
 )
 
 

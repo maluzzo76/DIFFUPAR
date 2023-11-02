@@ -49,6 +49,7 @@
           <Property Name="StarDate" Type="datetime" />
           <Property Name="LastStarDate" Type="datetime" />
           <Property Name="Status" Type="int" />
+          <Property Name="Orden" Type="int" />
         </EntityType>
         <EntityType Name="DbSource">
           <Key>
@@ -428,6 +429,7 @@
           <Property Name="LastStarDate" Type="DateTime" Precision="3" />
           <Property Name="Status" Type="Int32" />
           <NavigationProperty Name="DbQuery" Relationship="DiffuparAnalyticsModel.FK__DbSchedul__Query__0A9D95DB" FromRole="DbSchedule" ToRole="DbQuery" />
+          <Property Name="Orden" Type="Int32" />
         </EntityType>
         <Association Name="FK__DbSchedul__Query__0A9D95DB">
           <End Type="DiffuparAnalyticsModel.DbQuery" Role="DbQuery" Multiplicity="0..1" />
@@ -516,6 +518,7 @@
           <EntitySetMapping Name="DbSchedule">
             <EntityTypeMapping TypeName="DiffuparAnalyticsModel.DbSchedule">
               <MappingFragment StoreEntitySet="DbSchedule">
+                <ScalarProperty Name="Orden" ColumnName="Orden" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="LastStarDate" ColumnName="LastStarDate" />
                 <ScalarProperty Name="StarDate" ColumnName="StarDate" />

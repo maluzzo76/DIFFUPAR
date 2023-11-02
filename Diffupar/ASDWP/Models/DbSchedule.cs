@@ -18,15 +18,14 @@ namespace ASDWP.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public Nullable<int> QueryId { get; set; }
-
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> StarDate { get; set; }
-
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> LastStarDate { get; set; }
         public Nullable<int> Status { get; set; }
+        public Nullable<int> Orden { get; set; }
     
         public virtual DbQuery DbQuery { get; set; }
     }

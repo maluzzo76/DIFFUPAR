@@ -17,7 +17,7 @@ namespace Process
 
         public static void ScheduleExcecute()
         {
-            string _query = "select id, name from dbSchedule where status = 1";
+            string _query = "select id, name from dbSchedule where status = 1 order by orden";
 
             foreach (DataRow r in ADO.SQL.SqlExecuteQueryDataSet(_query, _sqlConnection).Tables[0].Rows)
             {
@@ -37,20 +37,16 @@ namespace Process
                 Console.WriteLine(_pe.Where);
                 Console.WriteLine(_pe.DbSourceConnection);
                 Console.WriteLine(_pe.DbDestinoConnection);
-                Console.WriteLine("Listando datos");
-                foreach (DataRow row in _pe.TdataImport.Rows)
-                {
-                    string _srow = "";
-                    foreach (DataColumn c in _pe.TdataImport.Columns)
-                    {
-                        _srow += string.Format("{0}\t", row[c.ColumnName].ToString());
-                    }
-                    Console.WriteLine(_srow);
-                }
-
+                
                 Console.WriteLine("Importando datos");
+                Console.WriteLine(string.Format("Total Registrosd: {0}",_pe.TdataImport.Rows.Count));
                 ADO.SQL.SqlBulkCopy(_pe.TableDestinoName, _pe.TdataImport, _pe.ColumnMapping, _sqlConnection);
+                Console.WriteLine("OK");
             }
+
+            Console.WriteLine("Actualiando Warehouse");
+            ADO.SQL.SqlExecuteNonQuery("exec [stg].[Sp_ImportDimensiones]", _sqlConnection);
+            Console.WriteLine("OK");
 
             Console.WriteLine("Fin");
 

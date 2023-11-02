@@ -130,13 +130,11 @@
     <Folder Include="dbo\Procedures" />
     <Folder Include="dbo\Views" />
     <Folder Include="dbo\Triggers" />
+    <Folder Include="whs\Views" />
+    <Folder Include="whs\Procedures" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="stg\Tables\config.sql">
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="whs\Tables\config.sql">
       <AnsiNulls>On</AnsiNulls>
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
@@ -178,12 +176,8 @@
     <Build Include="dbo\Tables\DbSchedule.sql" />
     <Build Include="dbo\Procedures\GetSchedule.sql" />
     <Build Include="stg\Tables\Categoria.sql" />
-    <Build Include="whs\Tables\DimProductos.sql" />
-    <Build Include="whs\Tables\DimTipoProveedor.sql" />
-    <Build Include="whs\Tables\DimCategoria.sql" />
     <Build Include="stg\Tables\TipoProveedor.sql" />
     <Build Include="stg\Tables\ProveedorRetailCegid.sql" />
-    <Build Include="whs\Tables\DimProveedorRetailCegid.sql" />
     <Build Include="stg\Tables\GrupoArt.sql" />
     <Build Include="stg\Tables\Genero.sql" />
     <Build Include="stg\Tables\TamanoReal.sql" />
@@ -193,6 +187,25 @@
     <Build Include="stg\Tables\UnidadMedida.sql" />
     <Build Include="stg\Tables\UnidadNegocio.sql" />
     <Build Include="stg\Tables\Linea.sql" />
+    <Build Include="whs\Tables\DimClientes.sql" />
+    <Build Include="whs\Tables\DimCentroCostos.sql" />
+    <Build Include="whs\Tables\CuentasContable.sql" />
+    <Build Include="whs\Tables\DimProductos.sql" />
+    <Build Include="whs\Tables\DimProveedorRetailCegid.sql" />
+    <Build Include="whs\Tables\DimTipoProveedor.sql" />
+    <Build Include="whs\Tables\DimFabricante.sql" />
+    <Build Include="whs\Tables\DimGenero.sql" />
+    <Build Include="whs\Tables\DimGruposArts.sql" />
+    <Build Include="whs\Tables\DimLineas.sql" />
+    <Build Include="whs\Tables\DimMarcas.sql" />
+    <Build Include="whs\Tables\DimTamanosConc.sql" />
+    <Build Include="whs\Tables\DimTamanoReal.sql" />
+    <Build Include="whs\Tables\DimTiposProductos.sql" />
+    <Build Include="whs\Tables\DimUnidadesMedida.sql" />
+    <Build Include="whs\Tables\DimUnidadesNegocio.sql" />
+    <Build Include="whs\Tables\DimCategorias.sql" />
+    <Build Include="whs\Views\Productos.sql" />
+    <Build Include="whs\Procedures\Sp_ImportDimensiones.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\Crear Seguridad.sql" />

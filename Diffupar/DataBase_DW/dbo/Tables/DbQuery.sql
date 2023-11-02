@@ -1,10 +1,26 @@
-﻿CREATE TABLE [dbo].[DbQuery]
-(
-	[Id] INT identity(1,1) NOT NULL PRIMARY KEY,
-	[Name] varchar(100),
-	[TableId] int not null,	
-	[TableDestinoId] Int,
-	[Where] varchar(100),
-	Foreign key (TableId) references dbo.DbTables(Id),
-	Foreign key (TableDestinoId) references dbo.DbTableStg(Id)
-)
+﻿CREATE TABLE [dbo].[DbQuery] (
+    [Id]             INT           IDENTITY (1, 1) NOT NULL,
+    [TableId]        INT           NOT NULL,
+    [TableDestinoId] INT           NULL,
+    [Where]          VARCHAR (100) NULL,
+    [Name]           VARCHAR (100) NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC),
+    FOREIGN KEY ([TableDestinoId]) REFERENCES [dbo].[DbTableStg] ([Id]),
+    FOREIGN KEY ([TableId]) REFERENCES [dbo].[DbTables] ([Id])
+);
+GO
+
+CREATE TRIGGER trgQueryInsert
+ON DbQuery
+FOR INSERT
+AS
+	insert into DbMapping
+	select 
+		i.Id,
+		null,
+		c.name
+	from inserted i
+	inner join DbTableStg t on t.id = i.TableDestinoId
+	inner join sys.columns c on c.object_id = t.ObjectId
+GO
+

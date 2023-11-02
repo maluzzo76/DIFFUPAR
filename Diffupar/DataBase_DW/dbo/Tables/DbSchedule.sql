@@ -6,5 +6,6 @@
 	[StarDate] datetime,
 	[LastStarDate] datetime,
 	[Status] int,
+	[Orden] int,
 	foreign key (QueryId) references DbQuery(Id)
 )

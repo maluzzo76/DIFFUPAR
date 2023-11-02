@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ASDWP.Models.DbSource>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Source</h2>
+
+<p>
+    @Html.ActionLink("Create Source", "Create",null, new {@class="btn btn-primary"})
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Source Name
+        </th>
+        <th>
+            Connection
+        </th>
+        <th>
+            Provider Name
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Connetion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DbProviders.Name)
+        </td>
+        <td>
+            <a class="btn-grid" href="@Url.Action("Edit","DbSources", new { id = item.Id }) "><span><img src="~/Content/image/iconos_Lapiz.png" /></span></a>
+            <a class="btn-grid" href="@Url.Action("Details","DbSources", new { id = item.Id }) "><img src="~/Content/image/iconos_Buscar.png"  /></a>
+            <a class="btn-grid" href="@Url.Action("Delete","DbSources", new { id = item.Id }) "><img src="~/Content/image/iconos_Basura.png" /></a>
+        </td>
+    </tr>
+}
+
+</table>

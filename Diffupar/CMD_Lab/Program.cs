@@ -25,6 +25,9 @@ namespace CMD_Lab
         {
             try
             {
+                Console.WriteLine("*".PadRight(88,char.Parse("*")));
+                Console.WriteLine(string.Format("{0} A L U S O F T  -  P R O C E S S  U P D A T E {0}","*".PadRight(21, char.Parse("*"))));
+                Console.WriteLine("*".PadRight(88, char.Parse("*")));
                 Console.ForegroundColor= ConsoleColor.Green;
                 Console.WriteLine("Selecione un opcion:(s) - Sap Managment | (p) - ETL Process | (Otra tecla) - Salir");
 
