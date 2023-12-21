@@ -12,3 +12,11 @@ D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\obj\Release\Process.csproj.
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\obj\Release\Process.csproj.CopyComplete
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\obj\Release\Process.dll
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\obj\Release\Process.pdb
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\bin\Release\Log.dll
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\bin\Release\MySql.Data.dll
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\bin\Release\System.Memory.dll
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\bin\Release\System.Threading.Tasks.Extensions.dll
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\bin\Release\System.Numerics.Vectors.dll
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\bin\Release\System.Buffers.dll
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\bin\Release\Log.pdb
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\bin\Release\MySql.Data.xml

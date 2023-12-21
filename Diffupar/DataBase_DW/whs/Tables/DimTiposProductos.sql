@@ -1,8 +1,7 @@
 ﻿CREATE TABLE [whs].[DimTiposProductos]
 (
-	ID int identity(1,1) primary key,
-	[Code] varchar(100), -- Codigo Dimension
-	[Name] varchar(100), -- Nombre Dimension
-	[CreateDate] datetime, -- Fecha Creacion
-	[UpdateDate] datetime -- Fecha Actualización
+	[Id] INT NOT NULL PRIMARY KEY identity(1,1),
+	Codigo int,
+	Tipo_Producto varchar(200),
+	Proveedor varchar(200)
 )

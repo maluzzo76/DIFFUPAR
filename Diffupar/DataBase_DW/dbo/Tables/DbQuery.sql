@@ -18,7 +18,7 @@ AS
 	select 
 		i.Id,
 		null,
-		c.name
+		c.[name]
 	from inserted i
 	inner join DbTableStg t on t.id = i.TableDestinoId
 	inner join sys.columns c on c.object_id = t.ObjectId

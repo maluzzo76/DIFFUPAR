@@ -21,6 +21,8 @@
 	[UnidadNegocio_Id] int,
 	[CreateDate] datetime,
 	[UpdateDate] datetime,
+	[Propio_Tercero_Id] int,
+	[Grupo_Item_Id] int,
 	
 	FOREIGN KEY	([Categoria_Id]) REFERENCES whs.DimCategoria(Id),
 	FOREIGN KEY	([TipoProveedor_Id]) REFERENCES whs.DimTipoProveedor(Id),
@@ -37,6 +39,7 @@
 	FOREIGN KEY	([TamanoReal_Id]) REFERENCES whs.DimTamanoReal(Id),
 	FOREIGN KEY	([TipoProducto_Id]) REFERENCES whs.DimTiposProductos(Id),
 	FOREIGN KEY	([UnidadMedida_Id]) REFERENCES whs.DimUnidadesMedida(Id),
-	FOREIGN KEY	([UnidadNegocio_Id]) REFERENCES whs.DimUnidadesNegocio(Id)
-
+	FOREIGN KEY	([UnidadNegocio_Id]) REFERENCES whs.DimUnidadesNegocio(Id),
+	FOREIGN KEY ([Propio_Tercero_Id]) REFERENCES whs.[DimPropioTercero](Id),
+	FOREIGN KEY ([Grupo_Item_Id]) REFERENCES whs.DimGrupoItems(Id)
 )

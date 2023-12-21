@@ -1,0 +1,8 @@
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\DataBase_DW\bin\Debug\DataBase_DW.dacpac
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\DataBase_DW\obj\Debug\DataBase_DW.sqlproj.AssemblyReference.cache
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\DataBase_DW\obj\Debug\Model.xml
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\DataBase_DW\obj\Debug\refactor.xml
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\DataBase_DW\obj\Debug\postdeploy.sql
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\DataBase_DW\obj\Debug\predeploy.sql
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\DataBase_DW\obj\Debug\DataBase_DW.dll
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\DataBase_DW\obj\Debug\DataBase_DW.pdb

@@ -11,6 +11,7 @@ using System.Text.RegularExpressions;
 using System.Diagnostics;
 using System.Configuration;
 using System.CodeDom;
+using Log;
 
 namespace CMD_Lab
 {
@@ -18,7 +19,13 @@ namespace CMD_Lab
     {
         static void Main(string[] args)
         {
-            menu();
+
+            //AgregarObjetivosTableauDiffupar();
+            //AgregarObjetivosTableauRouge();
+
+           Process.IA.ScheduleExcecute();
+           
+           // menu();
         }
 
         static void menu()
@@ -37,7 +44,7 @@ namespace CMD_Lab
                         SapManager();
                         break;
 
-                    case "P":
+                    case "P":                        
                         Process.IA.ScheduleExcecute();
                         break;
 
@@ -103,6 +110,67 @@ namespace CMD_Lab
             {
                 menu();
             }
+        }
+
+        static void AgregarObjetivosTableauDiffupar()
+        {
+            string _mySqlConnection = "datasource=192.168.1.66 ;port=3306;username=root;password=Diffupar22!;database=rouge;";
+            string _ExlsConnection = @"C:\Users\maria\Downloads\Objetivo DIciembre 2023- Diffupar.xlsx";
+
+            DataSet _dsExls = ADO.Excel.getExcelData(_ExlsConnection, "OBJETIVO TOTAL$");
+
+            Console.WriteLine("Datos de excel");
+            Console.WriteLine(_dsExls.Tables[0].Rows.Count);
+
+            int _index = 0;
+            IList<string> _qInsert = new List<string>();
+
+            foreach (DataRow _c in _dsExls.Tables[0].Rows)
+            {
+                if (_c["Local"].ToString() != "")
+                {
+                    string _valores = string.Format("'{0}','{1}{3}','{1}',{2}", _c["Local"].ToString(), _c["AÑO"].ToString(), _c["TOTAL DIFF REAL"].ToString(), _c["MES"].ToString());
+                    string _query = string.Format("insert into rouge.objetivos_diffupar_rouge (Sucursales,ID_YM_target_rouge,Year_target_Diffupar,target_diffupar_mensual) values ({0})", _valores);
+
+                    ADO.MySQL.MySqlExecuteNonQuery(_query, _mySqlConnection);
+                }
+
+                _index++;
+            }
+            Console.WriteLine("=========================================");
+            Console.ReadLine();
+
+        }
+
+        static void AgregarObjetivosTableauRouge()
+        {
+            string _mySqlConnection = "datasource=192.168.1.66 ;port=3306;username=root;password=Diffupar22!;database=rouge;";
+            string _ExlsConnection = @"C:\Users\maria\Downloads\Objetivo DICIEMBRE 2023 - ROUGE.xlsx";
+
+            DataSet _dsExls = ADO.Excel.getExcelData(_ExlsConnection, "OBJETIVO TOTAL$");
+
+            Console.WriteLine("Datos de excel");
+            Console.WriteLine(_dsExls.Tables[0].Rows.Count);
+
+            int _index = 0;
+            IList<string> _qInsert = new List<string>();
+
+            foreach (DataRow _c in _dsExls.Tables[0].Rows)
+            {
+                if (_index > 0 && _c["LOCAL"].ToString() != "")
+                {
+
+                    string _valores = string.Format("'{0}',{2},{1},'{1}-{3}-01','{1}{3}'", _c["LOCAL"].ToString(), _c["AÑO"].ToString(), _c["TOTAL DIFF REAL"].ToString(), _c["MES"].ToString());
+                    string _query = string.Format("insert into rouge.objetivos_rouge (Sucursales,target_rouge_mensual,Year,month_year,ID_YM) values ({0})", _valores);
+
+                    ADO.MySQL.MySqlExecuteNonQuery(_query, _mySqlConnection);
+                }
+
+                _index++;
+            }
+            Console.WriteLine("=========================================");
+            Console.ReadLine();
+
         }
     }
 }

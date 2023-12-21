@@ -15,5 +15,8 @@
 	[U_RBI_UM] varchar(100),
 	[U_RBI_UnideNegocio] varchar(100),	
 	[CreateDate] datetime,
-	[UpdateDate] datetime
+	[UpdateDate] datetime,
+	U_RBI_Dimension4  int,
+	U_RBI_Dimension5  int,
+	ItmsGrpCod int
 )

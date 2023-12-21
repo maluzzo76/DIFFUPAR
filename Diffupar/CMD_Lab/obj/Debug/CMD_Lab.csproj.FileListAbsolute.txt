@@ -12,3 +12,11 @@ D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\CMD_Lab\obj\Debug\CMD_Lab.csproj.Co
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\CMD_Lab\bin\Debug\Process.dll
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\CMD_Lab\bin\Debug\Process.pdb
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\CMD_Lab\bin\Debug\Process.dll.config
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\CMD_Lab\bin\Debug\MySql.Data.dll
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\CMD_Lab\bin\Debug\System.Memory.dll
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\CMD_Lab\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\CMD_Lab\bin\Debug\System.Numerics.Vectors.dll
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\CMD_Lab\bin\Debug\System.Buffers.dll
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\CMD_Lab\bin\Debug\MySql.Data.xml
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\CMD_Lab\bin\Debug\Log.dll
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\CMD_Lab\bin\Debug\Log.pdb

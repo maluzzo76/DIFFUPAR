@@ -63,6 +63,10 @@
       <Project>{fa46ec22-7c92-44d1-a286-4e42fc6c8814}</Project>
       <Name>ADO</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Log\Log.csproj">
+      <Project>{b9b77bc1-3b0d-4df1-a8a9-1c04b9d4dbf7}</Project>
+      <Name>Log</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />

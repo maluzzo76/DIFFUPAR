@@ -4,3 +4,10 @@ D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\ADO\obj\Debug\ADO.csproj.AssemblyRe
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\ADO\obj\Debug\ADO.csproj.CoreCompileInputs.cache
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\ADO\obj\Debug\ADO.dll
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\ADO\obj\Debug\ADO.pdb
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\ADO\bin\Debug\System.Memory.dll
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\ADO\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\ADO\bin\Debug\System.Numerics.Vectors.dll
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\ADO\bin\Debug\System.Buffers.dll
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\ADO\bin\Debug\MySql.Data.xml
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\ADO\obj\Debug\ADO.csproj.CopyComplete
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\ADO\bin\Debug\EPPlus.dll
