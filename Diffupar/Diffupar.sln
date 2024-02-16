@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Log", "Log\Log.csproj", "{B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASSapManagement", "ASSapManagement\ASSapManagement.csproj", "{2DA70BA5-5D99-4A10-AF36-81565FE0FF63}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComplementosServices", "ComplementosServices\ComplementosServices.csproj", "{D7292162-D66F-4321-AFD8-AEC1F2B8B420}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,12 @@ Global
 		{2DA70BA5-5D99-4A10-AF36-81565FE0FF63}.Development|Any CPU.Build.0 = Debug|Any CPU
 		{2DA70BA5-5D99-4A10-AF36-81565FE0FF63}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DA70BA5-5D99-4A10-AF36-81565FE0FF63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7292162-D66F-4321-AFD8-AEC1F2B8B420}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7292162-D66F-4321-AFD8-AEC1F2B8B420}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7292162-D66F-4321-AFD8-AEC1F2B8B420}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7292162-D66F-4321-AFD8-AEC1F2B8B420}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{D7292162-D66F-4321-AFD8-AEC1F2B8B420}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7292162-D66F-4321-AFD8-AEC1F2B8B420}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

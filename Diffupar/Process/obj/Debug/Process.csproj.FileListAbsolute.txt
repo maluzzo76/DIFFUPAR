@@ -17,6 +17,5 @@ D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\bin\Debug\System.Memory.dll
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\bin\Debug\System.Threading.Tasks.Extensions.dll
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\bin\Debug\System.Numerics.Vectors.dll
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\bin\Debug\System.Buffers.dll
-D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\bin\Debug\MySql.Data.xml
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\bin\Debug\Log.dll
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\bin\Debug\Log.pdb

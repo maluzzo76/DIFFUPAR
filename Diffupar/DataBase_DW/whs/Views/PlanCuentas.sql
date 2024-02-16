@@ -1,6 +1,7 @@
 ﻿CREATE VIEW [whs].[PlanCuentas]
 	AS 
 Select 
+	Id PlanCuenta_Id,
 	AcctCode Codigo,
 	LevelName1 Nivel1,
 	LevelName2 Nivel2,

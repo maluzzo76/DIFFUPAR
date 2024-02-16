@@ -23,7 +23,9 @@ namespace CMD_Lab
             //AgregarObjetivosTableauDiffupar();
             //AgregarObjetivosTableauRouge();
 
-           Process.IA.ScheduleExcecute();
+            Process.IA.ProcesarComplementos();
+
+           //Process.IA.ScheduleExcecute();
            
            // menu();
         }
@@ -115,7 +117,7 @@ namespace CMD_Lab
         static void AgregarObjetivosTableauDiffupar()
         {
             string _mySqlConnection = "datasource=192.168.1.66 ;port=3306;username=root;password=Diffupar22!;database=rouge;";
-            string _ExlsConnection = @"C:\Users\maria\Downloads\Objetivo DIciembre 2023- Diffupar.xlsx";
+            string _ExlsConnection = @"C:\Users\maria\Downloads\Diff\Objetivos DIffupar Enero.xlsx";
 
             DataSet _dsExls = ADO.Excel.getExcelData(_ExlsConnection, "OBJETIVO TOTAL$");
 
@@ -129,7 +131,7 @@ namespace CMD_Lab
             {
                 if (_c["Local"].ToString() != "")
                 {
-                    string _valores = string.Format("'{0}','{1}{3}','{1}',{2}", _c["Local"].ToString(), _c["AÑO"].ToString(), _c["TOTAL DIFF REAL"].ToString(), _c["MES"].ToString());
+                   string _valores = string.Format("'{0}','{1}{3}','{1}',{2}", _c["Local"].ToString(), _c["AÑO"].ToString(), _c["TOTAL DIFF REAL"].ToString(), _c["MES"].ToString());
                     string _query = string.Format("insert into rouge.objetivos_diffupar_rouge (Sucursales,ID_YM_target_rouge,Year_target_Diffupar,target_diffupar_mensual) values ({0})", _valores);
 
                     ADO.MySQL.MySqlExecuteNonQuery(_query, _mySqlConnection);
@@ -145,7 +147,7 @@ namespace CMD_Lab
         static void AgregarObjetivosTableauRouge()
         {
             string _mySqlConnection = "datasource=192.168.1.66 ;port=3306;username=root;password=Diffupar22!;database=rouge;";
-            string _ExlsConnection = @"C:\Users\maria\Downloads\Objetivo DICIEMBRE 2023 - ROUGE.xlsx";
+            string _ExlsConnection = @"C:\Users\maria\Downloads\Diff\Objetivo ROUGE Enero.xlsx";
 
             DataSet _dsExls = ADO.Excel.getExcelData(_ExlsConnection, "OBJETIVO TOTAL$");
 

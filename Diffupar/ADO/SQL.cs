@@ -15,10 +15,17 @@ namespace ADO
         public static DataSet SqlExecuteQueryDataSet(string query, string strConexion)
         {
             DataSet _ds = new DataSet();
-            using (SqlCommand _sqlCommand = new SqlCommand(query, (new SqlConnection(strConexion))))
+            try
+            {                
+                using (SqlCommand _sqlCommand = new SqlCommand(query, (new SqlConnection(strConexion))))
+                {
+                    _sqlCommand.CommandTimeout = 60000;
+                    (new SqlDataAdapter(_sqlCommand)).Fill(_ds);
+                }
+            }
+            catch(Exception ex)
             {
-                _sqlCommand.CommandTimeout = 6000;
-                (new SqlDataAdapter(_sqlCommand)).Fill(_ds);
+                throw ex;
             }
 
             return _ds;
@@ -30,7 +37,7 @@ namespace ADO
             using (SqlCommand _sqlCommand = new SqlCommand())
             {                
                 _sqlCommand.Connection = new SqlConnection(strConexion);
-                _sqlCommand.CommandTimeout = 6000;
+                _sqlCommand.CommandTimeout = 60000;
 
                 _sqlCommand.CommandText = ProceduereName;
                 _sqlCommand.CommandType = CommandType.StoredProcedure;
@@ -62,24 +69,63 @@ namespace ADO
                     bulkCopy.DestinationTableName = destinationTableName;
                     bulkCopy.BulkCopyTimeout = 2000;
                     //bulkCopy.BatchSize = int.Parse(System.Configuration.ConfigurationManager.AppSettings["BatchSize"]);
-                    foreach (SqlBulkCopyColumnMapping _mapping in mappings)
+                    if (mappings != null)
                     {
-                        bulkCopy.ColumnMappings.Add(_mapping);
+                        foreach (SqlBulkCopyColumnMapping _mapping in mappings)
+                        {
+                            bulkCopy.ColumnMappings.Add(_mapping);
+                        }
                     }
+
                     _sconn.Open();
                     bulkCopy.WriteToServer(tData);
+                    _sconn.Close();
+                    _sconn.Dispose();
                 }
             }
             catch (Exception ex)
             {
+                _sconn.Close();
+                _sconn.Dispose();
                 throw ex;
             }
-            finally
+         
+        }
+
+        public static void SqlBulkCopyNoDelete(string destinationTableName, DataTable tData, IList<SqlBulkCopyColumnMapping> mappings, string strConexion)
+        {
+            SqlConnection _sconn = new SqlConnection(strConexion);
+
+            try
+            {
+
+
+                using (SqlBulkCopy bulkCopy = new SqlBulkCopy(_sconn))
+                {
+                    bulkCopy.DestinationTableName = destinationTableName;
+                    bulkCopy.BulkCopyTimeout = 2000;
+                    //bulkCopy.BatchSize = int.Parse(System.Configuration.ConfigurationManager.AppSettings["BatchSize"]);
+                    if (mappings != null)
+                    {
+                        foreach (SqlBulkCopyColumnMapping _mapping in mappings)
+                        {
+                            bulkCopy.ColumnMappings.Add(_mapping);
+                        }
+                    }
+
+                    _sconn.Open();
+                    bulkCopy.WriteToServer(tData);
+                    _sconn.Close();
+                    _sconn.Dispose();
+                }
+            }
+            catch (Exception ex)
             {
                 _sconn.Close();
                 _sconn.Dispose();
-               // Log.Write.WriteError(String.Format("Registros Importados: {0}", tData.Rows.Count));
+                throw ex;
             }
+
         }
 
 

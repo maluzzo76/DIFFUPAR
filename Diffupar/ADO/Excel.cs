@@ -56,6 +56,45 @@ namespace ADO
             return _ds;
         }
 
+        public static DataSet getExcelDataByQuery(string filePath,string query)
+        {
+            DataSet _ds = new DataSet();
+
+            string _conexion = string.Format("Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties = 'Excel 12.0 Xml;HDR=YES'; ", filePath);
+
+            OleDbConnection _oconn = new OleDbConnection(_conexion);
+            OleDbCommand _oCommand = new OleDbCommand();
+
+
+            try
+            {
+                _oconn.Open();
+                var schemaDataTable = (DataTable)_oconn.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
+
+                _oCommand.Connection = _oconn;
+                string _query = query;
+                _oCommand.CommandType = CommandType.Text;
+                _oCommand.CommandText = _query;
+
+                (new OleDbDataAdapter(_oCommand)).Fill(_ds);
+            }
+            catch (OleDbException eole)
+            {
+                throw eole;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                _oCommand.Connection.Close();
+                _oCommand.Connection.Dispose();
+            }
+
+            return _ds;
+        }
+
         public static DataSet getExcelData(string filePath, string sheetName)
         {
             DataSet _ds = new DataSet();

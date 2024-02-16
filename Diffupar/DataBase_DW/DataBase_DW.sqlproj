@@ -9,8 +9,7 @@
     <ProjectGuid>{121b9d09-b9e2-4897-a7bb-4ad9ee14f442}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
-    <RootPath>
-    </RootPath>
+    <RootPath />
     <RootNamespace>DataBase_DW</RootNamespace>
     <AssemblyName>DataBase_DW</AssemblyName>
     <ModelCollation>3082,CI</ModelCollation>
@@ -111,7 +110,6 @@
   </PropertyGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
-    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
     <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
     <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
   </PropertyGroup>
@@ -204,7 +202,6 @@
     <Build Include="whs\Tables\DimUnidadesMedida.sql" />
     <Build Include="whs\Tables\DimUnidadesNegocio.sql" />
     <Build Include="whs\Tables\DimCategorias.sql" />
-    <None Include="whs\Views\Productos.sql" />
     <Build Include="whs\Procedures\Sp_ImportDimensiones.sql" />
     <Build Include="stg\Tables\Dimensiones_OOCR.sql" />
     <Build Include="stg\Tables\GrupoItems.sql" />
@@ -237,11 +234,27 @@
     <Build Include="whs\Views\PropioTercero.sql" />
     <Build Include="whs\Views\TiposProducto.sql" />
     <Build Include="whs\Views\PlanCuentas.sql" />
+    <Build Include="stg\Tables\FacturasCabecera.sql" />
+    <Build Include="stg\Tables\NotaCreditoCabecera.sql" />
+    <Build Include="stg\Tables\FacturaDetalle.sql" />
+    <Build Include="stg\Tables\NotaCreditoDetalle.sql" />
+    <Build Include="whs\Tables\FactComprobantes.sql" />
+    <Build Include="whs\Tables\DimTipoComprobantes.sql" />
+    <Build Include="whs\Views\Comprobantes.sql" />
+    <Build Include="stg\Tables\JDT1.sql" />
+    <Build Include="whs\Tables\FactLibroMayor.sql" />
+    <Build Include="whs\Views\LibroMayor.sql" />
+    <Build Include="whs\Views\Productos.sql" />
+    <Build Include="stg\Tables\JDT1Historica.sql" />
+    <Build Include="dbo\Tables\DBProcess.sql" />
+    <Build Include="stg\Tables\JDT1Complementos.sql" />
+    <Build Include="dbo\Procedures\GetDbProcess.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\Crear Seguridad.sql" />
     <None Include="Scripts\Carga Tablas stg.sql" />
     <None Include="dbo\Triggers\Triggers.sql" />
     <None Include="Scripts\Grant.sql" />
+    <None Include="Scripts\Carga Incial de Maestros.sql" />
   </ItemGroup>
 </Project>

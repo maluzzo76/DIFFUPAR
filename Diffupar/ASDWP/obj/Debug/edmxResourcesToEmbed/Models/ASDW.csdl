@@ -187,6 +187,7 @@
       <End Role="DbQuery" EntitySet="DbQuery" />
       <End Role="DbSchedule" EntitySet="DbSchedule" />
     </AssociationSet>
+    <EntitySet Name="DBProcess" EntityType="DiffuparAnalyticsModel.DBProcess" />
   </EntityContainer>
   <Association Name="FK__DbMapping__Colum__07C12930">
     <End Type="DiffuparAnalyticsModel.DbColumns" Role="DbColumns" Multiplicity="0..1" />
@@ -225,4 +226,17 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="DBProcess">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FechaCarga" Type="DateTime" Precision="3" />
+    <Property Name="FechaProcesado" Type="DateTime" Precision="3" />
+    <Property Name="NombreArchivo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="EstadoDescripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TipoProceso" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Archivo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
 </Schema>

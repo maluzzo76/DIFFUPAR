@@ -45,7 +45,7 @@ namespace Process.MappingEntities
             }
 
 
-            _pe.queryExceute = string.Format("select {0} from {1} {2};", _columns.Substring(0, _columns.Length - 1), _pe.TableOrigenName, _pe.Where);
+            _pe.queryExceute = string.Format("select  {0} from {1} {2};", _columns.Substring(0, _columns.Length - 1), _pe.TableOrigenName, _pe.Where);
             _pe.TdataImport = GetDataImport(_pe);
             
             return _pe;

@@ -33,5 +33,6 @@ namespace ASDWP.Models
         public virtual DbSet<DbTables> DbTables { get; set; }
         public virtual DbSet<DbTableStg> DbTableStg { get; set; }
         public virtual DbSet<DbSchedule> DbSchedule { get; set; }
+        public virtual DbSet<DBProcess> DBProcess { get; set; }
     }
 }

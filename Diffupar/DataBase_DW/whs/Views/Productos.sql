@@ -1,6 +1,7 @@
 ﻿create view whs.Productos
 as
 select
+	p.Id,
 	p.Codigo,
 	p.Nombre,
 	c.Codigo Codigo_Categoria,
@@ -55,18 +56,4 @@ left join whs.DimUnidadesMedida um on um.id = p.UnidadMedida_Id
 left join whs.DimUnidadesNegocio une on une.id = p.UnidadNegocio_Id
 left join whs.DimPropioTercero d4 on d4.id = p.Propio_Tercero_Id
 left join whs.DimGrupoItems gi on gi.id = p.Grupo_Item_Id
-GO
-
-
-GO
-
-GRANT SELECT
-    ON OBJECT::[whs].[Productos] TO [Diffupar]
-    AS [dbo];
-GO
-
-GRANT SELECT
-    ON OBJECT::[whs].[Productos] TO [PabloOns]
-    AS [dbo];
-GO
 

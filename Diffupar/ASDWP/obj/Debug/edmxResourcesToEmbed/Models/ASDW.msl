@@ -80,5 +80,19 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="DBProcess">
+      <EntityTypeMapping TypeName="DiffuparAnalyticsModel.DBProcess">
+        <MappingFragment StoreEntitySet="DBProcess">
+          <ScalarProperty Name="Archivo" ColumnName="Archivo" />
+          <ScalarProperty Name="TipoProceso" ColumnName="TipoProceso" />
+          <ScalarProperty Name="EstadoDescripcion" ColumnName="EstadoDescripcion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="NombreArchivo" ColumnName="NombreArchivo" />
+          <ScalarProperty Name="FechaProcesado" ColumnName="FechaProcesado" />
+          <ScalarProperty Name="FechaCarga" ColumnName="FechaCarga" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

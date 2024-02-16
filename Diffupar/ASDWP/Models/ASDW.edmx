@@ -22,6 +22,19 @@
           <Property Name="ColumnSourceId" Type="int" />
           <Property Name="ColumnDestino" Type="varchar" MaxLength="100" />
         </EntityType>
+        <EntityType Name="DBProcess">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FechaCarga" Type="datetime" />
+          <Property Name="FechaProcesado" Type="datetime" />
+          <Property Name="NombreArchivo" Type="varchar" MaxLength="100" />
+          <Property Name="Estado" Type="varchar" MaxLength="200" />
+          <Property Name="EstadoDescripcion" Type="varchar(max)" />
+          <Property Name="TipoProceso" Type="varchar" MaxLength="100" />
+          <Property Name="Archivo" Type="varchar(max)" />
+        </EntityType>
         <EntityType Name="DbProviders">
           <Key>
             <PropertyRef Name="Id" />
@@ -175,6 +188,7 @@
         <EntityContainer Name="DiffuparAnalyticsModelStoreContainer">
           <EntitySet Name="DbColumns" EntityType="Self.DbColumns" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DbMapping" EntityType="Self.DbMapping" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DBProcess" EntityType="Self.DBProcess" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DbProviders" EntityType="Self.DbProviders" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DbQuery" EntityType="Self.DbQuery" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DbSchedule" EntityType="Self.DbSchedule" Schema="dbo" store:Type="Tables" />
@@ -405,6 +419,7 @@
             <End Role="DbQuery" EntitySet="DbQuery" />
             <End Role="DbSchedule" EntitySet="DbSchedule" />
           </AssociationSet>
+          <EntitySet Name="DBProcess" EntityType="DiffuparAnalyticsModel.DBProcess" />
         </EntityContainer>
         <Association Name="FK__DbMapping__Colum__07C12930">
           <End Type="DiffuparAnalyticsModel.DbColumns" Role="DbColumns" Multiplicity="0..1" />
@@ -443,6 +458,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="DBProcess">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FechaCarga" Type="DateTime" Precision="3" />
+          <Property Name="FechaProcesado" Type="DateTime" Precision="3" />
+          <Property Name="NombreArchivo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Estado" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="EstadoDescripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TipoProceso" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Archivo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -524,6 +552,20 @@
                 <ScalarProperty Name="StarDate" ColumnName="StarDate" />
                 <ScalarProperty Name="QueryId" ColumnName="QueryId" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DBProcess">
+            <EntityTypeMapping TypeName="DiffuparAnalyticsModel.DBProcess">
+              <MappingFragment StoreEntitySet="DBProcess">
+                <ScalarProperty Name="Archivo" ColumnName="Archivo" />
+                <ScalarProperty Name="TipoProceso" ColumnName="TipoProceso" />
+                <ScalarProperty Name="EstadoDescripcion" ColumnName="EstadoDescripcion" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="NombreArchivo" ColumnName="NombreArchivo" />
+                <ScalarProperty Name="FechaProcesado" ColumnName="FechaProcesado" />
+                <ScalarProperty Name="FechaCarga" ColumnName="FechaCarga" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

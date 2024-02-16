@@ -64,4 +64,3 @@ D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\SapManager\bin\System.Memory.dll
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\SapManager\bin\System.Threading.Tasks.Extensions.dll
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\SapManager\bin\System.Numerics.Vectors.dll
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\SapManager\bin\System.Buffers.dll
-D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\SapManager\bin\MySql.Data.xml

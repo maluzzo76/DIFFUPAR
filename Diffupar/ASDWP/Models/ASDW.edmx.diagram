@@ -21,6 +21,7 @@
         <AssociationConnector Association="DiffuparAnalyticsModel.FK__DbMapping__Colum__07C12930" />
         <EntityTypeShape EntityType="DiffuparAnalyticsModel.DbSchedule" Width="1.5" PointX="1.875" PointY="4.25" />
         <AssociationConnector Association="DiffuparAnalyticsModel.FK__DbSchedul__Query__0A9D95DB" />
+        <EntityTypeShape EntityType="DiffuparAnalyticsModel.DBProcess" Width="1.5" PointX="0.75" PointY="7.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

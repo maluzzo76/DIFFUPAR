@@ -35,7 +35,7 @@ namespace Log
         public static void WriteError(String error)
         {
             ValidarRepositorio();
-            using (StreamWriter writer = new StreamWriter(_path + "Log_ASImport.txt.txt", true))
+            using (StreamWriter writer = new StreamWriter(_path + "Log_ASImport.txt", true))
             {
                 writer.WriteLine(String.Format(DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt") + ": " + error, DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt")));
                 writer.Close();
@@ -46,7 +46,7 @@ namespace Log
         public static void WriteSoloFile(String text)
         {
             ValidarRepositorio();
-            using (StreamWriter writer = new StreamWriter(_path + "Log_ASImport.txt.txt", true))
+            using (StreamWriter writer = new StreamWriter(_path + "Log_ASImport.txt", true))
             {
                 writer.WriteLine(String.Format(DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt") + ": " + text, DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt")));
                 writer.Close();

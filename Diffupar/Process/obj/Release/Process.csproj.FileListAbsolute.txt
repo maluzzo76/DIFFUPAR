@@ -19,4 +19,3 @@ D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\bin\Release\System.Threadin
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\bin\Release\System.Numerics.Vectors.dll
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\bin\Release\System.Buffers.dll
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\bin\Release\Log.pdb
-D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\bin\Release\MySql.Data.xml

@@ -36,6 +36,29 @@
                             <a class="dropdown-item" href="@Url.Action("index","DbSchedules",null)">Schedules</a>
                         </div>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                            Template
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="~/Templates/Template Libro Mayor Complemento.xlsx">Complemento Libro Mayor</a>
+                            <a class="dropdown-item" href="~/Templates/Template Plan de Cuentas Complemento.xlsx">Complemento Plan de Cuentas</a>
+                            <a style="border-top:1px solid black;" class="dropdown-item" href="~/Templates/Objetivos Totales.xlsx">objetivos Totales</a>
+                            <a class="dropdown-item" href="~/Templates/Objetivos Diffupar.xlsx">Objetivos Diffupar</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                            Subir Complementos
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="@Url.Action("FileUpload", "DbProcesses", new {pn = "Libro Mayor"})">Libro Mayor</a>                            
+                            <a style="border-top:1px solid black;" class="dropdown-item" href="@Url.Action("FileUpload", "DbProcesses", new {pn = "Objetivos Totales"})">Objetivos Totales</a>
+                            <a class="dropdown-item" href="@Url.Action("FileUpload", "DbProcesses", new {pn = "Objetivos Diffupar"})">Objetivos Diffupar</a>
+
+                        </div>
+                    </li>
+                    <li>@Html.ActionLink("Ver Procesos", "Index", "DbProcesses", new { area = "" }, new { @class = "nav-link" })</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

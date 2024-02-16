@@ -17,6 +17,8 @@ namespace Process
 
         public static void ScheduleExcecute()
         {
+            DateTime _start = DateTime.Now;
+            DateTime _end = DateTime.Now;
             Log.Write.WriteError("================================================================");
             Log.Write.WriteError("================================================================");
             Log.Write.WriteError("Inicio Schedule");
@@ -58,9 +60,17 @@ namespace Process
                 Console.ReadLine();
             }
             finally {
+                _end = DateTime.Now;
+                string _metricas = string.Format("Duración del proceso:{0} minutos", _end.Subtract(_start).TotalMinutes);
+                Log.Write.WriteError(_metricas);
                 Log.Write.WriteError("Fin");
             }
 
+        }
+
+        public static void ProcesarComplementos()
+        {
+            ComplementosProcess.Procesar(_sqlConnection);
         }
 
 

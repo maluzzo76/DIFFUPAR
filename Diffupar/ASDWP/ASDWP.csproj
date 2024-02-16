@@ -52,6 +52,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -173,6 +174,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DbColumnsController.cs" />
     <Compile Include="Controllers\DbMappingsController.cs" />
+    <Compile Include="Controllers\DBProcessesController.cs" />
     <Compile Include="Controllers\DbQueriesController.cs" />
     <Compile Include="Controllers\DbSchedulesController.cs" />
     <Compile Include="Controllers\DbSourcesController.cs" />
@@ -202,6 +204,9 @@
       <DependentUpon>ASDW.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DbMapping.cs">
+      <DependentUpon>ASDW.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBProcess.cs">
       <DependentUpon>ASDW.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DbProviders.cs">
@@ -244,11 +249,15 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\image\cancel.png" />
+    <Content Include="Content\image\iconos_Agregar.png" />
     <Content Include="Content\image\iconos_Basura.png" />
     <Content Include="Content\image\iconos_Buscar.png" />
     <Content Include="Content\image\iconos_Lapiz.png" />
+    <Content Include="Content\image\iconos_Lapiz2.png" />
     <Content Include="Content\image\iconos_Link 2.png" />
     <Content Include="Content\image\Logo_Solo_nombre.png" />
+    <Content Include="Content\image\Procesando.gif" />
     <Content Include="Content\image\query.png" />
     <Content Include="Content\image\schedule.png" />
     <Content Include="Content\image\source.png" />
@@ -354,9 +363,16 @@
     <Content Include="Views\DbSchedules\Details.cshtml" />
     <Content Include="Views\DbSchedules\Edit.cshtml" />
     <Content Include="Views\DbSchedules\Index.cshtml" />
+    <Content Include="Templates\Template Libro Mayor Complemento.xlsx" />
+    <Content Include="Templates\Template Plan de Cuentas Complemento.xlsx" />
+    <Content Include="Views\DBProcesses\Index.cshtml" />
+    <Content Include="Views\DBProcesses\FileUpload.cshtml" />
+    <Content Include="Templates\Objetivos Diffupar.xlsx" />
+    <Content Include="Templates\Objetivos Totales.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Complementos\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

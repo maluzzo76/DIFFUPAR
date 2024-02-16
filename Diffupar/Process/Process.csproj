@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComplementosProcess.cs" />
     <Compile Include="IA.cs" />
     <Compile Include="MappingEntities\Mapping.cs" />
     <Compile Include="Model\ProcessEntity.cs" />

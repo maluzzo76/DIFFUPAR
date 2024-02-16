@@ -1,7 +1,7 @@
 ﻿CREATE VIEW [whs].[Clientes]
 AS
 select 
-bp.id,
+bp.id Id,
 bp.CardCode Cliente_Codigo,
 bp.CardName Cliente_Nombre,
 bp.CardType Cliente_Tipo,

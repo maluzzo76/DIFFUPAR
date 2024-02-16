@@ -17,6 +17,19 @@
     <Property Name="ColumnSourceId" Type="int" />
     <Property Name="ColumnDestino" Type="varchar" MaxLength="100" />
   </EntityType>
+  <EntityType Name="DBProcess">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FechaCarga" Type="datetime" />
+    <Property Name="FechaProcesado" Type="datetime" />
+    <Property Name="NombreArchivo" Type="varchar" MaxLength="100" />
+    <Property Name="Estado" Type="varchar" MaxLength="200" />
+    <Property Name="EstadoDescripcion" Type="varchar(max)" />
+    <Property Name="TipoProceso" Type="varchar" MaxLength="100" />
+    <Property Name="Archivo" Type="varchar(max)" />
+  </EntityType>
   <EntityType Name="DbProviders">
     <Key>
       <PropertyRef Name="Id" />
@@ -170,6 +183,7 @@
   <EntityContainer Name="DiffuparAnalyticsModelStoreContainer">
     <EntitySet Name="DbColumns" EntityType="Self.DbColumns" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DbMapping" EntityType="Self.DbMapping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DBProcess" EntityType="Self.DBProcess" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DbProviders" EntityType="Self.DbProviders" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DbQuery" EntityType="Self.DbQuery" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DbSchedule" EntityType="Self.DbSchedule" Schema="dbo" store:Type="Tables" />

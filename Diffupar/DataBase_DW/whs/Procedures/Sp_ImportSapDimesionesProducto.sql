@@ -3,7 +3,7 @@
 AS
 
 DECLARE @code varchar(100), @name varchar(500)
-declare @value varchar(200), @text1 varchar(300), @text2 varchar(300), @index int = 0
+declare @value varchar(200), @text1 varchar(300), @text2 varchar(300),@isValue2 int, @index int = 0
 
 delete whs.DimUnidadesNegocioVenta
 delete whs.DimDepartamentos
@@ -14,20 +14,21 @@ delete whs.DimTiposProductos
 ------------------------------------------------------------------------------------------------------
 -- INSERTA DIMENSION 1
 ------------------------------------------------------------------------------------------------------
+update stg.Dimensiones_OOCR set [name]= replace([name],'E-COMMERCE','ECOMMERCE') where Code between 10000 and 20000 and [name] like '%E-COMMERCE%';
 declare
     cur_dim cursor for
-      select code, [name] from stg.Dimensiones_OOCR where Code between 10000 and 20000;
+      select code, trim([name]) from stg.Dimensiones_OOCR where Code between 10000 and 19999;
 BEGIN
    OPEN cur_dim;
    FETCH  cur_dim INTO @code,@name
 	WHILE (@@FETCH_STATUS = 0)
-		BEGIN
-			
+		BEGIN			
+		select @name c1
 			declare cur2 cursor for
 				select value from string_split(@name,'-')
 				begin
-					open cur2
-						FETCH  cur2 INTO @value						
+					open cur2						
+						FETCH  cur2 INTO @value		
 						WHILE (@@FETCH_STATUS = 0) --If the fetch went well then we go for it
 							BEGIN
 							if @index = 0
@@ -37,11 +38,12 @@ BEGIN
 							end
 							else
 							begin
-								set @text2 = @value
+								set @text2 = @value	
 								set @index = 0
 							end
 							FETCH  cur2 INTO @value							
 							END
+							set @index = 0
 							insert into whs.DimUnidadesNegocioVenta(Codigo,Direccion,Unidad_Negocio )values(@code ,@text1,@text2)
 					close cur2
 					DEALLOCATE cur2
@@ -53,12 +55,14 @@ BEGIN
 END
 
 
+
+
 ------------------------------------------------------------------------------------------------------
 -- INSERTA DIMENSION 2
 ------------------------------------------------------------------------------------------------------
 declare
     cur_dim cursor for
-      select code, [name] from stg.Dimensiones_OOCR where Code between 20000 and 30000;
+      select code, [name] from stg.Dimensiones_OOCR where Code between 20000 and 29999;
 BEGIN
    OPEN cur_dim;
    FETCH  cur_dim INTO @code,@name
@@ -99,7 +103,7 @@ END
 -- INSERTA DIMENSION 3
 ------------------------------------------------------------------------------------------------------
 insert into whs.DimLugarCliente
-      select code, [name] from stg.Dimensiones_OOCR where Code between 30000 and 40000;
+      select code, [name] from stg.Dimensiones_OOCR where Code between 30000 and 39999;
 
 
 ------------------------------------------------------------------------------------------------------
@@ -108,7 +112,7 @@ insert into whs.DimLugarCliente
 
 declare
     cur_dim cursor for
-      select code, [name] from stg.Dimensiones_OOCR where Code between 40000 and 50000;
+      select code, [name] from stg.Dimensiones_OOCR where Code between 40000 and 49999;
 BEGIN
    OPEN cur_dim;
    FETCH  cur_dim INTO @code,@name
@@ -151,7 +155,7 @@ END
 
 declare
     cur_dim cursor for
-      select code, [name] from stg.Dimensiones_OOCR where Code between 50000 and 60000;
+      select code, [name] from stg.Dimensiones_OOCR where Code between 50000 and 59999;
 BEGIN
    OPEN cur_dim;
    FETCH  cur_dim INTO @code,@name
@@ -277,7 +281,8 @@ left join whs.DimPlanDeCuentas l5 on l5.Level1 = p.Level1 and l5.Level2 = p.Leve
 where whs.DimPlanDeCuentas.AcctCode = q1.AcctCode
 
 update  whs.DimPlanDeCuentas
-set LevelName2 = case when Level2 <>'0' then AcctName else LevelName2 end ,
-	LevelName3 = case when Level3 <>'000' then AcctName else LevelName3 end,
-	LevelName4 = case when Level4 <>'00' then AcctName else LevelName4 end ,
-	LevelName5 = case when Level5 <>'000' then AcctName else LevelName5 end
+set LevelName2 =	case when Level2 <>'0' and LevelName2 is null  then AcctName else LevelName2 end ,
+	LevelName3 =	case when Level3 <>'000' and LevelName3 is null then AcctName else LevelName3 end,
+	LevelName4 =	case when Level4 <>'00' and LevelName4 is null then AcctName else LevelName4 end ,
+	LevelName5 =	case when Level5 <>'000' and LevelName5 is null then AcctName else LevelName5 end
+	
