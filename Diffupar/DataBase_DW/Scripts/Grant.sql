@@ -88,3 +88,14 @@ GRANT SELECT ON whs.TiposProducto TO mgiachetti
 GRANT SELECT ON whs.planCuentas TO mgiachetti
 GRANT SELECT ON whs.Comprobantes TO mgiachetti
 GRANT SELECT ON [whs].[LibroMayor] To mgiachetti
+
+GRANT SELECT ON whs.Productos TO vsolari
+GRANT SELECT ON whs.Clientes TO vsolari
+GRANT SELECT ON whs.UnidadesNegocio TO vsolari
+GRANT SELECT ON whs.Departamentos TO vsolari
+GRANT SELECT ON whs.LugarCliente TO vsolari
+GRANT SELECT ON whs.PropioTercero TO vsolari
+GRANT SELECT ON whs.TiposProducto TO vsolari
+GRANT SELECT ON whs.planCuentas TO vsolari
+GRANT SELECT ON whs.Comprobantes TO vsolari
+GRANT SELECT ON [whs].[LibroMayor] To vsolari

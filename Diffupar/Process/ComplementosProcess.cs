@@ -66,17 +66,20 @@ namespace Process
                 //Obtengo Perido y Origen
                 foreach (DataRow _rXls in _dsExcel.Tables[0].Rows)
                 {
-                    DateTime _Periodo = (DateTime)_rXls["RefDate"];
-                    int _pAnio = _Periodo.Year;
-                    int _pMonth = _Periodo.Month;
-                    string _origen = _rXls["Origen"].ToString();
-                    string _pYear = _Periodo.ToString();
+                    if (_rXls["RefDate"].ToString() != "")
+                    {
+                        DateTime _Periodo = (DateTime)_rXls["RefDate"];
+                        int _pAnio = _Periodo.Year;
+                        int _pMonth = _Periodo.Month;
+                        string _origen = _rXls["Origen"].ToString();
+                        string _pYear = _Periodo.ToString();
 
-                    string _delete = string.Format("delete [stg].[JDT1Complementos] where year(RefDate) = {0} and month(RefDate)={1} and Origen ='{2}'", _pAnio, _pMonth, _origen);
-                    Log.Write.WriteError(_delete);
-                    ADO.SQL.SqlExecuteNonQuery(_delete, _sqlConnection);
-
+                        string _delete = string.Format("delete [stg].[JDT1Complementos] where year(RefDate) = {0} and month(RefDate)={1} and Origen ='{2}'", _pAnio, _pMonth, _origen);
+                        Log.Write.WriteError(_delete);
+                        ADO.SQL.SqlExecuteNonQuery(_delete, _sqlConnection);
+                    }
                 }
+
 
                 _dsExcel = ADO.Excel.getExcelData(_fileName);
 
@@ -143,7 +146,7 @@ namespace Process
                     if (!_rXls["AÑO"].ToString().Equals(""))
                     {
                         string _PeridoAnio = _rXls["AÑO"].ToString();
-                        string _PeridoMes = _rXls["MES"].ToString().PadLeft(2,char.Parse("0"));
+                        string _PeridoMes = _rXls["MES"].ToString().PadLeft(2, char.Parse("0"));
                         //
                         string _detelePeriodo = string.Format("SET SQL_SAFE_UPDATES = 0; delete from rouge.objetivos_rouge where ID_YM = '{0}{1}'", _PeridoAnio, _PeridoMes);
                         Log.Write.WriteError(_detelePeriodo);
@@ -156,7 +159,7 @@ namespace Process
                 {
                     _query = "select * from [OBJETIVO TOTAL$]";
                     _dsExcel = ADO.Excel.getExcelDataByQuery(_fileName, _query);
-                    
+
                     Log.Write.WriteError("Insertando Datos");
                     foreach (DataRow _c in _dsExcel.Tables[0].Rows)
                     {

@@ -26,6 +26,8 @@ BEGIN
 		select @name c1
 			declare cur2 cursor for
 				select value from string_split(@name,'-')
+					set @text1 = ''
+				set @text2 = NULL
 				begin
 					open cur2						
 						FETCH  cur2 INTO @value		
@@ -38,13 +40,17 @@ BEGIN
 							end
 							else
 							begin
+								set @text2 = ''
+								if (select count(value) from string_split(@name,'-'))>1
+								begin
 								set @text2 = @value	
+								end								
 								set @index = 0
 							end
 							FETCH  cur2 INTO @value							
 							END
 							set @index = 0
-							insert into whs.DimUnidadesNegocioVenta(Codigo,Direccion,Unidad_Negocio )values(@code ,@text1,@text2)
+							insert into whs.DimUnidadesNegocioVenta(Codigo,Direccion,Unidad_Negocio )values(@code ,@text1,ISNULL(@text2,@text1))
 					close cur2
 					DEALLOCATE cur2
 				end

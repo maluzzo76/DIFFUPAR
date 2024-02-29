@@ -22,6 +22,7 @@ select
  Debit - Credit Saldo 
 from whs.FactLibroMayor lm
 left join whs.PlanCuentas pc on pc.PlanCuenta_Id = lm.PlanCuenta_Id
+where codigo is not null
 
 union all
 
@@ -47,5 +48,5 @@ select
 	saldo
 from stg.JDT1Complementos t1
 left join whs.DimPlanDeCuentas pc on pc.AcctCode = t1.Codigo 
-
+where codigo is not null
 
