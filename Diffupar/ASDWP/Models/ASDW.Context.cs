@@ -38,5 +38,7 @@ namespace ASDWP.Models
         public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
         public virtual DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
         public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
+        public virtual DbSet<ItemMenuSecurity> ItemMenuSecurity { get; set; }
+        public virtual DbSet<MenuSecurity> MenuSecurity { get; set; }
     }
 }

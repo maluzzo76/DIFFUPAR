@@ -135,6 +135,26 @@
     <Property Name="ObjectId" Type="int" />
     <Property Name="Name" Type="varchar" MaxLength="100" />
   </EntityType>
+  <EntityType Name="ItemMenuSecurity">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Menu_Id" Type="int" />
+    <Property Name="Nombre" Type="varchar" MaxLength="100" />
+    <Property Name="IsActivo" Type="bit" />
+    <Property Name="Orden" Type="int" />
+  </EntityType>
+  <EntityType Name="MenuSecurity">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_Id" Type="nvarchar" MaxLength="128" />
+    <Property Name="Nombre" Type="varchar" MaxLength="100" />
+    <Property Name="IsActivo" Type="bit" />
+    <Property Name="Orden" Type="int" />
+  </EntityType>
   <Association Name="FK__DbColumns__Dbtab__7D439ABD">
     <End Role="DbTables" Type="Self.DbTables" Multiplicity="0..1" />
     <End Role="DbColumns" Type="Self.DbColumns" Multiplicity="*" />
@@ -231,6 +251,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__ItemMenuS__Menu___2F2FFC0C">
+    <End Role="MenuSecurity" Type="Self.MenuSecurity" Multiplicity="0..1" />
+    <End Role="ItemMenuSecurity" Type="Self.ItemMenuSecurity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MenuSecurity">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ItemMenuSecurity">
+        <PropertyRef Name="Menu_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MenuSecur__User___30242045">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+    <End Role="MenuSecurity" Type="Self.MenuSecurity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MenuSecurity">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
     <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -302,6 +346,8 @@
     <EntitySet Name="DbSource" EntityType="Self.DbSource" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DbTables" EntityType="Self.DbTables" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DbTableStg" EntityType="Self.DbTableStg" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ItemMenuSecurity" EntityType="Self.ItemMenuSecurity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MenuSecurity" EntityType="Self.MenuSecurity" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__DbColumns__Dbtab__7D439ABD" Association="Self.FK__DbColumns__Dbtab__7D439ABD">
       <End Role="DbTables" EntitySet="DbTables" />
       <End Role="DbColumns" EntitySet="DbColumns" />
@@ -333,6 +379,14 @@
     <AssociationSet Name="FK__DbTables__DbSour__7A672E12" Association="Self.FK__DbTables__DbSour__7A672E12">
       <End Role="DbSource" EntitySet="DbSource" />
       <End Role="DbTables" EntitySet="DbTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ItemMenuS__Menu___2F2FFC0C" Association="Self.FK__ItemMenuS__Menu___2F2FFC0C">
+      <End Role="MenuSecurity" EntitySet="MenuSecurity" />
+      <End Role="ItemMenuSecurity" EntitySet="ItemMenuSecurity" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MenuSecur__User___30242045" Association="Self.FK__MenuSecur__User___30242045">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="MenuSecurity" EntitySet="MenuSecurity" />
     </AssociationSet>
     <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
       <End Role="AspNetUsers" EntitySet="AspNetUsers" />

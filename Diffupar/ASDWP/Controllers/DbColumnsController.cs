@@ -10,13 +10,16 @@ using ASDWP.Models;
 
 namespace ASDWP.Controllers
 {
-    public class DbColumnsController : Controller
+    public class DbColumnsController : CustomController
     {
         private ASDW_Entities db = new ASDW_Entities();
 
         // GET: DbColumns
         public ActionResult Index(int? idt)
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             var dbColumns = db.DbColumns.Include(d => d.DbTables).Where(w=> w.DbTables.Id==idt);
             ViewBag.idt = idt;
             ViewBag.tablaName = db.DbTables.Find(idt).Name;
@@ -26,6 +29,9 @@ namespace ASDWP.Controllers
         // GET: DbColumns/Details/5
         public ActionResult Details(int? id)
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -41,6 +47,9 @@ namespace ASDWP.Controllers
         // GET: DbColumns/Create
         public ActionResult Create(int? idt)
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             ViewBag.DbtableId = new SelectList(db.DbTables.Where(w=>w.Id==idt), "Id", "Name");
             ViewBag.idt = idt;
             return View();
@@ -53,6 +62,9 @@ namespace ASDWP.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,DbtableId,Name")] DbColumns dbColumns)
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             if (ModelState.IsValid)
             {
                 db.DbColumns.Add(dbColumns);
@@ -67,6 +79,9 @@ namespace ASDWP.Controllers
         // GET: DbColumns/Edit/5
         public ActionResult Edit(int? id)
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -87,6 +102,9 @@ namespace ASDWP.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,DbtableId,Name")] DbColumns dbColumns)
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             if (ModelState.IsValid)
             {
                 db.Entry(dbColumns).State = EntityState.Modified;
@@ -100,6 +118,9 @@ namespace ASDWP.Controllers
         // GET: DbColumns/Delete/5
         public ActionResult Delete(int? id)
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

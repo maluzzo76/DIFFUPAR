@@ -17,6 +17,7 @@ declare @idCRM int
 insert into MenuSecurity ([User_Id],Nombre,IsActivo,Orden) values(@UI,'Templates',0,2)
 set @idCRM = @@IDENTITY
 insert into ItemMenuSecurity (Menu_Id,Nombre,IsActivo, Orden) values (@idCRM,'Template Pedidos Arcor',0,2)
+insert into ItemMenuSecurity (Menu_Id,Nombre,IsActivo, Orden) values (@idCRM,'Template Pedidos Arcor',0,2)
 
 -- insert menu Configuracion --
 declare @idConf int

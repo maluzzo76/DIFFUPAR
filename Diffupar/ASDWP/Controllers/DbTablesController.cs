@@ -10,13 +10,16 @@ using ASDWP.Models;
 
 namespace ASDWP.Controllers
 {
-    public class DbTablesController : Controller
+    public class DbTablesController : CustomController
     {
         private ASDW_Entities db = new ASDW_Entities();
 
         // GET: DbTables
         public ActionResult Index()
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             var dbTables = db.DbTables.Include(d => d.DbSource);
             return View(dbTables.ToList());
         }
@@ -24,6 +27,9 @@ namespace ASDWP.Controllers
         // GET: DbTables/Details/5
         public ActionResult Details(int? id)
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -39,6 +45,9 @@ namespace ASDWP.Controllers
         // GET: DbTables/Create
         public ActionResult Create()
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             ViewBag.DbSourceId = new SelectList(db.DbSource, "Id", "Name");
             return View();
         }
@@ -50,6 +59,9 @@ namespace ASDWP.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,DbSourceId,Name")] DbTables dbTables)
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             if (ModelState.IsValid)
             {
                 db.DbTables.Add(dbTables);
@@ -64,6 +76,9 @@ namespace ASDWP.Controllers
         // GET: DbTables/Edit/5
         public ActionResult Edit(int? id)
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -84,6 +99,9 @@ namespace ASDWP.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,DbSourceId,Name")] DbTables dbTables)
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             if (ModelState.IsValid)
             {
                 db.Entry(dbTables).State = EntityState.Modified;
@@ -97,6 +115,9 @@ namespace ASDWP.Controllers
         // GET: DbTables/Delete/5
         public ActionResult Delete(int? id)
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -114,6 +135,9 @@ namespace ASDWP.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             DbTables dbTables = db.DbTables.Find(id);
             db.DbTables.Remove(dbTables);
             db.SaveChanges();

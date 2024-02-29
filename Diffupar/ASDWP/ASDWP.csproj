@@ -172,6 +172,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CustomController.cs" />
     <Compile Include="Controllers\DbColumnsController.cs" />
     <Compile Include="Controllers\DbMappingsController.cs" />
     <Compile Include="Controllers\DBProcessesController.cs" />
@@ -240,7 +241,13 @@
       <DependentUpon>ASDW.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ItemMenuSecurity.cs">
+      <DependentUpon>ASDW.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MenuSecurity.cs">
+      <DependentUpon>ASDW.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

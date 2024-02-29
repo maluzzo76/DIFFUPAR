@@ -22,13 +22,17 @@
         <EntityTypeShape EntityType="DiffuparAnalyticsModel.DbSchedule" Width="1.5" PointX="1.875" PointY="4.25" />
         <AssociationConnector Association="DiffuparAnalyticsModel.FK__DbSchedul__Query__0A9D95DB" />
         <EntityTypeShape EntityType="DiffuparAnalyticsModel.DBProcess" Width="1.5" PointX="0.75" PointY="7.75" />
-        <EntityTypeShape EntityType="DiffuparAnalyticsModel.AspNetRoles" Width="1.5" PointX="3.375" PointY="10.5" />
-        <EntityTypeShape EntityType="DiffuparAnalyticsModel.AspNetUserClaims" Width="1.5" PointX="7.875" PointY="11.625" />
-        <EntityTypeShape EntityType="DiffuparAnalyticsModel.AspNetUserLogins" Width="1.5" PointX="7.875" PointY="9" />
-        <EntityTypeShape EntityType="DiffuparAnalyticsModel.AspNetUsers" Width="1.5" PointX="5.625" PointY="9.375" />
+        <EntityTypeShape EntityType="DiffuparAnalyticsModel.AspNetRoles" Width="1.5" PointX="3.75" PointY="10.5" />
+        <EntityTypeShape EntityType="DiffuparAnalyticsModel.AspNetUserClaims" Width="1.5" PointX="8.25" PointY="9" />
+        <EntityTypeShape EntityType="DiffuparAnalyticsModel.AspNetUserLogins" Width="1.5" PointX="8.25" PointY="11.75" />
+        <EntityTypeShape EntityType="DiffuparAnalyticsModel.AspNetUsers" Width="1.5" PointX="6" PointY="9.375" />
+        <EntityTypeShape EntityType="DiffuparAnalyticsModel.ItemMenuSecurity" Width="1.5" PointX="10.75" PointY="8.75" />
+        <EntityTypeShape EntityType="DiffuparAnalyticsModel.MenuSecurity" Width="1.5" PointX="0.75" PointY="11.75" />
         <AssociationConnector Association="DiffuparAnalyticsModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
         <AssociationConnector Association="DiffuparAnalyticsModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
         <AssociationConnector Association="DiffuparAnalyticsModel.AspNetUserRoles" />
+        <AssociationConnector Association="DiffuparAnalyticsModel.FK__MenuSecur__User___30242045" />
+        <AssociationConnector Association="DiffuparAnalyticsModel.FK__ItemMenuS__Menu___2F2FFC0C" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

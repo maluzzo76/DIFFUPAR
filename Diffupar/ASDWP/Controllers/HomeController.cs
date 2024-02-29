@@ -6,10 +6,11 @@ using System.Web.Mvc;
 
 namespace ASDWP.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : CustomController
     {
         public ActionResult Index()
         {
+            validarLoggin();
             return View();
         }
 

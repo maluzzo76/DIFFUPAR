@@ -249,6 +249,8 @@
     <Build Include="dbo\Tables\DBProcess.sql" />
     <Build Include="stg\Tables\JDT1Complementos.sql" />
     <Build Include="dbo\Procedures\GetDbProcess.sql" />
+    <Build Include="dbo\Tables\ItemMenuSecurity.sql" />
+    <Build Include="dbo\Tables\MenuSecurity.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\Crear Seguridad.sql" />

@@ -139,6 +139,28 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="ItemMenuSecurity">
+      <EntityTypeMapping TypeName="DiffuparAnalyticsModel.ItemMenuSecurity">
+        <MappingFragment StoreEntitySet="ItemMenuSecurity">
+          <ScalarProperty Name="Orden" ColumnName="Orden" />
+          <ScalarProperty Name="IsActivo" ColumnName="IsActivo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Menu_Id" ColumnName="Menu_Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MenuSecurity">
+      <EntityTypeMapping TypeName="DiffuparAnalyticsModel.MenuSecurity">
+        <MappingFragment StoreEntitySet="MenuSecurity">
+          <ScalarProperty Name="Orden" ColumnName="Orden" />
+          <ScalarProperty Name="IsActivo" ColumnName="IsActivo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <AssociationSetMapping Name="AspNetUserRoles" TypeName="DiffuparAnalyticsModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
       <EndProperty Name="AspNetUsers">
         <ScalarProperty Name="Id" ColumnName="UserId" />

@@ -192,6 +192,8 @@
     <EntitySet Name="AspNetUserClaims" EntityType="DiffuparAnalyticsModel.AspNetUserClaims" />
     <EntitySet Name="AspNetUserLogins" EntityType="DiffuparAnalyticsModel.AspNetUserLogins" />
     <EntitySet Name="AspNetUsers" EntityType="DiffuparAnalyticsModel.AspNetUsers" />
+    <EntitySet Name="ItemMenuSecurity" EntityType="DiffuparAnalyticsModel.ItemMenuSecurity" />
+    <EntitySet Name="MenuSecurity" EntityType="DiffuparAnalyticsModel.MenuSecurity" />
     <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="DiffuparAnalyticsModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
       <End Role="AspNetUsers" EntitySet="AspNetUsers" />
       <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
@@ -203,6 +205,14 @@
     <AssociationSet Name="AspNetUserRoles" Association="DiffuparAnalyticsModel.AspNetUserRoles">
       <End Role="AspNetRoles" EntitySet="AspNetRoles" />
       <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MenuSecur__User___30242045" Association="DiffuparAnalyticsModel.FK__MenuSecur__User___30242045">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="MenuSecurity" EntitySet="MenuSecurity" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ItemMenuS__Menu___2F2FFC0C" Association="DiffuparAnalyticsModel.FK__ItemMenuS__Menu___2F2FFC0C">
+      <End Role="MenuSecurity" EntitySet="MenuSecurity" />
+      <End Role="ItemMenuSecurity" EntitySet="ItemMenuSecurity" />
     </AssociationSet>
   </EntityContainer>
   <Association Name="FK__DbMapping__Colum__07C12930">
@@ -303,6 +313,30 @@
     <NavigationProperty Name="AspNetUserClaims" Relationship="DiffuparAnalyticsModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
     <NavigationProperty Name="AspNetUserLogins" Relationship="DiffuparAnalyticsModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
     <NavigationProperty Name="AspNetRoles" Relationship="DiffuparAnalyticsModel.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+    <NavigationProperty Name="MenuSecurity" Relationship="DiffuparAnalyticsModel.FK__MenuSecur__User___30242045" FromRole="AspNetUsers" ToRole="MenuSecurity" />
+  </EntityType>
+  <EntityType Name="ItemMenuSecurity">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Menu_Id" Type="Int32" />
+    <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IsActivo" Type="Boolean" />
+    <Property Name="Orden" Type="Int32" />
+    <NavigationProperty Name="MenuSecurity" Relationship="DiffuparAnalyticsModel.FK__ItemMenuS__Menu___2F2FFC0C" FromRole="ItemMenuSecurity" ToRole="MenuSecurity" />
+  </EntityType>
+  <EntityType Name="MenuSecurity">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="User_Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IsActivo" Type="Boolean" />
+    <Property Name="Orden" Type="Int32" />
+    <NavigationProperty Name="AspNetUsers" Relationship="DiffuparAnalyticsModel.FK__MenuSecur__User___30242045" FromRole="MenuSecurity" ToRole="AspNetUsers" />
+    <NavigationProperty Name="ItemMenuSecurity" Relationship="DiffuparAnalyticsModel.FK__ItemMenuS__Menu___2F2FFC0C" FromRole="MenuSecurity" ToRole="ItemMenuSecurity" />
   </EntityType>
   <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
     <End Type="DiffuparAnalyticsModel.AspNetUsers" Role="AspNetUsers" Multiplicity="1">
@@ -335,5 +369,29 @@
   <Association Name="AspNetUserRoles">
     <End Type="DiffuparAnalyticsModel.AspNetRoles" Role="AspNetRoles" Multiplicity="*" />
     <End Type="DiffuparAnalyticsModel.AspNetUsers" Role="AspNetUsers" Multiplicity="*" />
+  </Association>
+  <Association Name="FK__MenuSecur__User___30242045">
+    <End Type="DiffuparAnalyticsModel.AspNetUsers" Role="AspNetUsers" Multiplicity="0..1" />
+    <End Type="DiffuparAnalyticsModel.MenuSecurity" Role="MenuSecurity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MenuSecurity">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ItemMenuS__Menu___2F2FFC0C">
+    <End Type="DiffuparAnalyticsModel.MenuSecurity" Role="MenuSecurity" Multiplicity="0..1" />
+    <End Type="DiffuparAnalyticsModel.ItemMenuSecurity" Role="ItemMenuSecurity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MenuSecurity">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ItemMenuSecurity">
+        <PropertyRef Name="Menu_Id" />
+      </Dependent>
+    </ReferentialConstraint>
   </Association>
 </Schema>

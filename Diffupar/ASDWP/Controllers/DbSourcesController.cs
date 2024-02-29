@@ -10,13 +10,16 @@ using ASDWP.Models;
 
 namespace ASDWP.Controllers
 {
-    public class DbSourcesController : Controller
+    public class DbSourcesController : CustomController
     {
         private ASDW_Entities db = new ASDW_Entities();
 
         // GET: DbSources
         public ActionResult Index()
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             var dbSource = db.DbSource.Include(d => d.DbProviders);
             return View(dbSource.ToList());
         }
@@ -24,6 +27,9 @@ namespace ASDWP.Controllers
         // GET: DbSources/Details/5
         public ActionResult Details(int? id)
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -39,6 +45,9 @@ namespace ASDWP.Controllers
         // GET: DbSources/Create
         public ActionResult Create()
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             ViewBag.ProviderId = new SelectList(db.DbProviders, "Id", "Name");
             return View();
         }
@@ -50,6 +59,9 @@ namespace ASDWP.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name,Connetion,ProviderId")] DbSource dbSource)
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             if (ModelState.IsValid)
             {
                 db.DbSource.Add(dbSource);
@@ -64,6 +76,9 @@ namespace ASDWP.Controllers
         // GET: DbSources/Edit/5
         public ActionResult Edit(int? id)
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -84,6 +99,9 @@ namespace ASDWP.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Name,Connetion,ProviderId")] DbSource dbSource)
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             if (ModelState.IsValid)
             {
                 db.Entry(dbSource).State = EntityState.Modified;
@@ -97,6 +115,9 @@ namespace ASDWP.Controllers
         // GET: DbSources/Delete/5
         public ActionResult Delete(int? id)
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -114,6 +135,9 @@ namespace ASDWP.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             DbSource dbSource = db.DbSource.Find(id);
             db.DbSource.Remove(dbSource);
             db.SaveChanges();

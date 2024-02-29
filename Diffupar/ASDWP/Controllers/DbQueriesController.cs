@@ -10,13 +10,16 @@ using ASDWP.Models;
 
 namespace ASDWP.Controllers
 {
-    public class DbQueriesController : Controller
+    public class DbQueriesController : CustomController
     {
         private ASDW_Entities db = new ASDW_Entities();
 
         // GET: DbQueries
         public ActionResult Index()
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             var dbQuery = db.DbQuery.Include(d => d.DbTableStg).Include(d => d.DbTables).Include(m=>m.DbMapping);
             return View(dbQuery.ToList());
         }
@@ -24,6 +27,9 @@ namespace ASDWP.Controllers
         // GET: DbQueries/Details/5
         public ActionResult Details(int? id)
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -42,6 +48,9 @@ namespace ASDWP.Controllers
         // GET: DbQueries/Create
         public ActionResult Create()
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             ViewBag.TableDestinoId = new SelectList(db.DbTableStg, "Id", "Name");
             ViewBag.TableId = new SelectList(db.DbTables, "Id", "Name");
             return View();
@@ -54,6 +63,9 @@ namespace ASDWP.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,TableId,TableDestinoId,Where,Name")] DbQuery dbQuery)
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             if (ModelState.IsValid)
             {
                 db.DbQuery.Add(dbQuery);
@@ -69,6 +81,9 @@ namespace ASDWP.Controllers
         // GET: DbQueries/Edit/5
         public ActionResult Edit(int? id)
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -92,6 +107,9 @@ namespace ASDWP.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,TableId,TableDestinoId,Where,Name")] DbQuery dbQuery)
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             if (ModelState.IsValid)
             {
                 db.Entry(dbQuery).State = EntityState.Modified;
@@ -106,6 +124,9 @@ namespace ASDWP.Controllers
         // GET: DbQueries/Delete/5
         public ActionResult Delete(int? id)
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -123,6 +144,9 @@ namespace ASDWP.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             DbQuery dbQuery = db.DbQuery.Find(id);
             db.DbQuery.Remove(dbQuery);
             db.SaveChanges();

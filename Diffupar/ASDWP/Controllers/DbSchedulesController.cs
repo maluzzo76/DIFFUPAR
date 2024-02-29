@@ -10,13 +10,16 @@ using ASDWP.Models;
 
 namespace ASDWP.Controllers
 {
-    public class DbSchedulesController : Controller
+    public class DbSchedulesController : CustomController
     {
         private ASDW_Entities db = new ASDW_Entities();
 
         // GET: DbSchedules
         public ActionResult Index()
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             var dbSchedule = db.DbSchedule.Include(d => d.DbQuery).OrderBy(o=> o.Orden);
             return View(dbSchedule.ToList());
         }
@@ -24,6 +27,9 @@ namespace ASDWP.Controllers
         // GET: DbSchedules/Details/5
         public ActionResult Details(int? id)
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -39,6 +45,9 @@ namespace ASDWP.Controllers
         // GET: DbSchedules/Create
         public ActionResult Create()
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             ViewBag.QueryId = new SelectList(db.DbQuery, "Id", "Name");
             return View();
         }
@@ -50,6 +59,9 @@ namespace ASDWP.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name,QueryId,StarDate,LastStarDate,Status,Orden")] DbSchedule dbSchedule)
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             if (ModelState.IsValid)
             {
                 db.DbSchedule.Add(dbSchedule);
@@ -64,6 +76,9 @@ namespace ASDWP.Controllers
         // GET: DbSchedules/Edit/5
         public ActionResult Edit(int? id)
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -84,6 +99,9 @@ namespace ASDWP.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Name,QueryId,StarDate,LastStarDate,Status,Orden")] DbSchedule dbSchedule)
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             if (ModelState.IsValid)
             {
                 db.Entry(dbSchedule).State = EntityState.Modified;
@@ -97,6 +115,9 @@ namespace ASDWP.Controllers
         // GET: DbSchedules/Delete/5
         public ActionResult Delete(int? id)
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -114,6 +135,9 @@ namespace ASDWP.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             DbSchedule dbSchedule = db.DbSchedule.Find(id);
             db.DbSchedule.Remove(dbSchedule);
             db.SaveChanges();

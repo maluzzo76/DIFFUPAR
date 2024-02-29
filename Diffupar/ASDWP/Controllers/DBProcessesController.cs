@@ -14,18 +14,23 @@ using System.Configuration;
 
 namespace ASDWP.Controllers
 {
-    public class DBProcessesController : Controller
+    public class DBProcessesController : CustomController
     {
         private ASDW_Entities db = new ASDW_Entities();
 
         // GET: DBProcesses
         public ActionResult Index()
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             return View(db.DBProcess.OrderByDescending(o=> o.Id).ToList());
         }
 
         public ActionResult updateEstado(int? id, int? cancel = 0)
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
 
             if (id != null)
             {
@@ -69,12 +74,17 @@ namespace ASDWP.Controllers
 
         public ActionResult FileUpload(string pn)
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
+
             ViewBag.ProcessName = pn;
             return View();
         }
 
         public ActionResult upFile(HttpPostedFileBase file, string processName)
         {
+            if (!validarLoggin())
+                return RedirectToAction("Index", "Home");
 
             if (ModelState.IsValid)
             {

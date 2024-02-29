@@ -1,3 +1,5 @@
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\ASDWP\obj\Debug\ASDWP.csproj.AssemblyReference.cache
+D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\ASDWP\obj\Debug\ASDWP.csproj.CoreCompileInputs.cache
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\ASDWP\bin\ASDWP.dll.config
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\ASDWP\bin\ASDWP.dll
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\ASDWP\bin\ASDWP.pdb
@@ -111,8 +113,6 @@ D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\ASDWP\bin\es\System.Web.WebPages.Ra
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\ASDWP\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\ASDWP\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\ASDWP\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
-D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\ASDWP\obj\Debug\ASDWP.csproj.AssemblyReference.cache
-D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\ASDWP\obj\Debug\ASDWP.csproj.CoreCompileInputs.cache
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\ASDWP\obj\Debug\ASDWP.csproj.CopyComplete
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\ASDWP\obj\Debug\ASDWP.dll
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\ASDWP\obj\Debug\ASDWP.pdb
