@@ -256,5 +256,6 @@
     <None Include="dbo\Triggers\Triggers.sql" />
     <None Include="Scripts\Grant.sql" />
     <None Include="Scripts\Carga Incial de Maestros.sql" />
+    <None Include="Scripts\Agregar Seguridad de usuario.sql" />
   </ItemGroup>
 </Project>

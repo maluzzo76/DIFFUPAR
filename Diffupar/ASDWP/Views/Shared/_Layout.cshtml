@@ -1,10 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNet.Identity
+<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    <title>@ViewBag.Title - Alusoft Data Warehouse admin</title>
     @Styles.Render("~/Content/css")
     @Styles.Render("~/Content/Site.css")
     @Scripts.Render("~/bundles/modernizr")
@@ -13,60 +14,86 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
+
+
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <div class="container">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="position:absolute; top:0px;width:100%;">
+        <div class="container-fluid ">
             @Html.ActionLink("Alusoft - Data Warehouse admin", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Alternar navegación" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                            Configuración
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="@Url.Action("index","DbSources",null)">Source</a>
-                            <a class="dropdown-item" href="@Url.Action("index","DbTables",null)">Tablas</a>
-                            <a class="dropdown-item" href="@Url.Action("index","DbQueries",null)">Querys</a>
-                            <a class="dropdown-item" href="@Url.Action("index","DbSchedules",null)">Schedules</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                            Template
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="~/Templates/Template Libro Mayor Complemento.xlsx">Complemento Libro Mayor</a>
-                            <a class="dropdown-item" href="~/Templates/Template Plan de Cuentas Complemento.xlsx">Complemento Plan de Cuentas</a>
-                            <a style="border-top:1px solid black;" class="dropdown-item" href="~/Templates/Objetivos Totales.xlsx">objetivos Totales</a>
-                            <a class="dropdown-item" href="~/Templates/Objetivos Diffupar.xlsx">Objetivos Diffupar</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                            Subir Complementos
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="@Url.Action("FileUpload", "DbProcesses", new {pn = "Libro Mayor"})">Libro Mayor</a>                            
-                            <a style="border-top:1px solid black;" class="dropdown-item" href="@Url.Action("FileUpload", "DbProcesses", new {pn = "Objetivos Totales"})">Objetivos Totales</a>
-                            <a class="dropdown-item" href="@Url.Action("FileUpload", "DbProcesses", new {pn = "Objetivos Diffupar"})">Objetivos Diffupar</a>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between ">
+                @if (Request.IsAuthenticated)
+                {
+                    <div class="nav navbar-nav" style="margin-left:100px;">
+                        <ul class="navbar-nav flex-grow-1">
+                            @foreach (var im in ((ViewData["Menu"] as IList<ASDWP.Models.MenuSecurity>)))
+                            {
+                                <li class="nav-item dropdown menuitem">
+                                    <a class="nav-link dropdown-toggle menuitem" href="#" id="navbardrop" data-toggle="dropdown">@im.Nombre</a>
+                                    <div class="dropdown-menu">
+                                        @foreach (var imenu in im.ItemMenuSecurity.Where(w => w.IsActivo == true).OrderBy(o => o.Orden))
+                                        {
+                                            switch (imenu.Nombre)
+                                            {
+                                                case "Source":
+                                                    <a class="dropdown-item menuitem" href="@Url.Action("index", "DbSources", null)">Source</a>
 
-                        </div>
-                    </li>
-                    <li>@Html.ActionLink("Ver Procesos", "Index", "DbProcesses", new { area = "" }, new { @class = "nav-link" })</li>
-                </ul>
+                                                    break;
+
+                                                case "Tables":
+                                                    <a class="dropdown-item menuitem" href="@Url.Action("index", "DbTables", null)">Tablas</a>
+
+                                                    break;
+
+                                                case "Querys":
+                                                    <a class="dropdown-item menuitem" href="@Url.Action("index", "DbQueries", null)">Querys</a>
+
+                                                    break;
+
+                                                case "DbSchedules":
+                                                    <a class="dropdown-item menuitem" href="@Url.Action("index", "DbSchedules", null)">Schedules</a>
+
+                                                    break;
+
+                                                case "Template Pedidos Arcor":
+                                                    <a class="dropdown-item menuitem" href="~/Templates/Template Libro Mayor Complemento.xlsx">Template Pedido Arcor</a>
+
+                                                    break;
+
+                                                case "Pedidos Arcor":
+                                                    <a class="dropdown-item menuitem" href="@Url.Action("FileUpload", "DbProcesses", new { pn = "Pedido Arcor" })">Pedido Arcor</a>
+
+                                                    break;
+
+                                                case "Procesos":
+                                                    <a class="dropdown-item menuitem" href="@Url.Action("index", "DbProcesses",null)">Procesos</a>
+                                                    break;
+
+                                            }
+                                        }
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                }
+                else
+                {
+                    <div class="nav navbar-nav" style="margin-left:100px;">
+                        <ul class="navbar-nav flex-grow-1">
+                        </ul>
+                    </div>
+                }
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </nav>
-    <div class="container body-content">
+    <div class="container body-content" style="padding-top:50px;">
         @RenderBody()
-        
     </div>
 
     @Scripts.Render("~/bundles/jquery")

@@ -200,6 +200,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ASDW.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\AspNetRoles.cs">
+      <DependentUpon>ASDW.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserClaims.cs">
+      <DependentUpon>ASDW.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserLogins.cs">
+      <DependentUpon>ASDW.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUsers.cs">
+      <DependentUpon>ASDW.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\DbColumns.cs">
       <DependentUpon>ASDW.tt</DependentUpon>
     </Compile>

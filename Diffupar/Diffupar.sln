@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diffupar", "Diffupar\Diffupar.csproj", "{C6702DCF-1C9F-4AB8-AFBA-074068ECA5EF}"
-EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DataBase_DW", "DataBase_DW\DataBase_DW.sqlproj", "{121B9D09-B9E2-4897-A7BB-4AD9EE14F442}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMD_Lab", "CMD_Lab\CMD_Lab.csproj", "{0F1C1A7C-BF5A-46F1-80E6-11EE0D3F621F}"
@@ -30,10 +28,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C6702DCF-1C9F-4AB8-AFBA-074068ECA5EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C6702DCF-1C9F-4AB8-AFBA-074068ECA5EF}.Development|Any CPU.ActiveCfg = Debug|Any CPU
-		{C6702DCF-1C9F-4AB8-AFBA-074068ECA5EF}.Development|Any CPU.Build.0 = Debug|Any CPU
-		{C6702DCF-1C9F-4AB8-AFBA-074068ECA5EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{121B9D09-B9E2-4897-A7BB-4AD9EE14F442}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{121B9D09-B9E2-4897-A7BB-4AD9EE14F442}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{121B9D09-B9E2-4897-A7BB-4AD9EE14F442}.Development|Any CPU.ActiveCfg = Debug|Any CPU

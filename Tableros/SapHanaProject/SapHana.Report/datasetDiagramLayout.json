@@ -1,0 +1,152 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1042.3422194435202,
+            "y": 44.188701462130382
+          },
+          "nodeIndex": "Clientes",
+          "nodeLineageTag": "f7362afc-703e-4a92-a5ac-3a8be8c24f86",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 1476.6186217091529,
+            "y": 163.14683523349723
+          },
+          "nodeIndex": "Cuentas Contables",
+          "nodeLineageTag": "b57f9f88-39a3-4609-8958-bfe3dac34637",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 641.33235156429794,
+            "y": 791.61337490843039
+          },
+          "nodeIndex": "Productos",
+          "nodeLineageTag": "cb9ce4ed-73ef-4e30-95b3-804eb428d83f",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 960.77164231747258,
+            "y": 930.61917969332251
+          },
+          "nodeIndex": "Dim Unidad de Negocio",
+          "nodeLineageTag": "7e25ce99-e19f-4213-bcf1-e3ce32afeedf",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 787.36856671460487,
+            "y": 347.2573712970804
+          },
+          "nodeIndex": "Comprobantes",
+          "nodeLineageTag": "7c1f0b9c-aaaa-4121-8734-102787ce5c7b",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 571.6563359594096,
+            "y": 29.234773941841837
+          },
+          "nodeIndex": "Dim Departamento",
+          "nodeLineageTag": "d86e516c-6e78-48c4-acce-8632a4f927d7",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 10
+        },
+        {
+          "location": {
+            "x": 108.19056577133688,
+            "y": 481.72934649144258
+          },
+          "nodeIndex": "Dim Lugar Cliente",
+          "nodeLineageTag": "ac6cf611-93e1-4c83-8b26-d5c523cc5c99",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 223.11974287626157,
+            "y": 766.78836241923864
+          },
+          "nodeIndex": "Dim Propio Tercero",
+          "nodeLineageTag": "61cf3769-6468-4213-907d-f05d3c4fe59b",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 295.84039002731743,
+            "y": 173.78221229830984
+          },
+          "nodeIndex": "Dim Tipo Articulo",
+          "nodeLineageTag": "e084a327-f099-4c45-a0be-9566f37559d2",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 1423.5523084572628,
+            "y": 701.74275491758681
+          },
+          "nodeIndex": "Cuentas Centro Costo",
+          "nodeLineageTag": "591fabdc-edef-4183-9097-18f47f0d4567",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 9
+        }
+      ],
+      "name": "Todas las tablas",
+      "zoomValue": 67.879120126721915,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas las tablas",
+  "defaultDiagram": "Todas las tablas"
+}

@@ -34,5 +34,9 @@ namespace ASDWP.Models
         public virtual DbSet<DbTableStg> DbTableStg { get; set; }
         public virtual DbSet<DbSchedule> DbSchedule { get; set; }
         public virtual DbSet<DBProcess> DBProcess { get; set; }
+        public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
+        public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
+        public virtual DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
+        public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
     }
 }
