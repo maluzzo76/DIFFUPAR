@@ -1,3 +1,0 @@
-D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Diffupar\obj\Release\Diffupar.csproj.AssemblyReference.cache
-D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Diffupar\obj\Release\Diffupar.csproj.SuggestedBindingRedirects.cache
-D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Diffupar\obj\Release\Diffupar.csproj.CoreCompileInputs.cache
