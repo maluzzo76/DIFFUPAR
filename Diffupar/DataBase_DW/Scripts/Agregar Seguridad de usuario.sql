@@ -5,31 +5,33 @@ SET @UI = (SELECT Id FROM AspNetUsers WHERE [USERNAME] = @USERNAME)
 
 -- insert menu finanzas --
 declare @idMf int
-insert into MenuSecurity ([User_Id],Nombre,IsActivo,Orden) values(@UI,'Configuración',0,1)
+insert into MenuSecurity ([User_Id],Nombre,IsActivo,Orden) values(@UI,'Configuración',1,1)
 set @idMf = @@IDENTITY
-insert into ItemMenuSecurity (Menu_Id,Nombre, IsActivo, Orden) values (@idMf,'Source',0,1)
-insert into ItemMenuSecurity (Menu_Id,Nombre, IsActivo, Orden) values (@idMf,'Tables', 0,2)
-insert into ItemMenuSecurity (Menu_Id,Nombre, IsActivo, Orden) values (@idMf,'Querys',0,3)
-insert into ItemMenuSecurity (Menu_Id,Nombre, IsActivo, Orden) values (@idMf,'Schedule',0,3)
+insert into ItemMenuSecurity (Menu_Id,Nombre, IsActivo, Orden) values (@idMf,'Source',1,1)
+insert into ItemMenuSecurity (Menu_Id,Nombre, IsActivo, Orden) values (@idMf,'Tables', 1,2)
+insert into ItemMenuSecurity (Menu_Id,Nombre, IsActivo, Orden) values (@idMf,'Querys',1,3)
+insert into ItemMenuSecurity (Menu_Id,Nombre, IsActivo, Orden) values (@idMf,'Schedule',1,3)
 
 -- insert menu CRM --
 declare @idCRM int
-insert into MenuSecurity ([User_Id],Nombre,IsActivo,Orden) values(@UI,'Templates',0,2)
+insert into MenuSecurity ([User_Id],Nombre,IsActivo,Orden) values(@UI,'Templates',1,2)
 set @idCRM = @@IDENTITY
-insert into ItemMenuSecurity (Menu_Id,Nombre,IsActivo, Orden) values (@idCRM,'Template Pedidos Arcor',0,2)
-insert into ItemMenuSecurity (Menu_Id,Nombre,IsActivo, Orden) values (@idCRM,'Template Pedidos Arcor',0,2)
+insert into ItemMenuSecurity (Menu_Id,Nombre,IsActivo, Orden) values (@idCRM,'TLibroMayor',1,1)
+insert into ItemMenuSecurity (Menu_Id,Nombre,IsActivo, Orden) values (@idCRM,'TObjetivosTotal',1,2)
 
 -- insert menu Configuracion --
 declare @idConf int
-insert into MenuSecurity ([User_Id],Nombre,IsActivo,Orden) values(@UI,'Upload File',0,3)
+insert into MenuSecurity ([User_Id],Nombre,IsActivo,Orden) values(@UI,'Upload File',1,3)
 set @idConf = @@IDENTITY
-insert into ItemMenuSecurity (Menu_Id,Nombre,IsActivo, Orden) values (@idConf,'Pedidos Arcor',0,1)
+insert into ItemMenuSecurity (Menu_Id,Nombre,IsActivo, Orden) values (@idConf,'UpLibroMayor',1,1)
+insert into ItemMenuSecurity (Menu_Id,Nombre,IsActivo, Orden) values (@idConf,'UpObjetivosTotal',1,2)
+
 
 -- insert menu Devops --
 declare @idDev int
-insert into MenuSecurity ([User_Id],Nombre,IsActivo,Orden) values(@UI,'Ver Procesos',0,4)
+insert into MenuSecurity ([User_Id],Nombre,IsActivo,Orden) values(@UI,'Ver Procesos',1,4)
 set @idConf = @@IDENTITY
-insert into ItemMenuSecurity (Menu_Id,Nombre,IsActivo, Orden) values (@idConf,'Procesos',0,1)
+insert into ItemMenuSecurity (Menu_Id,Nombre,IsActivo, Orden) values (@idConf,'Procesos',1,1)
 
 
 

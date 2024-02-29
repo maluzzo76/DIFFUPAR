@@ -59,25 +59,25 @@
 
                                                     break;
 
-                                                case "LibroMayor":
-                                                    <a class="dropdown-item menuitem" href="~/Templates/Template Libro Mayor Complemento.xlsx">Template Pedido Arcor</a>
-                                                    <a class="dropdown-item" href="/DbProcesses/FileUpload?pn=Libro%20Mayor">Libro Mayor</a>
+                                                case "TLibroMayor":
+                                                    <a class="dropdown-item" href="/Templates/Template Libro Mayor Complemento.xlsx">Complemento Libro Mayor</a>
+                                                    <a class="dropdown-item" href="/Templates/Template Plan de Cuentas Complemento.xlsx">Complemento Plan de Cuentas</a>
+                                                    break;
+
+                                                case "TObjetivosTotal":
+                                                    <a style="border-top:1px solid black;" class="dropdown-item" href="/Templates/Objetivos Totales.xlsx">Objetivos Totales</a>
+                                                    <a class="dropdown-item" href="/Templates/Objetivos Diffupar.xlsx">Objetivos Diffupar</a>
+                                                    break;
+
+                                             
+
+                                                case "UpLibroMayor":                                                    
+                                                    <a style="border-top:1px solid black;" class="dropdown-item" href="/DbProcesses/FileUpload?pn=Objetivos%20Totales">Objetivos Totales</a>
+                                                    break;
+
+                                                case "UpObjetivosTotal":
                                                     <a style="border-top:1px solid black;" class="dropdown-item" href="/DbProcesses/FileUpload?pn=Objetivos%20Totales">Objetivos Totales</a>
                                                     <a class="dropdown-item" href="/DbProcesses/FileUpload?pn=Objetivos%20Diffupar">Objetivos Diffupar</a>
-                                                    break;
-
-                                                case "ObjetivosTotal":
-                                                    <a style="border-top:1px solid black;" class="dropdown-item" href="/DbProcesses/FileUpload?pn=Objetivos%20Totales">Objetivos Totales</a>
-                                                    <a class="dropdown-item" href="/DbProcesses/FileUpload?pn=Objetivos%20Diffupar">Objetivos Diffupar</a>
-                                                    break;
-
-                                                case "ObjetivosDiffupar":
-                                                    <a class="dropdown-item" href="/DbProcesses/FileUpload?pn=Objetivos%20Diffupar">Objetivos Diffupar</a>
-                                                    break;
-
-                                                case "Pedidos Arcor":
-                                                    <a class="dropdown-item menuitem" href="@Url.Action("FileUpload", "DbProcesses", new { pn = "Pedido Arcor" })">Pedido Arcor</a>
-
                                                     break;
 
                                                 case "Procesos":
