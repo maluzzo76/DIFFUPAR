@@ -69,18 +69,20 @@ END
 declare
     cur_dim cursor for
       select code, [name] from stg.Dimensiones_OOCR where Code between 20000 and 29999;
+
 BEGIN
    OPEN cur_dim;
    FETCH  cur_dim INTO @code,@name
 	WHILE (@@FETCH_STATUS = 0)
-		BEGIN
-			
-			
+		BEGIN			
+		select @name c1
 			declare cur2 cursor for
 				select value from string_split(@name,'-')
+					set @text1 = ''
+				set @text2 = NULL
 				begin
-					open cur2
-						FETCH  cur2 INTO @value						
+					open cur2						
+						FETCH  cur2 INTO @value		
 						WHILE (@@FETCH_STATUS = 0) --If the fetch went well then we go for it
 							BEGIN
 							if @index = 0
@@ -90,12 +92,17 @@ BEGIN
 							end
 							else
 							begin
-								set @text2 = @value
+								set @text2 = null
+								if (select count(value) from string_split(@name,'-'))>1
+								begin
+								set @text2 = @value	
+								end								
 								set @index = 0
 							end
 							FETCH  cur2 INTO @value							
 							END
-							insert into whs.DimDepartamentos(Codigo,Departamento,Area )values(@code ,@text1,@text2)
+							set @index = 0
+							insert into whs.DimDepartamentos(Codigo,Departamento,Area )values(@code ,@text1,isnull(@text2,@text1))
 					close cur2
 					DEALLOCATE cur2
 				end
@@ -104,6 +111,7 @@ BEGIN
    CLOSE cur_dim;
    DEALLOCATE cur_dim
 END
+
 
 ------------------------------------------------------------------------------------------------------
 -- INSERTA DIMENSION 3

@@ -39,34 +39,7 @@ namespace ASDWP.Controllers
                 process.Estado = (cancel == 1) ? "Cancelado" : "Pendiente";
                 db.Entry(process).State = EntityState.Modified;
                 db.SaveChanges();
-
-                /*
-                if(cancel==1)
-                {
-                    string _serviceName ="Importación Complementos SAP DW";
-
-                    ServiceController sc = new ServiceController(_serviceName);
-
-                    try
-                    {
-                        if (sc != null && sc.Status == ServiceControllerStatus.Running)
-                        {
-                            sc.Refresh();
-                        }
-                        else
-                        {
-                            sc.Start();
-                        }
-                        sc.WaitForStatus(ServiceControllerStatus.Stopped);
-                        sc.Close();
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine("Error al detener el servicio:");
-                        Console.WriteLine(ex.Message);
-                    }
-                }
-                */
+               
             }
 
             return RedirectToAction("Index");

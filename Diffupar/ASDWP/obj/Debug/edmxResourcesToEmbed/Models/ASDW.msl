@@ -83,6 +83,7 @@
     <EntitySetMapping Name="DBProcess">
       <EntityTypeMapping TypeName="DiffuparAnalyticsModel.DBProcess">
         <MappingFragment StoreEntitySet="DBProcess">
+          <ScalarProperty Name="Periodicidad" ColumnName="Periodicidad" />
           <ScalarProperty Name="Archivo" ColumnName="Archivo" />
           <ScalarProperty Name="TipoProceso" ColumnName="TipoProceso" />
           <ScalarProperty Name="EstadoDescripcion" ColumnName="EstadoDescripcion" />

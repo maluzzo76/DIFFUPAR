@@ -22,5 +22,6 @@ namespace ASDWP.Models
         public string EstadoDescripcion { get; set; }
         public string TipoProceso { get; set; }
         public string Archivo { get; set; }
+        public string Periodicidad { get; set; }
     }
 }

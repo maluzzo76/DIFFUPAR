@@ -30,3 +30,12 @@ textarea {
         height: 20px;
         margin-right:10px;
     }
+
+.menuitem {
+    font-size: 10pt;
+}
+
+.loginitem {
+    font-size: 10pt;
+    color: white;
+}

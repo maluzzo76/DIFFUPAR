@@ -85,6 +85,7 @@
           <Property Name="EstadoDescripcion" Type="varchar(max)" />
           <Property Name="TipoProceso" Type="varchar" MaxLength="100" />
           <Property Name="Archivo" Type="varchar(max)" />
+          <Property Name="Periodicidad" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="DbProviders">
           <Key>
@@ -678,6 +679,7 @@
           <Property Name="EstadoDescripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="TipoProceso" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Archivo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Periodicidad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="AspNetRoles">
           <Key>
@@ -896,6 +898,7 @@
           <EntitySetMapping Name="DBProcess">
             <EntityTypeMapping TypeName="DiffuparAnalyticsModel.DBProcess">
               <MappingFragment StoreEntitySet="DBProcess">
+                <ScalarProperty Name="Periodicidad" ColumnName="Periodicidad" />
                 <ScalarProperty Name="Archivo" ColumnName="Archivo" />
                 <ScalarProperty Name="TipoProceso" ColumnName="TipoProceso" />
                 <ScalarProperty Name="EstadoDescripcion" ColumnName="EstadoDescripcion" />

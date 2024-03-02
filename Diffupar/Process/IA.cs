@@ -17,54 +17,7 @@ namespace Process
 
         public static void ScheduleExcecute()
         {
-            DateTime _start = DateTime.Now;
-            DateTime _end = DateTime.Now;
-            Log.Write.WriteError("================================================================");
-            Log.Write.WriteError("================================================================");
-            Log.Write.WriteError("Inicio Schedule");
-            string _query = "select id, name from dbSchedule where status = 1 order by orden";
-            try
-            {
-                foreach (DataRow r in ADO.SQL.SqlExecuteQueryDataSet(_query, _sqlConnection).Tables[0].Rows)
-                {
-                    int _scheduleID = int.Parse(r[0].ToString());
-                    string _scheduleName = r[1].ToString();
 
-                    Log.Write.WriteError(string.Format("Ejecutando Schedule: {0}", _scheduleName.ToUpper()));
-
-
-                    ProcessEntity _pe = MappingEntities.Mapping.GetProcessEntityBySchedule(_scheduleID);
-
-                    Log.Write.WriteError(_pe.queryExceute);
-                    Log.Write.WriteError(_pe.QueryId.ToString());
-                    Log.Write.WriteError(_pe.ProviderName);
-                    Log.Write.WriteError(_pe.TableOrigenName);
-                    Log.Write.WriteError(_pe.TableDestinoName);
-                    Log.Write.WriteError(_pe.Where);
-                    Log.Write.WriteError(_pe.DbSourceConnection);
-                    Log.Write.WriteError(_pe.DbDestinoConnection);
-
-                    Log.Write.WriteError("Importando datos");
-                    Log.Write.WriteError(string.Format("Total Registrosd: {0}", _pe.TdataImport.Rows.Count));
-                    ADO.SQL.SqlBulkCopy(_pe.TableDestinoName, _pe.TdataImport, _pe.ColumnMapping, _sqlConnection);
-                    Log.Write.WriteError("OK");
-                }
-
-                Log.Write.WriteError("Actualiando Warehouse");
-                ADO.SQL.SqlExecuteNonQuery("exec [stg].[Sp_ImportDimensiones]", _sqlConnection);
-                Log.Write.WriteError("OK");
-            }
-            catch (Exception ex)
-            {
-                Log.Write.WriteException(ex);
-                Console.ReadLine();
-            }
-            finally {
-                _end = DateTime.Now;
-                string _metricas = string.Format("Duración del proceso:{0} minutos", _end.Subtract(_start).TotalMinutes);
-                Log.Write.WriteError(_metricas);
-                Log.Write.WriteError("Fin");
-            }
 
         }
 

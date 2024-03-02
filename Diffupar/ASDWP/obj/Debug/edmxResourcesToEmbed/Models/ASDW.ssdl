@@ -80,6 +80,7 @@
     <Property Name="EstadoDescripcion" Type="varchar(max)" />
     <Property Name="TipoProceso" Type="varchar" MaxLength="100" />
     <Property Name="Archivo" Type="varchar(max)" />
+    <Property Name="Periodicidad" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="DbProviders">
     <Key>

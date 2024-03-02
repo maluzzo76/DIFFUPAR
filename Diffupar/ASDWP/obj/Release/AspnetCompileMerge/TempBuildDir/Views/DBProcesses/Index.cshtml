@@ -10,7 +10,7 @@
     </script>
 </header>
 
-<h2>Procesos</h2>
+<h3>Procesos <span style="color:#c1c1c1c6; font-size:12pt;padding-top:-10px;">Ultima Actualizacion Data Warehouse @Model.Where(w => w.Estado == "Procesado OK" && w.TipoProceso == "Data Warehouse").Max(m => m.FechaProcesado).Value.ToString("dd/MM/yyyy HH:mm")  </span></h3>
 
 <table class="table">
     <tr>
@@ -44,7 +44,7 @@
                 @Html.DisplayFor(modelItem => item.NombreArchivo)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FechaCarga)
+                @item.FechaCarga.Value.ToString("dd/MM/yyyy HH:mm")
             </td>
             <td>
                 @item.TipoProceso
@@ -59,7 +59,7 @@
                     }
                     else
                     {
-                        if (item.Estado != "Pendiente")
+                        if (item.Estado != "Pendiente" && item.Estado != "Reprocesar")
                         {
                             <a class="btn-grid" href="@Url.Action("updateEstado", "DbProcesses", new { id = item.Id }) "><span><img src="~/Content/image/iconos_Agregar.png" style="zoom:70%;" /></span></a>
                         }
@@ -70,7 +70,7 @@
             <td>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FechaProcesado)
+                @item.FechaProcesado.Value.ToString("dd/MM/yyyy HH:mm")
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.EstadoDescripcion)

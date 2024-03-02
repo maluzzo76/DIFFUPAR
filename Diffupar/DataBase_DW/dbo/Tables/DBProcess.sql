@@ -7,6 +7,7 @@
 	Estado varchar(200),
 	EstadoDescripcion varchar(max),
 	TipoProceso varchar(100),
-	Archivo varchar(max)
+	Archivo varchar(max),
+	Periodicidad varchar(100)
 
 )

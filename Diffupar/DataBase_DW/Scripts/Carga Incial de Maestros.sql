@@ -4,6 +4,12 @@
 insert into whs.DimTipoComprobantes(codigo, nombre) values('FAC','Factura')
 insert into whs.DimTipoComprobantes(codigo, nombre) values('NC','Nota de Credito')
 
+-------------------------------------------------------
+------ Schedulle actualización Data Warehouse ---------
+-------------------------------------------------------
+insert into DBProcess
+select '2024-02-19 02:00:00',null,'Actualización DW','Pendiente',null,'Data Warehouse',null,'D'
+
 
 select top 10 
 	fc.DocEntry,

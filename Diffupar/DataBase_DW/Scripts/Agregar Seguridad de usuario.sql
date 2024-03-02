@@ -2,6 +2,8 @@
 
 SET @UI = (SELECT Id FROM AspNetUsers WHERE [USERNAME] = @USERNAME)
 
+delete ItemMenuSecurity
+delete MenuSecurity
 
 -- insert menu finanzas --
 declare @idMf int
@@ -21,7 +23,7 @@ insert into ItemMenuSecurity (Menu_Id,Nombre,IsActivo, Orden) values (@idCRM,'TO
 
 -- insert menu Configuracion --
 declare @idConf int
-insert into MenuSecurity ([User_Id],Nombre,IsActivo,Orden) values(@UI,'Upload File',1,3)
+insert into MenuSecurity ([User_Id],Nombre,IsActivo,Orden) values(@UI,'Subir Complementos',1,3)
 set @idConf = @@IDENTITY
 insert into ItemMenuSecurity (Menu_Id,Nombre,IsActivo, Orden) values (@idConf,'UpLibroMayor',1,1)
 insert into ItemMenuSecurity (Menu_Id,Nombre,IsActivo, Orden) values (@idConf,'UpObjetivosTotal',1,2)
@@ -29,14 +31,6 @@ insert into ItemMenuSecurity (Menu_Id,Nombre,IsActivo, Orden) values (@idConf,'U
 
 -- insert menu Devops --
 declare @idDev int
-insert into MenuSecurity ([User_Id],Nombre,IsActivo,Orden) values(@UI,'Ver Procesos',1,4)
+insert into MenuSecurity ([User_Id],Nombre,IsActivo,Orden) values(@UI,'Procesos',1,4)
 set @idConf = @@IDENTITY
-insert into ItemMenuSecurity (Menu_Id,Nombre,IsActivo, Orden) values (@idConf,'Procesos',1,1)
-
-
-
---select * from MenuSecurity
---update MenuSecurity set IsActivo = 1
---select * from ItemMenuSecurity
---update ItemMenuSecurity set IsActivo = 1
-
+insert into ItemMenuSecurity (Menu_Id,Nombre,IsActivo, Orden) values (@idConf,'Ver Procesos',1,1)

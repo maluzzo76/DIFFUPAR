@@ -1,20 +1,79 @@
-﻿@{
+﻿@using Microsoft.AspNet.Identity
+@using ASDWP.Models
+@model LoginViewModel
+
+@{
     ViewBag.Title = "Home Page";
 }
 
-<main>
-    <div class="container-fluid p-3 my-3  text-dark">
-        <h1>Data Warehouse</h1>
-        <p>Panel de control y administración de procesos de actualización de data warehouse </p>
-        <img src="~/Content/image/Logo_Solo_nombre.png" style="zoom:73.5%; " />
+@if (Request.IsAuthenticated)
+{
+    <div class="container p-3 my-3  text-dark">
+        <div>
+            <div class="row" style="margin-left:15px;">
+                <h1>Bienvenido</h1>
+                <h2>@User.Identity.Name</h2>
+            </div>
+        </div>
+        <div style="margin-left:4px;">
+            <img src="~/Content/image/Logo_Solo_nombre.png" style="zoom:80%; " />
+        </div>
     </div>
-    <div class="container">
+
+
+}
+else
+{
+
+
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3" style="text-align:center;"><a href="@Url.Action("index","DbSources",null)"><img src="~/Content/image/source.png" style="zoom:40%;" /></a></div>
-            <div class="col-md-3" style="text-align:center;"><a href="@Url.Action("index","DbTables",null)"><img src="~/Content/image/tablas.png" style="zoom:40%;" /></a></div>
-            <div class="col-md-3" style="text-align:center;"><a href="@Url.Action("index","DbQueries",null)"><img src="~/Content/image/query.png" style="zoom:40%;" /></a></div>
-            <div class="col-md-3" style="text-align:center;"><a href="@Url.Action("index","DbSchedules",null)"><img src="~/Content/image/schedule.png" style="zoom:40%;" /></a></div>            
+            <div class="container p-3 my-3  text-dark" style="margin-left:9px;">
+                <h1></h1>
+                <p>@User.Identity.Name</p>
+                <img src="~/Content/image/Logo_Solo_nombre.png" style="zoom:75%; " />
+            </div>
+            <div class="d-flex align-content-center">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label " })
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                            <div class="col-md-10">
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <div class="checkbox">
+                                    @Html.CheckBoxFor(m => m.RememberMe)
+                                    @Html.LabelFor(m => m.RememberMe)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Iniciar sesión" class="btn btn-default" />
+                                @Html.ActionLink("Registrarse", "Register", "Account", null, new { @class = "btn btn-info" })
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div class="col-md-4"></div>
+            </div>
         </div>
 
     </div>
-</main>
+}
+

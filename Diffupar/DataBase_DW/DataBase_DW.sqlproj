@@ -251,6 +251,7 @@
     <Build Include="dbo\Procedures\GetDbProcess.sql" />
     <Build Include="dbo\Tables\ItemMenuSecurity.sql" />
     <Build Include="dbo\Tables\MenuSecurity.sql" />
+    <Build Include="dbo\Procedures\InsertProcessDW.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\Crear Seguridad.sql" />
