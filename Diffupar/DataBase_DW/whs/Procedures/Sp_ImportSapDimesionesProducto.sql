@@ -1,4 +1,4 @@
-﻿Create PROCEDURE [stg].[Sp_ImportSapDimesionesProducto]
+﻿CREATE PROCEDURE [stg].[Sp_ImportSapDimesionesProducto]
 	
 AS
 
@@ -69,64 +69,6 @@ END
 declare
     cur_dim cursor for
       select code, [name] from stg.Dimensiones_OOCR where Code between 20000 and 29999;
-
-BEGIN
-   OPEN cur_dim;
-   FETCH  cur_dim INTO @code,@name
-	WHILE (@@FETCH_STATUS = 0)
-		BEGIN			
-		select @name c1
-			declare cur2 cursor for
-				select value from string_split(@name,'-')
-					set @text1 = ''
-				set @text2 = NULL
-				begin
-					open cur2						
-						FETCH  cur2 INTO @value		
-						WHILE (@@FETCH_STATUS = 0) --If the fetch went well then we go for it
-							BEGIN
-							if @index = 0
-							begin
-								set @text1 = @value
-								set @index = 1
-							end
-							else
-							begin
-								set @text2 = null
-								if (select count(value) from string_split(@name,'-'))>1
-								begin
-								set @text2 = @value	
-								end								
-								set @index = 0
-							end
-							FETCH  cur2 INTO @value							
-							END
-							set @index = 0
-							insert into whs.DimDepartamentos(Codigo,Departamento,Area )values(@code ,@text1,isnull(@text2,@text1))
-					close cur2
-					DEALLOCATE cur2
-				end
-		FETCH  cur_dim INTO @code,@name
-		END
-   CLOSE cur_dim;
-   DEALLOCATE cur_dim
-END
-
-
-------------------------------------------------------------------------------------------------------
--- INSERTA DIMENSION 3
-------------------------------------------------------------------------------------------------------
-insert into whs.DimLugarCliente
-      select code, [name] from stg.Dimensiones_OOCR where Code between 30000 and 39999;
-
-
-------------------------------------------------------------------------------------------------------
--- INSERTA DIMENSION 4
-------------------------------------------------------------------------------------------------------
-
-declare
-    cur_dim cursor for
-      select code, [name] from stg.Dimensiones_OOCR where Code between 40000 and 49999;
 BEGIN
    OPEN cur_dim;
    FETCH  cur_dim INTO @code,@name
@@ -148,12 +90,70 @@ BEGIN
 							end
 							else
 							begin
-								set @text2 = @value
+								set @text2 = ''
+								if (select count(value) from string_split(@name,'-'))>1
+								begin
+								set @text2 = @value	
+								end								
+								set @index = 0
+							end
+							FETCH  cur2 INTO @value							
+							END
+							insert into whs.DimDepartamentos(Codigo,Departamento,Area )values(@code ,@text1,ISNULL(@text2,@text1))
+					close cur2
+					DEALLOCATE cur2
+				end
+		FETCH  cur_dim INTO @code,@name
+		END
+   CLOSE cur_dim;
+   DEALLOCATE cur_dim
+END
+
+------------------------------------------------------------------------------------------------------
+-- INSERTA DIMENSION 3
+------------------------------------------------------------------------------------------------------
+insert into whs.DimLugarCliente
+      select code, [name] from stg.Dimensiones_OOCR where Code between 30000 and 39999;
+
+
+------------------------------------------------------------------------------------------------------
+-- INSERTA DIMENSION 4
+------------------------------------------------------------------------------------------------------
+
+declare
+    cur_dim cursor for
+      select code, replace([name],'-','|') from stg.Dimensiones_OOCR where Code between 40000 and 49999;
+BEGIN
+   OPEN cur_dim;
+   FETCH  cur_dim INTO @code,@name
+	WHILE (@@FETCH_STATUS = 0)
+		BEGIN
+			
+			
+			declare cur2 cursor for
+				select value from string_split(@name,'|')
+				
+				begin
+					set @index = 0
+					open cur2
+						FETCH  cur2 INTO @value						
+						WHILE (@@FETCH_STATUS = 0) --If the fetch went well then we go for it
+							BEGIN
+							if @index = 0
+							begin
+								set @text1 = @value
+								set @index = 1
+							end
+							else
+							begin
+								set @text2 = ''								
+								set @text2 = @value													
 								set @index = 0
 							end
 							FETCH  cur2 INTO @value							
 							END
 							insert into whs.DimPropioTercero (Codigo,Propio_Tercero,Proveedor)values(@code ,@text1,@text2)
+							
 					close cur2
 					DEALLOCATE cur2
 				end
@@ -194,12 +194,16 @@ BEGIN
 							end
 							else
 							begin
-								set @text2 = @value
+								set @text2 = ''
+								if (select count(value) from string_split(@name,'-'))>1
+								begin
+								set @text2 = @value	
+								end								
 								set @index = 0
 							end
 							FETCH  cur2 INTO @value							
 							END
-							insert into whs.DimTiposProductos(Codigo,Tipo_Producto,Proveedor)values(@code ,@text1,@text2)
+							insert into whs.DimTiposProductos(Codigo,Tipo_Producto,Proveedor)values(@code ,@text1,ISNULL(@text2,@text1))
 					close cur2
 					DEALLOCATE cur2
 				end

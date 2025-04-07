@@ -10,3 +10,58 @@ D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\ADO\bin\Debug\System.Numerics.Vecto
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\ADO\bin\Debug\System.Buffers.dll
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\ADO\obj\Debug\ADO.csproj.CopyComplete
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\ADO\bin\Debug\EPPlus.dll
+D:\Fuentes\Diffupar\Source\Diffupar\ADO\bin\Debug\ADO.dll.config
+D:\Fuentes\Diffupar\Source\Diffupar\ADO\bin\Debug\ADO.dll
+D:\Fuentes\Diffupar\Source\Diffupar\ADO\bin\Debug\ADO.pdb
+D:\Fuentes\Diffupar\Source\Diffupar\ADO\bin\Debug\System.ComponentModel.Annotations.dll
+D:\Fuentes\Diffupar\Source\Diffupar\ADO\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\Fuentes\Diffupar\Source\Diffupar\ADO\bin\Debug\System.Memory.dll
+D:\Fuentes\Diffupar\Source\Diffupar\ADO\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Fuentes\Diffupar\Source\Diffupar\ADO\bin\Debug\System.Numerics.Vectors.dll
+D:\Fuentes\Diffupar\Source\Diffupar\ADO\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Fuentes\Diffupar\Source\Diffupar\ADO\bin\Debug\System.Buffers.dll
+D:\Fuentes\Diffupar\Source\Diffupar\ADO\obj\Debug\ADO.csproj.AssemblyReference.cache
+D:\Fuentes\Diffupar\Source\Diffupar\ADO\obj\Debug\ADO.csproj.CoreCompileInputs.cache
+D:\Fuentes\Diffupar\Source\Diffupar\ADO\obj\Debug\ADO.dll
+D:\Fuentes\Diffupar\Source\Diffupar\ADO\obj\Debug\ADO.pdb
+D:\Fuentes\Diffupar\Source\Diffupar\ADO\obj\Debug\ADO.csproj.Up2Date
+D:\Fuentes\Diffupar\Source\Diffupar\ADO\bin\Debug\Newtonsoft.Json.dll
+D:\Fuentes\Diffupar\Source\Diffupar\ADO\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\bin\Debug\ADO.dll.config
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\bin\Debug\ADO.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\bin\Debug\ADO.pdb
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\bin\Debug\EPPlus.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\bin\Debug\MySql.Data.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\bin\Debug\System.Memory.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\bin\Debug\System.Buffers.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\obj\Debug\ADO.csproj.AssemblyReference.cache
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\obj\Debug\ADO.csproj.CoreCompileInputs.cache
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\obj\Debug\ADO.csproj.Up2Date
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\obj\Debug\ADO.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\obj\Debug\ADO.pdb
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\bin\Debug\ADO.dll.config
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\bin\Debug\ADO.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\bin\Debug\ADO.pdb
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\bin\Debug\EPPlus.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\bin\Debug\MySql.Data.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\bin\Debug\Newtonsoft.Json.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\bin\Debug\System.Memory.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\bin\Debug\System.Buffers.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\bin\Debug\Newtonsoft.Json.xml
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\obj\Debug\ADO.csproj.AssemblyReference.cache
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\obj\Debug\ADO.csproj.CoreCompileInputs.cache
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\obj\Debug\ADO.csproj.Up2Date
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\obj\Debug\ADO.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ADO\obj\Debug\ADO.pdb

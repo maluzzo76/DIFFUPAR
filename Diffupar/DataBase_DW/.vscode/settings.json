@@ -1,0 +1,5 @@
+{
+    "dataworkspace.excludedProjects": [
+        "DataBase_DW-aspc01.sqlproj"
+    ]
+}

@@ -1,8 +1,14 @@
 ﻿-------------------------------------------------------
+----------- Reset Idendity ------------
+-------------------------------------------------------
+DBCC CHECKIDENT('whs.FactLibroMayor',reseed,0)
+
+-------------------------------------------------------
 ----------- Carga los tipos de comprobates ------------
 -------------------------------------------------------
 insert into whs.DimTipoComprobantes(codigo, nombre) values('FAC','Factura')
 insert into whs.DimTipoComprobantes(codigo, nombre) values('NC','Nota de Credito')
+insert into whs.DimTipoComprobantes(codigo, nombre) values('OC','Orden de Compra')
 
 -------------------------------------------------------
 ------ Schedulle actualización Data Warehouse ---------
@@ -78,3 +84,13 @@ left join whs.DimTiposProductos tp on tp.Codigo = fd.CogsOcrCo5
 left join whs.DimTipoComprobantes ct on ct.Codigo = 'FAC'
 
 
+-------------------------------------------------------
+----------- Carga los proveedores de Cegid ------------
+-------------------------------------------------------
+delete stg.MaestroProveedoresCegid
+insert into stg.MaestroProveedoresCegid
+SELECT 
+T_TIERS,
+T_LIBELLE
+FROM [200.32.54.90].Produccion.dbo.TIERS 
+WHERE T_NATUREAUXI='FOU'

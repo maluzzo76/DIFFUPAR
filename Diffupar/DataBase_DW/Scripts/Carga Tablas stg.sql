@@ -1,10 +1,13 @@
-﻿insert into [dbo].[DbTableStg] 
+﻿--Ejecutar cuando se crea una nueva tabla
+insert into [dbo].[DbTableStg] 
 select t.object_id, s.name + '.' + t.name  from sys.tables t
 inner join sys.schemas s on s.schema_id = t.schema_id
 where s.name = 'stg'
-and not exists (select name from DbTableStg where DbTableStg.name = s.name + '.' + t.name)
+and t.name not like '%Complemento%'
+and not exists (select name from DbTableStg where DbTableStg.name = s.name + '.' + t.name )
 
--- Cargar columnas a DBMAPPING ejecutar por cada tabla creada
+
+-- Cargar columnas a DBMAPPING ejecutar por cada tabla creada cuando se agregan columnas
 declare @idtd int, @idQ int, @tableDestinoName varchar(100)='productos'
 
 set @idtd =(select top 1 id from DbTableStg where name = 'stg.'+ @tableDestinoName)

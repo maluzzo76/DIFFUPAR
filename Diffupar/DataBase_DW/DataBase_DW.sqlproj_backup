@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>DataBase_DW</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{121b9d09-b9e2-4897-a7bb-4ad9ee14f442}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath />
+    <RootNamespace>DataBase_DW</RootNamespace>
+    <AssemblyName>DataBase_DW</AssemblyName>
+    <ModelCollation>3082,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>Modern_Spanish_CI_AS</DefaultCollation>
+    <AnsiNulls>False</AnsiNulls>
+    <QuotedIdentifier>False</QuotedIdentifier>
+    <IsLedgerOn>False</IsLedgerOn>
+    <QueryStoreCaptureMode>Auto</QueryStoreCaptureMode>
+    <QueryStoreDesiredState>ReadWrite</QueryStoreDesiredState>
+    <QueryStoreFlushInterval>900</QueryStoreFlushInterval>
+    <QueryStoreStatsInterval>60</QueryStoreStatsInterval>
+    <QueryStoreMaxPlansPerQuery>200</QueryStoreMaxPlansPerQuery>
+    <QueryStoreStaleQueryThreshold>30</QueryStoreStaleQueryThreshold>
+    <QueryStoreMaxStorageSize>1000</QueryStoreMaxStorageSize>
+    <DbScopedConfigLegacyCardinalityEstimation>Off</DbScopedConfigLegacyCardinalityEstimation>
+    <DbScopedConfigMaxDOP>0</DbScopedConfigMaxDOP>
+    <DbScopedConfigParameterSniffing>On</DbScopedConfigParameterSniffing>
+    <DbScopedConfigOptimizerHotfixes>Off</DbScopedConfigOptimizerHotfixes>
+    <DelayedDurability>DISABLED</DelayedDurability>
+    <AutoCreateStatisticsIncremental>False</AutoCreateStatisticsIncremental>
+    <MemoryOptimizedElevateToSnapshot>False</MemoryOptimizedElevateToSnapshot>
+    <Containment>None</Containment>
+    <IsNestedTriggersOn>True</IsNestedTriggersOn>
+    <IsTransformNoiseWordsOn>False</IsTransformNoiseWordsOn>
+    <TwoDigitYearCutoff>2049</TwoDigitYearCutoff>
+    <NonTransactedFileStreamAccess>OFF</NonTransactedFileStreamAccess>
+    <TargetRecoveryTimePeriod>60</TargetRecoveryTimePeriod>
+    <TargetRecoveryTimeUnit>SECONDS</TargetRecoveryTimeUnit>
+    <IsChangeTrackingOn>False</IsChangeTrackingOn>
+    <IsChangeTrackingAutoCleanupOn>True</IsChangeTrackingAutoCleanupOn>
+    <ChangeTrackingRetentionPeriod>2</ChangeTrackingRetentionPeriod>
+    <ChangeTrackingRetentionUnit>Days</ChangeTrackingRetentionUnit>
+    <IsEncryptionOn>False</IsEncryptionOn>
+    <IsBrokerPriorityHonored>False</IsBrokerPriorityHonored>
+    <Trustworthy>False</Trustworthy>
+    <AutoUpdateStatisticsAsynchronously>False</AutoUpdateStatisticsAsynchronously>
+    <PageVerify>CHECKSUM</PageVerify>
+    <ServiceBrokerOption>DisableBroker</ServiceBrokerOption>
+    <DateCorrelationOptimizationOn>False</DateCorrelationOptimizationOn>
+    <Parameterization>SIMPLE</Parameterization>
+    <AllowSnapshotIsolation>False</AllowSnapshotIsolation>
+    <ReadCommittedSnapshot>False</ReadCommittedSnapshot>
+    <VardecimalStorageFormatOn>True</VardecimalStorageFormatOn>
+    <SupplementalLoggingOn>False</SupplementalLoggingOn>
+    <CompatibilityMode>160</CompatibilityMode>
+    <AnsiNullDefault>False</AnsiNullDefault>
+    <AnsiPadding>False</AnsiPadding>
+    <AnsiWarnings>False</AnsiWarnings>
+    <ArithAbort>False</ArithAbort>
+    <ConcatNullYieldsNull>False</ConcatNullYieldsNull>
+    <NumericRoundAbort>False</NumericRoundAbort>
+    <RecursiveTriggersEnabled>False</RecursiveTriggersEnabled>
+    <DatabaseChaining>False</DatabaseChaining>
+    <DatabaseState>ONLINE</DatabaseState>
+    <CloseCursorOnCommitEnabled>False</CloseCursorOnCommitEnabled>
+    <DefaultCursor>GLOBAL</DefaultCursor>
+    <AutoClose>False</AutoClose>
+    <AutoCreateStatistics>True</AutoCreateStatistics>
+    <AutoShrink>False</AutoShrink>
+    <AutoUpdateStatistics>True</AutoUpdateStatistics>
+    <TornPageDetection>False</TornPageDetection>
+    <DatabaseAccess>MULTI_USER</DatabaseAccess>
+    <Recovery>FULL</Recovery>
+    <EnableFullTextSearch>True</EnableFullTextSearch>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+    <SccProjectName>$/DIFFUPAR - Data Warehouse/Diffupar/DataBase_DW</SccProjectName>
+    <SccProvider>{4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}</SccProvider>
+    <SccAuxPath>https://dev.azure.com/alusoft2023</SccAuxPath>
+    <SccLocalPath>.</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DataRetentionEnabled>False</DataRetentionEnabled>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="stg\" />
+    <Folder Include="stg\Tables\" />
+    <Folder Include="whs\" />
+    <Folder Include="whs\Tables\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo" />
+    <Folder Include="dbo\Tables" />
+    <Folder Include="Scripts" />
+    <Folder Include="dbo\Procedures" />
+    <Folder Include="dbo\Views" />
+    <Folder Include="dbo\Triggers" />
+    <Folder Include="whs\Views" />
+    <Folder Include="whs\Procedures" />
+    <Folder Include="rtl" />
+    <Folder Include="rtl\Tables" />
+    <Folder Include="rtl\Procedures" />
+    <Folder Include="rtl\Views" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="stg\Tables\config.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Security\stg.sql" />
+    <Build Include="Security\whs.sql" />
+    <Build Include="stg\Tables\Clientes.sql" />
+    <Build Include="stg\Tables\CuentasContable.sql" />
+    <Build Include="stg\Tables\CuentasCentroCostos.sql" />
+    <Build Include="stg\Tables\Productos.sql" />
+    <Build Include="stg\Tables\TipoProducto.sql" />
+    <Build Include="dbo\Tables\Dbsource.sql" />
+    <Build Include="dbo\Tables\DbTables.sql" />
+    <Build Include="dbo\Tables\DbColumns.sql" />
+    <Build Include="dbo\Tables\DbProviders.sql" />
+    <Build Include="dbo\Procedures\DbGetQuery.sql" />
+    <Build Include="dbo\Tables\DbQuery.sql" />
+    <Build Include="dbo\Tables\DbMapping.sql" />
+    <Build Include="dbo\Tables\AspNetUsers.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Tables\AspNetUserRoles.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Tables\AspNetUserLogins.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Tables\AspNetUserClaims.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Tables\AspNetRoles.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Tables\DbTableStg.sql" />
+    <Build Include="dbo\Tables\DbSchedule.sql" />
+    <Build Include="dbo\Procedures\GetSchedule.sql" />
+    <Build Include="stg\Tables\Categoria.sql" />
+    <Build Include="stg\Tables\TipoProveedor.sql" />
+    <Build Include="stg\Tables\ProveedorRetailCegid.sql" />
+    <Build Include="stg\Tables\GrupoArt.sql" />
+    <Build Include="stg\Tables\Genero.sql" />
+    <Build Include="stg\Tables\TamanoReal.sql" />
+    <Build Include="stg\Tables\TamanoConc.sql" />
+    <Build Include="stg\Tables\Marca.sql" />
+    <Build Include="stg\Tables\Fabricante.sql" />
+    <Build Include="stg\Tables\UnidadMedida.sql" />
+    <Build Include="stg\Tables\UnidadNegocio.sql" />
+    <Build Include="stg\Tables\Linea.sql" />
+    <Build Include="whs\Tables\DimClientes.sql" />
+    <Build Include="whs\Tables\DimCentroCostos.sql" />
+    <Build Include="whs\Tables\CuentasContable.sql" />
+    <Build Include="whs\Tables\DimProductos.sql" />
+    <Build Include="whs\Tables\DimProveedorRetailCegid.sql" />
+    <Build Include="whs\Tables\DimTipoProveedor.sql" />
+    <Build Include="whs\Tables\DimFabricante.sql" />
+    <Build Include="whs\Tables\DimGenero.sql" />
+    <Build Include="whs\Tables\DimGruposArts.sql" />
+    <Build Include="whs\Tables\DimLineas.sql" />
+    <Build Include="whs\Tables\DimMarcas.sql" />
+    <Build Include="whs\Tables\DimTamanosConc.sql" />
+    <Build Include="whs\Tables\DimTamanoReal.sql" />
+    <Build Include="whs\Tables\DimTiposProductos.sql" />
+    <Build Include="whs\Tables\DimUnidadesMedida.sql" />
+    <Build Include="whs\Tables\DimUnidadesNegocio.sql" />
+    <Build Include="whs\Tables\DimCategorias.sql" />
+    <Build Include="whs\Procedures\Sp_ImportDimensiones.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="stg\Tables\Dimensiones_OOCR.sql" />
+    <Build Include="stg\Tables\GrupoItems.sql" />
+    <Build Include="whs\Tables\DimPropioTercero.sql" />
+    <Build Include="whs\Procedures\Sp_ImportSapDimesionesProducto.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="whs\Tables\DimTipoArticulo.sql" />
+    <Build Include="whs\Tables\DimGrupoItems.sql" />
+    <Build Include="stg\Tables\Provincias.sql" />
+    <Build Include="whs\Tables\DimProvincias.sql" />
+    <Build Include="stg\Tables\Vendedores.sql" />
+    <Build Include="whs\Tables\DimVendedores.sql" />
+    <Build Include="stg\Tables\CondicionPego.sql" />
+    <Build Include="whs\Tables\DimCondicionesPago.sql" />
+    <Build Include="stg\Tables\BiusinessPartnerGruop.sql" />
+    <Build Include="whs\Tables\DimBusinessPartnerGroup.sql" />
+    <Build Include="stg\Tables\BusinessPartner.sql" />
+    <Build Include="whs\Tables\DimBusinessPartner.sql" />
+    <Build Include="whs\Tables\DimAlmacenes.sql" />
+    <Build Include="whs\Tables\DimPlanDeCuentas.sql" />
+    <Build Include="stg\Tables\Almacenes.sql" />
+    <Build Include="stg\Tables\PlanCuentas.sql" />
+    <Build Include="whs\Views\Clientes.sql" />
+    <Build Include="whs\Tables\DimLugarCliente.sql" />
+    <Build Include="whs\Tables\DimUnidadDeNegocio.sql" />
+    <Build Include="whs\Tables\DimDepartamentos.sql" />
+    <Build Include="whs\Tables\DimUnidadesNegocioVenta.sql" />
+    <Build Include="whs\Views\OrdenDeCompra.sql" />
+    <Build Include="whs\Views\UnidadesNegocio.sql" />
+    <Build Include="whs\Views\Departamentos.sql" />
+    <Build Include="whs\Views\LugarCliente.sql" />
+    <Build Include="whs\Views\PropioTercero.sql" />
+    <Build Include="whs\Views\TiposProducto.sql" />
+    <Build Include="whs\Views\PlanCuentas.sql" />
+    <Build Include="stg\Tables\FacturasCabecera.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="stg\Tables\NotaCreditoCabecera.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="stg\Tables\FacturaDetalle.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="stg\Tables\NotaCreditoDetalle.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="whs\Tables\FactComprobantes.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="whs\Tables\DimTipoComprobantes.sql" />
+    <Build Include="whs\Views\Comprobantes.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="stg\Tables\JDT1.sql" />
+    <Build Include="whs\Tables\FactLibroMayor.sql" />
+    <Build Include="whs\Views\LibroMayor.sql" />
+    <Build Include="whs\Views\Productos.sql" />
+    <Build Include="stg\Tables\JDT1Historica.sql" />
+    <Build Include="dbo\Tables\DBProcess.sql" />
+    <Build Include="stg\Tables\JDT1Complementos.sql" />
+    <Build Include="dbo\Procedures\GetDbProcess.sql" />
+    <Build Include="dbo\Tables\ItemMenuSecurity.sql" />
+    <Build Include="dbo\Tables\MenuSecurity.sql" />
+    <Build Include="stg\Tables\CategoriaComplemento.sql" />
+    <Build Include="stg\Tables\GeneroComplemento.sql" />
+    <Build Include="stg\Tables\GrupoArtComplemento.sql" />
+    <Build Include="stg\Tables\LineaComplemento.sql" />
+    <Build Include="stg\Tables\MarcaComplemento.sql" />
+    <Build Include="stg\Tables\UnidadMedidaComplemento.sql" />
+    <Build Include="stg\Tables\UnidadNegocioComplemento.sql" />
+    <Build Include="stg\Tables\FabricanteComplemento.sql" />
+    <Build Include="stg\Tables\ProveedorRetailCegidComplemento.sql" />
+    <Build Include="stg\Tables\TamanoRealComplemento.sql" />
+    <Build Include="stg\Tables\TipoProveedorComplemento.sql" />
+    <Build Include="stg\Tables\GrupoItemsComplemento.sql" />
+    <Build Include="stg\Tables\AlmacenesComplemento.sql" />
+    <Build Include="stg\Tables\VendedoresComplemento.sql" />
+    <Build Include="stg\Tables\TamanoConcComplemento.sql" />
+    <Build Include="stg\Tables\PlandecuentasComplemento.sql" />
+    <Build Include="stg\Tables\TipoProductoComplemento.sql" />
+    <Build Include="stg\Tables\LugarClienteComplemento.sql" />
+    <Build Include="dbo\Procedures\InsertDbProcess.sql" />
+    <Build Include="whs\Views\Ventas.sql" />
+    <Build Include="stg\Tables\PropioTerceroComplemento.sql" />
+    <Build Include="stg\Tables\Inventario.sql" />
+    <Build Include="whs\Tables\FactInventario.sql" />
+    <Build Include="stg\Tables\ComprobantesMensuales.sql" />
+    <Build Include="whs\Tables\FactComprobantesMensuales.sql" />
+    <Build Include="whs\Views\Inventario.sql" />
+    <Build Include="whs\Views\Almacenes.sql" />
+    <Build Include="stg\Tables\VentasComplemento.sql" />
+    <Build Include="whs\Views\VentasMensual.sql" />
+    <Build Include="stg\Tables\VentasHistorica.sql" />
+    <Build Include="whs\Tables\DimTipos_Movimientos.sql" />
+    <Build Include="stg\Tables\Tipos_Movimientos.sql" />
+    <Build Include="whs\Views\Vendedores.sql" />
+    <Build Include="whs\Procedures\Sp_ActualizarComplementos.sql" />
+    <Build Include="whs\Views\Facturacion.sql" />
+    <Build Include="whs\Tables\FactVentas.sql" />
+    <Build Include="whs\Procedures\Sp_ActualizarFactVentas.sql" />
+    <Build Include="stg\Tables\TipoCambio.sql" />
+    <Build Include="whs\Tables\DimTipoCambio.sql" />
+    <Build Include="whs\Tables\DimTipoCambioHistorico.sql" />
+    <Build Include="whs\Views\TipoCambio.sql" />
+    <Build Include="whs\Tables\FactCalendario.sql" />
+    <Build Include="whs\Views\Calendario.sql" />
+    <Build Include="whs\Procedures\Sp_InsertarCalendario.sql" />
+    <Build Include="stg\Tables\ListaPrecios.sql" />
+    <Build Include="whs\Tables\FactListaPrecios.sql" />
+    <Build Include="whs\Views\ListaPrecios.sql" />
+    <Build Include="whs\Tables\DimProductosRelevantes.sql" />
+    <Build Include="dbo\Views\V_PropioTercero.sql" />
+    <Build Include="stg\Tables\Objetivos.sql" />
+    <Build Include="dbo\Procedures\AgregarObjtivos.sql" />
+    <Build Include="dbo\Tables\RabbitQueue.sql" />
+    <Build Include="dbo\Tables\RabbitMenssage.sql" />
+    <Build Include="dbo\Tables\RabbitErrorLog.sql" />
+    <Build Include="dbo\Views\V_RabbitMessageProcess.sql" />
+    <Build Include="stg\Tables\NapseTransactions.sql" />
+    <Build Include="dbo\Tables\RabbitMessageMapping.sql" />
+    <Build Include="dbo\Procedures\InsertRabbitMessageMappingColumns.sql" />
+    <Build Include="whs\Views\NapseInventarioTransaction.sql" />
+    <Build Include="whs\Tables\DimTiendaRetail.sql" />
+    <Build Include="whs\Views\NapseInventarioDiario.sql" />
+    <Build Include="whs\Views\VentasRetails.sql" />
+    <None Include="dbo\Views\CegidVentaDetalle.sql" />
+    <None Include="dbo\Views\CegidVenta.sql" />
+    <Build Include="stg\Tables\VendedoresRetails.sql" />
+    <Build Include="stg\Tables\CegidVentaVendedor.sql" />
+    <Build Include="dbo\Triggers\trgUserInsert.sql" />
+    <Build Include="dbo\Tables\RetailSecurity.sql" />
+    <Build Include="whs\Views\VentaComercial.sql" />
+    <Build Include="whs\Views\ObjetivosRetails.sql" />
+    <Build Include="stg\Tables\SucursalRetail.sql" />
+    <Build Include="stg\Tables\MaestroProveedoresCegid.sql" />
+    <Build Include="Scripts\CreateViewFacturaCabeceraCegid.sql" />
+    <Build Include="Scripts\CreateViewFacturaDetalleCegid.sql" />
+    <Build Include="Scripts\CreateViewMedioDePagoCegid.sql" />
+    <Build Include="Scripts\CreateViewVendedorCegid.sql" />
+    <None Include="rtl\Procedures\SP_InyectarCegid.sql" />
+    <None Include="rtl\Tables\FacturaCabeceraCegid.sql" />
+    <None Include="rtl\Tables\FacturaDetalleCegit.sql" />
+    <None Include="rtl\Views\FacturaCabecera.sql" />
+    <None Include="rtl\Views\FacturaDetalle.sql" />
+    <None Include="rtl\Views\VentaComercial.sql" />
+    <None Include="rtl\Views\Calendario.sql" />
+    <None Include="rtl\Views\Clientes.sql" />
+    <None Include="rtl\Views\MediosDePago.sql" />
+    <None Include="rtl\Views\DetalleDeVentaPorMedioDePago.sql" />
+    <None Include="rtl\Tables\DetalleDeVentaPorMedioDePagoCegid.sql" />
+    <Build Include="whs\Views\DetalleDeVentaMedioPago.sql" />
+    <None Include="rtl\Procedures\SP_IntectarVtaPorMedioPago.sql" />
+    <Build Include="stg\Tables\OrdenCompraCabecera.sql" />
+    <None Include="rtl\Tables\SucursalHash.sql" />
+    <Build Include="stg\Tables\OrdenCompraDetalle.sql" />
+    <Build Include="whs\Tables\FactOrdenesDeCompra.sql" />
+    <Build Include="rtl\Tables\Calendario.sql" />
+    <Build Include="rtl\Procedures\SP_InyectarCalendarioCegid.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\Crear Seguridad.sql" />
+    <None Include="Scripts\Carga Tablas stg.sql" />
+    <None Include="dbo\Triggers\Triggers.sql" />
+    <None Include="Scripts\Grant.sql" />
+    <None Include="Scripts\Carga Incial de Maestros.sql" />
+    <None Include="Scripts\Agregar Seguridad de usuario.sql" />
+    <None Include="Scripts\CargarMappingTablas.sql" />
+    <None Include="Scripts\Carga inicial objetivos.sql" />
+    <None Include="Scripts\Rabbit.sql" />
+    <None Include="Scripts\NormalizarSucursalesCegid.sql" />
+    <None Include="Scripts\Crear Table facturas Cegid.sql" />
+    <None Include="Scripts\Migrar Dimensiones Cegid.sql" />
+  </ItemGroup>
+</Project>

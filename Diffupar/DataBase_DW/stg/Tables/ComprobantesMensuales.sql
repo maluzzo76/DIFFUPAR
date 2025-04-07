@@ -1,0 +1,30 @@
+﻿CREATE TABLE [stg].[ComprobantesMensuales]
+(
+	Fecha_Contabilizacion int,
+	Tipo_Documento varchar (200),
+	Socio_Negocio int,
+	Numero_Documento varchar (200),
+	Numero_Transaccion int,
+	Direccion varchar (200),
+	Origen varchar (10),
+	Escenario varchar (10),
+	Total_Documento decimal (18,4),
+	Venta_Neta decimal (18,4),
+	Cantidad int,
+	Codigo_Articulo varchar (200),
+	Dimension_1 int,
+	Dimension_2 int,
+	Dimension_3 int,
+	Dimension_4 int,
+	Dimension_5 int,
+	Costo_Unitario decimal (18,4),
+	Costo_total decimal (18,4),
+	Cuenta_Venta int,
+	Cuenta_Costo int,
+	Cuenta_Inventario int,
+	Precio_Unitario_sin_IVA decimal (18,4),
+	Descuento_Total_sin_IVA decimal (18,4),
+	Venta_PP_sin_IVA decimal (18,4),
+	Porcentaje_Descuento decimal (18,4)
+
+)

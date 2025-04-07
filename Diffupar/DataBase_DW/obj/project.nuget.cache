@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "/DRfYD/bkZEOYxUU1dtq/dB9UFx+1ilogMuxQ/SLBkdeVBrie1FVdMr0hxggKSD0qC+3Ut1LwJIoKXEju1yT9Q==",
+  "success": true,
+  "projectFilePath": "c:\\Users\\Dell\\Documents\\Alusoft\\Mariano Roberto Aluzzo - Source\\Desarrollo BI\\DIFFUPAR SAP\\Diffupar\\DataBase_DW\\DataBase_DW.sqlproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Dell\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.0\\microsoft.netframework.referenceassemblies.1.0.0.nupkg.sha512",
+    "C:\\Users\\Dell\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net472\\1.0.0\\microsoft.netframework.referenceassemblies.net472.1.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -37,9 +37,9 @@ namespace Process.MappingEntities
             //Mapea las columnas
             string _columns = string.Empty;
             _pe.ColumnMapping = new List<SqlBulkCopyColumnMapping>();
-
             foreach (DataRow _row in _dsSchedule.Tables[1].Rows)
             {
+                
                 _pe.ColumnMapping.Add(new SqlBulkCopyColumnMapping(_row["columnOrigen"].ToString(), _row["ColumnDestino"].ToString()));
                 _columns  += string.Format("{0},", GetColumnNameByExecute(_row["columnOrigen"].ToString(),_pe.ProviderName));
             }
@@ -48,7 +48,7 @@ namespace Process.MappingEntities
             _pe.queryExceute = string.Format("select  {0} from {1} {2};", _columns.Substring(0, _columns.Length - 1), _pe.TableOrigenName, _pe.Where);
             _pe.TdataImport = GetDataImport(_pe);
             
-            return _pe;
+             return _pe;
         }
 
         private static DataSet GetSchedule(int scheduleId) 

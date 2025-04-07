@@ -8,15 +8,24 @@
 
 @if (Request.IsAuthenticated)
 {
-    <div class="container p-3 my-3  text-dark">
-        <div>
-            <div class="row" style="margin-left:15px;">
-                <h1>Bienvenido</h1>
-                <h2>@User.Identity.Name</h2>
+    <div class="container-fluid   text-dark">
+        <div class="row">
+            <div class="d-flex align-content-center" >
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <h1 style="padding-left: 30px;">Bienvenido</h1>
+                    <i style="font-size:18pt; color:#808080;padding-left:30px;">@User.Identity.Name</i><br />
+                    <img src="~/Content/image/Logo_Solo_nombre.png" style="zoom:75%; " />
+                </div>
+                <div class="col-md-2"></div>
             </div>
-        </div>
-        <div style="margin-left:4px;">
-            <img src="~/Content/image/Logo_Solo_nombre.png" style="zoom:80%; " />
+            <div class="d-flex align-content-center" >
+                <div class="col-md-2"></div>
+                <div class="col-md-8" style="margin-left:150px;">                  
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+
         </div>
     </div>
 
@@ -25,15 +34,18 @@
 else
 {
 
-
     <div class="container-fluid">
         <div class="row">
-            <div class="container p-3 my-3  text-dark" style="margin-left:9px;">
-                <h1></h1>
-                <p>@User.Identity.Name</p>
-                <img src="~/Content/image/Logo_Solo_nombre.png" style="zoom:75%; " />
-            </div>
             <div class="d-flex align-content-center">
+                <div class="col-md-2"></div>
+                <div class="col-md-8" >
+                    <h1></h1>
+                    <p>@User.Identity.Name</p>
+                    <img src="~/Content/image/Logo_Solo_nombre.png" style="zoom:75%; " />
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+            <div class="d-flex align-content-center p-3">
                 <div class="col-md-4"></div>
                 <div class="col-md-4">
                     @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
@@ -73,7 +85,6 @@ else
                 <div class="col-md-4"></div>
             </div>
         </div>
-
     </div>
 }
 

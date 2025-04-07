@@ -8,6 +8,7 @@ select
 	c.Nombre Nombre_Categoria,
 	pr.Code Codigo_ProveedorRetailCegid,
 	pr.Name Nombre_ProveedorRetailCegid,
+	pcegid.Nombre NombreCompleto_ProveedorRetailCegid,
 	tp.Codigo Codigo_TipoProveedor,
 	Tp.Nombre Nombre_TipoProveedor,		
 	fa.Code Codigo_Fabricante,
@@ -48,6 +49,7 @@ left join whs.DimGruposArts ga on ga.id = p.GrupoArt_Id
 left join whs.DimLineas li on li.id = p.Linea_Id
 left join whs.DimMarcas ma on ma.id = p.Marca_Id 
 left join whs.DimProveedorRetailCegid pr on pr.Id = p.ProveedorRetailCegid_Id
+left join stg.MaestroProveedoresCegid pcegid on pcegid.codigo = pr.Code
 left join whs.DimTamanoReal tr on tr.id = p.TamanoReal_Id
 left join whs.DimTamanosConc tc on tc.ID = p.TamanosConc_Id 
 left join whs.DimTipoProveedor tp on tp.id = p.TipoProveedor_Id

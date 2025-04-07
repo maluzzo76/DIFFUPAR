@@ -1,0 +1,14 @@
+C:\Users\MarianoRobertoAluzzo\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ProcessNapseFile\NapseProcessFile\NapseProcessFile\bin\Debug\NapseProcessFile.exe.config
+C:\Users\MarianoRobertoAluzzo\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ProcessNapseFile\NapseProcessFile\NapseProcessFile\bin\Debug\NapseProcessFile.exe
+C:\Users\MarianoRobertoAluzzo\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ProcessNapseFile\NapseProcessFile\NapseProcessFile\bin\Debug\NapseProcessFile.pdb
+C:\Users\MarianoRobertoAluzzo\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ProcessNapseFile\NapseProcessFile\NapseProcessFile\obj\Debug\NapseProcessFile.csproj.AssemblyReference.cache
+C:\Users\MarianoRobertoAluzzo\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ProcessNapseFile\NapseProcessFile\NapseProcessFile\obj\Debug\NapseProcessFile.csproj.CoreCompileInputs.cache
+C:\Users\MarianoRobertoAluzzo\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ProcessNapseFile\NapseProcessFile\NapseProcessFile\obj\Debug\NapseProcessFile.exe
+C:\Users\MarianoRobertoAluzzo\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ProcessNapseFile\NapseProcessFile\NapseProcessFile\obj\Debug\NapseProcessFile.pdb
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ProcessNapseFile\NapseProcessFile\NapseProcessFile\bin\Debug\NapseProcessFile.exe.config
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ProcessNapseFile\NapseProcessFile\NapseProcessFile\bin\Debug\NapseProcessFile.exe
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ProcessNapseFile\NapseProcessFile\NapseProcessFile\bin\Debug\NapseProcessFile.pdb
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ProcessNapseFile\NapseProcessFile\NapseProcessFile\obj\Debug\NapseProcessFile.csproj.AssemblyReference.cache
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ProcessNapseFile\NapseProcessFile\NapseProcessFile\obj\Debug\NapseProcessFile.csproj.CoreCompileInputs.cache
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ProcessNapseFile\NapseProcessFile\NapseProcessFile\obj\Debug\NapseProcessFile.exe
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ProcessNapseFile\NapseProcessFile\NapseProcessFile\obj\Debug\NapseProcessFile.pdb

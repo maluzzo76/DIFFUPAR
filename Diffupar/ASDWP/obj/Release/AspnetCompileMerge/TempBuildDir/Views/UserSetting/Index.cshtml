@@ -1,0 +1,36 @@
+﻿@model IEnumerable<ASDWP.Models.AspNetUsers>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Seguridad</h2>
+
+
+<table class="table" >
+    <tr>
+        <th style="width:18px;"></th>
+        <th style="width:200px;">
+            usuario
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <img src="~/Content/image/user.png" width="18" height="18" data-toggle="collapse" data-target="#ItemMenu_@item.Id" />
+            </td>
+            <td>
+                <p data-toggle="collapse" data-target="#ItemMenu1_@item.Id"> @item.Email</p>
+            </td>
+            <td>
+                <a class="btn-grid" href="@Url.Action("Edit","UserSetting", new { id = item.Id }) "><span><img src="~/Content/image/iconos_Lapiz.png" /></span></a>
+                <a class="btn-grid" href="@Url.Action("ResetPassword","UserSetting", new { id = item.Id}) "><span><img src="~/Content/image/iconos_Ojo.png" /></span></a>
+            </td>
+        </tr>
+
+    }
+</table>
+
+

@@ -16,6 +16,7 @@ using System.Text.RegularExpressions;
 using System.Data;
 using System.Data.SqlClient;
 using System.Runtime.Remoting.Messaging;
+using System.Configuration;
 
 namespace ASDWP.Controllers
 {
@@ -23,7 +24,7 @@ namespace ASDWP.Controllers
     {
         private ASDW_Entities db = new ASDW_Entities();
 
-
+        internal static string _sqlConnexionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
         public bool validarLoggin()        {
             
 

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ASDWP.Models.MenuSecurity>
+
+
+
+@{
+    ViewBag.Title = "Tableros";
+}
+
+<h2>Mis Tableros</h2>
+
+<table class="table">
+    <tr>
+        <th style="width:18px;"></th>
+        <th>Tableros</th>
+    </tr>
+    @{
+        foreach (var _m in Model)
+        {
+            string _tienda = _m.OcrCode3.ToString();
+
+
+            string _url = ($"https://app.powerbi.com/reportEmbed?reportId=56d0145a-6e2c-40d9-bf7b-c8c01e21a9a4&appId=90a59e29-8d1b-474d-96d1-cc58f0efe46b&autoAuth=true&ctid=9b7ce184-ca66-41b7-97f7-c1555125e125&filter=Hash%2FKey+eq+'{_tienda}'");
+
+            <tr>
+                    <td>
+                        <a href="@_url" target="_blank"><img src="~/Content/image/powerbi.png" width="30" height="30" /></a>
+                    </td>
+                    <td>
+                        <a href="@_url" target="_blank">Ventas Retails</a>
+                    </td>
+            </tr>
+        }
+    }
+</table>
+
+    
+
+
+
+
+

@@ -40,5 +40,9 @@ namespace ASDWP.Models
         public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
         public virtual DbSet<ItemMenuSecurity> ItemMenuSecurity { get; set; }
         public virtual DbSet<MenuSecurity> MenuSecurity { get; set; }
+        public virtual DbSet<RabbitErrorLog> RabbitErrorLog { get; set; }
+        public virtual DbSet<RabbitMenssage> RabbitMenssage { get; set; }
+        public virtual DbSet<RabbitQueue> RabbitQueue { get; set; }
+        public virtual DbSet<RabbitMessageMapping> RabbitMessageMapping { get; set; }
     }
 }

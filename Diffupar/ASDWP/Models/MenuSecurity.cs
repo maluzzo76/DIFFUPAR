@@ -25,6 +25,7 @@ namespace ASDWP.Models
         public string Nombre { get; set; }
         public Nullable<bool> IsActivo { get; set; }
         public Nullable<int> Orden { get; set; }
+        public string OcrCode3 { get; set; }
     
         public virtual AspNetUsers AspNetUsers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

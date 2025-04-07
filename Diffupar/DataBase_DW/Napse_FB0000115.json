@@ -1,0 +1,4854 @@
+{
+    "_id": "67b8f3a38d21302aa9d61336",
+    "itemCount": 3,
+    "itemCountWithBarcodes": 3,
+    "grossAmount": 110490,
+    "taxAmount": 19175.95,
+    "promoDiscountAmount": 0,
+    "manualDiscountAmount": 0,
+    "cancelFlag": false,
+    "contingencyFlag": false,
+    "netSalesAmount": 110490,
+    "returnAmount": 0,
+    "transactionDiscountAmount": 0,
+    "voidedFlag": false,
+    "nccProcessedFlag": false,
+    "iva0Amount": 0,
+    "iva21Amount": 91314.05,
+    "iva105Amount": 0,
+    "iva27Amount": 0,
+    "iva10Amount": 0,
+    "iva22Amount": 0,
+    "iva18Amount": 0,
+    "customerLoyalty": [
+        {
+            "documentNumber": "99999999",
+            "loyaltyCardPointsBalance": 0,
+            "acumulatedPoints": 0,
+            "redeemedPoints": 0,
+            "promoSequence": -1,
+            "customerPromoSequence": -1
+        }
+    ],
+    "promoCouponLoyalty": [],
+    "manualDiscounts": [],
+    "foreignCurrencyInvoice": false,
+    "foreignCurrencySellingQuote": 0,
+    "events": [],
+    "deliveryDocumentsList": [],
+    "marginAsNumber": -2889507,
+    "marginAsPercent": -96.32,
+    "isFuel": false,
+    "fuelCreditProgramTransaction": false,
+    "exemptTransaction": false,
+    "invoiceRequired": false,
+    "notConciliatedPrePaySale": false,
+    "autoInvoiced": false,
+    "lake": false,
+    "prize": false,
+    "redeemCoupons": [],
+    "orderPartialBillVersion": 0,
+    "transactionObjectId": "67b8f339ec612716cd1f053d",
+    "tenderRepository": "67b3e67119d78e299c38dc88",
+    "trxType": "Sale",
+    "trxNumber": 79,
+    "store": "66ffd502f35cca555fef3f94",
+    "storeName": "B24 ARMENIA",
+    "terminal": "67b3e67119d78e299c38dc86",
+    "userClassification": null,
+    "storeCode": "2001",
+    "terminalCode": "20011",
+    "periodNumber": 4,
+    "sbPeriodNumber": 1,
+    "beginDateTime": "2025-02-21T18:39:25",
+    "endDateTime": "2025-02-21T18:42:16",
+    "beginDateTimeAsInt": 20250221,
+    "businessDayAsInt": 20250221,
+    "beginDateTimeHour": 18,
+    "calendarPeriod": {
+        "_id": "67b7ec34b21671156c736c57",
+        "calendarLevelID": 0,
+        "calendarID": 0,
+        "store": "66ffd502f35cca555fef3f94",
+        "shiftID": 1,
+        "calendarPeriodID": 8,
+        "businessDay": "67b7ec34b21671156c736c55",
+        "startDateTime": "2025-02-21T00:00:04",
+        "version": 0,
+        "id": "67b7ec34b21671156c736c57"
+    },
+    "operatorCode": "2404",
+    "operatorName": "VELARDEZ PAULO",
+    "trainingModeFlag": false,
+    "suspendedFlag": false,
+    "offlineFlag": false,
+    "trxTypeLang": "Venta",
+    "currencyDescription": "PESO ARGENTINO",
+    "fiscalPosNumber": "02085",
+    "serieOfficialBill": "B",
+    "billType": "FC B",
+    "billNumber": "00000009",
+    "fiscalCAENumber": "75083292396557",
+    "fiscalCAEDate": "2025-03-03T03:00:00",
+    "fiscalMode": "CAE",
+    "businessDayDate": "2025-02-21T00:00:00",
+    "originalPeriodNumber": null,
+    "originalSubPeriodNumber": null,
+    "originalPeriodCode": null,
+    "originalSubPeriodCode": null,
+    "grossPositiveAmount": 110490,
+    "grossNegativeAmount": 0,
+    "ivaTaxAmount": 19175.95,
+    "internalTaxAmount": 0,
+    "perceptionAmount": 0,
+    "billTotalAmount": 110490,
+    "hasCustomer": true,
+    "party": "66fd6c76e366164ce1337cde",
+    "partyCode": "99999999",
+    "partyTaxCategory": "CF",
+    "partyType": "PRS",
+    "partyFirstName": "Sin dato",
+    "partyLastName": "CONSUMIDOR FINAL",
+    "partyPerson": true,
+    "partyOrganization": false,
+    "partyGenderType": "F",
+    "partyBirthdate": "1901-02-01T00:00:00",
+    "partyIdentificationType": "DNI",
+    "partyIdentificationNumber": "99999999",
+    "partyAddressFirstLine": "X--",
+    "partyAddressCity": "CABA - Parque Chacabuco",
+    "partyAddressCityCode": "CF_E17_1424",
+    "partyAddressState": "CIUDAD AUTONOMA DE BUENOS AIRES",
+    "partyAddressStateCode": "CABA",
+    "partyAddressCountry": "Argentina",
+    "partyAddressCountryCode": "ARG",
+    "partyAddressPostalCode": "1424",
+    "partyEmail": "notienemail@yahoo.com.ar",
+    "partyTelephone": "54-11-296615487967",
+    "partyErpCode": "",
+    "denomination": "Sin dato CONSUMIDOR FINAL",
+    "invoiceCurrencyCode": "ARS",
+    "channel": "bridge",
+    "uniqueTrxReference": "200120011V79",
+    "createdAt": "2025-02-21T18:44:03",
+    "updatedAt": "2025-02-21T18:44:03",
+    "version": 0,
+    "items": [
+        {
+            "_id": "67b8f3a38d21302aa9d6131d",
+            "customerExtendedAmount": 19000,
+            "unitCost": 999999,
+            "unitPrice": 19000,
+            "unitPriceWithDiscounts": 19000,
+            "quantity": 1,
+            "voidedQuantity": 0,
+            "units": 1,
+            "extendedPrice": 19000,
+            "netAmount": 15702.48,
+            "netSalesAmount": 19000,
+            "marginAsNumber": -980999,
+            "netQuantity": 1,
+            "marginAsPercent": -98.1,
+            "promoDiscountAmount": 0,
+            "manualDiscountAmount": 0,
+            "itemDepth": 0,
+            "remainigWeight": 0,
+            "voidedBy": [],
+            "transactionObjectId": "67b8f339ec612716cd1f053d",
+            "returned": false,
+            "trxType": "Sale",
+            "trxNumber": 79,
+            "storeCode": "2001",
+            "store": "66ffd502f35cca555fef3f94",
+            "storeName": "B24 ARMENIA",
+            "terminal": "67b3e67119d78e299c38dc86",
+            "userClassification": null,
+            "terminalCode": "20011",
+            "periodNumber": 4,
+            "sbPeriodNumber": 1,
+            "beginDateTime": "2025-02-21T18:39:25",
+            "beginDateTimeAsInt": 20250221,
+            "businessDayAsInt": 20250221,
+            "beginDateTimeHour": 18,
+            "calendarPeriod": "67b7ec34b21671156c736c57",
+            "operatorCode": "2404",
+            "operatorName": "VELARDEZ PAULO",
+            "serieOfficialBill": "B",
+            "billType": "FC B",
+            "billNumber": "00000009",
+            "internalCode": "XIL21001",
+            "description": "ICONIC MINI ILLUMINATOR",
+            "itemType": "NORM",
+            "barcode": "5060490926094",
+            "barcodeEntity": {
+                "id": "670d362410bb34a6d4214831",
+                "barcode": "5060490926094",
+                "description": "ICONIC MINI ILLUMINATOR",
+                "units": 1,
+                "disabled": false
+            },
+            "sequenceNumber": 1,
+            "merchandiseHierarchyGroupCode": "301002007",
+            "merchandiseHierarchyGroupName": "Iluminador Liquido",
+            "unitOfMeasureCode": "1",
+            "unitOfMeasureDecimals": 0,
+            "unitOfMeasureDescription": "UN",
+            "priceListId": "128",
+            "originalActualUnitPrice": 19000,
+            "voiding": false,
+            "voidFlag": false,
+            "trainingModeFlag": false,
+            "suspendedFlag": false,
+            "cancelFlag": false,
+            "locationCode": "DEP1",
+            "sellerID": "2404",
+            "sellerName": "VELARDEZ PAULO",
+            "ivaType": {
+                "id": "5ea5565c5604c8593c6081ed",
+                "code": "IVA_21",
+                "description": "IVA 21%",
+                "percentage": 21,
+                "disabled": false
+            },
+            "taxDetail": [
+                {
+                    "magnitudTax": 0,
+                    "_id": "67b8f3a38d21302aa9d6131e",
+                    "taxType": "VAT",
+                    "typeCode": "Sale",
+                    "taxAuthority": "IVA_21",
+                    "taxableAmount": 15702.48,
+                    "taxIncludedInTaxableAmountFlag": true,
+                    "amount": 3297.52,
+                    "taxablePercentage": 21,
+                    "exemptFlag": false
+                }
+            ],
+            "vatTotal": 3297.52,
+            "taxTotal": 0,
+            "perceptionTotal": 0,
+            "itemTicketStockInformationList": [
+                {
+                    "inventoryReservationCode": "R792001107166ffd502f35cca555fef3f941",
+                    "storeCode": "2001",
+                    "locationCode": "DEP1",
+                    "locationErpCode": "7391",
+                    "revenueCenterCode": "RCD",
+                    "itemInventoryStateCode": "OnSale",
+                    "quantity": 1,
+                    "voidedFlag": false
+                }
+            ],
+            "giftCardBalance": 0,
+            "giftCardRechargeAmount": 0,
+            "prorratedTxDiscount": 0,
+            "billTotalAmount": 110490,
+            "additionalData": {
+                "userData": {
+                    "userFieldStringI": "40010",
+                    "userFieldStringII": "50129",
+                    "userFieldStringIII": "PX-000032",
+                    "userFieldStringIV": "E1K-05-50-B5",
+                    "userFlagI": false,
+                    "userFlagII": false,
+                    "userFlagIII": false,
+                    "userFlagIV": false,
+                    "userFlagV": false,
+                    "userFlagVI": false,
+                    "userFlagVII": false,
+                    "userFlagVIII": false,
+                    "userFlagIX": false,
+                    "userFlagX": false,
+                    "userFlagXI": false,
+                    "userFlagXII": false,
+                    "userFlagXIII": false,
+                    "userFlagXIV": false,
+                    "userFlagXV": false,
+                    "userFlagXVI": false
+                },
+                "locationStore": [
+                    {
+                        "_id": "66b628d91de7d8009899d759",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "9999",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "66b628da1de7d8009899d75a",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1200",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "677c1d291de7d8bdcfd5de3d",
+                        "disabled": true,
+                        "version": 0,
+                        "store": "1327",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "677c1d291de7d8bdcfd5de3e",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "3001",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "677d01801de7d8bdcfd5dec1",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "3002",
+                        "address": "3002",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67800b091de7d8bdcfd603e9",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1901",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67912e2b1de7d8b1ec85ee03",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1301",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67912e2c1de7d8b1ec85ee04",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1360",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67912e2c1de7d8b1ec85ee05",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1370",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67912e2c1de7d8b1ec85ee06",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "2070",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67912e4f1de7d8b1ec85ee31",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1363",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "6791a3071de7d8b1ec85f333",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1368",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "6791a3071de7d8b1ec85f334",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "2006",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "679258241de7d8b1ec85ff6d",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1341",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "679258241de7d8b1ec85ff6e",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1349",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "679258241de7d8b1ec85ff6f",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1362",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "6793c1141de7d892ddbe9fd0",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1314",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "6798bb141de7d892ddbee4a1",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "2013",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "6798bb971de7d892ddbee4cc",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1330",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "6798bb971de7d892ddbee4cd",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1352",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67993e721de7d892ddbf0612",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1324",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67993e721de7d892ddbf0613",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1348",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67993e721de7d892ddbf0614",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1353",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "679ad1681de7d892ddbf415f",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1322",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67a0915d1de7d892ddbfcd32",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1336",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67a0915d1de7d892ddbfcd33",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1337",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67a091941de7d892ddbfcd6b",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "2008",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67a413ef1de7d88909ae5931",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1308",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67a413ef1de7d88909ae5932",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1350",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67a413ef1de7d88909ae5933",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "2014",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67b297411de7d88909b34059",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1338",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67b297411de7d88909b3405a",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1356",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67b297411de7d88909b3405b",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "2007",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67b4728e1de7d88909b45b68",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1333",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67b4728e1de7d88909b45b69",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1334",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67b4728e1de7d88909b45b6a",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1343",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67b52d3d1de7d88909b474e3",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1365",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67b52d3d1de7d88909b474e4",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "2001",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67b52d3d1de7d88909b474e5",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "2003",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67b714c31de7d88909b59107",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1302",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67b714c31de7d88909b59108",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1305",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67b714c31de7d88909b59109",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1309",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    }
+                ]
+            },
+            "onConsignment": false,
+            "attributes": [
+                {
+                    "_id": "67b8f3a38d21302aa9d6131f",
+                    "code": "LINE",
+                    "option": "BE3"
+                },
+                {
+                    "_id": "67b8f3a38d21302aa9d61320",
+                    "code": "CATE",
+                    "option": "01"
+                },
+                {
+                    "_id": "67b8f3a38d21302aa9d61321",
+                    "code": "GENE",
+                    "option": "000"
+                },
+                {
+                    "_id": "67b8f3a38d21302aa9d61322",
+                    "code": "TC",
+                    "option": "000"
+                },
+                {
+                    "_id": "67b8f3a38d21302aa9d61323",
+                    "code": "TR",
+                    "option": "000"
+                },
+                {
+                    "_id": "67b8f3a38d21302aa9d61324",
+                    "code": "UM",
+                    "option": "SU"
+                }
+            ],
+            "version": 0,
+            "createdAt": "2025-02-21T18:44:03",
+            "updatedAt": "2025-02-21T18:44:03"
+        },
+        {
+            "_id": "67b8f3a38d21302aa9d61325",
+            "customerExtendedAmount": 30000,
+            "unitCost": 999999,
+            "unitPrice": 30000,
+            "unitPriceWithDiscounts": 30000,
+            "quantity": 1,
+            "voidedQuantity": 0,
+            "units": 1,
+            "extendedPrice": 30000,
+            "netAmount": 24793.39,
+            "netSalesAmount": 30000,
+            "marginAsNumber": -969999,
+            "netQuantity": 1,
+            "marginAsPercent": -97,
+            "promoDiscountAmount": 0,
+            "manualDiscountAmount": 0,
+            "itemDepth": 0,
+            "remainigWeight": 0,
+            "voidedBy": [],
+            "transactionObjectId": "67b8f339ec612716cd1f053d",
+            "returned": false,
+            "trxType": "Sale",
+            "trxNumber": 79,
+            "storeCode": "2001",
+            "store": "66ffd502f35cca555fef3f94",
+            "storeName": "B24 ARMENIA",
+            "terminal": "67b3e67119d78e299c38dc86",
+            "userClassification": null,
+            "terminalCode": "20011",
+            "periodNumber": 4,
+            "sbPeriodNumber": 1,
+            "beginDateTime": "2025-02-21T18:39:25",
+            "beginDateTimeAsInt": 20250221,
+            "businessDayAsInt": 20250221,
+            "beginDateTimeHour": 18,
+            "calendarPeriod": "67b7ec34b21671156c736c57",
+            "operatorCode": "2404",
+            "operatorName": "VELARDEZ PAULO",
+            "serieOfficialBill": "B",
+            "billType": "FC B",
+            "billNumber": "00000009",
+            "internalCode": "XLL22006",
+            "description": "ICONIC FULLER POUT LIPLINER S.LEWKS",
+            "itemType": "NORM",
+            "barcode": "5060945312649",
+            "barcodeEntity": {
+                "id": "670d362410bb34a6d4214b6f",
+                "barcode": "5060945312649",
+                "description": "ICONIC FULLER POUT LIPLINER S.LEWKS",
+                "units": 1,
+                "disabled": false
+            },
+            "sequenceNumber": 2,
+            "merchandiseHierarchyGroupCode": "301002001",
+            "merchandiseHierarchyGroupName": "Labial",
+            "unitOfMeasureCode": "1",
+            "unitOfMeasureDecimals": 0,
+            "unitOfMeasureDescription": "UN",
+            "priceListId": "128",
+            "originalActualUnitPrice": 30000,
+            "voiding": false,
+            "voidFlag": false,
+            "trainingModeFlag": false,
+            "suspendedFlag": false,
+            "cancelFlag": false,
+            "locationCode": "DEP1",
+            "sellerID": "2404",
+            "sellerName": "VELARDEZ PAULO",
+            "ivaType": {
+                "id": "5ea5565c5604c8593c6081ed",
+                "code": "IVA_21",
+                "description": "IVA 21%",
+                "percentage": 21,
+                "disabled": false
+            },
+            "taxDetail": [
+                {
+                    "magnitudTax": 0,
+                    "_id": "67b8f3a38d21302aa9d61326",
+                    "taxType": "VAT",
+                    "typeCode": "Sale",
+                    "taxAuthority": "IVA_21",
+                    "taxableAmount": 24793.39,
+                    "taxIncludedInTaxableAmountFlag": true,
+                    "amount": 5206.61,
+                    "taxablePercentage": 21,
+                    "exemptFlag": false
+                }
+            ],
+            "vatTotal": 5206.61,
+            "taxTotal": 0,
+            "perceptionTotal": 0,
+            "itemTicketStockInformationList": [
+                {
+                    "inventoryReservationCode": "R792001107166ffd502f35cca555fef3f942",
+                    "storeCode": "2001",
+                    "locationCode": "DEP1",
+                    "locationErpCode": "7391",
+                    "revenueCenterCode": "RCD",
+                    "itemInventoryStateCode": "OnSale",
+                    "quantity": 1,
+                    "voidedFlag": false
+                }
+            ],
+            "giftCardBalance": 0,
+            "giftCardRechargeAmount": 0,
+            "prorratedTxDiscount": 0,
+            "billTotalAmount": 110490,
+            "additionalData": {
+                "userData": {
+                    "userFieldStringI": "40010",
+                    "userFieldStringII": "50129",
+                    "userFieldStringIII": "PX-000032",
+                    "userFieldStringIV": "E1K-05-20-B3",
+                    "userFlagI": false,
+                    "userFlagII": false,
+                    "userFlagIII": false,
+                    "userFlagIV": false,
+                    "userFlagV": false,
+                    "userFlagVI": false,
+                    "userFlagVII": false,
+                    "userFlagVIII": false,
+                    "userFlagIX": false,
+                    "userFlagX": false,
+                    "userFlagXI": false,
+                    "userFlagXII": false,
+                    "userFlagXIII": false,
+                    "userFlagXIV": false,
+                    "userFlagXV": false,
+                    "userFlagXVI": false
+                },
+                "locationStore": [
+                    {
+                        "_id": "66b628d91de7d8009899d759",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "9999",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "66b628da1de7d8009899d75a",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1200",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "677c1d291de7d8bdcfd5de3d",
+                        "disabled": true,
+                        "version": 0,
+                        "store": "1327",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "677c1d291de7d8bdcfd5de3e",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "3001",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "677d01801de7d8bdcfd5dec1",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "3002",
+                        "address": "3002",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67800b091de7d8bdcfd603e9",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1901",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67912e2b1de7d8b1ec85ee03",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1301",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67912e2c1de7d8b1ec85ee04",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1360",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67912e2c1de7d8b1ec85ee05",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1370",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67912e2c1de7d8b1ec85ee06",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "2070",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67912e4f1de7d8b1ec85ee31",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1363",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "6791a3071de7d8b1ec85f333",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1368",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "6791a3071de7d8b1ec85f334",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "2006",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "679258241de7d8b1ec85ff6d",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1341",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "679258241de7d8b1ec85ff6e",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1349",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "679258241de7d8b1ec85ff6f",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1362",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "6793c1141de7d892ddbe9fd0",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1314",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "6798bb141de7d892ddbee4a1",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "2013",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "6798bb971de7d892ddbee4cc",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1330",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "6798bb971de7d892ddbee4cd",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1352",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67993e721de7d892ddbf0612",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1324",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67993e721de7d892ddbf0613",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1348",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67993e721de7d892ddbf0614",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1353",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "679ad1681de7d892ddbf415f",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1322",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67a0915d1de7d892ddbfcd32",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1336",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67a0915d1de7d892ddbfcd33",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1337",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67a091941de7d892ddbfcd6b",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "2008",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67a413ef1de7d88909ae5931",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1308",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67a413ef1de7d88909ae5932",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1350",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67a413ef1de7d88909ae5933",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "2014",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67b297411de7d88909b34059",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1338",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67b297411de7d88909b3405a",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1356",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67b297411de7d88909b3405b",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "2007",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67b4728e1de7d88909b45b68",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1333",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67b4728e1de7d88909b45b69",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1334",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67b4728e1de7d88909b45b6a",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1343",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67b52d3d1de7d88909b474e3",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1365",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67b52d3d1de7d88909b474e4",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "2001",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67b52d3d1de7d88909b474e5",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "2003",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67b714c31de7d88909b59107",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1302",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67b714c31de7d88909b59108",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1305",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67b714c31de7d88909b59109",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1309",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    }
+                ]
+            },
+            "onConsignment": false,
+            "attributes": [
+                {
+                    "_id": "67b8f3a38d21302aa9d61327",
+                    "code": "LINE",
+                    "option": "BH9"
+                },
+                {
+                    "_id": "67b8f3a38d21302aa9d61328",
+                    "code": "CATE",
+                    "option": "01"
+                },
+                {
+                    "_id": "67b8f3a38d21302aa9d61329",
+                    "code": "GENE",
+                    "option": "000"
+                },
+                {
+                    "_id": "67b8f3a38d21302aa9d6132a",
+                    "code": "TC",
+                    "option": "000"
+                },
+                {
+                    "_id": "67b8f3a38d21302aa9d6132b",
+                    "code": "TR",
+                    "option": "000"
+                },
+                {
+                    "_id": "67b8f3a38d21302aa9d6132c",
+                    "code": "UM",
+                    "option": "SU"
+                }
+            ],
+            "version": 0,
+            "createdAt": "2025-02-21T18:44:03",
+            "updatedAt": "2025-02-21T18:44:03"
+        },
+        {
+            "_id": "67b8f3a38d21302aa9d6132d",
+            "customerExtendedAmount": 61490,
+            "unitCost": 999999,
+            "unitPrice": 61490,
+            "unitPriceWithDiscounts": 61490,
+            "quantity": 1,
+            "voidedQuantity": 0,
+            "units": 1,
+            "extendedPrice": 61490,
+            "netAmount": 50818.18,
+            "netSalesAmount": 61490,
+            "marginAsNumber": -938509,
+            "netQuantity": 1,
+            "marginAsPercent": -93.85,
+            "promoDiscountAmount": 0,
+            "manualDiscountAmount": 0,
+            "itemDepth": 0,
+            "remainigWeight": 0,
+            "voidedBy": [],
+            "transactionObjectId": "67b8f339ec612716cd1f053d",
+            "returned": false,
+            "trxType": "Sale",
+            "trxNumber": 79,
+            "storeCode": "2001",
+            "store": "66ffd502f35cca555fef3f94",
+            "storeName": "B24 ARMENIA",
+            "terminal": "67b3e67119d78e299c38dc86",
+            "userClassification": null,
+            "terminalCode": "20011",
+            "periodNumber": 4,
+            "sbPeriodNumber": 1,
+            "beginDateTime": "2025-02-21T18:39:25",
+            "beginDateTimeAsInt": 20250221,
+            "businessDayAsInt": 20250221,
+            "beginDateTimeHour": 18,
+            "calendarPeriod": "67b7ec34b21671156c736c57",
+            "operatorCode": "2404",
+            "operatorName": "VELARDEZ PAULO",
+            "serieOfficialBill": "B",
+            "billType": "FC B",
+            "billNumber": "00000009",
+            "internalCode": "XFC20002",
+            "description": "ICONIC RADIANCE BOOSTER-SAND GLOW 30ML",
+            "itemType": "NORM",
+            "barcode": "5060490922201",
+            "barcodeEntity": {
+                "id": "670d362410bb34a6d4214b62",
+                "barcode": "5060490922201",
+                "description": "ICONIC RADIANCE BOOSTER-SAND GLOW 30ML",
+                "units": 1,
+                "disabled": false
+            },
+            "sequenceNumber": 3,
+            "merchandiseHierarchyGroupCode": "301003003",
+            "merchandiseHierarchyGroupName": "Base Liquida",
+            "unitOfMeasureCode": "1",
+            "unitOfMeasureDecimals": 0,
+            "unitOfMeasureDescription": "UN",
+            "priceListId": "128",
+            "originalActualUnitPrice": 61490,
+            "voiding": false,
+            "voidFlag": false,
+            "trainingModeFlag": false,
+            "suspendedFlag": false,
+            "cancelFlag": false,
+            "locationCode": "DEP1",
+            "sellerID": "2404",
+            "sellerName": "VELARDEZ PAULO",
+            "ivaType": {
+                "id": "5ea5565c5604c8593c6081ed",
+                "code": "IVA_21",
+                "description": "IVA 21%",
+                "percentage": 21,
+                "disabled": false
+            },
+            "taxDetail": [
+                {
+                    "magnitudTax": 0,
+                    "_id": "67b8f3a38d21302aa9d6132e",
+                    "taxType": "VAT",
+                    "typeCode": "Sale",
+                    "taxAuthority": "IVA_21",
+                    "taxableAmount": 50818.18,
+                    "taxIncludedInTaxableAmountFlag": true,
+                    "amount": 10671.82,
+                    "taxablePercentage": 21,
+                    "exemptFlag": false
+                }
+            ],
+            "vatTotal": 10671.82,
+            "taxTotal": 0,
+            "perceptionTotal": 0,
+            "itemTicketStockInformationList": [
+                {
+                    "inventoryReservationCode": "R792001107166ffd502f35cca555fef3f943",
+                    "storeCode": "2001",
+                    "locationCode": "DEP1",
+                    "locationErpCode": "7391",
+                    "revenueCenterCode": "RCD",
+                    "itemInventoryStateCode": "OnSale",
+                    "quantity": 1,
+                    "voidedFlag": false
+                }
+            ],
+            "giftCardBalance": 0,
+            "giftCardRechargeAmount": 0,
+            "prorratedTxDiscount": 0,
+            "billTotalAmount": 110490,
+            "additionalData": {
+                "userData": {
+                    "userFieldStringI": "40010",
+                    "userFieldStringII": "50129",
+                    "userFieldStringIII": "PX-000032",
+                    "userFieldStringIV": "E1K-05-20-B4",
+                    "userFlagI": false,
+                    "userFlagII": false,
+                    "userFlagIII": false,
+                    "userFlagIV": false,
+                    "userFlagV": false,
+                    "userFlagVI": false,
+                    "userFlagVII": false,
+                    "userFlagVIII": false,
+                    "userFlagIX": false,
+                    "userFlagX": false,
+                    "userFlagXI": false,
+                    "userFlagXII": false,
+                    "userFlagXIII": false,
+                    "userFlagXIV": false,
+                    "userFlagXV": false,
+                    "userFlagXVI": false
+                },
+                "locationStore": [
+                    {
+                        "_id": "66b628d91de7d8009899d759",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "9999",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "66b628da1de7d8009899d75a",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1200",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "677c1d291de7d8bdcfd5de3d",
+                        "disabled": true,
+                        "version": 0,
+                        "store": "1327",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "677c1d291de7d8bdcfd5de3e",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "3001",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "677d01801de7d8bdcfd5dec1",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "3002",
+                        "address": "3002",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67800b091de7d8bdcfd603e9",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1901",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67912e2b1de7d8b1ec85ee03",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1301",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67912e2c1de7d8b1ec85ee04",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1360",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67912e2c1de7d8b1ec85ee05",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1370",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67912e2c1de7d8b1ec85ee06",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "2070",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67912e4f1de7d8b1ec85ee31",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1363",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "6791a3071de7d8b1ec85f333",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1368",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "6791a3071de7d8b1ec85f334",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "2006",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "679258241de7d8b1ec85ff6d",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1341",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "679258241de7d8b1ec85ff6e",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1349",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "679258241de7d8b1ec85ff6f",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1362",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "6793c1141de7d892ddbe9fd0",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1314",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "6798bb141de7d892ddbee4a1",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "2013",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "6798bb971de7d892ddbee4cc",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1330",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "6798bb971de7d892ddbee4cd",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1352",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67993e721de7d892ddbf0612",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1324",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67993e721de7d892ddbf0613",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1348",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67993e721de7d892ddbf0614",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1353",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "679ad1681de7d892ddbf415f",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1322",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67a0915d1de7d892ddbfcd32",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1336",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67a0915d1de7d892ddbfcd33",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1337",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67a091941de7d892ddbfcd6b",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "2008",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67a413ef1de7d88909ae5931",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1308",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67a413ef1de7d88909ae5932",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1350",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67a413ef1de7d88909ae5933",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "2014",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67b297411de7d88909b34059",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1338",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67b297411de7d88909b3405a",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1356",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67b297411de7d88909b3405b",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "2007",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67b4728e1de7d88909b45b68",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1333",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67b4728e1de7d88909b45b69",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1334",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67b4728e1de7d88909b45b6a",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1343",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67b52d3d1de7d88909b474e3",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1365",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67b52d3d1de7d88909b474e4",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "2001",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67b52d3d1de7d88909b474e5",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "2003",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67b714c31de7d88909b59107",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1302",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67b714c31de7d88909b59108",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1305",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    },
+                    {
+                        "_id": "67b714c31de7d88909b59109",
+                        "disabled": false,
+                        "version": 0,
+                        "store": "1309",
+                        "address": "",
+                        "erpCode": "",
+                        "crossSalesAllowed": true
+                    }
+                ]
+            },
+            "onConsignment": false,
+            "attributes": [
+                {
+                    "_id": "67b8f3a38d21302aa9d6132f",
+                    "code": "LINE",
+                    "option": "BI6"
+                },
+                {
+                    "_id": "67b8f3a38d21302aa9d61330",
+                    "code": "CATE",
+                    "option": "01"
+                },
+                {
+                    "_id": "67b8f3a38d21302aa9d61331",
+                    "code": "GENE",
+                    "option": "000"
+                },
+                {
+                    "_id": "67b8f3a38d21302aa9d61332",
+                    "code": "TC",
+                    "option": "000"
+                },
+                {
+                    "_id": "67b8f3a38d21302aa9d61333",
+                    "code": "TR",
+                    "option": "000"
+                },
+                {
+                    "_id": "67b8f3a38d21302aa9d61334",
+                    "code": "UM",
+                    "option": "ML"
+                }
+            ],
+            "version": 0,
+            "createdAt": "2025-02-21T18:44:03",
+            "updatedAt": "2025-02-21T18:44:03"
+        }
+    ],
+    "payments": [
+        {
+            "_id": "67b8f3a38d21302aa9d61335",
+            "amount": 110490,
+            "change": 0,
+            "surcharge": 0,
+            "netAmount": 110490,
+            "foreignCurrencyQuote": 1,
+            "foreignAmount": 0,
+            "foreignChange": 0,
+            "fuelAmount": 0,
+            "tipAmount": 0,
+            "donationAmount": 0,
+            "transactionObjectId": "67b8f339ec612716cd1f053d",
+            "trxType": "Sale",
+            "trxNumber": 79,
+            "storeCode": "2001",
+            "store": "66ffd502f35cca555fef3f94",
+            "storeName": "B24 ARMENIA",
+            "terminal": "67b3e67119d78e299c38dc86",
+            "terminalCode": "20011",
+            "periodNumber": 4,
+            "sbPeriodNumber": 1,
+            "beginDateTime": "2025-02-21T18:39:25",
+            "beginDateTimeAsInt": 20250221,
+            "businessDayAsInt": 20250221,
+            "beginDateTimeHour": 18,
+            "calendarPeriod": "67b7ec34b21671156c736c57",
+            "operatorCode": "2404",
+            "operatorName": "VELARDEZ PAULO",
+            "tender": "66e99b76c5f852b6ba9c17d9",
+            "tenderRepository": "67b3e67119d78e299c38dc88",
+            "tenderCode": "VBBVA_OFF",
+            "tenderName": "Visa BBVA Off",
+            "tenderType": {
+                "id": "5ea556595604c8593c607ed6",
+                "descriptor": "Card",
+                "disabled": false,
+                "code": 4,
+                "codeName": "CARD"
+            },
+            "voided": false,
+            "voiding": false,
+            "trainingModeFlag": false,
+            "suspendedFlag": false,
+            "cancelFlag": false,
+            "fiscalPosNumber": "02085",
+            "billType": "FC B",
+            "serieOfficialBill": "B",
+            "billNumber": "00000009",
+            "currencyISOCode": "ARS",
+            "card": true,
+            "provider": "VBBVA_OFF",
+            "creditType": "",
+            "vtolStore": "-",
+            "vtolTerminal": "-",
+            "referenceNumber": "-",
+            "lotNumber": "-",
+            "cardNumber": "-",
+            "planDescriptor": "VISA BBVA OFF - CUOTA SIMPLE S/I",
+            "sellerName": "VELARDEZ PAULO",
+            "cardAuthorizationCode": "3617",
+            "cardCouponNumber": "0892",
+            "cardLotNumber": "0892",
+            "installments": "6",
+            "cardReferenceNumber": "0892",
+            "additionalData": {
+                "ad_planPrinterDescriptor": "VISA BBVA OFF - CUOTA SIMPLE S/I",
+                "sellerName": "VELARDEZ PAULO",
+                "planSurcharge": 0,
+                "cardAuthorizationCode": "3617",
+                "cardCouponNumber": "0892",
+                "authorization_type": 11,
+                "cardLotNumber": "0892",
+                "cardBatchNumber": "0892",
+                "paymentVerificationMethod": "11",
+                "installments": 6,
+                "ticketCurrency": "$",
+                "cuotaValue": "ARS 18.415,00",
+                "customerDocument": "31925937",
+                "cardReferenceNumber": "0892",
+                "planId": "1",
+                "currencyCode": "$",
+                "storeCode": "2001"
+            },
+            "version": 0,
+            "createdAt": "2025-02-21T18:44:03",
+            "updatedAt": "2025-02-21T18:44:03"
+        }
+    ],
+    "discounts": [],
+    "terminalAdditionalData": {},
+    "properties": {
+        "showPricesWithTaxesAndDiscounts": false,
+        "paymentPlanSelected": [
+            {
+                "id": "67aa70351de7d88909af9c05",
+                "paymentPlanCode": "VBBVA_OFF1PRQL",
+                "planId": "1",
+                "description": "VISA BBVA OFF - CUOTA SIMPLE S/I",
+                "terminalCardConfigPaymentPlanInstallments": [
+                    {
+                        "paymentPlanInstallmentCode": "161CRL",
+                        "installments": 6,
+                        "surcharge": 0
+                    }
+                ],
+                "vtolCode": "1",
+                "currency": "$"
+            }
+        ],
+        "promoLoyalties": {
+            "customers": [
+                {
+                    "sequence": 1,
+                    "attributes": [
+                        {
+                            "value": "false",
+                            "name": "birthday"
+                        },
+                        {
+                            "value": "consumidor final",
+                            "name": "lastName"
+                        },
+                        {
+                            "value": "99999999",
+                            "name": "identifier"
+                        },
+                        {
+                            "value": "99999999",
+                            "name": "code"
+                        },
+                        {
+                            "value": "false",
+                            "name": "incompleteData"
+                        },
+                        {
+                            "name": "limitedBenefits"
+                        },
+                        {
+                            "value": "1",
+                            "name": "type"
+                        },
+                        {
+                            "value": "null",
+                            "name": "phone"
+                        },
+                        {
+                            "value": "dm",
+                            "name": "segment"
+                        },
+                        {
+                            "value": "sin dato",
+                            "name": "name"
+                        },
+                        {
+                            "value": "1",
+                            "name": "seq"
+                        },
+                        {
+                            "value": "notienemail@yahoo.com.ar",
+                            "name": "email"
+                        },
+                        {
+                            "value": "124",
+                            "name": "age"
+                        }
+                    ],
+                    "attributesIt": [
+                        {
+                            "value": "false",
+                            "name": "birthday"
+                        },
+                        {
+                            "value": "consumidor final",
+                            "name": "lastName"
+                        },
+                        {
+                            "value": "99999999",
+                            "name": "identifier"
+                        },
+                        {
+                            "value": "99999999",
+                            "name": "code"
+                        },
+                        {
+                            "value": "false",
+                            "name": "incompleteData"
+                        },
+                        {
+                            "name": "limitedBenefits"
+                        },
+                        {
+                            "value": "1",
+                            "name": "type"
+                        },
+                        {
+                            "value": "null",
+                            "name": "phone"
+                        },
+                        {
+                            "value": "dm",
+                            "name": "segment"
+                        },
+                        {
+                            "value": "sin dato",
+                            "name": "name"
+                        },
+                        {
+                            "value": "1",
+                            "name": "seq"
+                        },
+                        {
+                            "value": "notienemail@yahoo.com.ar",
+                            "name": "email"
+                        },
+                        {
+                            "value": "124",
+                            "name": "age"
+                        }
+                    ],
+                    "attributesSize": 13
+                }
+            ]
+        },
+        "promotionsApplied": [
+            {
+                "benefits": [
+                    {
+                        "benefitType": "PaymentPlanBenefit",
+                        "order": 1,
+                        "attributes": [
+                            {
+                                "value": "PROMO SANTANDER WOMEN - VI 2",
+                                "name": "TLOGMessage"
+                            },
+                            {
+                                "name": "account"
+                            },
+                            {
+                                "value": "1",
+                                "name": "order"
+                            },
+                            {
+                                "value": "PaymentPlanBenefit",
+                                "name": "benefitType"
+                            },
+                            {
+                                "value": "resume",
+                                "name": "applicationMethod"
+                            },
+                            {
+                                "value": "PROMO SANTANDER WOMEN - VI 2",
+                                "name": "displayMessage"
+                            },
+                            {
+                                "value": "PROMO SANTANDER WOMEN - VI 2",
+                                "name": "printerMessage"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "baseAmount"
+                            },
+                            {
+                                "value": "677fc680d0c43e09fd4f56a6",
+                                "name": "nro"
+                            },
+                            {
+                                "value": "677fc680d0c43e09fd4f56a6",
+                                "name": "name"
+                            },
+                            {
+                                "value": "0",
+                                "name": "paymentplanvtolid"
+                            },
+                            {
+                                "value": "0",
+                                "name": "vtoloperationtype"
+                            },
+                            {
+                                "value": "VSRW",
+                                "name": "tender"
+                            },
+                            {
+                                "value": "2",
+                                "name": "installments"
+                            },
+                            {
+                                "value": "surcharge",
+                                "name": "percenttype"
+                            },
+                            {
+                                "value": "2",
+                                "name": "installmentsToDisplay"
+                            },
+                            {
+                                "value": "0",
+                                "name": "planId"
+                            },
+                            {
+                                "value": "4",
+                                "name": "type"
+                            },
+                            {
+                                "value": "0",
+                                "name": "percent"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "paymentAmount"
+                            }
+                        ],
+                        "comboParticipantLinesSize": 0,
+                        "attributesSize": 20,
+                        "appliedLinesSize": 0
+                    },
+                    {
+                        "benefitType": "PaymentPlanBenefit",
+                        "order": 2,
+                        "attributes": [
+                            {
+                                "value": "PROMO SANTANDER WOMEN - VI 3",
+                                "name": "TLOGMessage"
+                            },
+                            {
+                                "name": "account"
+                            },
+                            {
+                                "value": "2",
+                                "name": "order"
+                            },
+                            {
+                                "value": "PaymentPlanBenefit",
+                                "name": "benefitType"
+                            },
+                            {
+                                "value": "resume",
+                                "name": "applicationMethod"
+                            },
+                            {
+                                "value": "PROMO SANTANDER WOMEN - VI 3",
+                                "name": "displayMessage"
+                            },
+                            {
+                                "value": "PROMO SANTANDER WOMEN - VI 3",
+                                "name": "printerMessage"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "baseAmount"
+                            },
+                            {
+                                "value": "677fc680d0c43e09fd4f56a6",
+                                "name": "nro"
+                            },
+                            {
+                                "value": "677fc680d0c43e09fd4f56a6",
+                                "name": "name"
+                            },
+                            {
+                                "value": "0",
+                                "name": "paymentplanvtolid"
+                            },
+                            {
+                                "value": "0",
+                                "name": "vtoloperationtype"
+                            },
+                            {
+                                "value": "VSRW",
+                                "name": "tender"
+                            },
+                            {
+                                "value": "3",
+                                "name": "installments"
+                            },
+                            {
+                                "value": "surcharge",
+                                "name": "percenttype"
+                            },
+                            {
+                                "value": "3",
+                                "name": "installmentsToDisplay"
+                            },
+                            {
+                                "value": "0",
+                                "name": "planId"
+                            },
+                            {
+                                "value": "4",
+                                "name": "type"
+                            },
+                            {
+                                "value": "0",
+                                "name": "percent"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "paymentAmount"
+                            }
+                        ],
+                        "comboParticipantLinesSize": 0,
+                        "attributesSize": 20,
+                        "appliedLinesSize": 0
+                    },
+                    {
+                        "benefitType": "PaymentPlanBenefit",
+                        "order": 3,
+                        "attributes": [
+                            {
+                                "value": "PROMO SANTANDER WOMEN - VI 6",
+                                "name": "TLOGMessage"
+                            },
+                            {
+                                "name": "account"
+                            },
+                            {
+                                "value": "3",
+                                "name": "order"
+                            },
+                            {
+                                "value": "PaymentPlanBenefit",
+                                "name": "benefitType"
+                            },
+                            {
+                                "value": "resume",
+                                "name": "applicationMethod"
+                            },
+                            {
+                                "value": "PROMO SANTANDER WOMEN - VI 6",
+                                "name": "displayMessage"
+                            },
+                            {
+                                "value": "PROMO SANTANDER WOMEN - VI 6",
+                                "name": "printerMessage"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "baseAmount"
+                            },
+                            {
+                                "value": "677fc680d0c43e09fd4f56a6",
+                                "name": "nro"
+                            },
+                            {
+                                "value": "677fc680d0c43e09fd4f56a6",
+                                "name": "name"
+                            },
+                            {
+                                "value": "0",
+                                "name": "paymentplanvtolid"
+                            },
+                            {
+                                "value": "0",
+                                "name": "vtoloperationtype"
+                            },
+                            {
+                                "value": "VSRW",
+                                "name": "tender"
+                            },
+                            {
+                                "value": "6",
+                                "name": "installments"
+                            },
+                            {
+                                "value": "surcharge",
+                                "name": "percenttype"
+                            },
+                            {
+                                "value": "6",
+                                "name": "installmentsToDisplay"
+                            },
+                            {
+                                "value": "0",
+                                "name": "planId"
+                            },
+                            {
+                                "value": "4",
+                                "name": "type"
+                            },
+                            {
+                                "value": "0",
+                                "name": "percent"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "paymentAmount"
+                            }
+                        ],
+                        "comboParticipantLinesSize": 0,
+                        "attributesSize": 20,
+                        "appliedLinesSize": 0
+                    }
+                ],
+                "id": "PROMO SANTANDER WOMEN",
+                "nro": "677fc680d0c43e09fd4f56a6",
+                "code": "PROMO SANTANDER WOMEN"
+            },
+            {
+                "benefits": [
+                    {
+                        "benefitType": "PaymentPlanBenefit",
+                        "order": 4,
+                        "attributes": [
+                            {
+                                "value": "PROMO NARANJA - PLAN Z",
+                                "name": "TLOGMessage"
+                            },
+                            {
+                                "name": "account"
+                            },
+                            {
+                                "value": "4",
+                                "name": "order"
+                            },
+                            {
+                                "value": "PaymentPlanBenefit",
+                                "name": "benefitType"
+                            },
+                            {
+                                "value": "resume",
+                                "name": "applicationMethod"
+                            },
+                            {
+                                "value": "PROMO NARANJA - PLAN Z",
+                                "name": "displayMessage"
+                            },
+                            {
+                                "value": "PROMO NARANJA - PLAN Z",
+                                "name": "printerMessage"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "baseAmount"
+                            },
+                            {
+                                "value": "677fd967d0c43e09fd5a6b67",
+                                "name": "nro"
+                            },
+                            {
+                                "value": "677fd967d0c43e09fd5a6b67",
+                                "name": "name"
+                            },
+                            {
+                                "value": "0",
+                                "name": "paymentplanvtolid"
+                            },
+                            {
+                                "value": "0",
+                                "name": "vtoloperationtype"
+                            },
+                            {
+                                "value": "NJ",
+                                "name": "tender"
+                            },
+                            {
+                                "value": "11",
+                                "name": "installments"
+                            },
+                            {
+                                "value": "surcharge",
+                                "name": "percenttype"
+                            },
+                            {
+                                "value": "11",
+                                "name": "installmentsToDisplay"
+                            },
+                            {
+                                "value": "0",
+                                "name": "planId"
+                            },
+                            {
+                                "value": "4",
+                                "name": "type"
+                            },
+                            {
+                                "value": "0",
+                                "name": "percent"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "paymentAmount"
+                            }
+                        ],
+                        "comboParticipantLinesSize": 0,
+                        "attributesSize": 20,
+                        "appliedLinesSize": 0
+                    },
+                    {
+                        "benefitType": "PaymentPlanBenefit",
+                        "order": 5,
+                        "attributes": [
+                            {
+                                "value": "PROMO NARANJA - NJ 6",
+                                "name": "TLOGMessage"
+                            },
+                            {
+                                "name": "account"
+                            },
+                            {
+                                "value": "5",
+                                "name": "order"
+                            },
+                            {
+                                "value": "PaymentPlanBenefit",
+                                "name": "benefitType"
+                            },
+                            {
+                                "value": "resume",
+                                "name": "applicationMethod"
+                            },
+                            {
+                                "value": "PROMO NARANJA - NJ 6",
+                                "name": "displayMessage"
+                            },
+                            {
+                                "value": "PROMO NARANJA - NJ 6",
+                                "name": "printerMessage"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "baseAmount"
+                            },
+                            {
+                                "value": "677fd967d0c43e09fd5a6b67",
+                                "name": "nro"
+                            },
+                            {
+                                "value": "677fd967d0c43e09fd5a6b67",
+                                "name": "name"
+                            },
+                            {
+                                "value": "0",
+                                "name": "paymentplanvtolid"
+                            },
+                            {
+                                "value": "0",
+                                "name": "vtoloperationtype"
+                            },
+                            {
+                                "value": "NJ",
+                                "name": "tender"
+                            },
+                            {
+                                "value": "6",
+                                "name": "installments"
+                            },
+                            {
+                                "value": "surcharge",
+                                "name": "percenttype"
+                            },
+                            {
+                                "value": "6",
+                                "name": "installmentsToDisplay"
+                            },
+                            {
+                                "value": "0",
+                                "name": "planId"
+                            },
+                            {
+                                "value": "4",
+                                "name": "type"
+                            },
+                            {
+                                "value": "0",
+                                "name": "percent"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "paymentAmount"
+                            }
+                        ],
+                        "comboParticipantLinesSize": 0,
+                        "attributesSize": 20,
+                        "appliedLinesSize": 0
+                    },
+                    {
+                        "benefitType": "PaymentPlanBenefit",
+                        "order": 6,
+                        "attributes": [
+                            {
+                                "value": "PROMO NARANJA - PLAN Z OFF",
+                                "name": "TLOGMessage"
+                            },
+                            {
+                                "name": "account"
+                            },
+                            {
+                                "value": "6",
+                                "name": "order"
+                            },
+                            {
+                                "value": "PaymentPlanBenefit",
+                                "name": "benefitType"
+                            },
+                            {
+                                "value": "resume",
+                                "name": "applicationMethod"
+                            },
+                            {
+                                "value": "PROMO NARANJA - PLAN Z OFF",
+                                "name": "displayMessage"
+                            },
+                            {
+                                "value": "PROMO NARANJA - PLAN Z OFF",
+                                "name": "printerMessage"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "baseAmount"
+                            },
+                            {
+                                "value": "677fd967d0c43e09fd5a6b67",
+                                "name": "nro"
+                            },
+                            {
+                                "value": "677fd967d0c43e09fd5a6b67",
+                                "name": "name"
+                            },
+                            {
+                                "value": "0",
+                                "name": "paymentplanvtolid"
+                            },
+                            {
+                                "value": "0",
+                                "name": "vtoloperationtype"
+                            },
+                            {
+                                "value": "NJ_OFF",
+                                "name": "tender"
+                            },
+                            {
+                                "value": "11",
+                                "name": "installments"
+                            },
+                            {
+                                "value": "surcharge",
+                                "name": "percenttype"
+                            },
+                            {
+                                "value": "11",
+                                "name": "installmentsToDisplay"
+                            },
+                            {
+                                "value": "0",
+                                "name": "planId"
+                            },
+                            {
+                                "value": "4",
+                                "name": "type"
+                            },
+                            {
+                                "value": "0",
+                                "name": "percent"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "paymentAmount"
+                            }
+                        ],
+                        "comboParticipantLinesSize": 0,
+                        "attributesSize": 20,
+                        "appliedLinesSize": 0
+                    },
+                    {
+                        "benefitType": "PaymentPlanBenefit",
+                        "order": 7,
+                        "attributes": [
+                            {
+                                "value": "PROMO NARANJA - NJ OFF 6",
+                                "name": "TLOGMessage"
+                            },
+                            {
+                                "name": "account"
+                            },
+                            {
+                                "value": "7",
+                                "name": "order"
+                            },
+                            {
+                                "value": "PaymentPlanBenefit",
+                                "name": "benefitType"
+                            },
+                            {
+                                "value": "resume",
+                                "name": "applicationMethod"
+                            },
+                            {
+                                "value": "PROMO NARANJA - NJ OFF 6",
+                                "name": "displayMessage"
+                            },
+                            {
+                                "value": "PROMO NARANJA - NJ OFF 6",
+                                "name": "printerMessage"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "baseAmount"
+                            },
+                            {
+                                "value": "677fd967d0c43e09fd5a6b67",
+                                "name": "nro"
+                            },
+                            {
+                                "value": "677fd967d0c43e09fd5a6b67",
+                                "name": "name"
+                            },
+                            {
+                                "value": "0",
+                                "name": "paymentplanvtolid"
+                            },
+                            {
+                                "value": "0",
+                                "name": "vtoloperationtype"
+                            },
+                            {
+                                "value": "NJ_OFF",
+                                "name": "tender"
+                            },
+                            {
+                                "value": "6",
+                                "name": "installments"
+                            },
+                            {
+                                "value": "surcharge",
+                                "name": "percenttype"
+                            },
+                            {
+                                "value": "6",
+                                "name": "installmentsToDisplay"
+                            },
+                            {
+                                "value": "0",
+                                "name": "planId"
+                            },
+                            {
+                                "value": "4",
+                                "name": "type"
+                            },
+                            {
+                                "value": "0",
+                                "name": "percent"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "paymentAmount"
+                            }
+                        ],
+                        "comboParticipantLinesSize": 0,
+                        "attributesSize": 20,
+                        "appliedLinesSize": 0
+                    }
+                ],
+                "id": "PROMO NARANJA",
+                "nro": "677fd967d0c43e09fd5a6b67",
+                "code": "PROMO NARANJA"
+            },
+            {
+                "benefits": [
+                    {
+                        "benefitType": "PaymentPlanBenefit",
+                        "order": 8,
+                        "attributes": [
+                            {
+                                "value": "PROMO GALICIA MAS - VI 3",
+                                "name": "TLOGMessage"
+                            },
+                            {
+                                "name": "account"
+                            },
+                            {
+                                "value": "8",
+                                "name": "order"
+                            },
+                            {
+                                "value": "PaymentPlanBenefit",
+                                "name": "benefitType"
+                            },
+                            {
+                                "value": "resume",
+                                "name": "applicationMethod"
+                            },
+                            {
+                                "value": "PROMO GALICIA MAS - VI 3",
+                                "name": "displayMessage"
+                            },
+                            {
+                                "value": "PROMO GALICIA MAS - VI 3",
+                                "name": "printerMessage"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "baseAmount"
+                            },
+                            {
+                                "value": "677fdcfed0c43e09fd5c8b7d",
+                                "name": "nro"
+                            },
+                            {
+                                "value": "677fdcfed0c43e09fd5c8b7d",
+                                "name": "name"
+                            },
+                            {
+                                "value": "0",
+                                "name": "paymentplanvtolid"
+                            },
+                            {
+                                "value": "0",
+                                "name": "vtoloperationtype"
+                            },
+                            {
+                                "value": "VHSBC",
+                                "name": "tender"
+                            },
+                            {
+                                "value": "3",
+                                "name": "installments"
+                            },
+                            {
+                                "value": "surcharge",
+                                "name": "percenttype"
+                            },
+                            {
+                                "value": "3",
+                                "name": "installmentsToDisplay"
+                            },
+                            {
+                                "value": "0",
+                                "name": "planId"
+                            },
+                            {
+                                "value": "4",
+                                "name": "type"
+                            },
+                            {
+                                "value": "0",
+                                "name": "percent"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "paymentAmount"
+                            }
+                        ],
+                        "comboParticipantLinesSize": 0,
+                        "attributesSize": 20,
+                        "appliedLinesSize": 0
+                    },
+                    {
+                        "benefitType": "PaymentPlanBenefit",
+                        "order": 9,
+                        "attributes": [
+                            {
+                                "value": "PROMO GALICIA MAS - AM 3",
+                                "name": "TLOGMessage"
+                            },
+                            {
+                                "name": "account"
+                            },
+                            {
+                                "value": "9",
+                                "name": "order"
+                            },
+                            {
+                                "value": "PaymentPlanBenefit",
+                                "name": "benefitType"
+                            },
+                            {
+                                "value": "resume",
+                                "name": "applicationMethod"
+                            },
+                            {
+                                "value": "PROMO GALICIA MAS - AM 3",
+                                "name": "displayMessage"
+                            },
+                            {
+                                "value": "PROMO GALICIA MAS - AM 3",
+                                "name": "printerMessage"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "baseAmount"
+                            },
+                            {
+                                "value": "677fdcfed0c43e09fd5c8b7d",
+                                "name": "nro"
+                            },
+                            {
+                                "value": "677fdcfed0c43e09fd5c8b7d",
+                                "name": "name"
+                            },
+                            {
+                                "value": "0",
+                                "name": "paymentplanvtolid"
+                            },
+                            {
+                                "value": "0",
+                                "name": "vtoloperationtype"
+                            },
+                            {
+                                "value": "AMH",
+                                "name": "tender"
+                            },
+                            {
+                                "value": "3",
+                                "name": "installments"
+                            },
+                            {
+                                "value": "surcharge",
+                                "name": "percenttype"
+                            },
+                            {
+                                "value": "3",
+                                "name": "installmentsToDisplay"
+                            },
+                            {
+                                "value": "0",
+                                "name": "planId"
+                            },
+                            {
+                                "value": "4",
+                                "name": "type"
+                            },
+                            {
+                                "value": "0",
+                                "name": "percent"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "paymentAmount"
+                            }
+                        ],
+                        "comboParticipantLinesSize": 0,
+                        "attributesSize": 20,
+                        "appliedLinesSize": 0
+                    },
+                    {
+                        "benefitType": "PaymentPlanBenefit",
+                        "order": 10,
+                        "attributes": [
+                            {
+                                "value": "PROMO GALICIA MAS - MC 3",
+                                "name": "TLOGMessage"
+                            },
+                            {
+                                "name": "account"
+                            },
+                            {
+                                "value": "10",
+                                "name": "order"
+                            },
+                            {
+                                "value": "PaymentPlanBenefit",
+                                "name": "benefitType"
+                            },
+                            {
+                                "value": "resume",
+                                "name": "applicationMethod"
+                            },
+                            {
+                                "value": "PROMO GALICIA MAS - MC 3",
+                                "name": "displayMessage"
+                            },
+                            {
+                                "value": "PROMO GALICIA MAS - MC 3",
+                                "name": "printerMessage"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "baseAmount"
+                            },
+                            {
+                                "value": "677fdcfed0c43e09fd5c8b7d",
+                                "name": "nro"
+                            },
+                            {
+                                "value": "677fdcfed0c43e09fd5c8b7d",
+                                "name": "name"
+                            },
+                            {
+                                "value": "0",
+                                "name": "paymentplanvtolid"
+                            },
+                            {
+                                "value": "0",
+                                "name": "vtoloperationtype"
+                            },
+                            {
+                                "value": "MHSBC",
+                                "name": "tender"
+                            },
+                            {
+                                "value": "3",
+                                "name": "installments"
+                            },
+                            {
+                                "value": "surcharge",
+                                "name": "percenttype"
+                            },
+                            {
+                                "value": "3",
+                                "name": "installmentsToDisplay"
+                            },
+                            {
+                                "value": "0",
+                                "name": "planId"
+                            },
+                            {
+                                "value": "4",
+                                "name": "type"
+                            },
+                            {
+                                "value": "0",
+                                "name": "percent"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "paymentAmount"
+                            }
+                        ],
+                        "comboParticipantLinesSize": 0,
+                        "attributesSize": 20,
+                        "appliedLinesSize": 0
+                    },
+                    {
+                        "benefitType": "PaymentPlanBenefit",
+                        "order": 11,
+                        "attributes": [
+                            {
+                                "value": "PROMO GALICIA MAS - VI OFF 3",
+                                "name": "TLOGMessage"
+                            },
+                            {
+                                "name": "account"
+                            },
+                            {
+                                "value": "11",
+                                "name": "order"
+                            },
+                            {
+                                "value": "PaymentPlanBenefit",
+                                "name": "benefitType"
+                            },
+                            {
+                                "value": "resume",
+                                "name": "applicationMethod"
+                            },
+                            {
+                                "value": "PROMO GALICIA MAS - VI OFF 3",
+                                "name": "displayMessage"
+                            },
+                            {
+                                "value": "PROMO GALICIA MAS - VI OFF 3",
+                                "name": "printerMessage"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "baseAmount"
+                            },
+                            {
+                                "value": "677fdcfed0c43e09fd5c8b7d",
+                                "name": "nro"
+                            },
+                            {
+                                "value": "677fdcfed0c43e09fd5c8b7d",
+                                "name": "name"
+                            },
+                            {
+                                "value": "0",
+                                "name": "paymentplanvtolid"
+                            },
+                            {
+                                "value": "0",
+                                "name": "vtoloperationtype"
+                            },
+                            {
+                                "value": "VHSBC_OFF",
+                                "name": "tender"
+                            },
+                            {
+                                "value": "3",
+                                "name": "installments"
+                            },
+                            {
+                                "value": "surcharge",
+                                "name": "percenttype"
+                            },
+                            {
+                                "value": "3",
+                                "name": "installmentsToDisplay"
+                            },
+                            {
+                                "value": "0",
+                                "name": "planId"
+                            },
+                            {
+                                "value": "4",
+                                "name": "type"
+                            },
+                            {
+                                "value": "0",
+                                "name": "percent"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "paymentAmount"
+                            }
+                        ],
+                        "comboParticipantLinesSize": 0,
+                        "attributesSize": 20,
+                        "appliedLinesSize": 0
+                    },
+                    {
+                        "benefitType": "PaymentPlanBenefit",
+                        "order": 12,
+                        "attributes": [
+                            {
+                                "value": "PROMO GALICIA MAS - AM OFF 3",
+                                "name": "TLOGMessage"
+                            },
+                            {
+                                "name": "account"
+                            },
+                            {
+                                "value": "12",
+                                "name": "order"
+                            },
+                            {
+                                "value": "PaymentPlanBenefit",
+                                "name": "benefitType"
+                            },
+                            {
+                                "value": "resume",
+                                "name": "applicationMethod"
+                            },
+                            {
+                                "value": "PROMO GALICIA MAS - AM OFF 3",
+                                "name": "displayMessage"
+                            },
+                            {
+                                "value": "PROMO GALICIA MAS - AM OFF 3",
+                                "name": "printerMessage"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "baseAmount"
+                            },
+                            {
+                                "value": "677fdcfed0c43e09fd5c8b7d",
+                                "name": "nro"
+                            },
+                            {
+                                "value": "677fdcfed0c43e09fd5c8b7d",
+                                "name": "name"
+                            },
+                            {
+                                "value": "0",
+                                "name": "paymentplanvtolid"
+                            },
+                            {
+                                "value": "0",
+                                "name": "vtoloperationtype"
+                            },
+                            {
+                                "value": "AMH_OFF",
+                                "name": "tender"
+                            },
+                            {
+                                "value": "3",
+                                "name": "installments"
+                            },
+                            {
+                                "value": "surcharge",
+                                "name": "percenttype"
+                            },
+                            {
+                                "value": "3",
+                                "name": "installmentsToDisplay"
+                            },
+                            {
+                                "value": "0",
+                                "name": "planId"
+                            },
+                            {
+                                "value": "4",
+                                "name": "type"
+                            },
+                            {
+                                "value": "0",
+                                "name": "percent"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "paymentAmount"
+                            }
+                        ],
+                        "comboParticipantLinesSize": 0,
+                        "attributesSize": 20,
+                        "appliedLinesSize": 0
+                    },
+                    {
+                        "benefitType": "PaymentPlanBenefit",
+                        "order": 13,
+                        "attributes": [
+                            {
+                                "value": "PROMO GALICIA MAS - MC OFF 3",
+                                "name": "TLOGMessage"
+                            },
+                            {
+                                "name": "account"
+                            },
+                            {
+                                "value": "13",
+                                "name": "order"
+                            },
+                            {
+                                "value": "PaymentPlanBenefit",
+                                "name": "benefitType"
+                            },
+                            {
+                                "value": "resume",
+                                "name": "applicationMethod"
+                            },
+                            {
+                                "value": "PROMO GALICIA MAS - MC OFF 3",
+                                "name": "displayMessage"
+                            },
+                            {
+                                "value": "PROMO GALICIA MAS - MC OFF 3",
+                                "name": "printerMessage"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "baseAmount"
+                            },
+                            {
+                                "value": "677fdcfed0c43e09fd5c8b7d",
+                                "name": "nro"
+                            },
+                            {
+                                "value": "677fdcfed0c43e09fd5c8b7d",
+                                "name": "name"
+                            },
+                            {
+                                "value": "0",
+                                "name": "paymentplanvtolid"
+                            },
+                            {
+                                "value": "0",
+                                "name": "vtoloperationtype"
+                            },
+                            {
+                                "value": "MHSBC_OFF",
+                                "name": "tender"
+                            },
+                            {
+                                "value": "3",
+                                "name": "installments"
+                            },
+                            {
+                                "value": "surcharge",
+                                "name": "percenttype"
+                            },
+                            {
+                                "value": "3",
+                                "name": "installmentsToDisplay"
+                            },
+                            {
+                                "value": "0",
+                                "name": "planId"
+                            },
+                            {
+                                "value": "4",
+                                "name": "type"
+                            },
+                            {
+                                "value": "0",
+                                "name": "percent"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "paymentAmount"
+                            }
+                        ],
+                        "comboParticipantLinesSize": 0,
+                        "attributesSize": 20,
+                        "appliedLinesSize": 0
+                    }
+                ],
+                "id": "PROMO GALICIA MAS",
+                "nro": "677fdcfed0c43e09fd5c8b7d",
+                "code": "PROMO GALICIA MAS"
+            },
+            {
+                "benefits": [
+                    {
+                        "benefitType": "PaymentPlanBenefit",
+                        "order": 14,
+                        "attributes": [
+                            {
+                                "value": "PROMO BANCO SUPERVIELLE - VI 6",
+                                "name": "TLOGMessage"
+                            },
+                            {
+                                "name": "account"
+                            },
+                            {
+                                "value": "14",
+                                "name": "order"
+                            },
+                            {
+                                "value": "PaymentPlanBenefit",
+                                "name": "benefitType"
+                            },
+                            {
+                                "value": "resume",
+                                "name": "applicationMethod"
+                            },
+                            {
+                                "value": "PROMO BANCO SUPERVIELLE - VI 6",
+                                "name": "displayMessage"
+                            },
+                            {
+                                "value": "PROMO BANCO SUPERVIELLE - VI 6",
+                                "name": "printerMessage"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "baseAmount"
+                            },
+                            {
+                                "value": "677fcb83d0c43e09fd5246e0",
+                                "name": "nro"
+                            },
+                            {
+                                "value": "677fcb83d0c43e09fd5246e0",
+                                "name": "name"
+                            },
+                            {
+                                "value": "0",
+                                "name": "paymentplanvtolid"
+                            },
+                            {
+                                "value": "1",
+                                "name": "vtoloperationtype"
+                            },
+                            {
+                                "value": "VS",
+                                "name": "tender"
+                            },
+                            {
+                                "value": "6",
+                                "name": "installments"
+                            },
+                            {
+                                "value": "surcharge",
+                                "name": "percenttype"
+                            },
+                            {
+                                "value": "6",
+                                "name": "installmentsToDisplay"
+                            },
+                            {
+                                "value": "0",
+                                "name": "planId"
+                            },
+                            {
+                                "value": "11",
+                                "name": "type"
+                            },
+                            {
+                                "value": "0",
+                                "name": "percent"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "paymentAmount"
+                            }
+                        ],
+                        "comboParticipantLinesSize": 0,
+                        "attributesSize": 20,
+                        "appliedLinesSize": 0
+                    },
+                    {
+                        "benefitType": "PaymentPlanBenefit",
+                        "order": 15,
+                        "attributes": [
+                            {
+                                "value": "PROMO BANCO SUPERVIELLE - MC 6",
+                                "name": "TLOGMessage"
+                            },
+                            {
+                                "name": "account"
+                            },
+                            {
+                                "value": "15",
+                                "name": "order"
+                            },
+                            {
+                                "value": "PaymentPlanBenefit",
+                                "name": "benefitType"
+                            },
+                            {
+                                "value": "resume",
+                                "name": "applicationMethod"
+                            },
+                            {
+                                "value": "PROMO BANCO SUPERVIELLE - MC 6",
+                                "name": "displayMessage"
+                            },
+                            {
+                                "value": "PROMO BANCO SUPERVIELLE - MC 6",
+                                "name": "printerMessage"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "baseAmount"
+                            },
+                            {
+                                "value": "677fcb83d0c43e09fd5246e0",
+                                "name": "nro"
+                            },
+                            {
+                                "value": "677fcb83d0c43e09fd5246e0",
+                                "name": "name"
+                            },
+                            {
+                                "value": "0",
+                                "name": "paymentplanvtolid"
+                            },
+                            {
+                                "value": "1",
+                                "name": "vtoloperationtype"
+                            },
+                            {
+                                "value": "MCS",
+                                "name": "tender"
+                            },
+                            {
+                                "value": "6",
+                                "name": "installments"
+                            },
+                            {
+                                "value": "surcharge",
+                                "name": "percenttype"
+                            },
+                            {
+                                "value": "6",
+                                "name": "installmentsToDisplay"
+                            },
+                            {
+                                "value": "0",
+                                "name": "planId"
+                            },
+                            {
+                                "value": "11",
+                                "name": "type"
+                            },
+                            {
+                                "value": "0",
+                                "name": "percent"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "paymentAmount"
+                            }
+                        ],
+                        "comboParticipantLinesSize": 0,
+                        "attributesSize": 20,
+                        "appliedLinesSize": 0
+                    },
+                    {
+                        "benefitType": "PaymentPlanBenefit",
+                        "order": 16,
+                        "attributes": [
+                            {
+                                "value": "PROMO BANCO SUPERVIELLE - VI OFF 6",
+                                "name": "TLOGMessage"
+                            },
+                            {
+                                "name": "account"
+                            },
+                            {
+                                "value": "16",
+                                "name": "order"
+                            },
+                            {
+                                "value": "PaymentPlanBenefit",
+                                "name": "benefitType"
+                            },
+                            {
+                                "value": "resume",
+                                "name": "applicationMethod"
+                            },
+                            {
+                                "value": "PROMO BANCO SUPERVIELLE - VI OFF 6",
+                                "name": "displayMessage"
+                            },
+                            {
+                                "value": "PROMO BANCO SUPERVIELLE - VI OFF 6",
+                                "name": "printerMessage"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "baseAmount"
+                            },
+                            {
+                                "value": "677fcb83d0c43e09fd5246e0",
+                                "name": "nro"
+                            },
+                            {
+                                "value": "677fcb83d0c43e09fd5246e0",
+                                "name": "name"
+                            },
+                            {
+                                "value": "0",
+                                "name": "paymentplanvtolid"
+                            },
+                            {
+                                "value": "1",
+                                "name": "vtoloperationtype"
+                            },
+                            {
+                                "value": "VS_OFF",
+                                "name": "tender"
+                            },
+                            {
+                                "value": "6",
+                                "name": "installments"
+                            },
+                            {
+                                "value": "surcharge",
+                                "name": "percenttype"
+                            },
+                            {
+                                "value": "6",
+                                "name": "installmentsToDisplay"
+                            },
+                            {
+                                "value": "0",
+                                "name": "planId"
+                            },
+                            {
+                                "value": "11",
+                                "name": "type"
+                            },
+                            {
+                                "value": "0",
+                                "name": "percent"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "paymentAmount"
+                            }
+                        ],
+                        "comboParticipantLinesSize": 0,
+                        "attributesSize": 20,
+                        "appliedLinesSize": 0
+                    },
+                    {
+                        "benefitType": "PaymentPlanBenefit",
+                        "order": 17,
+                        "attributes": [
+                            {
+                                "value": "PROMO BANCO SUPERVIELLE - MC OFF 6",
+                                "name": "TLOGMessage"
+                            },
+                            {
+                                "name": "account"
+                            },
+                            {
+                                "value": "17",
+                                "name": "order"
+                            },
+                            {
+                                "value": "PaymentPlanBenefit",
+                                "name": "benefitType"
+                            },
+                            {
+                                "value": "resume",
+                                "name": "applicationMethod"
+                            },
+                            {
+                                "value": "PROMO BANCO SUPERVIELLE - MC OFF 6",
+                                "name": "displayMessage"
+                            },
+                            {
+                                "value": "PROMO BANCO SUPERVIELLE - MC OFF 6",
+                                "name": "printerMessage"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "baseAmount"
+                            },
+                            {
+                                "value": "677fcb83d0c43e09fd5246e0",
+                                "name": "nro"
+                            },
+                            {
+                                "value": "677fcb83d0c43e09fd5246e0",
+                                "name": "name"
+                            },
+                            {
+                                "value": "0",
+                                "name": "paymentplanvtolid"
+                            },
+                            {
+                                "value": "1",
+                                "name": "vtoloperationtype"
+                            },
+                            {
+                                "value": "MCS_OFF",
+                                "name": "tender"
+                            },
+                            {
+                                "value": "6",
+                                "name": "installments"
+                            },
+                            {
+                                "value": "surcharge",
+                                "name": "percenttype"
+                            },
+                            {
+                                "value": "6",
+                                "name": "installmentsToDisplay"
+                            },
+                            {
+                                "value": "0",
+                                "name": "planId"
+                            },
+                            {
+                                "value": "11",
+                                "name": "type"
+                            },
+                            {
+                                "value": "0",
+                                "name": "percent"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "paymentAmount"
+                            }
+                        ],
+                        "comboParticipantLinesSize": 0,
+                        "attributesSize": 20,
+                        "appliedLinesSize": 0
+                    }
+                ],
+                "id": "PROMO BANCO SUPERVIELLE",
+                "nro": "677fcb83d0c43e09fd5246e0",
+                "code": "PROMO BANCO SUPERVIELLE"
+            },
+            {
+                "benefits": [
+                    {
+                        "benefitType": "PaymentPlanBenefit",
+                        "order": 18,
+                        "attributes": [
+                            {
+                                "value": "PROMO BANCO PROVINCIA - VI 4",
+                                "name": "TLOGMessage"
+                            },
+                            {
+                                "name": "account"
+                            },
+                            {
+                                "value": "18",
+                                "name": "order"
+                            },
+                            {
+                                "value": "PaymentPlanBenefit",
+                                "name": "benefitType"
+                            },
+                            {
+                                "value": "resume",
+                                "name": "applicationMethod"
+                            },
+                            {
+                                "value": "PROMO BANCO PROVINCIA - VI 4",
+                                "name": "displayMessage"
+                            },
+                            {
+                                "value": "PROMO BANCO PROVINCIA - VI 4",
+                                "name": "printerMessage"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "baseAmount"
+                            },
+                            {
+                                "value": "677fb8b9d0c43e09fd4682c7",
+                                "name": "nro"
+                            },
+                            {
+                                "value": "677fb8b9d0c43e09fd4682c7",
+                                "name": "name"
+                            },
+                            {
+                                "value": "0",
+                                "name": "paymentplanvtolid"
+                            },
+                            {
+                                "value": "0",
+                                "name": "vtoloperationtype"
+                            },
+                            {
+                                "value": "VIBP",
+                                "name": "tender"
+                            },
+                            {
+                                "value": "4",
+                                "name": "installments"
+                            },
+                            {
+                                "value": "surcharge",
+                                "name": "percenttype"
+                            },
+                            {
+                                "value": "4",
+                                "name": "installmentsToDisplay"
+                            },
+                            {
+                                "value": "0",
+                                "name": "planId"
+                            },
+                            {
+                                "value": "4",
+                                "name": "type"
+                            },
+                            {
+                                "value": "0",
+                                "name": "percent"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "paymentAmount"
+                            }
+                        ],
+                        "comboParticipantLinesSize": 0,
+                        "attributesSize": 20,
+                        "appliedLinesSize": 0
+                    },
+                    {
+                        "benefitType": "PaymentPlanBenefit",
+                        "order": 19,
+                        "attributes": [
+                            {
+                                "value": "PROMO BANCO PROVINCIA - MC 4",
+                                "name": "TLOGMessage"
+                            },
+                            {
+                                "name": "account"
+                            },
+                            {
+                                "value": "19",
+                                "name": "order"
+                            },
+                            {
+                                "value": "PaymentPlanBenefit",
+                                "name": "benefitType"
+                            },
+                            {
+                                "value": "resume",
+                                "name": "applicationMethod"
+                            },
+                            {
+                                "value": "PROMO BANCO PROVINCIA - MC 4",
+                                "name": "displayMessage"
+                            },
+                            {
+                                "value": "PROMO BANCO PROVINCIA - MC 4",
+                                "name": "printerMessage"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "baseAmount"
+                            },
+                            {
+                                "value": "677fb8b9d0c43e09fd4682c7",
+                                "name": "nro"
+                            },
+                            {
+                                "value": "677fb8b9d0c43e09fd4682c7",
+                                "name": "name"
+                            },
+                            {
+                                "value": "0",
+                                "name": "paymentplanvtolid"
+                            },
+                            {
+                                "value": "0",
+                                "name": "vtoloperationtype"
+                            },
+                            {
+                                "value": "MCBP",
+                                "name": "tender"
+                            },
+                            {
+                                "value": "4",
+                                "name": "installments"
+                            },
+                            {
+                                "value": "surcharge",
+                                "name": "percenttype"
+                            },
+                            {
+                                "value": "4",
+                                "name": "installmentsToDisplay"
+                            },
+                            {
+                                "value": "0",
+                                "name": "planId"
+                            },
+                            {
+                                "value": "4",
+                                "name": "type"
+                            },
+                            {
+                                "value": "0",
+                                "name": "percent"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "paymentAmount"
+                            }
+                        ],
+                        "comboParticipantLinesSize": 0,
+                        "attributesSize": 20,
+                        "appliedLinesSize": 0
+                    },
+                    {
+                        "benefitType": "PaymentPlanBenefit",
+                        "order": 20,
+                        "attributes": [
+                            {
+                                "value": "PROMO BANCO PROVINCIA - VI OFF 4",
+                                "name": "TLOGMessage"
+                            },
+                            {
+                                "name": "account"
+                            },
+                            {
+                                "value": "20",
+                                "name": "order"
+                            },
+                            {
+                                "value": "PaymentPlanBenefit",
+                                "name": "benefitType"
+                            },
+                            {
+                                "value": "resume",
+                                "name": "applicationMethod"
+                            },
+                            {
+                                "value": "PROMO BANCO PROVINCIA - VI OFF 4",
+                                "name": "displayMessage"
+                            },
+                            {
+                                "value": "PROMO BANCO PROVINCIA - VI OFF 4",
+                                "name": "printerMessage"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "baseAmount"
+                            },
+                            {
+                                "value": "677fb8b9d0c43e09fd4682c7",
+                                "name": "nro"
+                            },
+                            {
+                                "value": "677fb8b9d0c43e09fd4682c7",
+                                "name": "name"
+                            },
+                            {
+                                "value": "0",
+                                "name": "paymentplanvtolid"
+                            },
+                            {
+                                "value": "0",
+                                "name": "vtoloperationtype"
+                            },
+                            {
+                                "value": "VIBP_OFF",
+                                "name": "tender"
+                            },
+                            {
+                                "value": "4",
+                                "name": "installments"
+                            },
+                            {
+                                "value": "surcharge",
+                                "name": "percenttype"
+                            },
+                            {
+                                "value": "4",
+                                "name": "installmentsToDisplay"
+                            },
+                            {
+                                "value": "0",
+                                "name": "planId"
+                            },
+                            {
+                                "value": "4",
+                                "name": "type"
+                            },
+                            {
+                                "value": "0",
+                                "name": "percent"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "paymentAmount"
+                            }
+                        ],
+                        "comboParticipantLinesSize": 0,
+                        "attributesSize": 20,
+                        "appliedLinesSize": 0
+                    },
+                    {
+                        "benefitType": "PaymentPlanBenefit",
+                        "order": 21,
+                        "attributes": [
+                            {
+                                "value": "PROMO BANCO PROVINCIA - MC OFF 4",
+                                "name": "TLOGMessage"
+                            },
+                            {
+                                "name": "account"
+                            },
+                            {
+                                "value": "21",
+                                "name": "order"
+                            },
+                            {
+                                "value": "PaymentPlanBenefit",
+                                "name": "benefitType"
+                            },
+                            {
+                                "value": "resume",
+                                "name": "applicationMethod"
+                            },
+                            {
+                                "value": "PROMO BANCO PROVINCIA - MC OFF 4",
+                                "name": "displayMessage"
+                            },
+                            {
+                                "value": "PROMO BANCO PROVINCIA - MC OFF 4",
+                                "name": "printerMessage"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "baseAmount"
+                            },
+                            {
+                                "value": "677fb8b9d0c43e09fd4682c7",
+                                "name": "nro"
+                            },
+                            {
+                                "value": "677fb8b9d0c43e09fd4682c7",
+                                "name": "name"
+                            },
+                            {
+                                "value": "0",
+                                "name": "paymentplanvtolid"
+                            },
+                            {
+                                "value": "0",
+                                "name": "vtoloperationtype"
+                            },
+                            {
+                                "value": "MCBP_OFF",
+                                "name": "tender"
+                            },
+                            {
+                                "value": "4",
+                                "name": "installments"
+                            },
+                            {
+                                "value": "surcharge",
+                                "name": "percenttype"
+                            },
+                            {
+                                "value": "4",
+                                "name": "installmentsToDisplay"
+                            },
+                            {
+                                "value": "0",
+                                "name": "planId"
+                            },
+                            {
+                                "value": "4",
+                                "name": "type"
+                            },
+                            {
+                                "value": "0",
+                                "name": "percent"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "paymentAmount"
+                            }
+                        ],
+                        "comboParticipantLinesSize": 0,
+                        "attributesSize": 20,
+                        "appliedLinesSize": 0
+                    }
+                ],
+                "id": "PROMO BANCO PROVINCIA",
+                "nro": "677fb8b9d0c43e09fd4682c7",
+                "code": "PROMO BANCO PROVINCIA"
+            },
+            {
+                "benefits": [
+                    {
+                        "benefitType": "PaymentPlanBenefit",
+                        "order": 22,
+                        "attributes": [
+                            {
+                                "value": "PROMO BANCO MACRO - VI 2",
+                                "name": "TLOGMessage"
+                            },
+                            {
+                                "name": "account"
+                            },
+                            {
+                                "value": "22",
+                                "name": "order"
+                            },
+                            {
+                                "value": "PaymentPlanBenefit",
+                                "name": "benefitType"
+                            },
+                            {
+                                "value": "resume",
+                                "name": "applicationMethod"
+                            },
+                            {
+                                "value": "PROMO BANCO MACRO - VI 2",
+                                "name": "displayMessage"
+                            },
+                            {
+                                "value": "PROMO BANCO MACRO - VI 2",
+                                "name": "printerMessage"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "baseAmount"
+                            },
+                            {
+                                "value": "677fd313d0c43e09fd56af28",
+                                "name": "nro"
+                            },
+                            {
+                                "value": "677fd313d0c43e09fd56af28",
+                                "name": "name"
+                            },
+                            {
+                                "value": "0",
+                                "name": "vtoloperationtype"
+                            },
+                            {
+                                "value": "VMAC",
+                                "name": "tender"
+                            },
+                            {
+                                "value": "2",
+                                "name": "installments"
+                            },
+                            {
+                                "value": "surcharge",
+                                "name": "percenttype"
+                            },
+                            {
+                                "value": "2",
+                                "name": "installmentsToDisplay"
+                            },
+                            {
+                                "value": "0",
+                                "name": "planId"
+                            },
+                            {
+                                "value": "4",
+                                "name": "type"
+                            },
+                            {
+                                "value": "0",
+                                "name": "percent"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "paymentAmount"
+                            }
+                        ],
+                        "comboParticipantLinesSize": 0,
+                        "attributesSize": 19,
+                        "appliedLinesSize": 0
+                    },
+                    {
+                        "benefitType": "PaymentPlanBenefit",
+                        "order": 23,
+                        "attributes": [
+                            {
+                                "value": "PROMO BANCO MACRO - VI 3",
+                                "name": "TLOGMessage"
+                            },
+                            {
+                                "name": "account"
+                            },
+                            {
+                                "value": "23",
+                                "name": "order"
+                            },
+                            {
+                                "value": "PaymentPlanBenefit",
+                                "name": "benefitType"
+                            },
+                            {
+                                "value": "resume",
+                                "name": "applicationMethod"
+                            },
+                            {
+                                "value": "PROMO BANCO MACRO - VI 3",
+                                "name": "displayMessage"
+                            },
+                            {
+                                "value": "PROMO BANCO MACRO - VI 3",
+                                "name": "printerMessage"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "baseAmount"
+                            },
+                            {
+                                "value": "677fd313d0c43e09fd56af28",
+                                "name": "nro"
+                            },
+                            {
+                                "value": "677fd313d0c43e09fd56af28",
+                                "name": "name"
+                            },
+                            {
+                                "value": "0",
+                                "name": "paymentplanvtolid"
+                            },
+                            {
+                                "value": "0",
+                                "name": "vtoloperationtype"
+                            },
+                            {
+                                "value": "VMAC",
+                                "name": "tender"
+                            },
+                            {
+                                "value": "3",
+                                "name": "installments"
+                            },
+                            {
+                                "value": "surcharge",
+                                "name": "percenttype"
+                            },
+                            {
+                                "value": "3",
+                                "name": "installmentsToDisplay"
+                            },
+                            {
+                                "value": "0",
+                                "name": "planId"
+                            },
+                            {
+                                "value": "4",
+                                "name": "type"
+                            },
+                            {
+                                "value": "0",
+                                "name": "percent"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "paymentAmount"
+                            }
+                        ],
+                        "comboParticipantLinesSize": 0,
+                        "attributesSize": 20,
+                        "appliedLinesSize": 0
+                    },
+                    {
+                        "benefitType": "PaymentPlanBenefit",
+                        "order": 24,
+                        "attributes": [
+                            {
+                                "value": "PROMO BANCO MACRO - VI 6",
+                                "name": "TLOGMessage"
+                            },
+                            {
+                                "name": "account"
+                            },
+                            {
+                                "value": "24",
+                                "name": "order"
+                            },
+                            {
+                                "value": "PaymentPlanBenefit",
+                                "name": "benefitType"
+                            },
+                            {
+                                "value": "resume",
+                                "name": "applicationMethod"
+                            },
+                            {
+                                "value": "PROMO BANCO MACRO - VI 6",
+                                "name": "displayMessage"
+                            },
+                            {
+                                "value": "PROMO BANCO MACRO - VI 6",
+                                "name": "printerMessage"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "baseAmount"
+                            },
+                            {
+                                "value": "677fd313d0c43e09fd56af28",
+                                "name": "nro"
+                            },
+                            {
+                                "value": "677fd313d0c43e09fd56af28",
+                                "name": "name"
+                            },
+                            {
+                                "value": "0",
+                                "name": "paymentplanvtolid"
+                            },
+                            {
+                                "value": "0",
+                                "name": "vtoloperationtype"
+                            },
+                            {
+                                "value": "VMAC",
+                                "name": "tender"
+                            },
+                            {
+                                "value": "6",
+                                "name": "installments"
+                            },
+                            {
+                                "value": "surcharge",
+                                "name": "percenttype"
+                            },
+                            {
+                                "value": "0",
+                                "name": "planId"
+                            },
+                            {
+                                "value": "4",
+                                "name": "type"
+                            },
+                            {
+                                "value": "0",
+                                "name": "percent"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "paymentAmount"
+                            }
+                        ],
+                        "comboParticipantLinesSize": 0,
+                        "attributesSize": 19,
+                        "appliedLinesSize": 0
+                    },
+                    {
+                        "benefitType": "PaymentPlanBenefit",
+                        "order": 25,
+                        "attributes": [
+                            {
+                                "value": "PROMO BANCO MACRO - VI OFF 2",
+                                "name": "TLOGMessage"
+                            },
+                            {
+                                "name": "account"
+                            },
+                            {
+                                "value": "25",
+                                "name": "order"
+                            },
+                            {
+                                "value": "PaymentPlanBenefit",
+                                "name": "benefitType"
+                            },
+                            {
+                                "value": "resume",
+                                "name": "applicationMethod"
+                            },
+                            {
+                                "value": "PROMO BANCO MACRO - VI OFF 2",
+                                "name": "displayMessage"
+                            },
+                            {
+                                "value": "PROMO BANCO MACRO - VI OFF 2",
+                                "name": "printerMessage"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "baseAmount"
+                            },
+                            {
+                                "value": "677fd313d0c43e09fd56af28",
+                                "name": "nro"
+                            },
+                            {
+                                "value": "677fd313d0c43e09fd56af28",
+                                "name": "name"
+                            },
+                            {
+                                "value": "0",
+                                "name": "paymentplanvtolid"
+                            },
+                            {
+                                "value": "0",
+                                "name": "vtoloperationtype"
+                            },
+                            {
+                                "value": "VMAC_OFF",
+                                "name": "tender"
+                            },
+                            {
+                                "value": "2",
+                                "name": "installments"
+                            },
+                            {
+                                "value": "surcharge",
+                                "name": "percenttype"
+                            },
+                            {
+                                "value": "2",
+                                "name": "installmentsToDisplay"
+                            },
+                            {
+                                "value": "0",
+                                "name": "planId"
+                            },
+                            {
+                                "value": "4",
+                                "name": "type"
+                            },
+                            {
+                                "value": "0",
+                                "name": "percent"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "paymentAmount"
+                            }
+                        ],
+                        "comboParticipantLinesSize": 0,
+                        "attributesSize": 20,
+                        "appliedLinesSize": 0
+                    },
+                    {
+                        "benefitType": "PaymentPlanBenefit",
+                        "order": 26,
+                        "attributes": [
+                            {
+                                "value": "PROMO BANCO MACRO - VI OFF 3",
+                                "name": "TLOGMessage"
+                            },
+                            {
+                                "name": "account"
+                            },
+                            {
+                                "value": "26",
+                                "name": "order"
+                            },
+                            {
+                                "value": "PaymentPlanBenefit",
+                                "name": "benefitType"
+                            },
+                            {
+                                "value": "resume",
+                                "name": "applicationMethod"
+                            },
+                            {
+                                "value": "PROMO BANCO MACRO - VI OFF 3",
+                                "name": "displayMessage"
+                            },
+                            {
+                                "value": "PROMO BANCO MACRO - VI OFF 3",
+                                "name": "printerMessage"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "baseAmount"
+                            },
+                            {
+                                "value": "677fd313d0c43e09fd56af28",
+                                "name": "nro"
+                            },
+                            {
+                                "value": "677fd313d0c43e09fd56af28",
+                                "name": "name"
+                            },
+                            {
+                                "value": "0",
+                                "name": "paymentplanvtolid"
+                            },
+                            {
+                                "value": "0",
+                                "name": "vtoloperationtype"
+                            },
+                            {
+                                "value": "VMAC_OFF",
+                                "name": "tender"
+                            },
+                            {
+                                "value": "3",
+                                "name": "installments"
+                            },
+                            {
+                                "value": "surcharge",
+                                "name": "percenttype"
+                            },
+                            {
+                                "value": "3",
+                                "name": "installmentsToDisplay"
+                            },
+                            {
+                                "value": "0",
+                                "name": "planId"
+                            },
+                            {
+                                "value": "4",
+                                "name": "type"
+                            },
+                            {
+                                "value": "0",
+                                "name": "percent"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "paymentAmount"
+                            }
+                        ],
+                        "comboParticipantLinesSize": 0,
+                        "attributesSize": 20,
+                        "appliedLinesSize": 0
+                    },
+                    {
+                        "benefitType": "PaymentPlanBenefit",
+                        "order": 27,
+                        "attributes": [
+                            {
+                                "value": "PROMO BANCO MACRO - VI OFF 6",
+                                "name": "TLOGMessage"
+                            },
+                            {
+                                "name": "account"
+                            },
+                            {
+                                "value": "27",
+                                "name": "order"
+                            },
+                            {
+                                "value": "PaymentPlanBenefit",
+                                "name": "benefitType"
+                            },
+                            {
+                                "value": "resume",
+                                "name": "applicationMethod"
+                            },
+                            {
+                                "value": "PROMO BANCO MACRO - VI OFF 6",
+                                "name": "displayMessage"
+                            },
+                            {
+                                "value": "PROMO BANCO MACRO - VI OFF 6",
+                                "name": "printerMessage"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "baseAmount"
+                            },
+                            {
+                                "value": "677fd313d0c43e09fd56af28",
+                                "name": "nro"
+                            },
+                            {
+                                "value": "677fd313d0c43e09fd56af28",
+                                "name": "name"
+                            },
+                            {
+                                "value": "0",
+                                "name": "paymentplanvtolid"
+                            },
+                            {
+                                "value": "0",
+                                "name": "vtoloperationtype"
+                            },
+                            {
+                                "value": "VMAC_OFF",
+                                "name": "tender"
+                            },
+                            {
+                                "value": "6",
+                                "name": "installments"
+                            },
+                            {
+                                "value": "surcharge",
+                                "name": "percenttype"
+                            },
+                            {
+                                "value": "6",
+                                "name": "installmentsToDisplay"
+                            },
+                            {
+                                "value": "0",
+                                "name": "planId"
+                            },
+                            {
+                                "value": "4",
+                                "name": "type"
+                            },
+                            {
+                                "value": "0",
+                                "name": "percent"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "paymentAmount"
+                            }
+                        ],
+                        "comboParticipantLinesSize": 0,
+                        "attributesSize": 20,
+                        "appliedLinesSize": 0
+                    },
+                    {
+                        "benefitType": "PaymentPlanBenefit",
+                        "order": 28,
+                        "attributes": [
+                            {
+                                "value": "PROMO BANCO MACRO - MC 2",
+                                "name": "TLOGMessage"
+                            },
+                            {
+                                "name": "account"
+                            },
+                            {
+                                "value": "28",
+                                "name": "order"
+                            },
+                            {
+                                "value": "PaymentPlanBenefit",
+                                "name": "benefitType"
+                            },
+                            {
+                                "value": "resume",
+                                "name": "applicationMethod"
+                            },
+                            {
+                                "value": "PROMO BANCO MACRO - MC 2",
+                                "name": "displayMessage"
+                            },
+                            {
+                                "value": "PROMO BANCO MACRO - MC 2",
+                                "name": "printerMessage"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "baseAmount"
+                            },
+                            {
+                                "value": "677fd313d0c43e09fd56af28",
+                                "name": "nro"
+                            },
+                            {
+                                "value": "677fd313d0c43e09fd56af28",
+                                "name": "name"
+                            },
+                            {
+                                "value": "0",
+                                "name": "paymentplanvtolid"
+                            },
+                            {
+                                "value": "0",
+                                "name": "vtoloperationtype"
+                            },
+                            {
+                                "value": "MMAC",
+                                "name": "tender"
+                            },
+                            {
+                                "value": "2",
+                                "name": "installments"
+                            },
+                            {
+                                "value": "surcharge",
+                                "name": "percenttype"
+                            },
+                            {
+                                "value": "2",
+                                "name": "installmentsToDisplay"
+                            },
+                            {
+                                "value": "0",
+                                "name": "planId"
+                            },
+                            {
+                                "value": "4",
+                                "name": "type"
+                            },
+                            {
+                                "value": "0",
+                                "name": "percent"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "paymentAmount"
+                            }
+                        ],
+                        "comboParticipantLinesSize": 0,
+                        "attributesSize": 20,
+                        "appliedLinesSize": 0
+                    },
+                    {
+                        "benefitType": "PaymentPlanBenefit",
+                        "order": 29,
+                        "attributes": [
+                            {
+                                "value": "PROMO BANCO MACRO - MC 3",
+                                "name": "TLOGMessage"
+                            },
+                            {
+                                "name": "account"
+                            },
+                            {
+                                "value": "29",
+                                "name": "order"
+                            },
+                            {
+                                "value": "PaymentPlanBenefit",
+                                "name": "benefitType"
+                            },
+                            {
+                                "value": "resume",
+                                "name": "applicationMethod"
+                            },
+                            {
+                                "value": "PROMO BANCO MACRO - MC 3",
+                                "name": "displayMessage"
+                            },
+                            {
+                                "value": "PROMO BANCO MACRO - MC 3",
+                                "name": "printerMessage"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "baseAmount"
+                            },
+                            {
+                                "value": "677fd313d0c43e09fd56af28",
+                                "name": "nro"
+                            },
+                            {
+                                "value": "677fd313d0c43e09fd56af28",
+                                "name": "name"
+                            },
+                            {
+                                "value": "0",
+                                "name": "paymentplanvtolid"
+                            },
+                            {
+                                "value": "0",
+                                "name": "vtoloperationtype"
+                            },
+                            {
+                                "value": "MMAC",
+                                "name": "tender"
+                            },
+                            {
+                                "value": "3",
+                                "name": "installments"
+                            },
+                            {
+                                "value": "surcharge",
+                                "name": "percenttype"
+                            },
+                            {
+                                "value": "3",
+                                "name": "installmentsToDisplay"
+                            },
+                            {
+                                "value": "0",
+                                "name": "planId"
+                            },
+                            {
+                                "value": "4",
+                                "name": "type"
+                            },
+                            {
+                                "value": "0",
+                                "name": "percent"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "paymentAmount"
+                            }
+                        ],
+                        "comboParticipantLinesSize": 0,
+                        "attributesSize": 20,
+                        "appliedLinesSize": 0
+                    },
+                    {
+                        "benefitType": "PaymentPlanBenefit",
+                        "order": 30,
+                        "attributes": [
+                            {
+                                "value": "PROMO BANCO MACRO - MC 6",
+                                "name": "TLOGMessage"
+                            },
+                            {
+                                "name": "account"
+                            },
+                            {
+                                "value": "30",
+                                "name": "order"
+                            },
+                            {
+                                "value": "PaymentPlanBenefit",
+                                "name": "benefitType"
+                            },
+                            {
+                                "value": "resume",
+                                "name": "applicationMethod"
+                            },
+                            {
+                                "value": "PROMO BANCO MACRO - MC 6",
+                                "name": "displayMessage"
+                            },
+                            {
+                                "value": "PROMO BANCO MACRO - MC 6",
+                                "name": "printerMessage"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "baseAmount"
+                            },
+                            {
+                                "value": "677fd313d0c43e09fd56af28",
+                                "name": "nro"
+                            },
+                            {
+                                "value": "677fd313d0c43e09fd56af28",
+                                "name": "name"
+                            },
+                            {
+                                "value": "0",
+                                "name": "paymentplanvtolid"
+                            },
+                            {
+                                "value": "0",
+                                "name": "vtoloperationtype"
+                            },
+                            {
+                                "value": "MMAC",
+                                "name": "tender"
+                            },
+                            {
+                                "value": "6",
+                                "name": "installments"
+                            },
+                            {
+                                "value": "surcharge",
+                                "name": "percenttype"
+                            },
+                            {
+                                "value": "6",
+                                "name": "installmentsToDisplay"
+                            },
+                            {
+                                "value": "0",
+                                "name": "planId"
+                            },
+                            {
+                                "value": "4",
+                                "name": "type"
+                            },
+                            {
+                                "value": "0",
+                                "name": "percent"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "paymentAmount"
+                            }
+                        ],
+                        "comboParticipantLinesSize": 0,
+                        "attributesSize": 20,
+                        "appliedLinesSize": 0
+                    },
+                    {
+                        "benefitType": "PaymentPlanBenefit",
+                        "order": 31,
+                        "attributes": [
+                            {
+                                "value": "PROMO BANCO MACRO - MC OFF 2",
+                                "name": "TLOGMessage"
+                            },
+                            {
+                                "name": "account"
+                            },
+                            {
+                                "value": "31",
+                                "name": "order"
+                            },
+                            {
+                                "value": "PaymentPlanBenefit",
+                                "name": "benefitType"
+                            },
+                            {
+                                "value": "resume",
+                                "name": "applicationMethod"
+                            },
+                            {
+                                "value": "PROMO BANCO MACRO - MC OFF 2",
+                                "name": "displayMessage"
+                            },
+                            {
+                                "value": "PROMO BANCO MACRO - MC OFF 2",
+                                "name": "printerMessage"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "baseAmount"
+                            },
+                            {
+                                "value": "677fd313d0c43e09fd56af28",
+                                "name": "nro"
+                            },
+                            {
+                                "value": "677fd313d0c43e09fd56af28",
+                                "name": "name"
+                            },
+                            {
+                                "value": "0",
+                                "name": "paymentplanvtolid"
+                            },
+                            {
+                                "value": "0",
+                                "name": "vtoloperationtype"
+                            },
+                            {
+                                "value": "MMAC_OFF",
+                                "name": "tender"
+                            },
+                            {
+                                "value": "2",
+                                "name": "installments"
+                            },
+                            {
+                                "value": "surcharge",
+                                "name": "percenttype"
+                            },
+                            {
+                                "value": "2",
+                                "name": "installmentsToDisplay"
+                            },
+                            {
+                                "value": "0",
+                                "name": "planId"
+                            },
+                            {
+                                "value": "4",
+                                "name": "type"
+                            },
+                            {
+                                "value": "0",
+                                "name": "percent"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "paymentAmount"
+                            }
+                        ],
+                        "comboParticipantLinesSize": 0,
+                        "attributesSize": 20,
+                        "appliedLinesSize": 0
+                    },
+                    {
+                        "benefitType": "PaymentPlanBenefit",
+                        "order": 32,
+                        "attributes": [
+                            {
+                                "value": "PROMO BANCO MACRO - MC OFF 3",
+                                "name": "TLOGMessage"
+                            },
+                            {
+                                "name": "account"
+                            },
+                            {
+                                "value": "32",
+                                "name": "order"
+                            },
+                            {
+                                "value": "PaymentPlanBenefit",
+                                "name": "benefitType"
+                            },
+                            {
+                                "value": "resume",
+                                "name": "applicationMethod"
+                            },
+                            {
+                                "value": "PROMO BANCO MACRO - MC OFF 3",
+                                "name": "displayMessage"
+                            },
+                            {
+                                "value": "PROMO BANCO MACRO - MC OFF 3",
+                                "name": "printerMessage"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "baseAmount"
+                            },
+                            {
+                                "value": "677fd313d0c43e09fd56af28",
+                                "name": "nro"
+                            },
+                            {
+                                "value": "677fd313d0c43e09fd56af28",
+                                "name": "name"
+                            },
+                            {
+                                "value": "0",
+                                "name": "paymentplanvtolid"
+                            },
+                            {
+                                "value": "0",
+                                "name": "vtoloperationtype"
+                            },
+                            {
+                                "value": "MMAC_OFF",
+                                "name": "tender"
+                            },
+                            {
+                                "value": "3",
+                                "name": "installments"
+                            },
+                            {
+                                "value": "surcharge",
+                                "name": "percenttype"
+                            },
+                            {
+                                "value": "3",
+                                "name": "installmentsToDisplay"
+                            },
+                            {
+                                "value": "0",
+                                "name": "planId"
+                            },
+                            {
+                                "value": "4",
+                                "name": "type"
+                            },
+                            {
+                                "value": "0",
+                                "name": "percent"
+                            },
+                            {
+                                "value": "110490.00",
+                                "name": "paymentAmount"
+                            }
+                        ],"comboP

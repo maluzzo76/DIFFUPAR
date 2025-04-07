@@ -1,8 +1,8 @@
-D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\DataBase_DW\bin\Debug\DataBase_DW.dacpac
-D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\DataBase_DW\obj\Debug\DataBase_DW.sqlproj.AssemblyReference.cache
-D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\DataBase_DW\obj\Debug\Model.xml
-D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\DataBase_DW\obj\Debug\refactor.xml
-D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\DataBase_DW\obj\Debug\postdeploy.sql
-D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\DataBase_DW\obj\Debug\predeploy.sql
-D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\DataBase_DW\obj\Debug\DataBase_DW.dll
-D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\DataBase_DW\obj\Debug\DataBase_DW.pdb
+c:\Users\Dell\Documents\Alusoft\Mariano Roberto Aluzzo - Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\DataBase_DW\bin\Debug\DataBase_DW.dacpac
+c:\Users\Dell\Documents\Alusoft\Mariano Roberto Aluzzo - Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\DataBase_DW\obj\Debug\DataBase_DW.sqlproj.AssemblyReference.cache
+c:\Users\Dell\Documents\Alusoft\Mariano Roberto Aluzzo - Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\DataBase_DW\obj\Debug\Model.xml
+c:\Users\Dell\Documents\Alusoft\Mariano Roberto Aluzzo - Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\DataBase_DW\obj\Debug\refactor.xml
+c:\Users\Dell\Documents\Alusoft\Mariano Roberto Aluzzo - Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\DataBase_DW\obj\Debug\postdeploy.sql
+c:\Users\Dell\Documents\Alusoft\Mariano Roberto Aluzzo - Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\DataBase_DW\obj\Debug\predeploy.sql
+c:\Users\Dell\Documents\Alusoft\Mariano Roberto Aluzzo - Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\DataBase_DW\obj\Debug\DataBase_DW.dll
+c:\Users\Dell\Documents\Alusoft\Mariano Roberto Aluzzo - Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\DataBase_DW\obj\Debug\DataBase_DW.pdb

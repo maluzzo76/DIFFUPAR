@@ -52,3 +52,21 @@ D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Log\obj\Release\Log.csproj.Assembly
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Log\obj\Release\Log.csproj.CoreCompileInputs.cache
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Log\obj\Release\Log.dll
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Log\obj\Release\Log.pdb
+D:\Fuentes\Diffupar\Source\Diffupar\Log\bin\Release\Log.dll
+D:\Fuentes\Diffupar\Source\Diffupar\Log\bin\Release\Log.pdb
+D:\Fuentes\Diffupar\Source\Diffupar\Log\obj\Release\Log.csproj.AssemblyReference.cache
+D:\Fuentes\Diffupar\Source\Diffupar\Log\obj\Release\Log.csproj.CoreCompileInputs.cache
+D:\Fuentes\Diffupar\Source\Diffupar\Log\obj\Release\Log.dll
+D:\Fuentes\Diffupar\Source\Diffupar\Log\obj\Release\Log.pdb
+D:\Fuentes\Diffupar\Source\Diffupar\Log\bin\Release\Newtonsoft.Json.dll
+D:\Fuentes\Diffupar\Source\Diffupar\Log\bin\Release\Newtonsoft.Json.xml
+D:\Fuentes\Diffupar\Source\Diffupar\Log\obj\Release\Log.csproj.Up2Date
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Log\bin\Release\Log.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Log\bin\Release\Log.pdb
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Log\bin\Release\Newtonsoft.Json.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Log\bin\Release\Newtonsoft.Json.xml
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Log\obj\Release\Log.csproj.AssemblyReference.cache
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Log\obj\Release\Log.csproj.CoreCompileInputs.cache
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Log\obj\Release\Log.csproj.Up2Date
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Log\obj\Release\Log.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Log\obj\Release\Log.pdb

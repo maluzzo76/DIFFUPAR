@@ -54,3 +54,30 @@ D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Log\obj\Debug\Log.csproj.AssemblyRe
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Log\obj\Debug\Log.csproj.CoreCompileInputs.cache
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Log\obj\Debug\Log.dll
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Log\obj\Debug\Log.pdb
+D:\Fuentes\Diffupar\Source\Diffupar\Log\bin\Debug\Log.dll
+D:\Fuentes\Diffupar\Source\Diffupar\Log\bin\Debug\Log.pdb
+D:\Fuentes\Diffupar\Source\Diffupar\Log\obj\Debug\Log.csproj.AssemblyReference.cache
+D:\Fuentes\Diffupar\Source\Diffupar\Log\obj\Debug\Log.csproj.CoreCompileInputs.cache
+D:\Fuentes\Diffupar\Source\Diffupar\Log\obj\Debug\Log.dll
+D:\Fuentes\Diffupar\Source\Diffupar\Log\obj\Debug\Log.pdb
+D:\Fuentes\Diffupar\Source\Diffupar\Log\bin\Debug\Newtonsoft.Json.dll
+D:\Fuentes\Diffupar\Source\Diffupar\Log\bin\Debug\Newtonsoft.Json.xml
+D:\Fuentes\Diffupar\Source\Diffupar\Log\obj\Debug\Log.csproj.Up2Date
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Log\bin\Debug\Log.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Log\bin\Debug\Log.pdb
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Log\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Log\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Log\obj\Debug\Log.csproj.AssemblyReference.cache
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Log\obj\Debug\Log.csproj.CoreCompileInputs.cache
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Log\obj\Debug\Log.csproj.Up2Date
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Log\obj\Debug\Log.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Log\obj\Debug\Log.pdb
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Log\bin\Debug\Log.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Log\bin\Debug\Log.pdb
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Log\bin\Debug\Newtonsoft.Json.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Log\bin\Debug\Newtonsoft.Json.xml
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Log\obj\Debug\Log.csproj.AssemblyReference.cache
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Log\obj\Debug\Log.csproj.CoreCompileInputs.cache
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Log\obj\Debug\Log.csproj.Up2Date
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Log\obj\Debug\Log.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Log\obj\Debug\Log.pdb

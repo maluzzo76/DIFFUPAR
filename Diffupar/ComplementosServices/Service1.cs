@@ -35,6 +35,11 @@ namespace ComplementosServices
                 timer.Stop();
                 Log.Write.WriteError("Inicio Elapsed Servicio");
                 Process.IA.ProcesarComplementos();
+
+                Process.Napse _napse = new Process.Napse();
+                _napse.GetNapseRest();
+
+                Process.NapseCast.JsonNapseTransform();
             }
             catch (Exception ex)
             {             

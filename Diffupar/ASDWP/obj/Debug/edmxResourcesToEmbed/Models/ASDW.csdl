@@ -214,6 +214,10 @@
       <End Role="MenuSecurity" EntitySet="MenuSecurity" />
       <End Role="ItemMenuSecurity" EntitySet="ItemMenuSecurity" />
     </AssociationSet>
+    <EntitySet Name="RabbitErrorLog" EntityType="DiffuparAnalyticsModel.RabbitErrorLog" />
+    <EntitySet Name="RabbitMenssage" EntityType="DiffuparAnalyticsModel.RabbitMenssage" />
+    <EntitySet Name="RabbitQueue" EntityType="DiffuparAnalyticsModel.RabbitQueue" />
+    <EntitySet Name="RabbitMessageMapping" EntityType="DiffuparAnalyticsModel.RabbitMessageMapping" />
   </EntityContainer>
   <Association Name="FK__DbMapping__Colum__07C12930">
     <End Type="DiffuparAnalyticsModel.DbColumns" Role="DbColumns" Multiplicity="0..1" />
@@ -338,6 +342,7 @@
     <Property Name="Orden" Type="Int32" />
     <NavigationProperty Name="AspNetUsers" Relationship="DiffuparAnalyticsModel.FK__MenuSecur__User___30242045" FromRole="MenuSecurity" ToRole="AspNetUsers" />
     <NavigationProperty Name="ItemMenuSecurity" Relationship="DiffuparAnalyticsModel.FK__ItemMenuS__Menu___2F2FFC0C" FromRole="MenuSecurity" ToRole="ItemMenuSecurity" />
+    <Property Name="OcrCode3" Type="String" />
   </EntityType>
   <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
     <End Type="DiffuparAnalyticsModel.AspNetUsers" Role="AspNetUsers" Multiplicity="1">
@@ -395,4 +400,52 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="RabbitErrorLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProcessDate" Type="DateTime" Precision="3" />
+    <Property Name="RabbitQueueId" Type="Int32" />
+    <Property Name="ErrorMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Excepcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ProcessId" Type="Guid" />
+  </EntityType>
+  <EntityType Name="RabbitMenssage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Msg" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="RabbitQueue_Id" Type="Int32" />
+    <Property Name="ImportDate" Type="DateTime" Precision="3" />
+    <Property Name="ProcessId" Type="Guid" />
+    <Property Name="JsonTransactionID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="RabbitQueue">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ExchangeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="QueueName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="RoutingKey" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UltimaEjecucion" Type="DateTime" Precision="3" />
+    <Property Name="ProximaEjecucion" Type="DateTime" Precision="3" />
+    <Property Name="Estado" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Origen" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="tipo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TableDestinoDw" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="RabbitMessageMapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ColumnName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="JsonAttribute" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="RabbitQueueId" Type="Int32" />
+  </EntityType>
 </Schema>

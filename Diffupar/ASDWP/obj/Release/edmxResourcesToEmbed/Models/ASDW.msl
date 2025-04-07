@@ -154,6 +154,7 @@
     <EntitySetMapping Name="MenuSecurity">
       <EntityTypeMapping TypeName="DiffuparAnalyticsModel.MenuSecurity">
         <MappingFragment StoreEntitySet="MenuSecurity">
+          <ScalarProperty Name="OcrCode3" ColumnName="OcrCode3" />
           <ScalarProperty Name="Orden" ColumnName="Orden" />
           <ScalarProperty Name="IsActivo" ColumnName="IsActivo" />
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -170,5 +171,57 @@
         <ScalarProperty Name="Id" ColumnName="RoleId" />
       </EndProperty>
     </AssociationSetMapping>
+    <EntitySetMapping Name="RabbitErrorLog">
+      <EntityTypeMapping TypeName="DiffuparAnalyticsModel.RabbitErrorLog">
+        <MappingFragment StoreEntitySet="RabbitErrorLog">
+          <ScalarProperty Name="ProcessId" ColumnName="ProcessId" />
+          <ScalarProperty Name="Excepcion" ColumnName="Excepcion" />
+          <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+          <ScalarProperty Name="RabbitQueueId" ColumnName="RabbitQueueId" />
+          <ScalarProperty Name="ProcessDate" ColumnName="ProcessDate" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RabbitMenssage">
+      <EntityTypeMapping TypeName="DiffuparAnalyticsModel.RabbitMenssage">
+        <MappingFragment StoreEntitySet="RabbitMenssage">
+          <ScalarProperty Name="JsonTransactionID" ColumnName="JsonTransactionID" />
+          <ScalarProperty Name="ProcessId" ColumnName="ProcessId" />
+          <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
+          <ScalarProperty Name="RabbitQueue_Id" ColumnName="RabbitQueue_Id" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Msg" ColumnName="Msg" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RabbitQueue">
+      <EntityTypeMapping TypeName="DiffuparAnalyticsModel.RabbitQueue">
+        <MappingFragment StoreEntitySet="RabbitQueue">
+          <ScalarProperty Name="TableDestinoDw" ColumnName="TableDestinoDw" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="Origen" ColumnName="Origen" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="ProximaEjecucion" ColumnName="ProximaEjecucion" />
+          <ScalarProperty Name="UltimaEjecucion" ColumnName="UltimaEjecucion" />
+          <ScalarProperty Name="RoutingKey" ColumnName="RoutingKey" />
+          <ScalarProperty Name="QueueName" ColumnName="QueueName" />
+          <ScalarProperty Name="ExchangeName" ColumnName="ExchangeName" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RabbitMessageMapping">
+      <EntityTypeMapping TypeName="DiffuparAnalyticsModel.RabbitMessageMapping">
+        <MappingFragment StoreEntitySet="RabbitMessageMapping">
+          <ScalarProperty Name="RabbitQueueId" ColumnName="RabbitQueueId" />
+          <ScalarProperty Name="JsonAttribute" ColumnName="JsonAttribute" />
+          <ScalarProperty Name="ColumnName" ColumnName="ColumnName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

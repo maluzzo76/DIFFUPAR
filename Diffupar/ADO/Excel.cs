@@ -20,7 +20,7 @@ namespace ADO
         {
             DataSet _ds = new DataSet();
 
-            string _conexion = string.Format("Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties = 'Excel 12.0 Xml;HDR=YES'; ", filePath);
+            string _conexion = string.Format("Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties = 'Excel 12.0 Xml;HDR=YES';", filePath);
 
             OleDbConnection _oconn = new OleDbConnection(_conexion);
             OleDbCommand _oCommand = new OleDbCommand();

@@ -18,7 +18,7 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="position:absolute; top:0px;width:100%;">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="position:absolute; top:0px;width:100%">
         <div class="container-fluid ">
             @Html.ActionLink("Alusoft - Data Warehouse admin", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Alternar navegación" aria-controls="navbarSupportedContent"
@@ -59,9 +59,26 @@
 
                                                     break;
 
+                                                case "Seguridad":
+                                                    <a class="dropdown-item menuitem" href="@Url.Action("index", "UserSetting", null)">Seguridad</a>
+
+                                                    break;
+
+                                                case "NExtracciones":
+                                                    <a class="dropdown-item menuitem" href="@Url.Action("index", "RabbitQueues", null)">Extracciones</a>
+
+                                                    break;
+
                                                 case "TLibroMayor":
-                                                    <a class="dropdown-item" href="/Templates/Template Libro Mayor Complemento.xlsx">Complemento Libro Mayor</a>
-                                                    <a class="dropdown-item" href="/Templates/Template Plan de Cuentas Complemento.xlsx">Complemento Plan de Cuentas</a>
+                                                    <a class="dropdown-item" href="/Templates/Template  Libro Mayor Complemento.xlsx">Complemento Libro Mayor</a>
+                                                    <a class="dropdown-item" href="/Templates/Template  Plan de Cuentas Complemento.xlsx">Complemento Plan de Cuentas</a>
+                                                    <a class="dropdown-item" href="~/Templates/Template Lugar Cliente Complemento.xlsx">Complemento Lugar Cliente</a>
+                                                    <a class="dropdown-item" href="~/Templates/Template Tipo Producto Complemento.xlsx">Complemento Tipo Producto</a>
+                                                    <a class="dropdown-item" href="~/Templates/Template Propio Tercero Complemento.xlsx">Complemento Propio Tercero</a>
+                                                    <a class="dropdown-item" href="~/Templates/Template Ventas Mensual.xlsx">Complemento Venta Mensual</a>
+                                                    <a class="dropdown-item" href="~/Templates/Template Tipos de Movimientos.xlsx">Tipos de Movimientos</a>
+                                                    <a class="dropdown-item" href="~/Templates/Template Vendedores Complemento.xlsx">Complemento Vendedores</a>
+                                                    <a class="dropdown-item" href="~/Templates/Template Productos Relevantes Complemento.xlsx">Productos Relevantes</a>
                                                     break;
 
                                                 case "TObjetivosTotal":
@@ -69,19 +86,32 @@
                                                     <a class="dropdown-item" href="/Templates/Objetivos Diffupar.xlsx">Objetivos Diffupar</a>
                                                     break;
 
-                                             
 
-                                                case "UpLibroMayor":                                                    
-                                                    <a style="border-top:1px solid black;" class="dropdown-item" href="/DbProcesses/FileUpload?pn=Libro Mayor">Libro Mayor</a>
+
+                                                case "UpLibroMayor":
+                                                    <a style="border-bottom:0px solid black;" class="dropdown-item" href="/DbProcesses/FileUpload?pn=Libro Mayor">Libro Mayor</a>
+                                                    <a style="border-bottom:0px solid black;" class="dropdown-item" href="/DbProcesses/FileUpload?pn=Plan de Cuentas">Plan de Cuentas</a>
+                                                    <a style="border-bottom:0px solid black;" class="dropdown-item" href="/DbProcesses/FileUpload?pn=Lugar Cliente">Lugar Cliente</a>
+                                                    <a style="border-bottom:0px solid black;" class="dropdown-item" href="/DbProcesses/FileUpload?pn=Tipo Producto">Tipo Producto</a>
+                                                    <a style="border-bottom:0px solid black;" class="dropdown-item" href="/DbProcesses/FileUpload?pn=Propio Tercero">Propio Tercero</a>
+                                                    <a style="border-bottom:0px solid black;" class="dropdown-item" href="/DbProcesses/FileUpload?pn=Ventas Mensual">Ventas Mensuales</a>
+                                                    <a style="border-bottom:0px solid black;" class="dropdown-item" href="/DbProcesses/FileUpload?pn=Tipos Movimientos">Tipos Movimientos</a>
+                                                    <a style="border-bottom:0px solid black;" class="dropdown-item" href="/DbProcesses/FileUpload?pn=Vendedores">Vendedores</a>
+                                                    <a style="border-bottom:0px solid black;" class="dropdown-item" href="/DbProcesses/FileUpload?pn=ProductosRelevantes">Productos Relevantes</a>
                                                     break;
 
                                                 case "UpObjetivosTotal":
                                                     <a style="border-top:1px solid black;" class="dropdown-item" href="/DbProcesses/FileUpload?pn=Objetivos%20Totales">Objetivos Totales</a>
                                                     <a class="dropdown-item" href="/DbProcesses/FileUpload?pn=Objetivos%20Diffupar">Objetivos Diffupar</a>
+                                                    <a class="dropdown-item " href="@Url.Action("index", "Objetivos", null)">Cargar Objetivos BI</a>
                                                     break;
 
                                                 case "Ver Procesos":
                                                     <a class="dropdown-item menuitem" href="@Url.Action("index", "DbProcesses",null)">Procesos</a>
+                                                    break;
+
+                                                case "Venta Retail":
+                                                    <a class="dropdown-item menuitem" href="@Url.Action("index", "Reports",null )">Mis Tableros</a>
                                                     break;
 
                                             }
@@ -103,7 +133,7 @@
             </div>
         </div>
     </nav>
-    <div class="container body-content" style="padding-top:50px;">
+    <div class="container-fluid body-content" style="padding-top:50px;">
         @RenderBody()
     </div>
 

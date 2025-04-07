@@ -19,3 +19,129 @@ D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\bin\Debug\System.Numerics.V
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\bin\Debug\System.Buffers.dll
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\bin\Debug\Log.dll
 D:\Fuentes\Diffupar\Source\DIFFUPAR\Diffupar\Process\bin\Debug\Log.pdb
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\Process.dll.config
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\Process.dll
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\Process.pdb
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\ADO.dll
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\EntityFramework.dll
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\EntityFramework.SqlServer.dll
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\Log.dll
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\MySql.Data.dll
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\System.Memory.dll
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\System.Numerics.Vectors.dll
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\System.Buffers.dll
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\ADO.pdb
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\ADO.dll.config
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\Log.pdb
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\EntityFramework.xml
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\EntityFramework.SqlServer.xml
+D:\Fuentes\Diffupar\Source\Diffupar\Process\obj\Debug\Process.csproj.AssemblyReference.cache
+D:\Fuentes\Diffupar\Source\Diffupar\Process\obj\Debug\Process.csproj.CoreCompileInputs.cache
+D:\Fuentes\Diffupar\Source\Diffupar\Process\obj\Debug\Process.dll
+D:\Fuentes\Diffupar\Source\Diffupar\Process\obj\Debug\Process.pdb
+D:\Fuentes\Diffupar\Source\Diffupar\Process\obj\Debug\Process.csproj.Up2Date
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\Newtonsoft.Json.dll
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\Newtonsoft.Json.xml
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\RabbitMQ.Client.dll
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\System.Threading.Channels.dll
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\RabbitMQ.Client.xml
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\System.Buffers.xml
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\System.Memory.xml
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\System.Numerics.Vectors.xml
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\System.Threading.Channels.xml
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\System.Text.Encodings.Web.dll
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\System.Text.Json.dll
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\System.ValueTuple.dll
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\System.Text.Encodings.Web.xml
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\System.Text.Json.xml
+D:\Fuentes\Diffupar\Source\Diffupar\Process\bin\Debug\System.ValueTuple.xml
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\Process.dll.config
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\Process.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\Process.pdb
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\ADO.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\EntityFramework.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\Log.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\RabbitMQ.Client.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\System.Buffers.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\System.Memory.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\System.Text.Json.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\System.Threading.Channels.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\System.ValueTuple.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\MySql.Data.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\ADO.pdb
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\ADO.dll.config
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\Log.pdb
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\EntityFramework.xml
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\RabbitMQ.Client.xml
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\System.Buffers.xml
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\System.Memory.xml
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\System.Text.Json.xml
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\System.Threading.Channels.xml
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\System.ValueTuple.xml
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\obj\Debug\Process.csproj.AssemblyReference.cache
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\obj\Debug\Process.csproj.CoreCompileInputs.cache
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\obj\Debug\Process.csproj.Up2Date
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\obj\Debug\Process.dll
+C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\obj\Debug\Process.pdb
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\Process.dll.config
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\Process.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\Process.pdb
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\ADO.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\EntityFramework.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\Log.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\Newtonsoft.Json.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\RabbitMQ.Client.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\System.Buffers.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\System.Memory.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\System.Text.Json.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\System.Threading.Channels.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\System.ValueTuple.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\MySql.Data.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\ADO.pdb
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\ADO.dll.config
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\Log.pdb
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\EntityFramework.xml
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\Newtonsoft.Json.xml
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\RabbitMQ.Client.xml
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\System.Buffers.xml
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\System.Memory.xml
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\System.Text.Json.xml
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\System.Threading.Channels.xml
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\bin\Debug\System.ValueTuple.xml
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\obj\Debug\Process.csproj.AssemblyReference.cache
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\obj\Debug\Process.csproj.CoreCompileInputs.cache
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\obj\Debug\Process.csproj.Up2Date
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\obj\Debug\Process.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Process\obj\Debug\Process.pdb

@@ -1,0 +1,71 @@
+﻿@model IEnumerable<ASDWP.Controllers.Objetivo>
+@{
+    ViewBag.Title = "Objetivos";
+}
+
+<h2>Objetivos</h2>
+
+@using (Html.BeginForm("Details", "Objetivos", new { anio = Model.Max(m=>m.Anio), mes = Model.Max(m=>m.Mes)}, FormMethod.Post, null))
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="col-md-3">
+            <input type="text" id="LugarCliente" name="LugarCliente" />
+            @Html.DropDownList("LugarClienteCoidgo", null, htmlAttributes: new { @class = "form-control" })
+        </div>
+        <div class="col-md-3">
+            <input type="submit" value="Buscar" class="btn btn-success" />
+        </div>
+    </div>
+}
+
+
+<hr />
+
+<table class="table">
+    <tr>
+        <th>
+            Año
+        </th>
+        <th>
+            Mes
+        </th>
+        <th>
+            Local
+        </th>
+        <th>
+            Objetivo $
+        </th>
+        <th>
+            objetivo Cant.
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>
+                @item.Anio
+            </th>
+            <th>
+                @item.Mes
+            </th>
+            <th>
+                @item.LugarCliente
+            </th>
+            <th>
+                $ @item.ObjetivoMoneda
+            </th>
+            <th>
+                @item.ObjetivoCantidad
+            </th>
+        </tr>
+    }
+</table>
+
+<br />
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">      
+        @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-info" })
+    </div>
+</div>
+

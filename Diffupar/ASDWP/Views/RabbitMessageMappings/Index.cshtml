@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ASDWP.Models.RabbitMessageMapping>
+
+@{
+    ViewBag.Title = "Rabbit Message Mapping";
+}
+
+<h2>Rabbit Message Mapping - <i> @ViewBag.RabbitqueueName</i> </h2>
+
+@Html.ActionLink("Volver", "Index", "RabbitQueues",null, new { @class = "btn btn-info" })
+
+
+<table class="table">
+    <tr>
+        <th>
+            Rabbit Process
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ColumnName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JsonAttribute)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @ViewBag.RabbitqueueName
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ColumnName)
+            </td>
+            <td>
+                @using (Html.BeginForm("CreateMapping", "RabbitMessageMappings", new { queueId = ViewBag.RabbitqueueId, id = item.Id }, FormMethod.Post))
+                {
+                    <input type="text" id="JsonAttribute" name="JsonAttribute" value="@item.JsonAttribute" />
+                    <input type="submit" value="Agregar" class="btn btn-success" />
+                }
+            </td>
+        </tr>
+    }
+
+</table>

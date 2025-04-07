@@ -32,6 +32,7 @@ namespace ADO
                 using (OdbcCommand command = OdbcConn.CreateCommand())
                 {   
                     command.CommandText = query;
+                    command.CommandTimeout = 1800;
                     OdbcConn.Open();
 
                     OdbcDataAdapter adapter = new OdbcDataAdapter(command);

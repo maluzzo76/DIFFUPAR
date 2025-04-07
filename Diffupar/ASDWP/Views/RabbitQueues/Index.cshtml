@@ -1,0 +1,104 @@
+﻿@model IEnumerable<ASDWP.Models.RabbitQueue>
+
+@{
+    ViewBag.Title = "Rabbit Admin";
+}
+
+<header>    
+    <script>
+        setInterval("location.reload()", 10000);
+    </script>
+</header>
+
+<h2>Rabbit Transaction</h2>
+
+<p>
+    @Html.ActionLink("Agregar Extracción", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>        
+        <th colspan="8"></th>
+        <th colspan="4" style="text-align:center;background-color:#d2e4fc">Mensajes</th>
+        <th colspan="2"></th>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Origen)
+        </th>
+        <th>
+            Tipo
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExchangeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QueueName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoutingKey)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UltimaEjecucion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProximaEjecucion)
+        </th>      
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {      
+
+
+        <tr>
+            <td>
+                <p style="padding-top: 2px">@item.Origen</p>
+            </td>
+            <td>
+                <p style="padding-top: 2px">@item.tipo</p>
+            </td>
+            <td>
+                <p style="padding-top: 2px; vertical-align:middle">@item.Nombre</p>
+            </td>
+            <td>
+                <p style="padding-top: 2px">@item.ExchangeName</p>
+            </td>
+            <td>
+                <p style="padding-top: 2px">@item.QueueName</p>
+            </td>
+            <td>
+                <p style="padding-top: 2px">@item.RoutingKey</p>
+            </td>
+            <td>
+                <p style="padding-top: 2px">@item.UltimaEjecucion</p>
+            </td>
+            <td>
+                <p style="padding-top: 2px">@item.ProximaEjecucion</p>
+            </td>
+         
+            <td>
+                @{
+                    if (item.Estado.Equals("OnLine"))
+                    {
+                        <p style="padding-top: 2px; color: green;" class="fw-bold">@item.Estado</p>
+                    }
+                    else
+                    {
+                        <p style="padding-top: 2px; color: red;" class="fw-bold">@item.Estado</p>
+                    }
+                }
+            </td>
+            <td>
+                <a class="btn-grid" href="@Url.Action("Edit","RabbitQueues", new { id = item.Id }) "><span><img src="~/Content/image/iconos_Lapiz.png" /></span></a>
+                <a class="btn-grid" href="@Url.Action("Details","RabbitQueues", new { id = item.Id }) "><img src="~/Content/image/iconos_Buscar.png" /></a>
+            </td>
+        </tr>
+    }
+
+</table>

@@ -5,5 +5,6 @@
 	Nombre varchar(100),
 	IsActivo bit default(0),
 	Orden int,
+	OcrCode3 varchar(max),
 	foreign key ([User_Id]) references AspNetUsers(Id)
 )

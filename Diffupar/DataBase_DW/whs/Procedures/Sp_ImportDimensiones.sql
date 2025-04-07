@@ -1,335 +1,1467 @@
-﻿CREATE PROCEDURE [stg].[Sp_ImportDimensiones]
+﻿	create PROCEDURE [stg].[Sp_ImportDimensiones]
 
-AS
-
-------------------------------------------------------------------------------------------------------
--- DELETE DIMENSIONES
-------------------------------------------------------------------------------------------------------
---Dimensiones Principales
-delete whs.FactComprobantes
-delete whs.DimProductos
-delete whs.DimBusinessPartner
-
---Dimensiones Secundarias
-delete whs.DimCategoria
-delete whs.DimFabricante
-delete whs.DimGenero
-delete whs.DimGruposArts
-delete whs.DimLineas
-delete whs.DimMarcas
-delete whs.DimProveedorRetailCegid 
-delete whs.DimTamanoReal
-delete whs.DimTamanosConc
-delete whs.DimTipoProveedor 
-delete whs.DimTiposProductos
-delete whs.DimUnidadesMedida
-delete whs.DimUnidadesNegocio
-delete whs.DimGrupoItems
-delete whs.DimProvincias
-delete whs.DimVendedores
-delete whs.DimCondicionesPago
-delete whs.DimBusinessPartnerGroup
-delete whs.DimAlmacenes
-delete whs.FactLibroMayor
-
-------------------------------------------------------------------------------------------------------
--- INSERTA DIMENSIONES SECUNDARIAS
-------------------------------------------------------------------------------------------------------
-insert into whs.DimCategoria select code, [name], null, null from stg.Categoria
-insert into whs.DimFabricante select code, [name], null, null from stg.Fabricante
-insert into whs.DimGenero select code, [name], null, null from stg.Genero
-insert into whs.DimGruposArts select code, [name], null, null from stg.GrupoArt
-insert into whs.DimLineas select code, [name], null, null from stg.Linea
-insert into whs.DimMarcas select code,[name], null, null from stg.Marca
-insert into whs.DimProveedorRetailCegid select code, [name], null, null from stg.ProveedorRetailCegid
-insert into whs.DimTamanoReal select code, [name], null, null from stg.TamanoReal
-insert into whs.DimTamanosConc select code, [name], null, null from stg.TamanoConc
-insert into whs.DimTipoProveedor select code, [name], null, null from stg.TipoProveedor
-insert into whs.DimUnidadesMedida select code, [name], null, null from stg.UnidadMedida
-insert into whs.DimUnidadesNegocio select code, [name], null, null from stg.UnidadNegocio
-insert into whs.DimGrupoItems select ItmsGrpCod,ItmsGrpNam from stg.GrupoItems
-insert into whs.DimProvincias select code,Country,[Name] from stg.Provincias
-insert into whs.DimVendedores select SlpCode,SlpName from stg.Vendedores
-insert into whs.DimCondicionesPago select GroupNum,PymntGroup from stg.CondicionPego
-insert into whs.DimBusinessPartnerGroup select GroupCode, GroupName, GroupType from stg.BiusinessPartnerGruop
-insert into whs.DimAlmacenes select WhsCode,WhsName, IntrnalKey from stg.Almacenes
-
-------------------------------------------------------------------------------------------------------
--- INSERTA DIMENSIONES PARTICIONADAS DE LA 1 A LA 5
-------------------------------------------------------------------------------------------------------
-exec stg.Sp_ImportSapDimesionesProducto
+	AS
 
 
-------------------------------------------------------------------------------------------------------
--- INSERTA DIMENSION PRODUCTO
-------------------------------------------------------------------------------------------------------
+	------------------------------------------------------------------------------------------------------
+	-- DELETE DIMENSIONES
+	------------------------------------------------------------------------------------------------------
+	--Dimensiones Principales
+	delete whs.FactComprobantes 
+	delete whs.FactOrdenesDeCompra
+	delete whs.FactInventario
+	Delete whs.factListaPrecios
+	delete whs.DimProductos
+	delete whs.DimBusinessPartner
 
-insert into whs.DimProductos
+	--Dimensiones Secundarias
+	delete whs.DimCategoria
+	delete whs.DimFabricante
+	delete whs.DimGenero
+	delete whs.DimGruposArts
+	delete whs.DimLineas
+	delete whs.DimMarcas
+	delete whs.DimProveedorRetailCegid 
+	delete whs.DimTamanoReal
+	delete whs.DimTamanosConc
+	delete whs.DimTipoProveedor 
+	delete whs.DimTiposProductos
+	delete whs.DimUnidadesMedida
+	delete whs.DimUnidadesNegocio
+	delete whs.DimGrupoItems
+	delete whs.DimProvincias
+	delete whs.DimVendedores
+	delete whs.DimCondicionesPago
+	delete whs.DimBusinessPartnerGroup
+	delete whs.DimAlmacenes
+	delete whs.FactLibroMayor
+	delete whs.DimTipoCambio
+
+	------------------------------------------------------------------------------------------------------
+	-- INSERTA DIMENSIONES SECUNDARIAS
+	------------------------------------------------------------------------------------------------------
+	insert into whs.DimCategoria select code, [name], null, null from stg.Categoria
+	insert into whs.DimFabricante select code, [name], null, null from stg.Fabricante
+	insert into whs.DimGenero select code, [name], null, null from stg.Genero
+	insert into whs.DimGruposArts select code, [name], null, null from stg.GrupoArt
+	insert into whs.DimLineas select code, [name], null, null from stg.Linea
+	insert into whs.DimMarcas select code,[name], null, null from stg.Marca
+	insert into whs.DimProveedorRetailCegid select code, [name], null, null from stg.ProveedorRetailCegid
+	insert into whs.DimTamanoReal select code, [name], null, null from stg.TamanoReal
+	insert into whs.DimTamanosConc select code, [name], null, null from stg.TamanoConc
+	insert into whs.DimTipoProveedor select code, [name], null, null from stg.TipoProveedor
+	insert into whs.DimUnidadesMedida select code, [name], null, null from stg.UnidadMedida
+	insert into whs.DimUnidadesNegocio select code, [name], null, null from stg.UnidadNegocio
+	insert into whs.DimGrupoItems select ItmsGrpCod,ItmsGrpNam from stg.GrupoItems
+	insert into whs.DimProvincias select code,Country,[Name] from stg.Provincias
+	insert into whs.DimVendedores select SlpCode,SlpName from stg.Vendedores
+	insert into whs.DimCondicionesPago select GroupNum,PymntGroup from stg.CondicionPego
+	insert into whs.DimBusinessPartnerGroup select GroupCode, GroupName, GroupType from stg.BiusinessPartnerGruop
+	insert into whs.DimAlmacenes select WhsCode,WhsName, IntrnalKey,U_Dimension1,CreateDate from stg.Almacenes
+	insert into whs.DimTipoCambio Select Fecha, Moneda, TipoCambio from stg.TipoCambio
+
+	------------------------------------------------------------------------------------------------------
+	-- INSERTA DIMENSIONES PARTICIONADAS DE LA 1 A LA 5
+	------------------------------------------------------------------------------------------------------
+	exec whs.Sp_ActualizarComplementos
+	exec stg.Sp_ImportSapDimesionesProducto
+
+
+
+	------------------------------------------------------------------------------------------------------
+	-- INSERTA DIMENSION PRODUCTO
+	------------------------------------------------------------------------------------------------------
+
+	insert into whs.DimProductos
+		select 
+		ItemCode,
+		Itemname,
+		c.id,
+		tp.id,
+		prc.id,
+		null,
+		null,
+		null,
+		f.id,
+		g.id,
+		ga.id,
+		l.id,
+		m.id,
+		tc.id,
+		tr.id,
+		d5.Id,
+		um.id,
+		une.id,
+		p.CreateDate,
+		p.UpdateDate,
+		d4.id,
+		gi.id
+		
+
+		from stg.Productos p
+		left join whs.DimCategoria c on c.Codigo = replicate('0', 2 - len(p.U_RBI_Categoria))+p.U_RBI_Categoria
+		left join whs.DimTipoProveedor tp on tp.Codigo = p.U_RBI_TipoProveedor
+		left join whs.DimProveedorRetailCegid prc on prc.Code = p.U_RBI_ProvRetailCegid
+		left join whs.DimFabricante f on f.Code = p.U_RBI_Fabricante
+		left join whs.DimGenero g on trim(g.Code) =replicate('0',3-len(trim(p.U_RBI_Genero))) + trim(p.U_RBI_Genero)
+		left join whs.DimGruposArts ga on ga.Code = p.U_RBI_GrupoArt
+		left join whs.DimLineas l on l.Code = replicate('0',3-len(trim(p.U_RBI_Linea))) + trim(p.U_RBI_Linea)
+		left join whs.DimMarcas m on m.Code =replicate('0',3-len(trim(p.U_RBI_Marca))) + trim(p.U_RBI_Marca)
+		left join whs.DimTamanosConc tc on tc.Code = replicate('0',3-len(trim(p.U_RBI_TamanoConc))) + trim(p.U_RBI_TamanoConc)
+		left join whs.DimTamanoReal tr on tr.Code = replicate('0',3-len(trim(p.U_RBI_TamanoReal))) + trim(p.U_RBI_TamanoReal)
+		left join whs.DimUnidadesMedida um on um.Code = p.U_RBI_UM
+		left join whs.DimUnidadesNegocio une on une.Code = p.U_RBI_UnideNegocio
+		left join whs.DimPropioTercero d4 on d4.codigo = p.U_RBI_Dimension4
+		left join whs.DimTiposProductos d5 on d5.Codigo = p.U_RBI_Dimension5
+		left join whs.DimGrupoItems gi on gi.ItmsGrpCod = p.ItmsGrpCod
+
+
+	------------------------------------------------------------------------------------------------------
+	-- INSERTA DIMENSION BUSINESS PARTNER
+	------------------------------------------------------------------------------------------------------
+	insert into whs.DimBusinessPartner
 	select 
-	ItemCode,
-	Itemname,
-	c.id,
-	tp.id,
-	prc.id,
-	null,
-	null,
-	null,
-	f.id,
-	g.id,
-	ga.id,
-	l.id,
-	m.id,
-	tc.id,
-	tr.id,
-	d5.Id,
-	um.id,
-	une.id,
-	p.CreateDate,
-	p.UpdateDate,
-	d4.id,
-	gi.id
-	
+	CardCode,
+	CardName,
+	CardType,
+	CmpPrivate,
+	bpg.id,
+	cp.id,
+	v.id,
+	p.id
 
-	from stg.Productos p
-	left join whs.DimCategoria c on c.Codigo = replicate('0', 2 - len(p.U_RBI_Categoria))+p.U_RBI_Categoria
-	left join whs.DimTipoProveedor tp on tp.Codigo = p.U_RBI_TipoProveedor
-	left join whs.DimProveedorRetailCegid prc on prc.Code = p.U_RBI_ProvRetailCegid
-	left join whs.DimFabricante f on f.Code = p.U_RBI_Fabricante
-	left join whs.DimGenero g on trim(g.Code) =replicate('0',3-len(trim(p.U_RBI_Genero))) + trim(p.U_RBI_Genero)
-	left join whs.DimGruposArts ga on ga.Code = p.U_RBI_GrupoArt
-	left join whs.DimLineas l on l.Code = replicate('0',3-len(trim(p.U_RBI_Linea))) + trim(p.U_RBI_Linea)
-	left join whs.DimMarcas m on m.Code =replicate('0',3-len(trim(p.U_RBI_Marca))) + trim(p.U_RBI_Marca)
-	left join whs.DimTamanosConc tc on tc.Code = replicate('0',3-len(trim(p.U_RBI_TamanoConc))) + trim(p.U_RBI_TamanoConc)
-	left join whs.DimTamanoReal tr on tr.Code = replicate('0',3-len(trim(p.U_RBI_TamanoReal))) + trim(p.U_RBI_TamanoReal)
-	left join whs.DimUnidadesMedida um on um.Code = p.U_RBI_UM
-	left join whs.DimUnidadesNegocio une on une.Code = p.U_RBI_UnideNegocio
-	left join whs.DimPropioTercero d4 on d4.codigo = p.U_RBI_Dimension4
-	left join whs.DimTiposProductos d5 on d5.Codigo = p.U_RBI_Dimension5
-	left join whs.DimGrupoItems gi on gi.ItmsGrpCod = p.ItmsGrpCod
+	from stg.BusinessPartner bp
+	left join whs.DimBusinessPartnerGroup bpg on bpg.GroupCode = bp.GroupCode
+	left join whs.DimCondicionesPago cp on cp.GroupNum = bp.GroupNum
+	left join whs.DimVendedores v on v.SlpCode = bp.SlpCode
+	left join whs.DimProvincias p on p.Codigo = bp.State1
+
+	------------------------------------------------------------------------------------------------------
+	-- INSERTA LISTA DE PRECIOS
+	------------------------------------------------------------------------------------------------------
+	insert into whs.factListaPrecios
+	select   lp.* , p.Id from stg.ListaPrecios lp
+	left join whs.DimProductos p on p.Codigo = lp.ItemCode
+
+	------------------------------------------------------------------------------------------------------
+	-- INSERTA FAC COMPROBANTES FACTURA
+	------------------------------------------------------------------------------------------------------
+
+	insert into whs.FactComprobantes
+	select DISTINCT
+		fc.DocEntry,
+		fc.DocNum ,
+		fc.DocType, 
+		fc.CANCELED,
+		fc.Handwrtten,
+		fc.Printed,
+		fc.DocStatus,
+		fc.DocDate,
+		fc.DocDueDate,	
+		fc.CtlAccount,
+		fc.UpdateDate,
+		fc.CreateDate,
+		fd.LineNum,	
+		fd.Price,
+		fd.Currency,
+		fd.LineTotal,
+		fd.OpenSum,
+		fd.SlpCode,
+		fd.AcctCode,
+		fd.PriceBefDi,
+		fd.BaseCard,
+		fd.TotalSumSy,
+		fd.OpenSumSys,
+		fd.VatPrcnt,
+		fd.PriceAfVAT,
+		fd.VatSum,
+		fd.VatSumSy,
+		fd.DedVatSum,
+		fd.DedVatSumS,
+		fd.GrssProfit,
+		fd.GrssProfSC,
+		fd.VisOrder,
+		fd.INMPrice,
+		fd.TaxCode,
+		fd.LineVat,
+		fd.LineVatS,
+		fd.OwnerCode,
+		fd.StockSum,
+		fd.StockSumSc,
+		fd.ShipToCode,
+		fd.ShipToDesc,
+		fd.GTotal,
+		fd.GTotalSC,
+		fd.TaxOnly,
+		PTICode, 
+		Letter,
+		NumAtCard,
+		FolNumTo,
+		JrnlMemo,
+		un.Id UnidadNegocioVentaId,
+		cta.Id PlanCuenta_Id,
+		dto.Id Departamento_Id,
+		lc.Id LugarCliente_Id,
+		pt.Id PropioTercero_Id,
+		tp.Id TipoProducto_Id,
+		ct.id TipoComprobante_Id,
+		fd.GPBefDisc,	
+
+		WtLiable,
+		GrssProfFC,
+		LicTradNum,
+		FreeTxt,
+		NatOfTrans,
+		PostTax,
+		LstByDsSum,
+		MYFtype,
+		PartRetire,
+		U_RBI_CantOriOc,
+		LocCode,
+		StckAppSc,
+		BlockNum,
+		VatExEntry,
+		StckAppDFC,
+		SacEntry,
+		CFOPCode,
+		OrderedQty,
+		[Address],
+		PrntLnNum,
+		RG23APart1,
+		DstrbSumSC,
+		EnSetCost,
+		LineVendor,
+		Wght2Unit,
+		RetirAPCFC,
+		BaseAtCard,
+		DiscPrcnt,
+		ReturnAct,
+		LegalTTCA,
+		ShipFromDe,
+		Shortages,
+		TaxDistSFC,
+		PackQty,
+		EquVatPer,
+		DistribIS,
+		StckAppFc,
+		LogInstanc,
+		LinePoPrss,
+		EquVatSumF,
+		U_CodComer,
+		ActBaseEnt,
+		ExpType,
+		PoTrgNum,
+		AgrLnNum,
+		NumPerMsr,
+		LegalTW,
+		LineStatus,
+		NVECode,
+		GrossBuyPr,
+		EquVatSumS,
+		StckSumApp,
+		OrigItem,
+		BaseDocNum,
+		RG23APart2,
+		PcDocType,
+		AgrNo,
+		Dscription,
+		CSTfIPI,
+		ItemType,
+		FinncPriod,
+		DefBreak,
+		LnExcised,
+		TargetType,
+		StckAppD,
+		StockSumFc,
+		OcrCode,
+		PoNum,
+		Len1Unit,
+		LegalText,
+		Surpluses,
+		SWW,
+		LstByDsSc,
+		LineType,
+		GPTtlBasPr,
+		TaxDistSum,
+		DropShip,
+		QtyToShip,
+		TaxRelev,
+		TaxType,
+		VatWoDpm,
+		ToStock,
+		TotInclTax,
+		InvntSttus,
+		TreeType,
+		TrnsCode,
+		DetailsOW,
+		U_CodFide,
+		U_DesLin,
+		LstByDsFc,
+		U_RBI_CantConf,
+		PickOty,
+		RG23CPart1,
+		RG23CPart2,
+		ISDistrb,
+		UnencReasn,
+		UomCode2,
+		InvQty,
+		UomEntry,
+		BaseEntry,
+		DistribExp,
+		UomEntry2,
+		Usage,
+		UseBaseUn,
+		VatAppld,
+		VatAppldSC,
+		VatGroup,
+		Excisable,
+		VatGrpSrc,
+		CSTCode,
+		ToDiff,
+		UpdInvntry,
+		ActBaseNum,
+		VatWoDpmFc,
+		StckDstSum,
+		VendorNum,
+		Wdth1Unit,
+		Wdth2Unit,
+		ISDistrbFC,
+		Len2Unit,
+		RetCost,
+		WhsCode,
+		Flags,
+		UFFiscBene,
+		Width1,
+		IsAqcuistn,
+		Hght1Unit,
+		isSrvCall,
+		PickStatus,
+		unitMsr,
+		IndEscala,
+		EquVatSum,
+		VatDscntPr,
+		OpenInvQty,
+		CSTfPIS,
+		unitMsr2,
+		CodeBars,
+		StockValue,
+		VatAppldFC,
+		AssblValue,
+		DeferrTax,
+		BaseRef,
+		ItmTaxType,
+		PQTReqDate,
+		PQTReqQty,
+		ISDtCryImp,
+		CredOrigin,
+		NCMCode,
+		length2,
+		ReturnRsn,
+		StckAppDSC,
+		DelivrdQty,
+		HsnEntry,
+		CESTCode,
+		GTotalFC,
+		OriBAbsEnt,
+		RetirAPCSC,
+		LinManClsd,
+		TaxPerUnit,
+		Hght2Unit,
+		OriBDocTyp,
+		NoInvtryMv,
+		Commission,
+		TaxDistSSC,
+		ExpUUID,
+		U_RBI_Comprador,
+		RetireAPC,
+		BaseQty,
+		FisrtBin,
+		PoItmNum,
+		DIOTNat,
+		StgEntry,
+		ShipFromCo,
+		StckDstFc,
+		CUSplit,
+		NumPerMsr2,
+		Project,
+		NeedQty,
+		PcQuantity,
+		UomCode,
+		ISDtRgnImp,
+		VatSumFrgn,
+		ShipDate,
+		SubCatNum,
+		RevCharge,
+		DedVatSumF,
+		Rate,
+		EncryptIV,
+		Width2,
+		ExLineNo,
+		FreeChrgBP,
+		GrossBase,
+		CSTfCOFINS,
+		OpenRtnQty,
+		ThirdParty,
+		ConsumeFCT,
+		OpenQty,
+		StockPrice,
+		StdItemId,
+		TotalFrgn,
+		StgDesc,
+		ISDistrbSC,
+		SerialNum,
+		ExciseAmt,
+		IsByPrdct,
+		CNJPMan,
+		ActBaseLn,
+		TaxAmtSrc,
+		WtCalced,
+		IsCstmAct,
+		StckINMPr,
+		OpenCreQty,
+		PickIdNo,
+		SpecPrice,
+		ExtTaxSumF,
+		BasePrice,
+		ObjType,
+		U_CodLin,
+		LstBINMPr,
+		TaxStatus,
+		LegalTIMD,
+		ExtTaxSumS,
+		TrgetEntry,
+		Weight1,
+		Weight2,
+		CiOppLineN,
+		InvQtyOnly,
+		DstrbSumFC,
+		ExpOpType,
+		BaseOpnQty,
+		Length1,
+		BaseType,
+		OriBLinNum,
+		RetireQty,
+		VatExLN,
+		ISOrCryExp,
+		StckDstSc,
+		CountryOrg,
+		DistribSum,
+		VolUnit,
+		Height1,
+		Height2,
+		LineVatlF,
+		TranType,
+		PoTrgEntry,
+		PoLineNum,
+		AllocBinC,
+		Volume,
+		ReleasQtty,
+		CtrSealQty,
+		Factor1,
+		Factor2,
+		Factor3,
+		Factor4,
+		BaseLine,
+		StgSeqNum,	
+		U_DescCComer,
+		ImportLog,
+		ISOrRgnExp,
+		PriceEdit,
+		FromWhsCod,
+		OcrCode2,
+		OcrCode3,
+		OcrCode4,
+		OcrCode5,
+		LegalTCD,
+		U_RBI_DispVentas,
+		ExtTaxSum,
+		ExtTaxRate,
+		OpenSumFC,
+		Wght1Unit,
+		VatWoDpmSc,
+		BackOrdr,
+		U_DescFide,
+		IsPrscGood,
+		DescOW,
+		Incoterms,
+		CommClass,
+		CEECFlag,
+		ActDelDate,
+		TransMod,
+		ChgAsmBoMW,
+
+		bp.Id Cliente_Id,
+		pr.Id,
+		fc.TransId,
+		fc.Indicator,
+		CogsAcct,
+		'SAP',
+		CASE 
+			when TaxCode = 'IVA_EXEv' or TaxCode = 'IVA_NG' then 1
+			WHEN VatPrcnt = 100 THEN 1
+			WHEN VatPrcnt = 0 THEN 0
+			ELSE CONVERT(DECIMAL(18,2), '1.' + CAST(CAST(VatPrcnt AS INT) AS VARCHAR(100)))
+		END Tasa_Impositica_Porc,
+		[U_RBI_EXTCOD]
 
 
-------------------------------------------------------------------------------------------------------
--- INSERTA DIMENSION BUSINESS PARTNER
-------------------------------------------------------------------------------------------------------
-insert into whs.DimBusinessPartner
-select 
-CardCode,
-CardName,
-CardType,
-CmpPrivate,
-bpg.id,
-cp.id,
-v.id,
-p.id
+	from stg.FacturaDetalle fd
+	inner join stg.FacturasCabecera fc on fc.DocEntry = fd.DocEntry
+	left join whs.DimUnidadesNegocioVenta un on un.Codigo = fd.CogsOcrCod
+	left join whs.DimPlanDeCuentas cta on cta.AcctCode =fd.AcctCode
+	left join whs.DimDepartamentos dto on dto.Codigo = fd.CogsOcrCo2
+	left join whs.DimLugarCliente lc on lc.Codigo = fd.CogsOcrCo3
+	left join whs.DimPropioTercero pt on pt.Codigo = fd.CogsOcrCo4
+	left join whs.DimTiposProductos tp on tp.Codigo = fd.CogsOcrCo5
+	left join whs.DimBusinessPartner bp on bp.CardCode = fc.CardCode
+	left join whs.DimProductos pr on pr.Codigo = fd.ItemCode
+	inner join whs.DimTipoComprobantes ct on ct.Codigo = 'FAC'
 
-from stg.BusinessPartner bp
-left join whs.DimBusinessPartnerGroup bpg on bpg.GroupCode = bp.GroupCode
-left join whs.DimCondicionesPago cp on cp.GroupNum = bp.GroupNum
-left join whs.DimVendedores v on v.SlpCode = bp.SlpCode
-left join whs.DimProvincias p on p.Codigo = bp.State1
+	------------------------------------------------------------------------------------------------------
+	-- INSERTA FAC COMPROBANTES NOTAS DE CREDITOS
+	------------------------------------------------------------------------------------------------------
+
+	insert into whs.FactComprobantes
+	select Distinct
+
+			fc.DocEntry,
+		fc.DocNum ,
+		fc.DocType, 
+		fc.CANCELED,
+		fc.Handwrtten,
+		fc.Printed,
+		fc.DocStatus,
+		fc.DocDate,
+		fc.DocDueDate,	
+		fc.CtlAccount,
+		fc.UpdateDate,
+		fc.CreateDate,
+		fd.LineNum,	
+		case 
+			when Price > 0 then Price * -1
+			else Price
+		end,
+		fd.Currency,
+		fd.LineTotal,
+		fd.OpenSum,
+		SlpCode,
+		fd.AcctCode,
+		case 
+			when PriceBefDi > 0 then PriceBefDi * -1
+			else PriceBefDi
+		end,
+		fd.BaseCard,
+		fd.TotalSumSy,
+		fd.OpenSumSys,
+		VatPrcnt,	
+		fd.PriceAfVAT,
+		fd.VatSum,
+		fd.VatSumSy,
+		fd.DedVatSum,
+		fd.DedVatSumS,
+		fd.GrssProfit,
+		fd.GrssProfSC,
+		fd.VisOrder,
+		fd.INMPrice,
+		fd.TaxCode,
+		fd.LineVat,
+		fd.LineVatS,
+		fd.OwnerCode,
+		fd.StockSum,
+		fd.StockSumSc,
+		fd.ShipToCode,
+		fd.ShipToDesc,
+		case
+			when GTotal > 0 then GTotal * -1
+			else GTotal
+		end,
+		fd.GTotalSC,
+		fd.TaxOnly,
+		PTICode, 
+		Letter,
+		NumAtCard,
+		FolNumTo,
+		JrnlMemo,
+		un.Id UnidadNegocioVentaId,
+		cta.Id PlanCuenta_Id,
+		dto.Id Departamento_Id,
+		lc.Id LugarCliente_Id,
+		pt.Id PropioTercero_Id,
+		tp.Id TipoProducto_Id,
+		ct.id TipoComprobante_Id,
+		fd.GPBefDisc,	
+
+		WtLiable,
+		GrssProfFC,
+		LicTradNum,
+		FreeTxt,
+		NatOfTrans,
+		PostTax,
+		LstByDsSum,
+		MYFtype,
+		PartRetire,
+		U_RBI_CantOriOc,
+		LocCode,
+		StckAppSc,
+		BlockNum,
+		VatExEntry,
+		StckAppDFC,
+		SacEntry,
+		CFOPCode,
+		OrderedQty,
+		[Address],
+		PrntLnNum,
+		RG23APart1,
+		DstrbSumSC,
+		EnSetCost,
+		LineVendor,
+		Wght2Unit,
+		RetirAPCFC,
+		BaseAtCard,
+		DiscPrcnt,
+		ReturnAct,
+		LegalTTCA,
+		ShipFromDe,
+		Shortages,
+		TaxDistSFC,
+		PackQty,
+		EquVatPer,
+		DistribIS,
+		StckAppFc,
+		LogInstanc,
+		LinePoPrss,
+		EquVatSumF,
+		U_CodComer,
+		ActBaseEnt,
+		ExpType,
+		PoTrgNum,
+		AgrLnNum,
+		NumPerMsr,
+		LegalTW,
+		LineStatus,
+		NVECode,
+		GrossBuyPr,
+		EquVatSumS,
+		StckSumApp,
+		OrigItem,
+		BaseDocNum,
+		RG23APart2,
+		PcDocType,
+		AgrNo,
+		Dscription,
+		CSTfIPI,
+		ItemType,
+		FinncPriod,
+		DefBreak,
+		LnExcised,
+		TargetType,
+		StckAppD,
+		StockSumFc,
+		OcrCode,
+		PoNum,
+		Len1Unit,
+		LegalText,
+		Surpluses,
+		SWW,
+		LstByDsSc,
+		LineType,
+		GPTtlBasPr,
+		TaxDistSum,
+		DropShip,
+		QtyToShip,
+		TaxRelev,
+		TaxType,
+		VatWoDpm,
+		ToStock,
+		TotInclTax,
+		InvntSttus,
+		TreeType,
+		TrnsCode,
+		DetailsOW,
+		U_CodFide,
+		case when U_DesLin > 0 then U_DesLin * -1
+			else U_DesLin
+		end U_DesLin	,
+		LstByDsFc,
+		U_RBI_CantConf,
+		PickOty,
+		RG23CPart1,
+		RG23CPart2,
+		ISDistrb,
+		UnencReasn,
+		UomCode2,
+		case 
+			when InvQty > 0 Then InvQty * -1 
+			else InvQty 
+		end,
+		UomEntry,
+		BaseEntry,
+		DistribExp,
+		UomEntry2,
+		Usage,
+		UseBaseUn,
+		VatAppld,
+		VatAppldSC,
+		VatGroup,
+		Excisable,
+		VatGrpSrc,
+		CSTCode,
+		ToDiff,
+		UpdInvntry,
+		ActBaseNum,
+		VatWoDpmFc,
+		StckDstSum,
+		VendorNum,
+		Wdth1Unit,
+		Wdth2Unit,
+		ISDistrbFC,
+		Len2Unit,
+		RetCost,
+		WhsCode,
+		Flags,
+		UFFiscBene,
+		Width1,
+		IsAqcuistn,
+		Hght1Unit,
+		isSrvCall,
+		PickStatus,
+		unitMsr,
+		IndEscala,
+		EquVatSum,
+		VatDscntPr,
+		OpenInvQty,
+		CSTfPIS,
+		unitMsr2,
+		CodeBars,
+
+		CASE WHEN StockValue > 0 THEN StockValue *-1
+		ELSE StockValue
+		END StockValue ,
+
+		VatAppldFC,
+		AssblValue,
+		DeferrTax,
+		BaseRef,
+		ItmTaxType,
+		PQTReqDate,
+		PQTReqQty,
+		ISDtCryImp,
+		CredOrigin,
+		NCMCode,
+		length2,
+		ReturnRsn,
+		StckAppDSC,
+		DelivrdQty,
+		HsnEntry,
+		CESTCode,
+		GTotalFC,
+		OriBAbsEnt,
+		RetirAPCSC,
+		LinManClsd,
+		TaxPerUnit,
+		Hght2Unit,
+		OriBDocTyp,
+		NoInvtryMv,
+		Commission,
+		TaxDistSSC,
+		ExpUUID,
+		U_RBI_Comprador,
+		RetireAPC,
+		BaseQty,
+		FisrtBin,
+		PoItmNum,
+		DIOTNat,
+		StgEntry,
+		ShipFromCo,
+		StckDstFc,
+		CUSplit,
+		NumPerMsr2,
+		Project,
+		NeedQty,
+		PcQuantity,
+		UomCode,
+		ISDtRgnImp,
+		VatSumFrgn,
+		ShipDate,
+		SubCatNum,
+		RevCharge,
+		DedVatSumF,
+		Rate,
+		EncryptIV,
+		Width2,
+		ExLineNo,
+		FreeChrgBP,
+		GrossBase,
+		CSTfCOFINS,
+		OpenRtnQty,
+		ThirdParty,
+		ConsumeFCT,
+		OpenQty,
+
+		CASE WHEN StockPrice > 0 THEN StockPrice *-1
+		ELSE StockPrice
+		END StockPrice,
 
 
+		StdItemId,
+		TotalFrgn,
+		StgDesc,
+		ISDistrbSC,
+		SerialNum,
+		ExciseAmt,
+		IsByPrdct,
+		CNJPMan,
+		ActBaseLn,
+		TaxAmtSrc,
+		WtCalced,
+		IsCstmAct,
+		StckINMPr,
+		OpenCreQty,
+		PickIdNo,
+		SpecPrice,
+		ExtTaxSumF,
+		BasePrice,
+		ObjType,
+		U_CodLin,
+		LstBINMPr,
+		TaxStatus,
+		LegalTIMD,
+		ExtTaxSumS,
+		TrgetEntry,
+		Weight1,
+		Weight2,
+		CiOppLineN,
+		InvQtyOnly,
+		DstrbSumFC,
+		ExpOpType,
+		BaseOpnQty,
+		Length1,
+		BaseType,
+		OriBLinNum,
+		RetireQty,
+		VatExLN,
+		ISOrCryExp,
+		StckDstSc,
+		CountryOrg,
+		DistribSum,
+		VolUnit,
+		Height1,
+		Height2,
+		LineVatlF,
+		TranType,
+		PoTrgEntry,
+		PoLineNum,
+		AllocBinC,
+		Volume,
+		ReleasQtty,
+		CtrSealQty,
+		Factor1,
+		Factor2,
+		Factor3,
+		Factor4,
+		BaseLine,
+		StgSeqNum,
+		case when U_DescCComer > 0 then U_DescCComer * -1 
+			else U_DescCComer
+		end U_DescCComer,
+		ImportLog,
+		ISOrRgnExp,
+		PriceEdit,
+		FromWhsCod,
+		OcrCode2,
+		OcrCode3,
+		OcrCode4,
+		OcrCode5,
+		LegalTCD,
+		U_RBI_DispVentas,
+		ExtTaxSum,
+		ExtTaxRate,
+		OpenSumFC,
+		Wght1Unit,
+		VatWoDpmSc,
+		BackOrdr,
+		case when U_DescFide > 0 then  U_DescFide * -1
+			else U_DescFide
+		end U_DescFide,
+		IsPrscGood,
+		DescOW,
+		Incoterms,
+		CommClass,
+		CEECFlag,
+		ActDelDate,
+		TransMod,
+		ChgAsmBoMW,
 
-------------------------------------------------------------------------------------------------------
--- INSERTA FAC COMPROBANTES FACTURA
-------------------------------------------------------------------------------------------------------
-insert into whs.FactComprobantes
-select
-	fc.DocEntry,
-	fc.DocNum ,
-	fc.DocType, 
-	fc.CANCELED,
-	fc.Handwrtten,
-	fc.Printed,
-	fc.DocStatus,
-	fc.DocDate,
-	fc.DocDueDate,	
-	fc.CtlAccount,
-	fc.UpdateDate,
-	fc.CreateDate,
-	fd.LineNum,	
-	fd.Price,
-	fd.Currency,
-	fd.LineTotal,
-	fd.OpenSum,
-	fd.SlpCode,
-	fd.AcctCode,
-	fd.PriceBefDi,
-	fd.BaseCard,
-	fd.TotalSumSy,
-	fd.OpenSumSys,
-	fd.VatPrcnt,
-	fd.PriceAfVAT,
-	fd.VatSum,
-	fd.VatSumSy,
-	fd.DedVatSum,
-	fd.DedVatSumS,
-	fd.GrssProfit,
-	fd.GrssProfSC,
-	fd.VisOrder,
-	fd.INMPrice,
-	fd.TaxCode,
-	fd.LineVat,
-	fd.LineVatS,
-	fd.OwnerCode,
-	fd.StockSum,
-	fd.StockSumSc,
-	fd.ShipToCode,
-	fd.ShipToDesc,
-	fd.GTotal,
-	fd.GTotalSC,
-	fd.TaxOnly,
-	PTICode, 
-	Letter,
-	NumAtCard,
-	FolNumTo,
-	JrnlMemo,
-	un.Id UnidadNegocioVentaId,
-	cta.Id PlanCuenta_Id,
-	dto.Id Departamento_Id,
-	lc.Id LugarCliente_Id,
-	pt.Id PropioTercero_Id,
-	tp.Id TipoProducto_Id,
-	ct.id TipoComprobante_Id,
-	fd.GPBefDisc,
-	bp.Id Cliente_Id,
-	pr.Id
-from stg.FacturaDetalle fd
-inner join stg.FacturasCabecera fc on fc.DocEntry = fd.DocEntry
-left join whs.DimUnidadesNegocioVenta un on un.Codigo = fd.CogsOcrCod
-left join whs.DimPlanDeCuentas cta on cta.AcctCode =fd.AcctCode
-left join whs.DimDepartamentos dto on dto.Codigo = fd.CogsOcrCo2
-left join whs.DimLugarCliente lc on lc.Codigo = fd.CogsOcrCo3
-left join whs.DimPropioTercero pt on pt.Codigo = fd.CogsOcrCo4
-left join whs.DimTiposProductos tp on tp.Codigo = fd.CogsOcrCo5
-left join whs.DimBusinessPartner bp on bp.CardCode = fc.CardCode
-left join whs.DimProductos pr on pr.Codigo = fd.ItemCode
-inner join whs.DimTipoComprobantes ct on ct.Codigo = 'FAC'
-
-------------------------------------------------------------------------------------------------------
--- INSERTA FAC COMPROBANTES NOTAS DE CREDITOS
-------------------------------------------------------------------------------------------------------
-insert into whs.FactComprobantes
-select
-	fc.DocEntry,
-	fc.DocNum ,
-	fc.DocType, 
-	fc.CANCELED,
-	fc.Handwrtten,
-	fc.Printed,
-	fc.DocStatus,
-	fc.DocDate,
-	fc.DocDueDate,	
-	fc.CtlAccount,
-	fc.UpdateDate,
-	fc.CreateDate,
-	fd.LineNum,
-	fd.Price,
-	fd.Currency,
-	fd.LineTotal,
-	fd.OpenSum,
-	fd.SlpCode,
-	fd.AcctCode,
-	fd.PriceBefDi,
-	fd.BaseCard,
-	fd.TotalSumSy,
-	fd.OpenSumSys,
-	fd.VatPrcnt,
-	fd.PriceAfVAT,
-	fd.VatSum,
-	fd.VatSumSy,
-	fd.DedVatSum,
-	fd.DedVatSumS,
-	fd.GrssProfit,
-	fd.GrssProfSC,
-	fd.VisOrder,
-	fd.INMPrice,
-	fd.TaxCode,
-	fd.LineVat,
-	fd.LineVatS,
-	fd.OwnerCode,
-	fd.StockSum,
-	fd.StockSumSc,
-	fd.ShipToCode,
-	fd.ShipToDesc,
-	fd.GTotal,
-	fd.GTotalSC,
-	fd.TaxOnly,
-	PTICode, 
-	Letter,
-	NumAtCard,
-	FolNumTo,
-	JrnlMemo,
-	un.Id UnidadNegocioVentaId,
-	cta.Id PlanCuenta_Id,
-	dto.Id Departamento_Id,
-	lc.Id LugarCliente_Id,
-	pt.Id PropioTercero_Id,
-	tp.Id TipoProducto_Id,
-	ct.id TipoComprobante_Id,
-	fd.GPBefDisc,
-	bp.Id Cliente_Id,
-	pr.id
-from stg.NotaCreditoDetalle fd
-inner join stg.NotaCreditoCabecera fc on fc.DocEntry = fd.DocEntry
-left join whs.DimUnidadesNegocioVenta un on un.Codigo = fd.CogsOcrCod
-left join whs.DimPlanDeCuentas cta on cta.AcctCode =fd.AcctCode
-left join whs.DimDepartamentos dto on dto.Codigo = fd.CogsOcrCo2
-left join whs.DimLugarCliente lc on lc.Codigo = fd.CogsOcrCo3
-left join whs.DimPropioTercero pt on pt.Codigo = fd.CogsOcrCo4
-left join whs.DimTiposProductos tp on tp.Codigo = fd.CogsOcrCo5
-left join whs.DimBusinessPartner bp on bp.CardCode = fc.CardCode
-left join whs.DimProductos pr on pr.Codigo = fd.ItemCode
-inner join whs.DimTipoComprobantes ct on ct.Codigo = 'NC'
-
-------------------------------------------------------------------------------------------------------
--- INSERTA FAC LIBRO MAYOR
-------------------------------------------------------------------------------------------------------
-insert into whs.FactLibroMayor
-select 
-	TransId,
-	pc.id, 
-	LineMemo,
-	RefDate,
-	Ref1,
-	Ref2,
-	BaseRef,
-	Project,
-	ProfitCode,
-	OcrCode2,
-	OcrCode3,
-	OcrCode4,
-	OcrCode5,
-	Debit,
-	Credit,
-	'SAP',
-	FCCurrency
-from stg.jdt1 t1
-left join whs.DimPlanDeCuentas pc on pc.AcctCode = t1.Account 
-where RefDate >='2023-01-01' 
-union all
-select 
-	TransId,
-	pc.id, 
-	LineMemo,
-	RefDate,
-	Ref1,
-	Ref2,
-	BaseRef,
-	Project,
-	ProfitCode,
-	OcrCode2,
-	OcrCode3,
-	OcrCode4,
-	OcrCode5,
-	Debit,
-	Credit,
-	'SAP1',
-	FCCurrency
-from stg.JDT1Historica t1
-left join whs.DimPlanDeCuentas pc on pc.AcctCode = t1.Account 
-where RefDate >= '2023-08-01'
+		bp.Id Cliente_Id,
+		pr.Id,
+		fc.TransId,
+		fc.Indicator,
+		CogsAcct,
+		'SAP',
+		CASE 
+			WHEN VatPrcnt = 100 THEN 1
+			WHEN VatPrcnt = 0 THEN 0
+			ELSE CONVERT(DECIMAL(18,2), '1.' + CAST(CAST(VatPrcnt AS INT) AS VARCHAR(100)))
+		END Tasa_Impositica_Porc,
+		[U_RBI_EXTCOD]
 
 
+	from stg.NotaCreditoDetalle fd
+	inner join stg.NotaCreditoCabecera fc on fc.DocEntry = fd.DocEntry
+	left join whs.DimUnidadesNegocioVenta un on un.Codigo = fd.CogsOcrCod
+	left join whs.DimPlanDeCuentas cta on cta.AcctCode =fd.AcctCode
+	left join whs.DimDepartamentos dto on dto.Codigo = fd.CogsOcrCo2
+	left join whs.DimLugarCliente lc on lc.Codigo = fd.CogsOcrCo3
+	left join whs.DimPropioTercero pt on pt.Codigo = fd.CogsOcrCo4
+	left join whs.DimTiposProductos tp on tp.Codigo = fd.CogsOcrCo5
+	left join whs.DimBusinessPartner bp on bp.CardCode = fc.CardCode
+	left join whs.DimProductos pr on pr.Codigo = fd.ItemCode
+	inner join whs.DimTipoComprobantes ct on ct.Codigo = 'NC'
+
+	------------------------------------------------------------------------------------------------------
+	-- INSERTA FAC ORDENES DE COMPRA
+	------------------------------------------------------------------------------------------------------
+
+	insert into whs.FactOrdenesDeCompra
+	select DISTINCT
+		fc.DocEntry,
+		fc.DocNum ,
+		fc.DocType, 
+		fc.CANCELED,
+		fc.Handwrtten,
+		fc.Printed,
+		fc.DocStatus,
+		fc.DocDate,
+		fc.DocDueDate,	
+		fc.CtlAccount,
+		fc.UpdateDate,
+		fc.CreateDate,
+		fd.LineNum,	
+		fd.Price,
+		fd.Currency,
+		fd.LineTotal,
+		fd.OpenSum,
+		fd.SlpCode,
+		fd.AcctCode,
+		fd.PriceBefDi,
+		fd.BaseCard,
+		fd.TotalSumSy,
+		fd.OpenSumSys,
+		fd.VatPrcnt,
+		fd.PriceAfVAT,
+		fd.VatSum,
+		fd.VatSumSy,
+		fd.DedVatSum,
+		fd.DedVatSumS,
+		fd.GrssProfit,
+		fd.GrssProfSC,
+		fd.VisOrder,
+		fd.INMPrice,
+		fd.TaxCode,
+		fd.LineVat,
+		fd.LineVatS,
+		fd.OwnerCode,
+		fd.StockSum,
+		fd.StockSumSc,
+		fd.ShipToCode,
+		fd.ShipToDesc,
+		fd.GTotal,
+		fd.GTotalSC,
+		fd.TaxOnly,
+		PTICode, 
+		Letter,
+		NumAtCard,
+		FolNumTo,
+		JrnlMemo,
+		un.Id UnidadNegocioVentaId,
+		cta.Id PlanCuenta_Id,
+		dto.Id Departamento_Id,
+		lc.Id LugarCliente_Id,
+		pt.Id PropioTercero_Id,
+		tp.Id TipoProducto_Id,
+		ct.id TipoComprobante_Id,
+		fd.GPBefDisc,	
+
+		WtLiable,
+		GrssProfFC,
+		LicTradNum,
+		FreeTxt,
+		NatOfTrans,
+		PostTax,
+		LstByDsSum,
+		MYFtype,
+		PartRetire,
+		U_RBI_CantOriOc,
+		LocCode,
+		StckAppSc,
+		BlockNum,
+		VatExEntry,
+		StckAppDFC,
+		SacEntry,
+		CFOPCode,
+		OrderedQty,
+		[Address],
+		PrntLnNum,
+		RG23APart1,
+		DstrbSumSC,
+		EnSetCost,
+		LineVendor,
+		Wght2Unit,
+		RetirAPCFC,
+		BaseAtCard,
+		DiscPrcnt,
+		ReturnAct,
+		LegalTTCA,
+		ShipFromDe,
+		Shortages,
+		TaxDistSFC,
+		PackQty,
+		EquVatPer,
+		DistribIS,
+		StckAppFc,
+		LogInstanc,
+		LinePoPrss,
+		EquVatSumF,
+		U_CodComer,
+		ActBaseEnt,
+		ExpType,
+		PoTrgNum,
+		AgrLnNum,
+		NumPerMsr,
+		LegalTW,
+		LineStatus,
+		NVECode,
+		GrossBuyPr,
+		EquVatSumS,
+		StckSumApp,
+		OrigItem,
+		BaseDocNum,
+		RG23APart2,
+		PcDocType,
+		AgrNo,
+		Dscription,
+		CSTfIPI,
+		ItemType,
+		FinncPriod,
+		DefBreak,
+		LnExcised,
+		TargetType,
+		StckAppD,
+		StockSumFc,
+		OcrCode,
+		PoNum,
+		Len1Unit,
+		LegalText,
+		Surpluses,
+		SWW,
+		LstByDsSc,
+		LineType,
+		GPTtlBasPr,
+		TaxDistSum,
+		DropShip,
+		QtyToShip,
+		TaxRelev,
+		TaxType,
+		VatWoDpm,
+		ToStock,
+		TotInclTax,
+		InvntSttus,
+		TreeType,
+		TrnsCode,
+		DetailsOW,
+		U_CodFide,
+		U_DesLin,
+		LstByDsFc,
+		U_RBI_CantConf,
+		PickOty,
+		RG23CPart1,
+		RG23CPart2,
+		ISDistrb,
+		UnencReasn,
+		UomCode2,
+		InvQty,
+		UomEntry,
+		BaseEntry,
+		DistribExp,
+		UomEntry2,
+		Usage,
+		UseBaseUn,
+		VatAppld,
+		VatAppldSC,
+		VatGroup,
+		Excisable,
+		VatGrpSrc,
+		CSTCode,
+		ToDiff,
+		UpdInvntry,
+		ActBaseNum,
+		VatWoDpmFc,
+		StckDstSum,
+		VendorNum,
+		Wdth1Unit,
+		Wdth2Unit,
+		ISDistrbFC,
+		Len2Unit,
+		RetCost,
+		WhsCode,
+		Flags,
+		UFFiscBene,
+		Width1,
+		IsAqcuistn,
+		Hght1Unit,
+		isSrvCall,
+		PickStatus,
+		unitMsr,
+		IndEscala,
+		EquVatSum,
+		VatDscntPr,
+		OpenInvQty,
+		CSTfPIS,
+		unitMsr2,
+		CodeBars,
+		StockValue,
+		VatAppldFC,
+		AssblValue,
+		DeferrTax,
+		BaseRef,
+		ItmTaxType,
+		PQTReqDate,
+		PQTReqQty,
+		ISDtCryImp,
+		CredOrigin,
+		NCMCode,
+		length2,
+		ReturnRsn,
+		StckAppDSC,
+		DelivrdQty,
+		HsnEntry,
+		CESTCode,
+		GTotalFC,
+		OriBAbsEnt,
+		RetirAPCSC,
+		LinManClsd,
+		TaxPerUnit,
+		Hght2Unit,
+		OriBDocTyp,
+		NoInvtryMv,
+		Commission,
+		TaxDistSSC,
+		ExpUUID,
+		U_RBI_Comprador,
+		RetireAPC,
+		BaseQty,
+		FisrtBin,
+		PoItmNum,
+		DIOTNat,
+		StgEntry,
+		ShipFromCo,
+		StckDstFc,
+		CUSplit,
+		NumPerMsr2,
+		Project,
+		NeedQty,
+		PcQuantity,
+		UomCode,
+		ISDtRgnImp,
+		VatSumFrgn,
+		ShipDate,
+		SubCatNum,
+		RevCharge,
+		DedVatSumF,
+		Rate,
+		EncryptIV,
+		Width2,
+		ExLineNo,
+		FreeChrgBP,
+		GrossBase,
+		CSTfCOFINS,
+		OpenRtnQty,
+		ThirdParty,
+		ConsumeFCT,
+		OpenQty,
+		StockPrice,
+		StdItemId,
+		TotalFrgn,
+		StgDesc,
+		ISDistrbSC,
+		SerialNum,
+		ExciseAmt,
+		IsByPrdct,
+		CNJPMan,
+		ActBaseLn,
+		TaxAmtSrc,
+		WtCalced,
+		IsCstmAct,
+		StckINMPr,
+		OpenCreQty,
+		PickIdNo,
+		SpecPrice,
+		ExtTaxSumF,
+		BasePrice,
+		ObjType,
+		U_CodLin,
+		LstBINMPr,
+		TaxStatus,
+		LegalTIMD,
+		ExtTaxSumS,
+		TrgetEntry,
+		Weight1,
+		Weight2,
+		CiOppLineN,
+		InvQtyOnly,
+		DstrbSumFC,
+		ExpOpType,
+		BaseOpnQty,
+		Length1,
+		BaseType,
+		OriBLinNum,
+		RetireQty,
+		VatExLN,
+		ISOrCryExp,
+		StckDstSc,
+		CountryOrg,
+		DistribSum,
+		VolUnit,
+		Height1,
+		Height2,
+		LineVatlF,
+		TranType,
+		PoTrgEntry,
+		PoLineNum,
+		AllocBinC,
+		Volume,
+		ReleasQtty,
+		CtrSealQty,
+		Factor1,
+		Factor2,
+		Factor3,
+		Factor4,
+		BaseLine,
+		StgSeqNum,	
+		U_DescCComer,
+		ImportLog,
+		ISOrRgnExp,
+		PriceEdit,
+		FromWhsCod,
+		OcrCode2,
+		OcrCode3,
+		OcrCode4,
+		OcrCode5,
+		LegalTCD,
+		U_RBI_DispVentas,
+		ExtTaxSum,
+		ExtTaxRate,
+		OpenSumFC,
+		Wght1Unit,
+		VatWoDpmSc,
+		BackOrdr,
+		U_DescFide,
+		IsPrscGood,
+		DescOW,
+		Incoterms,
+		CommClass,
+		CEECFlag,
+		ActDelDate,
+		TransMod,
+		ChgAsmBoMW,
+
+		bp.Id Cliente_Id,
+		pr.Id,
+		fc.TransId,
+		fc.Indicator,
+		CogsAcct,
+		'OC',
+		CASE 
+			when TaxCode = 'IVA_EXEv' or TaxCode = 'IVA_NG' then 1
+			WHEN VatPrcnt = 100 THEN 1
+			WHEN VatPrcnt = 0 THEN 0
+			ELSE CONVERT(DECIMAL(18,2), '1.' + CAST(CAST(VatPrcnt AS INT) AS VARCHAR(100)))
+		END Tasa_Impositica_Porc,
+		[U_RBI_EXTCOD]
 
 
+	from stg.OrdenCompraDetalle fd
+	inner join stg.OrdenCompraCabecera fc on fc.DocEntry = fd.DocEntry
+	left join whs.DimUnidadesNegocioVenta un on un.Codigo = fd.CogsOcrCod
+	left join whs.DimPlanDeCuentas cta on cta.AcctCode =fd.AcctCode
+	left join whs.DimDepartamentos dto on dto.Codigo = fd.CogsOcrCo2
+	left join whs.DimLugarCliente lc on lc.Codigo = fd.CogsOcrCo3
+	left join whs.DimPropioTercero pt on pt.Codigo = fd.CogsOcrCo4
+	left join whs.DimTiposProductos tp on tp.Codigo = fd.CogsOcrCo5
+	left join whs.DimBusinessPartner bp on bp.CardCode = fc.CardCode
+	left join whs.DimProductos pr on pr.Codigo = fd.ItemCode
+	inner join whs.DimTipoComprobantes ct on ct.Codigo = 'OC'
+
+	------------------------------------------------------------------------------------------------------
+	-- INSERTA FAC LIBRO MAYOR
+	------------------------------------------------------------------------------------------------------
+	insert into whs.FactLibroMayor
+	select 
+		TransId,
+		pc.id, 
+		LineMemo,
+		RefDate,
+		Ref1,
+		Ref2,
+		BaseRef,
+		Project,
+		ProfitCode,
+		OcrCode2,
+		OcrCode3,
+		OcrCode4,
+		OcrCode5,
+		Debit,
+		Credit,
+		'SAP',
+		FCCurrency
+	from stg.jdt1 t1
+	left join whs.DimPlanDeCuentas pc on pc.AcctCode = t1.Account 
+	where RefDate >='2023-01-01' 
+	union all
+	select 
+		TransId,
+		pc.id, 
+		LineMemo,
+		RefDate,
+		Ref1,
+		Ref2,
+		BaseRef,
+		Project,
+		ProfitCode,
+		OcrCode2,
+		OcrCode3,
+		OcrCode4,
+		OcrCode5,
+		Debit,
+		Credit,
+		'SAP1',
+		FCCurrency
+	from stg.JDT1Historica t1
+	left join whs.DimPlanDeCuentas pc on pc.AcctCode = t1.Account 
+	where RefDate >= '2023-08-01'
+
+
+	------------------------------------------------------------------------------------------------------
+	-- Inserta la tabla FactVentas
+	------------------------------------------------------------------------------------------------------
+	Exec [whs].[Sp_ActualizarFactVentas]
+
+	------------------------------------------------------------------------------------------------------
+	-- INSERTA FAC INVENTARIOS
+	------------------------------------------------------------------------------------------------------
+	insert into [whs].[FactInventario]
+	select
+	i.TransNum,
+	i.TransType,
+	i.CreatedBy ,
+	i.BASE_REF ,
+	i.DocLineNum ,
+	convert(datetime,TRY_CONVERT(DATE, i.DocDate , 105 ))DocDate ,
+	convert(datetime,TRY_CONVERT(DATE, i.DocDueDate , 105 ))DocDueDate ,
+	i.CardCode ,
+	i.CardName ,
+	i.Ref1 ,
+	i.Ref2 ,
+	i.Comments ,
+	i.JrnlMemo ,
+	i.DocTime ,
+	i.ItemCode ,
+	i.Dscription ,
+	i.InQty ,
+	i.OutQty ,
+	i.Price ,
+	i.Currency ,
+	i.Rate ,
+	i.VendorNum ,
+	i.SerialNum ,
+	i.Warehouse ,
+	i.TreeType ,
+	i.SlpCode ,
+	convert(datetime,TRY_CONVERT(DATE, i.TaxDate , 105 ))TaxDate ,
+	i.DataSource ,
+	i.PrjCode ,
+	i.UserSign ,
+	i.BlockNum ,
+	i.ImportLog ,
+	i.UseDocPric ,
+	i.[Location] ,
+	i.CalcPrice ,
+	i.OpenQty ,
+	i.Instance ,
+	i.LastInst ,
+	i.RevalTotal ,
+	i.BaseCurr ,
+	i.ApplObj ,
+	i.AppObjAbs ,
+	i.AppObjType ,
+	i.StockAct ,
+	i.TrnsfrAct ,
+	i.PriceDifAc ,
+	i.VarianceAc ,
+	i.ReturnAct ,
+	i.ExcRateAct ,
+	i.ClearAct ,
+	i.CostAct ,
+	i.WipAct ,
+	i.Balance ,
+	convert(datetime,TRY_CONVERT(DATE, i.CreateDate , 105 ))CreateDate ,
+	i.BaseLine ,
+	i.TransValue ,
+	i.PriceDiff ,
+	i.TransSeq ,
+	i.InvntAct ,
+	i.RemMethod ,
+	i.OpenValue ,
+	i.SubLineNum ,
+	i.AppObjLine ,
+	i.Expenses ,
+	i.OpenExp ,
+	i.Allocation ,
+	i.OpenAlloc ,
+	i.ExpAlloc ,
+	i.OExpAlloc ,
+	i.OpenPDiff ,
+	i.ExchDiff ,
+	i.OpenEDiff ,
+	i.NegInvAdjs ,
+	i.OpenNegInv ,
+	i.NegStckAct ,
+	i.BTransVal ,
+	i.VarVal ,
+	i.BExpVal ,
+	i.CogsVal ,
+	i.BNegAVal ,
+	i.IOffIncAcc ,
+	i.IOffIncVal ,
+	i.DOffDecAcc ,
+	i.DOffDecVal ,
+	i.DecAcc ,
+	i.DecVal ,
+	i.WipVal ,
+	i.WipVarAcc ,
+	i.WipVarVal ,
+	i.IncAct ,
+	i.IncVal ,
+	i.ExpCAcc ,
+	i.CostMethod ,
+	i.OcrCode ,
+	i.BaseQty ,
+	i.PrevTrans ,
+	i.HTransSeq ,
+	i.OcrCode2 ,
+	i.OcrCode3 ,
+	i.OcrCode4 ,
+	i.OcrCode5 ,
+	i.StgSeqNum ,
+	i.StgEntry ,
+	i.StgDesc 
+	, a.Id almcen, p.Id, c.Id
+	from stg.Inventario i
+	left join  whs.DimAlmacenes a on a.WhsCode = i.Warehouse
+	left join whs.Productos p on p.Codigo = i.ItemCode
+	left join (select c.* from whs.DimBusinessPartner c inner join whs.DimProvincias pv on pv.id = c.Provincia_Id where pv.Pais = 'AR') c on c.CardCode = i.CardCode 
+
+	------------------------------------------------------------------------------------------------------
+	-- INSERTA FAC CALENDARIO
+	------------------------------------------------------------------------------------------------------
+	exec  [dbo].[Sp_InsertarCalendario]

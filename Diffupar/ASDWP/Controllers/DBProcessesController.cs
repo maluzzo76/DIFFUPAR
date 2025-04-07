@@ -24,7 +24,9 @@ namespace ASDWP.Controllers
             if (!validarLoggin())
                 return RedirectToAction("Index", "Home");
 
-            return View(db.DBProcess.OrderByDescending(o=> o.Id).ToList());
+            DateTime _fecha = DateTime.Now.AddDays(-15);
+
+            return View(db.DBProcess.Where(w=>w.FechaCarga > _fecha).OrderByDescending(o=> o.Id).ToList());
         }
 
         public ActionResult updateEstado(int? id, int? cancel = 0)
@@ -67,7 +69,7 @@ namespace ASDWP.Controllers
                     string _fileId = string.Format("{0}.{1}", _fileName,(new FileInfo(file.FileName)).Extension);
 
                     string _server = Request.Path;
-                    string path = Path.Combine(Server.MapPath("~/Complementos"), _fileId);
+                    string path = Path.Combine(Server.MapPath("~/Complementos"), _fileId);                    
                     file.SaveAs(path);
 
                     DBProcess process = new DBProcess();

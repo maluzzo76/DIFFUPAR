@@ -19,7 +19,7 @@ namespace ADO
             {                
                 using (SqlCommand _sqlCommand = new SqlCommand(query, (new SqlConnection(strConexion))))
                 {
-                    _sqlCommand.CommandTimeout = 60000;
+                    _sqlCommand.CommandTimeout = 600000;
                     (new SqlDataAdapter(_sqlCommand)).Fill(_ds);
                 }
             }
@@ -72,7 +72,7 @@ namespace ADO
                     if (mappings != null)
                     {
                         foreach (SqlBulkCopyColumnMapping _mapping in mappings)
-                        {
+                        {                            
                             bulkCopy.ColumnMappings.Add(_mapping);
                         }
                     }
@@ -104,7 +104,7 @@ namespace ADO
                 {
                     bulkCopy.DestinationTableName = destinationTableName;
                     bulkCopy.BulkCopyTimeout = 2000;
-                    //bulkCopy.BatchSize = int.Parse(System.Configuration.ConfigurationManager.AppSettings["BatchSize"]);
+                    bulkCopy.BatchSize = tData.Rows.Count + 10;
                     if (mappings != null)
                     {
                         foreach (SqlBulkCopyColumnMapping _mapping in mappings)

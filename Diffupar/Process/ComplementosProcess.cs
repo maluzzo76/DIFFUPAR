@@ -26,6 +26,7 @@ namespace Process
                 foreach (DataRow _r in _dsProcess.Tables[0].Rows)
                 {
                     int _id = Convert.ToInt32(_r["ID"]);
+
                     switch (_r["TipoProceso"].ToString())
                     {
                         case "Libro Mayor":
@@ -40,10 +41,104 @@ namespace Process
                             ObjetivosDiffupar(_r);
                             break;
 
+                        //Duplicar este metodo y cambiar el valore del case y el nombre de la tabla de destino
+                        case "Plan de Cuentas":
+                            ComplementoGenerico(_r, "stg.PlandecuentasComplemento");
+                            break;
+
+                        case "Vendedores":
+                            ComplementoGenerico(_r, "stg.VendedoresComplemento");
+                            string _queryComplementoUpdate = "exec [whs].[Sp_ActualizarComplementos]";
+                            ADO.SQL.SqlExecuteNonQuery(_queryComplementoUpdate, sqlConnection);
+                            break;
+
+                        case "ProductosRelevantes":
+                            ComplementoGenerico(_r, "whs.DimProductosRelevantes");
+                            break;
+
+                        case "Unidad Negocio":
+                            ComplementoGenerico(_r, "stg.UnidadNegocioComplemento");
+                            break;
+
+                        case "Unidad Medida":
+                            ComplementoGenerico(_r, "stg.UnidadMedidaComplemento");
+                            break;
+
+                        case "Tipo Producto":
+                            ComplementoGenerico(_r, "stg.TipoProductoComplemento");
+                            break;
+
+                        case "Tipo Proveedor":
+                            ComplementoGenerico(_r, "stg.TipoProveedor");
+                            break;
+
+                        case "Tamano Real":
+                            ComplementoGenerico(_r, "stg.TamanoRealComplemento");
+                            break;
+
+                        case "Tamano Conc":
+                            ComplementoGenerico(_r, "stg.TamanoConcComplemento");
+                            break;
+
+                        case "Proveedor Retail Cegid":
+                            ComplementoGenerico(_r, "stg.ProveedorRetailCegidComplemento");
+                            break;
+
+                        case "Marca":
+                            ComplementoGenerico(_r, "stg.MarcaComplemento");
+                            break;
+
+                        case "Lugar Cliente":
+                            ComplementoGenerico(_r, "stg.LugarClienteComplemento");
+                            break;
+
+                        case "Linea":
+                            ComplementoGenerico(_r, "stg.LineaComplemento");
+                            break;
+
+                        case "GrupoItems":
+                            ComplementoGenerico(_r, "stg.GrupoItemsComplemento");
+                            break;
+
+                        case "GrupoArt":
+                            ComplementoGenerico(_r, "stg.GrupoArtComplemento");
+                            break;
+
+                        case "Genero":
+                            ComplementoGenerico(_r, "stg.GeneroComplemento");
+                            break;
+
+                        case "Fabricante":
+                            ComplementoGenerico(_r, "stg.FabricanteComplemento");
+                            break;
+
+                        case "Categoria":
+                            ComplementoGenerico(_r, "stg.CategoriaComplemento");
+                            break;
+
+                        case "Almacenes":
+                            ComplementoGenerico(_r, "stg.AlmacenesComplemento");
+                            break;
+
+
+                        case "Propio Tercero":
+                            ComplementoGenerico(_r, "stg.PropioTerceroComplemento");
+                            break;
+
+                        case "Ventas Mensual":
+                            VentaComplemento(_r, "stg.VentasComplemento");
+                            break;
+
+                        case "Tipos Movimientos":
+                            ComplementoGenerico(_r, "stg.Tipos_Movimientos");
+                            break;
+
                         case "Data Warehouse":
                             DataWarehouse(_r);
                             break;
+
                     }
+
                 }
             }
             catch (Exception ex)
@@ -85,7 +180,6 @@ namespace Process
                     }
                 }
 
-
                 _dsExcel = ADO.Excel.getExcelData(_fileName);
 
                 IList<System.Data.SqlClient.SqlBulkCopyColumnMapping> _mapping = new List<System.Data.SqlClient.SqlBulkCopyColumnMapping>();
@@ -113,6 +207,120 @@ namespace Process
                     ActualizarEstadoProcess(_id, "Procesado OK", "");
                     Log.Write.WriteError("Datos Insertados");
                     _dsExcel.Dispose();
+                }
+                catch (Exception ee)
+                {
+                    _dsExcel.Dispose();
+                    Log.Write.WriteException(ee);
+                    ActualizarEstadoProcess(_id, "Error", ee.Message);
+                    throw ee;
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Write.WriteException(ex);
+                ActualizarEstadoProcess(_id, "Error", ex.Message);
+            }
+            finally { }
+        }
+
+        private static void ComplementoGenerico(DataRow _row, string tableDestino)
+        {
+            int _id = Convert.ToInt32(_row["ID"]);
+            string _complementosFolder = ConfigurationManager.AppSettings["ComplementosFolder"].ToString();
+            string _fileName = string.Format("{0}{1}", _complementosFolder, _row["Archivo"]);
+            Log.Write.WriteError("importando complemento " + _fileName);
+
+            ActualizarEstadoProcess(_id, "Procesando", "");
+            try
+            {
+
+
+                DataSet _dsExcel = ADO.Excel.getExcelData(_fileName);
+
+                IList<System.Data.SqlClient.SqlBulkCopyColumnMapping> _mapping = new List<System.Data.SqlClient.SqlBulkCopyColumnMapping>();
+                foreach (DataColumn _c in _dsExcel.Tables[0].Columns)
+                {
+                    _mapping.Add((new System.Data.SqlClient.SqlBulkCopyColumnMapping(_c.ColumnName, _c.ColumnName)));
+                }
+
+
+                try
+                {
+                    Log.Write.WriteError("Insertando Datos");
+                    ADO.SQL.SqlBulkCopy(tableDestino, _dsExcel.Tables[0], _mapping, _sqlConnection);
+                    ActualizarEstadoProcess(_id, "Procesado OK", "");
+                    Log.Write.WriteError("Datos Insertados");
+                    _dsExcel.Dispose();
+                }
+                catch (Exception ee)
+                {
+                    _dsExcel.Dispose();
+                    Log.Write.WriteException(ee);
+                    ActualizarEstadoProcess(_id, "Error", ee.Message);
+                    throw ee;
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Write.WriteException(ex);
+                ActualizarEstadoProcess(_id, "Error", ex.Message);
+            }
+            finally { }
+        }
+
+        private static void VentaComplemento(DataRow _row, string tableDestino)
+        {
+            int _id = Convert.ToInt32(_row["ID"]);
+            string _complementosFolder = ConfigurationManager.AppSettings["ComplementosFolder"].ToString();
+            string _fileName = string.Format("{0}{1}", _complementosFolder, _row["Archivo"]);
+            Log.Write.WriteError("importando complemento " + _fileName);
+
+            ActualizarEstadoProcess(_id, "Procesando", "");
+            try
+            {
+                //string _query = "select distinct Fecha_Contabilizacion, Origen from [Complementos$]";
+                DataSet _dsExcel = ADO.Excel.getExcelData(_fileName);
+                
+
+                if (_dsExcel.Tables[0].Rows.Count > 0)
+                {
+                    DataRow _rXls = _dsExcel.Tables[0].Rows[0];
+                    if (!_rXls["Fecha_Contabilizacion"].ToString().Equals(""))
+                    {
+                        int _PeridoAnio = DateTime.Parse(_rXls["Fecha_Contabilizacion"].ToString()).Year;
+                        int _PeridoMes = DateTime.Parse(_rXls["Fecha_Contabilizacion"].ToString()).Month;
+                        string _Origen = _rXls["Origen"].ToString();
+
+                        string _detelePeriodo = string.Format("delete stg.VentasComplemento where MONTH(Fecha_Contabilizacion)={1} and year(Fecha_Contabilizacion)={0} and Origen = '{2}' ", _PeridoAnio, _PeridoMes, _Origen);
+                        Log.Write.WriteError(_detelePeriodo);
+                        ADO.SQL.SqlExecuteNonQuery(_detelePeriodo, _sqlConnection);
+                    }
+
+                }
+
+                IList<System.Data.SqlClient.SqlBulkCopyColumnMapping> _mapping = new List<System.Data.SqlClient.SqlBulkCopyColumnMapping>();
+                foreach (DataColumn _c in _dsExcel.Tables[0].Columns)
+                {
+                    _mapping.Add((new System.Data.SqlClient.SqlBulkCopyColumnMapping(_c.ColumnName, _c.ColumnName)));
+                }
+
+
+                try
+                {
+                    Log.Write.WriteError("Insertando Datos");
+                    ADO.SQL.SqlBulkCopyNoDelete(tableDestino, _dsExcel.Tables[0], _mapping, _sqlConnection);
+
+                    _dsExcel.Dispose();
+                    string _deleteNull = "delete stg.VentasComplemento where Fecha_Contabilizacion is null";
+                    ADO.SQL.SqlExecuteNonQuery(_deleteNull, _sqlConnection);
+
+                    ActualizarEstadoProcess(_id, "Procesando", "Actualzando Cubo de Ventas");
+                    string _exec = "exec [whs].[Sp_ActualizarFactVentas]";
+                    ADO.SQL.SqlExecuteNonQuery(_exec, _sqlConnection);
+
+                    ActualizarEstadoProcess(_id, "Procesado OK", "");
+                    Log.Write.WriteError("Datos Insertados");
                 }
                 catch (Exception ee)
                 {
@@ -170,11 +378,13 @@ namespace Process
                     {
                         if (_c["LOCAL"].ToString() != "")
                         {
+                            if (_c["TOTAL  REAL"].ToString() != "")
+                            {
+                                string _valores = string.Format("'{0}',{2},{1},'{1}-{3}-01','{1}{3}'", _c["LOCAL"].ToString(), _c["AÑO"].ToString(), _c["TOTAL  REAL"].ToString(), _c["MES"].ToString());
+                                string _queryInsert = string.Format("insert into rouge.objetivos_rouge (Sucursales,target_rouge_mensual,Year,month_year,ID_YM) values ({0})", _valores);
 
-                            string _valores = string.Format("'{0}',{2},{1},'{1}-{3}-01','{1}{3}'", _c["LOCAL"].ToString(), _c["AÑO"].ToString(), _c["TOTAL  REAL"].ToString(), _c["MES"].ToString());
-                            string _queryInsert = string.Format("insert into rouge.objetivos_rouge (Sucursales,target_rouge_mensual,Year,month_year,ID_YM) values ({0})", _valores);
-
-                            ADO.MySQL.MySqlExecuteNonQuery(_queryInsert, _mySqlCegid);
+                                ADO.MySQL.MySqlExecuteNonQuery(_queryInsert, _mySqlCegid);
+                            }
                         }
                     }
                     ActualizarEstadoProcess(_id, "Procesado OK", "");
@@ -226,7 +436,7 @@ namespace Process
                     }
 
                 }
-
+                int _line = 0;
                 try
                 {
                     _query = "select * from [OBJETIVO TOTAL$]";
@@ -235,13 +445,18 @@ namespace Process
                     Log.Write.WriteError("Insertando Datos");
                     foreach (DataRow _c in _dsExcel.Tables[0].Rows)
                     {
+                        _line = _line + 1;
                         if (_c["LOCAL"].ToString() != "")
                         {
+                            if (_c["TOTAL DIFF REAL"].ToString() != "")
+                            {
+                                string _valores = string.Format("'{0}','{1}{3}','{1}',{2}", _c["LOCAL"].ToString(), _c["AÑO"].ToString(), _c["TOTAL DIFF REAL"].ToString().Replace(",","."), _c["MES"].ToString());
+                                string _queryInsert = string.Format("insert into rouge.objetivos_diffupar_rouge (Sucursales,ID_YM_target_rouge,Year_target_Diffupar,target_diffupar_mensual) values ({0})", _valores);
 
-                            string _valores = string.Format("'{0}','{1}{3}','{1}',{2}", _c["LOCAL"].ToString(), _c["AÑO"].ToString(), _c["TOTAL DIFF REAL"].ToString(), _c["MES"].ToString());
-                            string _queryInsert = string.Format("insert into rouge.objetivos_diffupar_rouge (Sucursales,ID_YM_target_rouge,Year_target_Diffupar,target_diffupar_mensual) values ({0})", _valores);
+                                Log.Write.WriteError(($"Query Insert Objetivos Diffupar: {_queryInsert }"));
+                                ADO.MySQL.MySqlExecuteNonQuery(_queryInsert, _mySqlCegid);
+                            }
 
-                            ADO.MySQL.MySqlExecuteNonQuery(_queryInsert, _mySqlCegid);
                         }
                     }
                     ActualizarEstadoProcess(_id, "Procesado OK", "");
@@ -252,7 +467,7 @@ namespace Process
                 {
                     _dsExcel.Dispose();
                     Log.Write.WriteException(ee);
-                    ActualizarEstadoProcess(_id, "Error", ee.Message);
+                    ActualizarEstadoProcess(_id, "Error", "Linea " + _line.ToString() + " " + ee.Message);
                     throw ee;
                 }
             }
@@ -289,7 +504,7 @@ namespace Process
                             string _scheduleName = r[1].ToString();
 
                             Log.Write.WriteError(string.Format("Ejecutando Schedule: {0}", _scheduleName.ToUpper()));
-
+                            ActualizarEstadoProcess(_id, "Procesando", _scheduleName);
 
                             ProcessEntity _pe = MappingEntities.Mapping.GetProcessEntityBySchedule(_scheduleID);
 
@@ -310,7 +525,7 @@ namespace Process
 
                         Log.Write.WriteError("Actualiando Warehouse");
                         ADO.SQL.SqlExecuteNonQuery("exec [stg].[Sp_ImportDimensiones]", _sqlConnection);
-                        
+
                         ActualizarEstadoProcess(_id, "Procesado OK", "");
                         Log.Write.WriteError("Data Warehouse actualizado");
 

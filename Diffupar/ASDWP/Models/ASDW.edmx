@@ -160,6 +160,55 @@
           <Property Name="Nombre" Type="varchar" MaxLength="100" />
           <Property Name="IsActivo" Type="bit" />
           <Property Name="Orden" Type="int" />
+          <Property Name="OcrCode3" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="RabbitErrorLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProcessDate" Type="datetime" />
+          <Property Name="RabbitQueueId" Type="int" />
+          <Property Name="ErrorMessage" Type="text" />
+          <Property Name="Excepcion" Type="text" />
+          <Property Name="ProcessId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="RabbitMenssage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Msg" Type="text" />
+          <Property Name="Estado" Type="varchar" MaxLength="100" />
+          <Property Name="RabbitQueue_Id" Type="int" />
+          <Property Name="ImportDate" Type="datetime" />
+          <Property Name="ProcessId" Type="uniqueidentifier" />
+          <Property Name="JsonTransactionID" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="RabbitMessageMapping">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ColumnName" Type="varchar" MaxLength="200" />
+          <Property Name="JsonAttribute" Type="varchar" MaxLength="200" />
+          <Property Name="RabbitQueueId" Type="int" />
+        </EntityType>
+        <EntityType Name="RabbitQueue">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="100" />
+          <Property Name="ExchangeName" Type="varchar" MaxLength="100" />
+          <Property Name="QueueName" Type="varchar" MaxLength="100" />
+          <Property Name="RoutingKey" Type="varchar" MaxLength="100" />
+          <Property Name="UltimaEjecucion" Type="datetime" />
+          <Property Name="ProximaEjecucion" Type="datetime" />
+          <Property Name="Estado" Type="varchar" MaxLength="100" />
+          <Property Name="Origen" Type="varchar" MaxLength="100" />
+          <Property Name="tipo" Type="varchar" MaxLength="100" />
+          <Property Name="TableDestinoDw" Type="varchar" MaxLength="200" />
         </EntityType>
         <Association Name="FK__DbColumns__Dbtab__7D439ABD">
           <End Role="DbTables" Type="Self.DbTables" Multiplicity="0..1" />
@@ -354,6 +403,10 @@
           <EntitySet Name="DbTableStg" EntityType="Self.DbTableStg" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ItemMenuSecurity" EntityType="Self.ItemMenuSecurity" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MenuSecurity" EntityType="Self.MenuSecurity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RabbitErrorLog" EntityType="Self.RabbitErrorLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RabbitMenssage" EntityType="Self.RabbitMenssage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RabbitMessageMapping" EntityType="Self.RabbitMessageMapping" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RabbitQueue" EntityType="Self.RabbitQueue" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__DbColumns__Dbtab__7D439ABD" Association="Self.FK__DbColumns__Dbtab__7D439ABD">
             <End Role="DbTables" EntitySet="DbTables" />
             <End Role="DbColumns" EntitySet="DbColumns" />
@@ -629,6 +682,10 @@
             <End Role="MenuSecurity" EntitySet="MenuSecurity" />
             <End Role="ItemMenuSecurity" EntitySet="ItemMenuSecurity" />
           </AssociationSet>
+          <EntitySet Name="RabbitErrorLog" EntityType="DiffuparAnalyticsModel.RabbitErrorLog" />
+          <EntitySet Name="RabbitMenssage" EntityType="DiffuparAnalyticsModel.RabbitMenssage" />
+          <EntitySet Name="RabbitQueue" EntityType="DiffuparAnalyticsModel.RabbitQueue" />
+          <EntitySet Name="RabbitMessageMapping" EntityType="DiffuparAnalyticsModel.RabbitMessageMapping" />
           </EntityContainer>
         <Association Name="FK__DbMapping__Colum__07C12930">
           <End Type="DiffuparAnalyticsModel.DbColumns" Role="DbColumns" Multiplicity="0..1" />
@@ -753,6 +810,7 @@
           <Property Name="Orden" Type="Int32" />
           <NavigationProperty Name="AspNetUsers" Relationship="DiffuparAnalyticsModel.FK__MenuSecur__User___30242045" FromRole="MenuSecurity" ToRole="AspNetUsers" />
           <NavigationProperty Name="ItemMenuSecurity" Relationship="DiffuparAnalyticsModel.FK__ItemMenuS__Menu___2F2FFC0C" FromRole="MenuSecurity" ToRole="ItemMenuSecurity" />
+          <Property Name="OcrCode3" Type="String" />
         </EntityType>
         <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
           <End Type="DiffuparAnalyticsModel.AspNetUsers" Role="AspNetUsers" Multiplicity="1">
@@ -810,6 +868,54 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="RabbitErrorLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProcessDate" Type="DateTime" Precision="3" />
+          <Property Name="RabbitQueueId" Type="Int32" />
+          <Property Name="ErrorMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Excepcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ProcessId" Type="Guid" />
+        </EntityType>
+        <EntityType Name="RabbitMenssage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Msg" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Estado" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="RabbitQueue_Id" Type="Int32" />
+          <Property Name="ImportDate" Type="DateTime" Precision="3" />
+          <Property Name="ProcessId" Type="Guid" />
+          <Property Name="JsonTransactionID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="RabbitQueue">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ExchangeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="QueueName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="RoutingKey" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UltimaEjecucion" Type="DateTime" Precision="3" />
+          <Property Name="ProximaEjecucion" Type="DateTime" Precision="3" />
+          <Property Name="Estado" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Origen" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="tipo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TableDestinoDw" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="RabbitMessageMapping">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ColumnName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="JsonAttribute" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="RabbitQueueId" Type="Int32" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -969,6 +1075,7 @@
           <EntitySetMapping Name="MenuSecurity">
             <EntityTypeMapping TypeName="DiffuparAnalyticsModel.MenuSecurity">
               <MappingFragment StoreEntitySet="MenuSecurity">
+                <ScalarProperty Name="OcrCode3" ColumnName="OcrCode3" />
                 <ScalarProperty Name="Orden" ColumnName="Orden" />
                 <ScalarProperty Name="IsActivo" ColumnName="IsActivo" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -985,6 +1092,58 @@
               <ScalarProperty Name="Id" ColumnName="RoleId" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="RabbitErrorLog">
+            <EntityTypeMapping TypeName="DiffuparAnalyticsModel.RabbitErrorLog">
+              <MappingFragment StoreEntitySet="RabbitErrorLog">
+                <ScalarProperty Name="ProcessId" ColumnName="ProcessId" />
+                <ScalarProperty Name="Excepcion" ColumnName="Excepcion" />
+                <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+                <ScalarProperty Name="RabbitQueueId" ColumnName="RabbitQueueId" />
+                <ScalarProperty Name="ProcessDate" ColumnName="ProcessDate" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RabbitMenssage">
+            <EntityTypeMapping TypeName="DiffuparAnalyticsModel.RabbitMenssage">
+              <MappingFragment StoreEntitySet="RabbitMenssage">
+                <ScalarProperty Name="JsonTransactionID" ColumnName="JsonTransactionID" />
+                <ScalarProperty Name="ProcessId" ColumnName="ProcessId" />
+                <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
+                <ScalarProperty Name="RabbitQueue_Id" ColumnName="RabbitQueue_Id" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Msg" ColumnName="Msg" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RabbitQueue">
+            <EntityTypeMapping TypeName="DiffuparAnalyticsModel.RabbitQueue">
+              <MappingFragment StoreEntitySet="RabbitQueue">
+                <ScalarProperty Name="TableDestinoDw" ColumnName="TableDestinoDw" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="Origen" ColumnName="Origen" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="ProximaEjecucion" ColumnName="ProximaEjecucion" />
+                <ScalarProperty Name="UltimaEjecucion" ColumnName="UltimaEjecucion" />
+                <ScalarProperty Name="RoutingKey" ColumnName="RoutingKey" />
+                <ScalarProperty Name="QueueName" ColumnName="QueueName" />
+                <ScalarProperty Name="ExchangeName" ColumnName="ExchangeName" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RabbitMessageMapping">
+            <EntityTypeMapping TypeName="DiffuparAnalyticsModel.RabbitMessageMapping">
+              <MappingFragment StoreEntitySet="RabbitMessageMapping">
+                <ScalarProperty Name="RabbitQueueId" ColumnName="RabbitQueueId" />
+                <ScalarProperty Name="JsonAttribute" ColumnName="JsonAttribute" />
+                <ScalarProperty Name="ColumnName" ColumnName="ColumnName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -155,6 +155,55 @@
     <Property Name="Nombre" Type="varchar" MaxLength="100" />
     <Property Name="IsActivo" Type="bit" />
     <Property Name="Orden" Type="int" />
+    <Property Name="OcrCode3" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="RabbitErrorLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProcessDate" Type="datetime" />
+    <Property Name="RabbitQueueId" Type="int" />
+    <Property Name="ErrorMessage" Type="text" />
+    <Property Name="Excepcion" Type="text" />
+    <Property Name="ProcessId" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="RabbitMenssage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Msg" Type="text" />
+    <Property Name="Estado" Type="varchar" MaxLength="100" />
+    <Property Name="RabbitQueue_Id" Type="int" />
+    <Property Name="ImportDate" Type="datetime" />
+    <Property Name="ProcessId" Type="uniqueidentifier" />
+    <Property Name="JsonTransactionID" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="RabbitMessageMapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ColumnName" Type="varchar" MaxLength="200" />
+    <Property Name="JsonAttribute" Type="varchar" MaxLength="200" />
+    <Property Name="RabbitQueueId" Type="int" />
+  </EntityType>
+  <EntityType Name="RabbitQueue">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="100" />
+    <Property Name="ExchangeName" Type="varchar" MaxLength="100" />
+    <Property Name="QueueName" Type="varchar" MaxLength="100" />
+    <Property Name="RoutingKey" Type="varchar" MaxLength="100" />
+    <Property Name="UltimaEjecucion" Type="datetime" />
+    <Property Name="ProximaEjecucion" Type="datetime" />
+    <Property Name="Estado" Type="varchar" MaxLength="100" />
+    <Property Name="Origen" Type="varchar" MaxLength="100" />
+    <Property Name="tipo" Type="varchar" MaxLength="100" />
+    <Property Name="TableDestinoDw" Type="varchar" MaxLength="200" />
   </EntityType>
   <Association Name="FK__DbColumns__Dbtab__7D439ABD">
     <End Role="DbTables" Type="Self.DbTables" Multiplicity="0..1" />
@@ -349,6 +398,10 @@
     <EntitySet Name="DbTableStg" EntityType="Self.DbTableStg" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ItemMenuSecurity" EntityType="Self.ItemMenuSecurity" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MenuSecurity" EntityType="Self.MenuSecurity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RabbitErrorLog" EntityType="Self.RabbitErrorLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RabbitMenssage" EntityType="Self.RabbitMenssage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RabbitMessageMapping" EntityType="Self.RabbitMessageMapping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RabbitQueue" EntityType="Self.RabbitQueue" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__DbColumns__Dbtab__7D439ABD" Association="Self.FK__DbColumns__Dbtab__7D439ABD">
       <End Role="DbTables" EntitySet="DbTables" />
       <End Role="DbColumns" EntitySet="DbColumns" />

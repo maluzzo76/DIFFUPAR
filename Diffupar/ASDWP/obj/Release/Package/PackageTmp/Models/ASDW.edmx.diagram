@@ -33,6 +33,12 @@
         <AssociationConnector Association="DiffuparAnalyticsModel.AspNetUserRoles" />
         <AssociationConnector Association="DiffuparAnalyticsModel.FK__MenuSecur__User___30242045" />
         <AssociationConnector Association="DiffuparAnalyticsModel.FK__ItemMenuS__Menu___2F2FFC0C" />
+        <EntityTypeShape EntityType="DiffuparAnalyticsModel.DimPropioTercero" Width="1.5" PointX="11.375" PointY="4.75" />
+        <EntityTypeShape EntityType="DiffuparAnalyticsModel.V_PropioTercero" Width="1.5" PointX="11.375" PointY="4.75" />
+        <EntityTypeShape EntityType="DiffuparAnalyticsModel.RabbitErrorLog" Width="1.5" PointX="14.25" PointY="1.875" />
+        <EntityTypeShape EntityType="DiffuparAnalyticsModel.RabbitMenssage" Width="1.5" PointX="12.375" PointY="4.625" />
+        <EntityTypeShape EntityType="DiffuparAnalyticsModel.RabbitQueue" Width="1.5" PointX="15.875" PointY="5.125" />
+        <EntityTypeShape EntityType="DiffuparAnalyticsModel.RabbitMessageMapping" Width="2.125" PointX="12.75" PointY="7.625" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

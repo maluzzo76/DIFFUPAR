@@ -1,0 +1,11 @@
+alter view [rtl].[Vendedores]
+as
+SELECT 
+GCL_COMMERCIAL,
+max(GCL_LIBELLE)GCL_LIBELLE,
+max(GCL_PRENOM)GCL_PRENOM ,
+max(GCL_SURNOM)GCL_SURNOM
+
+FROM [200.32.54.90].Produccion.[dbo].COMMERCIAL
+group by GCL_COMMERCIAL
+GO

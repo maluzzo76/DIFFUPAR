@@ -1,0 +1,31 @@
+﻿CREATE TABLE [whs].[FactComprobantesMensuales]
+( 
+	[Id] INT NOT NULL PRIMARY KEY,
+	Fecha_Contabilizacion int,
+	Tipo_Documento varchar (200),
+	Socio_Negocio int,
+	Numero_Documento varchar (200),
+	Numero_Transaccion int,
+	Direccion varchar (200),
+	Origen varchar (10),
+	Escenario varchar (10),
+	Total_Documento decimal (18,4),
+	Venta_Neta decimal (18,4),
+	Cantidad int,
+	Producto_Id int,
+	Departamento_Id int,
+	LugarCliente_Id int,
+	PropioTercero_Id int,
+	TipoProducto_Id int,
+	TipoComprobante_Id int,
+	Costo_Unitario decimal (18,4),
+	Costo_total decimal (18,4),
+	CuentaVenta_Id int,
+	CuentaCosto_Id int,
+	CuentaInventario_Id int,
+	Precio_Unitario_sin_IVA decimal (18,4),
+	Descuento_Total_sin_IVA decimal (18,4),
+	Venta_PP_sin_IVA decimal (18,4),
+	Porcentaje_Descuento decimal (18,4)
+
+)
