@@ -1,0 +1,52 @@
+﻿@model IEnumerable<ASDWP.Models.DbQuery>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Querys</h2>
+
+<p>
+    @Html.ActionLink("Create", "Create",null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Query Nombre
+        </th>
+        <th>
+            Tabla Origen
+        </th>
+        <th>
+            Tabla Destino
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Where)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DbTableStg.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DbTables.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Where)
+        </td>
+        <td>
+            <a class="btn-grid" href="@Url.Action("Edit","DbQueries", new { id = item.Id }) "><span><img src="~/Content/image/iconos_Lapiz.png" /></span></a>
+            <a class="btn-grid" href="@Url.Action("Details","DbQueries", new { id = item.Id }) "><img src="~/Content/image/iconos_Link 2.png" /></a>
+            <a class="btn-grid" href="@Url.Action("Delete","DbQueries", new { id = item.Id }) "><img src="~/Content/image/iconos_Basura.png" /></a>
+        </td>
+    </tr>
+}
+
+</table>

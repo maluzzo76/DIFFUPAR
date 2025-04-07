@@ -61,3 +61,25 @@ C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR S
 C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ASSapManagement\obj\Release\ASSapMan.9CCD39D0.Up2Date
 C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ASSapManagement\obj\Release\ASSapManagement.exe
 C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\ASSapManagement\obj\Release\ASSapManagement.pdb
+C:\Users\MarianoRobertoAluzzo\Documents\Source\Diffupar\ASSapManagement\bin\Release\ASSapManagement.exe.config
+C:\Users\MarianoRobertoAluzzo\Documents\Source\Diffupar\ASSapManagement\bin\Release\ASSapManagement.exe
+C:\Users\MarianoRobertoAluzzo\Documents\Source\Diffupar\ASSapManagement\bin\Release\ASSapManagement.pdb
+C:\Users\MarianoRobertoAluzzo\Documents\Source\Diffupar\ASSapManagement\bin\Release\ADO.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Source\Diffupar\ASSapManagement\bin\Release\Newtonsoft.Json.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Source\Diffupar\ASSapManagement\bin\Release\MySql.Data.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Source\Diffupar\ASSapManagement\bin\Release\System.Memory.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Source\Diffupar\ASSapManagement\bin\Release\System.Threading.Tasks.Extensions.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Source\Diffupar\ASSapManagement\bin\Release\System.Numerics.Vectors.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Source\Diffupar\ASSapManagement\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Source\Diffupar\ASSapManagement\bin\Release\System.Buffers.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Source\Diffupar\ASSapManagement\bin\Release\ADO.pdb
+C:\Users\MarianoRobertoAluzzo\Documents\Source\Diffupar\ASSapManagement\bin\Release\ADO.dll.config
+C:\Users\MarianoRobertoAluzzo\Documents\Source\Diffupar\ASSapManagement\bin\Release\Newtonsoft.Json.xml
+C:\Users\MarianoRobertoAluzzo\Documents\Source\Diffupar\ASSapManagement\obj\Release\ASSapManagement.csproj.AssemblyReference.cache
+C:\Users\MarianoRobertoAluzzo\Documents\Source\Diffupar\ASSapManagement\obj\Release\ASSapManagement.Form1.resources
+C:\Users\MarianoRobertoAluzzo\Documents\Source\Diffupar\ASSapManagement\obj\Release\ASSapManagement.Properties.Resources.resources
+C:\Users\MarianoRobertoAluzzo\Documents\Source\Diffupar\ASSapManagement\obj\Release\ASSapManagement.csproj.GenerateResource.cache
+C:\Users\MarianoRobertoAluzzo\Documents\Source\Diffupar\ASSapManagement\obj\Release\ASSapManagement.csproj.CoreCompileInputs.cache
+C:\Users\MarianoRobertoAluzzo\Documents\Source\Diffupar\ASSapManagement\obj\Release\ASSapMan.9CCD39D0.Up2Date
+C:\Users\MarianoRobertoAluzzo\Documents\Source\Diffupar\ASSapManagement\obj\Release\ASSapManagement.exe
+C:\Users\MarianoRobertoAluzzo\Documents\Source\Diffupar\ASSapManagement\obj\Release\ASSapManagement.pdb

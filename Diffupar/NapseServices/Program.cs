@@ -11,6 +11,7 @@ using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System.Runtime.CompilerServices;
 using System.Collections;
+using System.IO;
 
 namespace NapseServices
 {
@@ -31,8 +32,29 @@ namespace NapseServices
         static async Task Main(string[] args)
         {
 
+            //Crea los directorios
+            string _directoryRoot = ConfigurationManager.AppSettings["ProcessJsonPath"].ToString();
+            string _DirectoryPath = $"{_directoryRoot}\\pendientes";
+
+            try
+            {
+                //creo los directorios si no existen
+                if (!Directory.Exists(_directoryRoot))
+                    Directory.CreateDirectory(_directoryRoot);
+
+                if (!Directory.Exists(_DirectoryPath))
+                    Directory.CreateDirectory(_DirectoryPath);
+            }
+            catch(Exception e) 
+            { 
+                Console.WriteLine(e.Message);
+                }
+
+            //incia el proceso
+
             ProcessId = Guid.NewGuid();
             string _query = "select * from dbo.RabbitQueue where  estado = 'OnLine' and origen ='Rabbit'";
+            //string _query = "select * from RabbitQueue where id= 9";
             DataTable _dt = ADO.SQL.SqlExecuteQueryDataSet(_query, _sqlConnection).Tables[0];
             List<Task> tasks = new List<Task>();
             int _cursoTop = 0;
@@ -109,7 +131,8 @@ namespace NapseServices
                         Console.WriteLine($" [*] Esperando mensajes en la cola '{queueName}':Messages: {_cMsg}");
 
                         //Persiste Msg
-                        AddMessageRabbit(message, RabbiQueueId);                        
+                        AddMessageRabbit(message, RabbiQueueId);
+                        System.Threading.Thread.Sleep(2000);
 
                     };
 
@@ -168,17 +191,31 @@ namespace NapseServices
                         ProcessId = Guid.NewGuid();
                         var body = ea.Body.ToArray();
                         var message = Encoding.UTF8.GetString(body);
-
+                        string jsonResponse = message;
                         _cMsg++;
 
                         Console.SetCursorPosition(_cleft, cursonTop);
                         Console.WriteLine($" [*] Esperando mensajes en la cola '{queueName}': Messages: {_cMsg}");
 
-                        //Persiste Msg
-                        AddMessageRabbit(message, RabbiQueueId);
+                       
+                        if (queueName.Contains("bi2"))
+                        {
+                            string _directoryRoot = ConfigurationManager.AppSettings["ProcessJsonPath"].ToString();
+                            string _DirectoryPath = $"{_directoryRoot}\\pendientes";
+                            string filePath = $"{_DirectoryPath}\\{Guid.NewGuid()}.json";
+
+                            File.WriteAllText(filePath, jsonResponse);
+                        }
+                        else
+                        {
+                            //Persiste Msg
+                            AddMessageRabbit(message, RabbiQueueId);
+                            System.Threading.Thread.Sleep(2000);
+                        }
                     };
 
-                    //AutoAck=true (Confirma la cola y elimina) AutoAck=False (No confirma la cola y no la elimina)
+                    //AutoAck=true (Confirma la cola y elimina) AutoAck=False (No confirma la cola y no la elimina)                   
+
                     channel.BasicConsume(queue: queueName, autoAck: _autoACK, consumer: consumer);
 
                     await Task.Delay(-1);
@@ -213,7 +250,6 @@ namespace NapseServices
                 LogError(ex, rabbitQueueId);
             }
         }
-
 
 
         /// <summary>

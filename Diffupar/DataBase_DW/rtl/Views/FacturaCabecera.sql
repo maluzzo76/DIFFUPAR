@@ -1,4 +1,4 @@
-﻿create VIEW rtl.FacturaCabecera
+﻿CREATE VIEW rtl.FacturaCabecera
 as
 select  
  p.GP_DATEPIECE Fecha,
@@ -52,34 +52,21 @@ case
 		when e.ET_LIBELLE ='B24 ECOMMERCE' THEN 'B24 ECOMMERCE'
 		when e.ET_LIBELLE ='OUTLET' THEN 'OUTLET'
 		ELSE 'ST COMPARABLE'
-		END Grupo,
-		cl.ClienteNombre,
-		cl.ClienteApellido,
-		cl.Zona as ClienteZona,
-		cl.Email as ClienteEmail,
-		cl.Genero as ClienteGenero
+		END Grupo
 
 
 
 from [200.32.54.90].Produccion.[dbo].[PIECE] as p WITH(Nolock)
 inner join [200.32.54.90].Produccion.[dbo].[ETABLISS] as e  WITH(Nolock) on e.ET_ETABLISSEMENT=p.GP_ETABLISSEMENT
-
 left join(
-			select
-			T_TIERS AS PK_CUSTOMER,
-			UPPER(t_prenom) as ClienteNombre,
-			upper(t_libelle) as ClienteApellido,
-			t_ville as Zona,
-			LOWER(t_email) as Email,
-			case
-				when t_sexe = 'F' then 'FEMENINO'
-				when t_sexe = 'M' then 'MASCULINO'
-			else 
-				UPPER(t_sexe)
-			end as Genero 
-			FROM [200.32.54.90].Produccion.dbo.TIERS p WITH(Nolock)
-			where T_NATUREAUXI='CLI'
- 		) as CL on CL.PK_CUSTOMER=P.GP_TIERS
+select 
+ T_TIERS AS PK_CUSTOMER
+ FROM [200.32.54.90].Produccion.dbo.TIERS p WITH(Nolock)
+where T_NATUREAUXI='CLI'
+--AND T_PARTICULIER='X'
+--AND T_TIERS<>'9999'
+
+ ) as CL on CL.PK_CUSTOMER=P.GP_TIERS
 
 
 where p.GP_NATUREPIECEG='FFO'

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<ASDWP.Models.DbSchedule>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Schedules</h2>
+
+<p>
+    @Html.ActionLink("Create Scehdule", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Orden
+        </th>
+        <th>
+            Nombre
+        </th>
+        <th>
+            Fecha inicio
+        </th>
+        <th>
+            Fecha Fin
+        </th>
+        <th>
+            Estado
+        </th>
+        <th>
+            Where
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Orden)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StarDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastStarDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DbQuery.Where)
+        </td>
+        <td>
+            <a class="btn-grid" href="@Url.Action("Edit","DbSchedules", new { id = item.Id }) "><span><img src="~/Content/image/iconos_Lapiz.png" /></span></a>
+            <a class="btn-grid" href="@Url.Action("Details","DbSchedules", new { id = item.Id }) "><img src="~/Content/image/iconos_Buscar.png" /></a>
+            <a class="btn-grid" href="@Url.Action("Delete","DbSchedules", new { id = item.Id }) "><img src="~/Content/image/iconos_Basura.png" /></a>
+        </td>
+    </tr>
+}
+
+</table>

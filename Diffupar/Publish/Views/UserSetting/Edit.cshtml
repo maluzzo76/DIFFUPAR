@@ -1,0 +1,71 @@
+﻿@model ASDWP.Models.AspNetUsers
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<table>
+    <tr>
+        <td style="width:20px;">
+            <img src="~/Content/image/user.png" width="35" height="35" />
+        </td>
+        <td>
+            <h2>Editar seguridad de @Model.UserName</h2>
+        </td>
+    </tr>
+</table>
+
+@Html.ActionLink("Volver", "Index")
+
+
+<table class="table">
+
+    <tr>
+        <td>
+            <table class="table " style="background-color:#7c9ad026">
+                @foreach (var iMenu in Model.MenuSecurity)
+                {
+                    <tr>
+                        <td>
+                            @iMenu.Nombre
+                        </td>
+                        <td>
+                            @using (Html.BeginForm("setSeguridadMenu", "UserSetting", new { id = iMenu.Id }, FormMethod.Post, null))
+                            {
+
+                                var _hash = "";
+                                if (iMenu.OcrCode3 != null)
+                                {
+                                    _hash = iMenu.OcrCode3;
+                                }
+
+                                <label>Hash Tienda</label>
+                                <input id="HashStore" name="HashStore" type="text" value="@_hash" onchange="form.submit();" />
+                                <label>Activo</label>
+                                <input id="isActivo" name="isActivo" type="checkbox" checked="@iMenu.IsActivo" onclick="form.submit();" />
+                            }
+                        </td>
+                        <td>
+                            <table class="table" style="background-color:#7c9ad00e">
+                                @foreach (var _mItem in iMenu.ItemMenuSecurity)
+                                {
+                                    <tr>
+                                        <td style="width:400px;">
+                                            @_mItem.Nombre
+                                        </td>
+                                        <td>
+                                            @using (Html.BeginForm("setSeguridad", "UserSetting", new { id = _mItem.Id }, FormMethod.Post, null))
+                                            {
+                                                <input id="isActivo" name="isActivo" type="checkbox" checked="@_mItem.IsActivo" onclick="form.submit();" />
+                                            }
+                                        </td>
+                                    </tr>
+                                }
+                            </table>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </td>
+    </tr>
+</table>

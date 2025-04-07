@@ -1,0 +1,134 @@
+﻿@model IEnumerable<ASDWP.Models.RabbitMenssage>
+
+@{
+    ViewBag.Title = "Detalle Menssage";
+}
+
+<h2>Rabbit Message Detalle</h2>
+
+<p>
+    @Html.ActionLink("Volver", "Details", new { id = Model.ElementAt(0).RabbitQueue_Id }, new { @class = "btn btn-primary" })
+</p>
+
+
+
+<div>
+    <hr />
+    <div class="container-fluid bg-secondary text-light">
+        @{
+            ASDWP.Models.RabbitQueue _r = (ASDWP.Models.RabbitQueue)ViewBag.queue;
+            <h1>Origen: @_r.Origen - @_r.Nombre </h1>
+            <h5>Exchange: @_r.ExchangeName</h5>
+            <h5>Queues: @_r.QueueName</h5>
+            <h5>Routing Key: @_r.RoutingKey</h5>
+            <br />
+        }
+
+
+    </div>
+</div>
+
+<div class="container-fluid">
+    <hr />
+    <div class="row">
+        <div class="col-md-6">
+            @{ foreach (var m in Model)
+                {
+                    <div class="col-12" style="height:800px; overflow: auto; border: 1px solid #cfcfcf; border-radius: 4px; box-shadow: 3px 7px 30px -1px rgba(0,0,0,0.34);">
+                        @{
+
+                            // Convertimos el objeto C# a JSON (opcionalmente formateado)
+                            var jsonString = Newtonsoft.Json.Linq.JObject.Parse(m.Msg);
+                            <i style="color: #5b5959;">
+                                <span><i style="font-size:14pt;" class="fw-bold">Menssage Id: <i style="color: #808080; ">@m.Id</i></i></span><br />
+                                <span><i style="font-size:14pt;" class="fw-bold">Process Key: <i style="color: #808080; ">@m.ProcessId</i></i></span><br />
+                                <span><i style="font-size:14pt;" class="fw-bold">Fecha: <i style="color: #808080; ">@m.ImportDate</i></i></span><br />
+                                <span>
+                                    <pre style="border-top:1px solid #808080;">@jsonString</pre>
+                                </span>
+                            </i>
+                        }
+
+                    </div>
+                    <hr />
+                }
+            }
+        </div>
+        <div class="col-md-6" ">
+            <div class="col-12" style="height:800px; overflow: auto; border: 1px solid #cfcfcf; border-radius: 4px; box-shadow: 3px 7px 30px -1px rgba(0,0,0,0.34);">
+                <i style="color: #5b5959;">
+                    <span><i style="font-size:14pt;" class="fw-bold"><i style="color: #808080; ">Detalle de Inyección Dw</i></i></span><br />   <br /><br />
+                </i>
+
+                <table class="table">
+                    <tr>
+                        <th>
+                            Columna
+                        </th>
+                        <th>
+                            Valor
+                        </th>
+                    </tr>
+                    @{
+                        System.Data.DataTable _dt = ((System.Data.DataTable)ViewData["MsgDW"]);
+                        foreach (System.Data.DataRow _row in _dt.Rows)
+                        {
+                            for (int index = 0; index < _dt.Columns.Count; index++)
+                            {
+                                <tr>
+                                    @{
+                                        if (@_dt.Columns[index].ColumnName.StartsWith("Id"))
+                                        {
+                                            <td style="background-color:#eeeeee;">
+                                                @_dt.Columns[index].ColumnName
+                                            </td>
+                                            <td style="background-color: #eeeeee;">
+                                                @_row[index].ToString()
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td>
+                                                @_dt.Columns[index].ColumnName
+                                            </td>
+                                            <td>
+                                                @if (@_dt.Columns[index].ColumnName.Equals("Cantidad"))
+                                                {
+                                                    var _can = decimal.Round(decimal.Parse(_row[index].ToString()), 0);
+
+                                                    @_can
+                                                }
+                                                else
+                                                {
+                                                    @_row[index].ToString()
+                                                }
+
+                                            </td>
+                                        }
+                                    }
+
+                                </tr>
+                            }
+                        }
+                    }
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function formatjson(json) {
+
+        const jsonData = json
+
+        // Convertir JSON a una cadena formateada y mostrarla
+        document.getElementById("jsonDisplay").textContent = JSON.stringify(jsonData, null, 4);
+    }
+
+
+</script>
+
+
+

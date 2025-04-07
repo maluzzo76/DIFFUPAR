@@ -70,3 +70,12 @@ C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR S
 C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Log\obj\Release\Log.csproj.Up2Date
 C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Log\obj\Release\Log.dll
 C:\Users\Pc\Documents\Alusoft\OneDrive - Alusoft\Source\Desarrollo BI\DIFFUPAR SAP\Diffupar\Log\obj\Release\Log.pdb
+C:\Users\MarianoRobertoAluzzo\Documents\Source\Diffupar\Log\bin\Release\Log.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Source\Diffupar\Log\bin\Release\Log.pdb
+C:\Users\MarianoRobertoAluzzo\Documents\Source\Diffupar\Log\bin\Release\Newtonsoft.Json.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Source\Diffupar\Log\bin\Release\Newtonsoft.Json.xml
+C:\Users\MarianoRobertoAluzzo\Documents\Source\Diffupar\Log\obj\Release\Log.csproj.AssemblyReference.cache
+C:\Users\MarianoRobertoAluzzo\Documents\Source\Diffupar\Log\obj\Release\Log.csproj.CoreCompileInputs.cache
+C:\Users\MarianoRobertoAluzzo\Documents\Source\Diffupar\Log\obj\Release\Log.csproj.Up2Date
+C:\Users\MarianoRobertoAluzzo\Documents\Source\Diffupar\Log\obj\Release\Log.dll
+C:\Users\MarianoRobertoAluzzo\Documents\Source\Diffupar\Log\obj\Release\Log.pdb

@@ -1,0 +1,42 @@
+﻿@model ASDWP.Models.RabbitMessageMapping
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RabbitMessageMapping</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ColumnName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ColumnName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JsonAttribute)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JsonAttribute)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RabbitQueueId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RabbitQueueId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

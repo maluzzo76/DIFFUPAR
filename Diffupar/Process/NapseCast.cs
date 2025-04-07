@@ -20,6 +20,9 @@ using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.Data.Entity.ModelConfiguration.Configuration;
 using System.Diagnostics.SymbolStore;
+using System.Diagnostics.Eventing.Reader;
+using System.IO;
+using System.Collections;
 
 namespace Process
 {
@@ -33,6 +36,10 @@ namespace Process
         /// </summary>
         public static void JsonNapseTransform()
         {
+            //process cola transaction Bi2
+
+            RabbitJsonProcess.process();
+
             string _qGetRabbitMessage = "select * from dbo.V_RabbitMessageProcess  order by tipo desc";
 
             DataTable dataTable = ADO.SQL.SqlExecuteQueryDataSet(_qGetRabbitMessage, _sqlConnection).Tables[0];
@@ -97,21 +104,21 @@ namespace Process
             // Recorre cada Recepcion
             foreach (var _items in jObject["inventoryControlDocumentLineItem"])
             {
-                
 
-                _jsonTransactionId = (string)jObject["_id"];                
+
+                _jsonTransactionId = (string)jObject["_id"];
                 string _id = (string)jObject["_id"];
                 DateTime _fecha = DateTime.Parse(jObject["createdAt"].ToString());
-                string _TipoOperacion= (string)jObject["documentTypeCode"];
+                string _TipoOperacion = (string)jObject["documentTypeCode"];
                 string _NroOperacion = (string)jObject["serialFormId"];
                 string _CodigoTienda = (string)jObject["sourceRetailStoreCode"];
                 string _NombreTienda = "";
-                string _Motivo   = "";
+                string _Motivo = "";
                 string _TipoDocumento = (string)jObject["documentTypeCode"];
                 string _NroDocumento = (string)jObject["serialFormId"];
                 string _EstadoDocumento = (string)jObject["inventoryControlDocumentStateName"];
                 string _DepositoOrigen = "";
-                string _DepositoDestino ="";
+                string _DepositoDestino = "";
                 string _CodigoArticulo = (string)_items["itemCode"];
                 string _NombreArticulo = "";
                 decimal _Cantidad = (decimal)_items["unitCount"]["numberDecimal"];
@@ -157,10 +164,10 @@ namespace Process
                 _nRow["TipoAjuste"] = _TipoAjuste;
                 _nRow["NroOcSap"] = _NroOcSap;
                 _nRow["CodigoTiendaDestino"] = _CodigoTiendaDestino;
-                _nRow["NombreTiendaDestino"] = _NombreDestinoTienda;    
+                _nRow["NombreTiendaDestino"] = _NombreDestinoTienda;
 
                 bool _isInserted = false;
-               
+
                 //Agregar los numeros de recepcion
                 foreach (var _CR in jObject["inventoryControlDocumentReference"])
                 {
@@ -198,7 +205,7 @@ namespace Process
                     _isInserted = true;
                 }
 
-                if(!_isInserted)
+                if (!_isInserted)
                     _dtJson.Rows.Add(_nRow);
             }
 
@@ -210,6 +217,7 @@ namespace Process
 
         internal static void ProcessMessageTransactios(string message, string ProcessKey)
         {
+
             var jObject = JObject.Parse(message);
             string _jsonTransactionId = "";
             DataTable _dtJson = NapseDt_TransactioInvetary();
@@ -218,12 +226,13 @@ namespace Process
             {
                 DataRow _nRow = _dtJson.NewRow();
 
-               _jsonTransactionId = (string)jObject["_id"];
+                _jsonTransactionId = (string)jObject["_id"];
                 string _id = (string)jObject["_id"];
-                DateTime _fecha = DateTime.Parse(jObject["createdAt"].ToString());//beginDateTime
+                DateTime _fecha = DateTime.Parse(jObject["beginDateTime"].ToString());//createdAt
                 string _TipoOperacion = (string)jObject["trxType"];
                 string _NroOperacion = (string)jObject["trxNumber"];
-                string _CodigoTienda = ($"{(string)jObject["storeCode"]}-{(string)_items["terminalCode"]}-{(string)jObject["trxNumber"]}") ;
+                // string _CodigoTienda = ($"{(string)jObject["storeCode"]}-{(string)_items["terminalCode"]}-{(string)jObject["trxNumber"]}") ;
+                string _CodigoTienda = (string)jObject["storeCode"];
                 string _NombreTienda = (string)jObject["storeName"];
                 string _Motivo = "";
                 string _TipoDocumento = (string)_items["billType"];
@@ -246,17 +255,51 @@ namespace Process
                 string _ClienteCodigo = (string)jObject["partyIdentificationNumber"];
                 string _ClienteNombre = (string)jObject["partyFirstName"];
                 string _ClienteApellido = (string)jObject["partyLastName"];
-                decimal _PrecioUnitarioSinIva = (decimal)_items["unitPriceWithDiscounts"]; 
+                decimal _PrecioUnitarioSinIva = (decimal)_items["unitPriceWithDiscounts"];
                 decimal _PrecioUnitarioConIva = (decimal)_items["unitPrice"];
-                decimal _PrecioTotalSinIva = (decimal)_items["netAmount"]; 
+                decimal _PrecioTotalSinIva = (decimal)_items["netAmount"];
                 decimal _PrecioTotalConIva = (decimal)_items["customerExtendedAmount"];
                 decimal _DescuentoManual = (decimal)_items["manualDiscountAmount"];
                 decimal _DescuentoPromo = (decimal)_items["promoDiscountAmount"];
+                int _voidedQuantity = (int)_items["voidedQuantity"];
+
+                //valido la cancelacion
+                bool _voiding = (bool)_items["voiding"];
+                bool _voidFlag = (bool)_items["voidFlag"];
+
+
+                if (!_voiding && _voidFlag)
+                {
+                    _Cantidad = 0;
+                    _PrecioUnitarioSinIva = 0;
+                    _PrecioUnitarioConIva = 0;
+                    _PrecioTotalSinIva = 0;
+                    _PrecioTotalConIva = 0;
+                }
+
+                if (_voiding && !_voidFlag)
+                {
+                    _Cantidad = 0;
+                    _PrecioUnitarioSinIva = 0;
+                    _PrecioUnitarioConIva = 0;
+                    _PrecioTotalSinIva = 0;
+                    _PrecioTotalConIva = 0;
+                }
 
 
 
+                if (_voidedQuantity > 0)
+                {
+                    _Cantidad = _Cantidad * -1;
+                    _PrecioUnitarioSinIva = _PrecioUnitarioSinIva * -1;
+                    _PrecioUnitarioConIva = _PrecioUnitarioConIva * -1;
+                    _PrecioTotalSinIva = _PrecioTotalSinIva * -1;
+                    _PrecioTotalConIva = _PrecioTotalConIva * -1;
+                }
 
-                _nRow["Id"] =_id;
+
+
+                _nRow["Id"] = _id;
                 _nRow["Fecha"] = _fecha;
                 _nRow["TipoOperacion"] = _TipoOperacion;
                 _nRow["NroOperacion"] = _NroOperacion;
@@ -270,7 +313,7 @@ namespace Process
                 _nRow["DepositoDestino"] = _DepositoDestino;
                 _nRow["CodigoArticulo"] = _CodigoArticulo;
                 _nRow["NombreArticulo"] = _NombreArticulo;
-                _nRow["Cantidad"] = _Cantidad;
+
                 _nRow["CodigoVendedor"] = _CodigoVendedor;
                 _nRow["NombreVendedor"] = _NombreVendedor;
                 _nRow["EstadoInventario"] = _EstadoInventario;
@@ -282,15 +325,19 @@ namespace Process
                 _nRow["ClienteCodigo"] = _ClienteCodigo;
                 _nRow["ClienteNombre"] = _ClienteNombre;
                 _nRow["ClienteApellido"] = _ClienteApellido;
+
+
+                _nRow["Cantidad"] = _Cantidad;
                 _nRow["PrecioUnitarioSinIva"] = _PrecioUnitarioSinIva;
-                _nRow["PrecioInitarioTotal"] = _PrecioTotalConIva;
+                _nRow["PrecioInitarioTotal"] = _PrecioUnitarioConIva;
                 _nRow["PrecioTotalSinIva"] = _PrecioTotalSinIva;
                 _nRow["PrecioTotal"] = _PrecioTotalConIva;
                 _nRow["DescuentoPromo"] = _DescuentoPromo;
                 _nRow["DescuentoManual"] = _DescuentoManual;
 
 
-                bool _inserted  = false;
+
+                bool _inserted = false;
 
                 if (_items["itemTicketStockInformationList"] != null && _items["itemTicketStockInformationList"].ToList().Count > 0)
                 {
@@ -298,10 +345,10 @@ namespace Process
                     {
                         DataRow _ninf = _dtJson.NewRow();
                         _EstadoInventario = (string)_item1["itemInventoryStateCode"];
-                        
 
-                       
-                      
+
+
+
                         _ninf["Id"] = _id;
                         _ninf["Fecha"] = _fecha;
                         _ninf["TipoOperacion"] = _TipoOperacion;
@@ -329,21 +376,21 @@ namespace Process
                         _ninf["ClienteNombre"] = _ClienteNombre;
                         _ninf["ClienteApellido"] = _ClienteApellido;
                         _ninf["PrecioUnitarioSinIva"] = _PrecioUnitarioSinIva;
-                        _ninf["PrecioInitarioTotal"] = _PrecioTotalConIva;
+                        _ninf["PrecioInitarioTotal"] = _PrecioUnitarioConIva;
                         _ninf["PrecioTotalSinIva"] = _PrecioTotalSinIva;
                         _ninf["PrecioTotal"] = _PrecioTotalConIva;
                         _ninf["DescuentoPromo"] = _DescuentoPromo;
                         _ninf["DescuentoManual"] = _DescuentoManual;
 
-
                         _dtJson.Rows.Add(_ninf);
+
                         _inserted = true;
                     }
                 }
-                   
-                if(!_inserted)
+
+                if (!_inserted)
                     _dtJson.Rows.Add(_nRow);
-                
+
 
             }
             string _queryEstado = ($"update RabbitMenssage set JsonTransactionID = isnull(JsonTransactionID,'') + '{_jsonTransactionId}' where ProcessId = '{ProcessKey}'");
@@ -462,7 +509,7 @@ namespace Process
             _dt.Columns.Add("NombreTiendaDestino", typeof(string));
             //------------------------------------------------
             _dt.Columns.Add("CodigoExterno", typeof(string));
-            _dt.Columns.Add("PuntoDeVenta", typeof(string));            
+            _dt.Columns.Add("PuntoDeVenta", typeof(string));
             _dt.Columns.Add("LetraComprobante", typeof(string));
             _dt.Columns.Add("PrecioUnitarioSinIva", typeof(decimal));
             _dt.Columns.Add("PrecioInitarioTotal", typeof(decimal));
@@ -483,13 +530,335 @@ namespace Process
         }
 
 
-
         internal static DataTable NapseDt_Store()
         {
             DataTable _dt = new DataTable();
             _dt.Columns.Add("Codigo", typeof(string));
             _dt.Columns.Add("Nombre", typeof(string));
             _dt.Columns.Add("TiendaDigital", typeof(string));
+
+            return _dt;
+        }
+    }
+
+    public class RabbitJsonProcess
+    {
+        private static string _sqlConnection = ConfigurationManager.ConnectionStrings["dbHost"].ConnectionString;
+        private static IList<SqlBulkCopyColumnMapping> _mappingsColumns = new List<SqlBulkCopyColumnMapping>();
+        static IList<string> _transacciones = new List<string>();
+
+
+        public static void process()
+        {
+            Log.Write.WriteError("Inicio Proceso jsonFiles");
+            _sqlConnection = ConfigurationManager.ConnectionStrings["dbHost"].ConnectionString;
+            _transacciones.Add($"trxType,storeCode,beginDateTime,Id,total");
+
+            string _directoryRoot = ConfigurationManager.AppSettings["ProcessJsonPath"].ToString();
+            string _DirectoryPath = $"{_directoryRoot}\\pendientes";
+            string _DirectoryErrorPath = $"{_directoryRoot}\\noProcesados";
+            string _DirectoryProcesadosPath = $"{_directoryRoot}\\procesados";
+
+            //creo los directorios si no existen
+            if (!Directory.Exists(_directoryRoot))
+                Directory.CreateDirectory(_directoryRoot);
+
+            if (!Directory.Exists(_DirectoryPath))
+                Directory.CreateDirectory(_DirectoryPath);
+
+            if (!Directory.Exists(_DirectoryErrorPath))
+                Directory.CreateDirectory(_DirectoryErrorPath);
+
+            if (!Directory.Exists(_DirectoryProcesadosPath))
+                Directory.CreateDirectory(_DirectoryProcesadosPath);
+
+
+            int _count = 0;
+            //Console.WriteLine($" [*] Mensages procesados '{_count}");
+
+
+            foreach (string filepath in System.IO.Directory.GetFiles(_DirectoryPath))
+            {
+                FileInfo _fInfo = new FileInfo(filepath);
+
+                try
+                {
+                    if (File.Exists(filepath)) // Verifica si el archivo existe
+                    {
+                        string jsonContent = File.ReadAllText(filepath);
+
+                        ProcessMessageTransactios(jsonContent, filepath);
+
+                        _count++;
+
+                        Console.WriteLine($" [*] Mensages procesados '{_count}");
+                    }
+                    else
+                    {
+                        Log.Write.WriteError($"El archivo ({filepath}) no existe.");
+                        Console.WriteLine("El archivo no existe.");
+                    }
+
+                    File.Move(filepath, $"{_DirectoryProcesadosPath}\\{_fInfo.Name}");
+                }
+                catch (Exception ex)
+                {
+                    Log.Write.WriteException(ex);
+                }
+            }
+            File.WriteAllLines($"{_directoryRoot}\\{DateTime.Now.ToString().Replace("/", "").Replace(":", "").Trim()}_transacciones_log.csv", _transacciones);
+
+            Log.Write.WriteError("Inicio Proceso jsonFiles");
+        }
+
+        static void ProcessMessageTransactios(string message, string ProcessKey)
+        {
+            var jObject = JObject.Parse(message);
+            string _jsonTransactionId = "";
+            DataTable _dtJson = NapseDt_TransactioInvetary();
+
+            foreach (var _items in jObject["items"])
+            {
+                DataRow _nRow = _dtJson.NewRow();
+
+                _jsonTransactionId = (string)jObject["_id"];
+                string _id = (string)jObject["_id"];
+                DateTime _fecha = DateTime.Parse(jObject["createdAt"].ToString());//createdAt
+                string _TipoOperacion = (string)jObject["trxType"];
+                string _NroOperacion = (string)jObject["trxNumber"];
+                // string _CodigoTienda = ($"{(string)jObject["storeCode"]}-{(string)_items["terminalCode"]}-{(string)jObject["trxNumber"]}") ;
+                string _CodigoTienda = (string)jObject["storeCode"];
+                string _NombreTienda = (string)jObject["storeName"];
+                string _Motivo = "";
+                string _TipoDocumento = (string)_items["billType"];
+                string _NroDocumento = (string)_items["billNumber"];
+                string _EstadoDocumento = "";
+                string _DepositoOrigen = (string)_items["locationCode"];
+                string _DepositoDestino = "";
+                string _CodigoArticulo = (string)_items["internalCode"];
+                string _NombreArticulo = (string)_items["description"];
+                decimal _Cantidad = (decimal)_items["quantity"];
+                string _CodigoVendedor = (string)_items["sellerID"];
+                string _NombreVendedor = (string)_items["sellerName"];
+                string _EstadoInventario = "";
+                string _MessageProcessId = ProcessKey;
+                string _CodigoTerminal = (string)_items["terminalCode"];
+                string _CodigoExterno = ($"{_CodigoTienda}{_CodigoTerminal}{_NroOperacion}");
+                string _PuntoDeVenta = (string)jObject["fiscalPosNumber"];
+                string _LetraComprobante = (string)jObject["serieOfficialBill"];
+                string _Canal = (string)jObject["channel"];
+                string _ClienteCodigo = (string)jObject["partyIdentificationNumber"];
+                string _ClienteNombre = (string)jObject["partyFirstName"];
+                string _ClienteApellido = (string)jObject["partyLastName"];
+                decimal _PrecioUnitarioSinIva = (decimal)_items["unitPriceWithDiscounts"];
+                decimal _PrecioUnitarioConIva = (decimal)_items["unitPrice"];
+                decimal _PrecioTotalSinIva = (decimal)_items["netAmount"];
+                decimal _PrecioTotalConIva = (decimal)_items["customerExtendedAmount"];
+                decimal _DescuentoManual = (decimal)_items["manualDiscountAmount"];
+                decimal _DescuentoPromo = (decimal)_items["promoDiscountAmount"];
+                int _voidedQuantity = (int)_items["voidedQuantity"];
+                bool _voiding = (bool)_items["voiding"];
+                bool _voidFlag = (bool)_items["voidFlag"];
+                bool _returned = (bool)_items["returned"];
+
+                //aplico descuentos 
+               
+
+                bool _isAnulado = false;
+                //Anula el producto
+
+                if (_TipoOperacion == "Return")
+                {
+                    if (!_voiding && !_voidFlag)
+                    {                       
+                        _Cantidad = _Cantidad * -1;
+                        _PrecioTotalSinIva = _PrecioTotalSinIva * -1;
+                        _PrecioTotalConIva = _PrecioTotalConIva * -1;
+                    }
+                    else if (!_voiding && _voidFlag)
+                    {                       
+                        _Cantidad = _Cantidad * -1;
+                        _PrecioTotalSinIva = _PrecioTotalSinIva * -1;
+                        _PrecioTotalConIva = _PrecioTotalConIva * -1;
+                    }
+
+                }
+                else
+                {
+                    if (_voiding == false && _voidFlag == true)
+                    {
+                        _isAnulado = true;
+                        _Cantidad = _Cantidad * -1;
+                        _PrecioTotalSinIva = _PrecioTotalSinIva * -1;
+                        _PrecioTotalConIva = _PrecioTotalConIva * -1;
+                    }
+
+                    if (_voiding == true && _voidFlag == false)
+                    {
+                        _isAnulado = true;
+                        _Cantidad = _Cantidad * -1;
+                        _PrecioTotalSinIva = _PrecioTotalSinIva * -1;
+                        _PrecioTotalConIva = _PrecioTotalConIva * -1;
+                    }
+
+
+                    if (_voiding == false && _voidFlag == false && _voidedQuantity > 0)
+                    {                        
+                        _Cantidad = _Cantidad * -1;
+                        _PrecioTotalSinIva = _PrecioTotalSinIva * -1;
+                        _PrecioTotalConIva = _PrecioTotalConIva * -1;
+                    }
+                }
+
+                if (_isAnulado == false)
+                {
+
+                    _nRow["Id"] = _id;
+                    _nRow["Fecha"] = _fecha;
+                    _nRow["TipoOperacion"] = _TipoOperacion;
+                    _nRow["NroOperacion"] = _NroOperacion;
+                    _nRow["CodigoTienda"] = _CodigoTienda;
+                    _nRow["NombreTienda"] = _NombreTienda;
+                    _nRow["Motivo"] = _Motivo;
+                    _nRow["TipoDocumento"] = _TipoDocumento;
+                    _nRow["NroDocumento"] = _NroDocumento;
+                    _nRow["EstadoDocumento"] = _EstadoDocumento;
+                    _nRow["DepositoOrigen"] = _DepositoOrigen;
+                    _nRow["DepositoDestino"] = _DepositoDestino;
+                    _nRow["CodigoArticulo"] = _CodigoArticulo;
+                    _nRow["NombreArticulo"] = _NombreArticulo;
+
+                    _nRow["CodigoVendedor"] = _CodigoVendedor;
+                    _nRow["NombreVendedor"] = _NombreVendedor;
+                    _nRow["EstadoInventario"] = _EstadoInventario;
+                    _nRow["MessageProcessId"] = ProcessKey;
+                    _nRow["CodigoExterno"] = _CodigoExterno;
+                    _nRow["PuntoDeVenta"] = _PuntoDeVenta;
+                    _nRow["LetraComprobante"] = _LetraComprobante;
+                    _nRow["Canal"] = _Canal;
+                    _nRow["ClienteCodigo"] = _ClienteCodigo;
+                    _nRow["ClienteNombre"] = _ClienteNombre;
+                    _nRow["ClienteApellido"] = _ClienteApellido;
+
+
+                    _nRow["Cantidad"] = _Cantidad;
+                    _nRow["PrecioUnitarioSinIva"] = _PrecioUnitarioSinIva;
+                    _nRow["PrecioInitarioTotal"] = _PrecioUnitarioConIva;
+                    _nRow["PrecioTotalSinIva"] = _PrecioTotalSinIva;
+                    _nRow["PrecioTotal"] = _PrecioTotalConIva;
+                    _nRow["DescuentoPromo"] = _DescuentoPromo;
+                    _nRow["DescuentoManual"] = _DescuentoManual;
+
+                    string _log = $"{_NroOperacion};{(string)jObject["storeCode"]};{_fecha},{_id};{_PrecioTotalConIva}";
+                    _transacciones.Add(_log);
+
+                    bool _inserted = false;
+
+                    if (_items["itemTicketStockInformationList"] != null && _items["itemTicketStockInformationList"].ToList().Count > 0)
+                    {
+                        foreach (var _item1 in _items["itemTicketStockInformationList"])
+                        {
+                            DataRow _ninf = _dtJson.NewRow();
+                            _EstadoInventario = (string)_item1["itemInventoryStateCode"];
+
+                            _ninf["Id"] = _id;
+                            _ninf["Fecha"] = _fecha;
+                            _ninf["TipoOperacion"] = _TipoOperacion;
+                            _ninf["NroOperacion"] = _NroOperacion;
+                            _ninf["CodigoTienda"] = _CodigoTienda;
+                            _ninf["NombreTienda"] = _NombreTienda;
+                            _ninf["Motivo"] = _Motivo;
+                            _ninf["TipoDocumento"] = _TipoDocumento;
+                            _ninf["NroDocumento"] = _NroDocumento;
+                            _ninf["EstadoDocumento"] = _EstadoDocumento;
+                            _ninf["DepositoOrigen"] = _DepositoOrigen;
+                            _ninf["DepositoDestino"] = _DepositoDestino;
+                            _ninf["CodigoArticulo"] = _CodigoArticulo;
+                            _ninf["NombreArticulo"] = _NombreArticulo;
+                            _ninf["Cantidad"] = _Cantidad;
+                            _ninf["CodigoVendedor"] = _CodigoVendedor;
+                            _ninf["NombreVendedor"] = _NombreVendedor;
+                            _ninf["EstadoInventario"] = _EstadoInventario;
+                            _ninf["MessageProcessId"] = ProcessKey;
+                            _ninf["CodigoExterno"] = _CodigoExterno;
+                            _ninf["PuntoDeVenta"] = _PuntoDeVenta;
+                            _ninf["LetraComprobante"] = _LetraComprobante;
+                            _ninf["Canal"] = _Canal;
+                            _ninf["ClienteCodigo"] = _ClienteCodigo;
+                            _ninf["ClienteNombre"] = _ClienteNombre;
+                            _ninf["ClienteApellido"] = _ClienteApellido;
+                            _ninf["PrecioUnitarioSinIva"] = _PrecioUnitarioSinIva;
+                            _ninf["PrecioInitarioTotal"] = _PrecioUnitarioConIva;
+                            _ninf["PrecioTotalSinIva"] = _PrecioTotalSinIva;
+                            _ninf["PrecioTotal"] = _PrecioTotalConIva;
+                            _ninf["DescuentoPromo"] = _DescuentoPromo;
+                            _ninf["DescuentoManual"] = _DescuentoManual;
+
+                            _dtJson.Rows.Add(_ninf);
+
+                            _inserted = true;
+                        }
+                    }
+
+                    if (!_inserted)
+                        _dtJson.Rows.Add(_nRow);
+                }
+            }
+
+            ADO.SQL.SqlBulkCopyNoDelete("[stg].[NapseTransactions]", _dtJson, _mappingsColumns, _sqlConnection);
+
+        }
+
+        internal static DataTable NapseDt_TransactioInvetary()
+        {
+            DataTable _dt = new DataTable();
+            _dt.Columns.Add("Id", typeof(string));
+            _dt.Columns.Add("Fecha", typeof(DateTime));
+            _dt.Columns.Add("TipoOperacion", typeof(string));
+            _dt.Columns.Add("NroOperacion", typeof(string));
+            _dt.Columns.Add("CodigoTienda", typeof(string));
+            _dt.Columns.Add("NombreTienda", typeof(string));
+            _dt.Columns.Add("Motivo", typeof(string));
+            _dt.Columns.Add("TipoDocumento", typeof(string));
+            _dt.Columns.Add("NroDocumento", typeof(string));
+            _dt.Columns.Add("EstadoDocumento", typeof(string));
+            _dt.Columns.Add("DepositoOrigen", typeof(string));
+            _dt.Columns.Add("DepositoOrigenNombre", typeof(string));
+            _dt.Columns.Add("DepositoDestino", typeof(string));
+            _dt.Columns.Add("CodigoArticulo", typeof(string));
+            _dt.Columns.Add("NombreArticulo", typeof(string));
+            _dt.Columns.Add("Cantidad", typeof(decimal));
+            _dt.Columns.Add("CodigoVendedor", typeof(string));
+            _dt.Columns.Add("NombreVendedor", typeof(string));
+            _dt.Columns.Add("EstadoInventario", typeof(string));
+            _dt.Columns.Add("MessageProcessId", typeof(string));
+            _dt.Columns.Add("UserName", typeof(string));
+            _dt.Columns.Add("Proveedor", typeof(string));
+            _dt.Columns.Add("TipoAjuste", typeof(string));
+            //------------------------------------------------
+            _dt.Columns.Add("CodigoRecepcion", typeof(string));
+            _dt.Columns.Add("NroOcSap", typeof(string));
+            _dt.Columns.Add("NumeroPedidoExterno", typeof(string));
+            _dt.Columns.Add("CodigoTiendaDestino", typeof(string));
+            _dt.Columns.Add("NombreTiendaDestino", typeof(string));
+            //------------------------------------------------
+            _dt.Columns.Add("CodigoExterno", typeof(string));
+            _dt.Columns.Add("PuntoDeVenta", typeof(string));
+            _dt.Columns.Add("LetraComprobante", typeof(string));
+            _dt.Columns.Add("PrecioUnitarioSinIva", typeof(decimal));
+            _dt.Columns.Add("PrecioInitarioTotal", typeof(decimal));
+            _dt.Columns.Add("PrecioTotalSinIva", typeof(decimal));
+            _dt.Columns.Add("PrecioTotal", typeof(decimal));
+            _dt.Columns.Add("DescuentoPromo", typeof(decimal));
+            _dt.Columns.Add("DescuentoManual", typeof(decimal));
+            _dt.Columns.Add("Canal", typeof(string));
+            _dt.Columns.Add("ClienteCodigo", typeof(string));
+            _dt.Columns.Add("ClienteNombre", typeof(string));
+            _dt.Columns.Add("ClienteApellido", typeof(string));
+
+
+
+
 
             return _dt;
         }

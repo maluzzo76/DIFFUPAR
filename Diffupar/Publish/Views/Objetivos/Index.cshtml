@@ -1,0 +1,122 @@
+﻿@model IEnumerable<ASDWP.Controllers.Objetivo>
+@{
+    ViewBag.Title = "Objetivos";
+}
+
+<div class="container-fluid " style="background-color:#f2f2f2">
+    @if (Model.Count()>0)
+    {
+        <h2>Objetivos @Model.Max(a => a.Mes) - @Model.Max(a => a.Anio) <span>@Html.ActionLink("Agregar Objetivo", "Create", new { id = 0 }, new { @class = "btn btn-primary" })</span> </h2>
+    }
+    else
+    {
+        <h2>Objetivos <span>@Html.ActionLink("Agregar Objetivo", "Create", new { id = 0 }, new { @class = "btn btn-primary" })</span> </h2>
+    }
+
+
+
+    <div class="row">
+        <div class="col-md-6 ">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-3 sombra" style="height: 80px; border-radius: 6px; margin-left: 10px; color: black; text-align: center; padding-top: 10px; background-color: white; border-bottom: 3px solid blue;">
+                    <h5>Objetivos Retails </h5>
+                    <i style="font-size:16pt;">$ @Model.Sum(s => s.ObjetivoMoneda).ToString("N2")</i>
+                </div>
+                <div class="col-md-3 sombra" style="height: 80px; border-radius: 6px; margin-left: 10px; color: black; text-align: center; padding-top: 10px; background-color: white; border-bottom: 3px solid blue;">
+                    <h5>Objetivos Diffupar </h5>
+                    <i style="font-size:16pt;">$ @Model.Sum(s => s.ObjetivoCantidad).ToString("N2")</i>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            @using (Html.BeginForm("Index", "Objetivos", null, FormMethod.Post, null))
+            {
+                @Html.AntiForgeryToken()
+                <div class="container-fluid d-flex justify-content-end">
+                    <div class="row d-flex justify-content-end">
+                        <table>
+                            <tr>
+                                <th>Año</th>
+                                <th>Mes</th>
+                                <th>Tienda</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <td>@Html.DropDownList("Anio", null, htmlAttributes: new { @class = "form-control" })</td>
+                                <td>@Html.DropDownList("Mes", null, htmlAttributes: new { @class = "form-control" })</td>
+                                <td>
+                                    <input type="text" id="LugarCliente" value="@ViewBag.lugarCliente" name="LugarCliente" class="form-control" />
+                                </td>
+                                <td><input type="submit" value="Buscar" class="btn btn-success" /></td>
+                                <td> </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <br />
+</div>
+
+
+
+<hr />
+
+<table class="devoptable">
+    <tr>     
+        <th>
+            Periodo
+        </th>
+        <th>
+            Tienda
+        </th>
+        <th>
+            Objetivo Retails $
+        </th>
+        <th>
+            Objetivo Diffupar $
+        </th>        
+        <th>
+            Usuario
+        </th>
+        <th>
+            Fecha
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>           
+            <td class="fw-bold">
+                @item.Mes-@item.Anio
+            </td>
+            <td class="fw-bold">
+                @item.LugarCliente
+            </td>
+            @using (Html.BeginForm("EditObjetivo", "Objetivos", new { id = item.Id, anio = ViewBag.Anio, mes = ViewBag.Mes, lugarCliente = ViewBag.lugarCliente }, FormMethod.Post))
+            {
+                <td>
+                    $ <input title="Ultima Modificacion: @item.Usuario" class="devopControl fw-bold" style=" cursor: text;text-align:right;" type="text" step="0.01" id="ObjetivoMoneda" name="ObjetivoMoneda" value="@item.ObjetivoMoneda.ToString("N2")" onclick="select('ObjetivoMoneda')" onchange="form.submit();" />
+                </td>
+                <td>
+                    <input class="devopControl fw-bold" style="cursor: text; text-align: right;" type="text" id="ObjetivoCantidad" name="ObjetivoCantidad" value=" @item.ObjetivoCantidad.ToString("N2")" onchange="form.submit();" onclick="select('ObjetivoCantidad')" />
+                </td>                
+            }
+
+            <td>
+                @item.Usuario
+            </td>
+            <td>
+                @item.UltimaModificacion
+            </td>
+        </tr>
+    }
+</table>
+
+<script>
+        funtion select(obj)
+        {
+            $(obj).select();
+        }
+</script>

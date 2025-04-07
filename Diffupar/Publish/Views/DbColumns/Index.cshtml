@@ -1,0 +1,40 @@
+﻿@model IEnumerable<ASDWP.Models.DbColumns>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Columnas de tabla @ViewBag.TablaName</h2>
+
+<p>
+    @Html.ActionLink("Agregar Columna", "Create", new { idt = ViewBag.idt }, new {@class="btn btn-success"})
+    @Html.ActionLink("Volver", "Index", "Dbtables",null, new { @class = "btn btn-info" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DbTables.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DbTables.Name)
+        </td>
+        <td>
+            <a class="btn-grid" href="@Url.Action("Edit","DbColumns", new { id = item.Id }) "><span><img src="~/Content/image/iconos_Lapiz.png" /></span></a>            
+            <a class="btn-grid" href="@Url.Action("Delete","DbColumns", new { id = item.Id }) "><img src="~/Content/image/iconos_Basura.png" /></a>
+            
+        </td>
+    </tr>
+}
+
+</table>

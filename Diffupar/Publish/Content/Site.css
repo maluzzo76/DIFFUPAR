@@ -1,0 +1,160 @@
+﻿/* Set padding to keep content from hitting the edges */
+.body-content {
+    margin-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.btn-grid {    
+}
+
+    
+
+    .btn-grid img {
+        width: 20px;
+        height: 20px;
+        margin-right:10px;
+    }
+
+.menuitem {
+    font-size: 10pt;
+}
+
+.loginitem {
+    font-size: 10pt;
+    color: white;
+}
+
+.devoptable {
+    font-size: 8pt;
+    width: 100%;
+}
+
+    .devoptable th {
+        font-size: 11pt;
+        color: black;
+    }
+
+    .devoptable tr {
+        border-bottom: 1px solid #696969;
+        height: 50px;
+        color: #161616;
+    }
+
+    .devoptable td {
+        padding-right: 20px;
+        border-bottom: 1px solid #cfcece;   
+        font-size:10pt;
+    }
+
+    .devoptable p {
+        font-weight: bold;
+        white-space: nowrap;
+        width: 250px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 8pt;
+        color: black;
+    }
+
+    .devoptable a {
+        font-weight: bold;
+        white-space: nowrap;
+        width: 250px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 8pt;
+        color: black;
+    }
+
+
+
+.devopControl {
+    border: none;
+    border-radius: 6px;
+    background-color:#e9e8e897;
+    text-align:right;
+    width:120px;
+   
+}
+
+.devopControlEdit {
+    border: none;
+    background-color: #1358fb26;
+    border-radius: 5px;
+    color: black;
+    width: 250px;
+}
+
+
+
+.devopControl :focus, input:focus {
+    outline: none;
+    background-color: #1b9bf253;
+}
+
+.devopControlnew {
+    border: none;
+    border-radius: 5px;
+    background-color: #dedede6f;
+    text-align: center;
+    width: 250px;
+    color: black;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator, input[type="time"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 2px;
+    opacity: 0.9;
+    color: red;
+    zoom: 130%;
+}
+
+.sombra {
+    box-shadow: 3px 7px 18px -8px rgba(0,0,0,0.70);
+}
+
+.accordion {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    text-align: left;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+    .accordion:hover {
+        background-color: #0056b3;
+    }
+
+/* Contenido oculto */
+.panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: #f1f1f1;
+    padding: 0 15px;
+}
+
+    .panel.show {
+        max-height: 200px; /* Ajusta según el contenido */
+    }

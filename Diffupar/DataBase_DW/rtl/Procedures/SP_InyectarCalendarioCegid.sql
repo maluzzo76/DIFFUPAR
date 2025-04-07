@@ -3,13 +3,12 @@ AS
 DECLARE @FechaDesde datetime, @FechaFin Datetime
 
 SET @FechaDesde  = (select min(Fecha_Contabilizacion) from DiffuparAnalyticsQA.rtl.VentaComercial)
-SET @FechaFin = (select DATEADD(day,1,getdate()))
+SET @FechaFin = (select getdate())
 
-declare @Sucursales table(codigo int,sucursal varchar(255))
+declare @Sucursales table(sucursal varchar(255))
 
 insert into @Sucursales
-select distinct CodigoTienda, upper(Sucursal) Sucursal from rtl.VentaComercial
---select distinct NombreTienda from DiffuparAnalyticsQA.rtl.ScursalesRetails
+select distinct sucursal from DiffuparAnalyticsQA.rtl.VentaComercial
 
 delete rtl.TCalendario
 
@@ -19,39 +18,38 @@ BEGIN
 
 	INSERT INTO rtl.TCalendario
 	SELECT
-		codigo,
 		sucursal,
 		year(@FechaDesde),
 		month(@FechaDesde),
 		case
-		when	Sucursal ='ALTO AVELLANEDA'
-				OR Sucursal ='ALTO PALERMO GONDOLA' 
-				OR Sucursal ='IMPRENTA' 
-				OR Sucursal ='VILLA DEL PARQUE' 
-				OR Sucursal ='PASEO ALCORTA 2P'
-				OR Sucursal ='MENDOZA PLAZA'
-				OR Sucursal ='PATIO BULLRICH PB'
-				OR Sucursal ='VILLA DEL PARQUE'
-				OR Sucursal ='PATIO BULLRICH PB'
-				OR Sucursal ='QUILMES FACTORY'
-				OR Sucursal ='MARKETING RETAIL'
-				OR Sucursal ='DISTRITO ARCOS GOND'
-				OR Sucursal ='CREED ALVEAR'
-				OR Sucursal ='CABILDO Y PAMPA'
-				OR Sucursal ='ALTO ROSARIO'
-				OR Sucursal ='ABASTO MAC'
-				OR Sucursal ='ALTO PALERMO MAC'
-				OR Sucursal ='MAC ALTO ROSARIO'
-				OR Sucursal ='ALTO ROSARIO MAC'
-				OR Sucursal ='PALERMO SOHO MAC'
-				OR Sucursal ='MENDOZA PLAZA GOND'
-				OR Sucursal ='GALERIAS PACIFICO MAC'
-				OR Sucursal ='PALMARES'
-				OR Sucursal ='ALTO AVELLANEDA MALA' then 'ST NO COMPARABLE'
-		when (LEFT(Sucursal,3)='B24' and Sucursal<>'B24 ECOMMERCE' )then 'BEAUTY 24'
-		when Sucursal='CONNECTE' THEN 'ECOMMERCE'
-		when Sucursal='B24 ECOMMERCE' THEN 'B24 ECOMMERCE'
-		when Sucursal='OUTLET' THEN 'OUTLET'
+		when	   sucursal='ALTO AVELLANEDA'
+				OR sucursal='ALTO PALERMO GOND' 
+				OR sucursal ='IMPRENTA' 
+				OR sucursal ='VILLA DEL PARQUE' 
+				OR sucursal ='PASEO ALCORTA 2P'
+				OR sucursal ='MENDOZA PLAZA'
+				OR sucursal ='PATIO BULLRICH PB'
+				OR sucursal ='VILLA DEL PARQUE'
+				OR sucursal ='PATIO BULLRICH PB'
+				OR sucursal ='QUILMES FACTORY'
+				OR sucursal ='MARKETING RETAIL'
+				OR sucursal ='DISTRITO ARCOS GOND'
+				OR sucursal ='CREED ALVEAR'
+				OR sucursal ='CABILDO Y PAMPA'
+				OR sucursal ='ALTO ROSARIO'
+				OR sucursal ='ABASTO MAC'
+				OR sucursal ='ALTO PALERMO MAC'
+				OR sucursal ='ALTO ROSARIO MAC'
+				OR sucursal ='PALERMO SOHO MAC'
+				OR sucursal ='MENDOZA PLAZA GOND'
+				OR sucursal ='GALERIAS PACIFICO MAC'
+				OR sucursal ='PALMARES'
+				OR sucursal ='ALTO AVELLANEDA MALA' then 'ST NO COMPARABLE'
+  
+		when (LEFT(sucursal,3)='B24' and sucursal<>'B24 ECOMMERCE' )then 'BEAUTY 24'
+		when sucursal ='CONNECTE' THEN 'ECOMMERCE'
+		when sucursal ='B24 ECOMMERCE' THEN 'B24 ECOMMERCE'
+		when sucursal ='OUTLET' THEN 'OUTLET'
 		ELSE 'ST COMPARABLE'
 		END Grupo
 	FROM  @Sucursales	

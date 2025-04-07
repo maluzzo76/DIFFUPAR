@@ -133,9 +133,11 @@ namespace ADO
         {
             using (SqlCommand _sqlCommand = new SqlCommand(query, (new SqlConnection(strConexion))))
             {
-                _sqlCommand.CommandTimeout = 6000;
+                _sqlCommand.CommandTimeout = 60000;
                 _sqlCommand.Connection.Open();
                 _sqlCommand.ExecuteNonQuery();
+                _sqlCommand.Connection.Close();
+                _sqlCommand.Connection.Dispose();
             }
         }
 

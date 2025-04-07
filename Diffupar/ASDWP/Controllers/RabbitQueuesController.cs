@@ -49,7 +49,7 @@ namespace ASDWP.Controllers
             }
             else
             {
-                ViewData["RabbitMessage"] = db.RabbitMenssage.Where(w => w.RabbitQueue_Id == id).GroupBy(d => d.ProcessId).Select(s => s.FirstOrDefault()).OrderByDescending(o => o.ImportDate).ToList();
+                ViewData["RabbitMessage"] = db.RabbitMenssage.Where(w => w.RabbitQueue_Id == id && w.ImportDate.Value.Year == 2024).GroupBy(d => d.ProcessId).Select(s => s.FirstOrDefault()).OrderByDescending(o => o.ImportDate).ToList();
             }
 
             ViewBag.search = search;
